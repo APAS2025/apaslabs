@@ -69,11 +69,11 @@ const WhyWeExistSection = () => {
             }`}
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter mb-6">
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
                 The Infrastructure Crisis
               </span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full shadow-glow mb-8" />
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-600 mx-auto rounded-full shadow-glow mb-8" />
             <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto leading-relaxed">
               Critical systems fail because decisions are made in isolation, without data, accountability, or community input.
             </p>
@@ -127,7 +127,7 @@ const WhyWeExistSection = () => {
             <div className="flex flex-col lg:flex-row items-center gap-8">
               <div className="flex-1 text-center lg:text-left">
                 <h3 className="text-3xl lg:text-4xl font-bold mb-4">
-                  <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
                     Living Labs Solution
                   </span>
                 </h3>

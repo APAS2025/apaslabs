@@ -72,7 +72,7 @@ const JourneySection = () => {
               : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent mb-4">
             Our Journey
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">

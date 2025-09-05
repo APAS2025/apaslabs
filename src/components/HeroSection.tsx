@@ -30,7 +30,7 @@ const HeroSection = () => {
         {/* Hero Headline */}
         <div className="mb-6 sm:mb-8">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-inter leading-tight mb-4 sm:mb-6">
-            <span className="block bg-gradient-primary bg-clip-text text-transparent drop-shadow-lg">
+            <span className="block bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent drop-shadow-lg">
               Advancing the Future
             </span>
             <span className="block text-foreground drop-shadow-lg">
@@ -39,7 +39,7 @@ const HeroSection = () => {
           </h1>
           
           {/* Accent line under headline */}
-          <div className="mx-auto w-24 sm:w-32 h-1 bg-gradient-primary rounded-full shadow-glow mb-6 sm:mb-8" />
+          <div className="mx-auto w-24 sm:w-32 h-1 bg-gradient-to-r from-primary to-blue-600 rounded-full shadow-glow mb-6 sm:mb-8" />
         </div>
 
         {/* Subheading */}
