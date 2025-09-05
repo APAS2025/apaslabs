@@ -9,7 +9,7 @@ const GetInvolvedSection = () => {
       title: "Founding Donors",
       description: "Join our founding donor circle and help us build the financial foundation for revolutionary public infrastructure.",
       cta: "Become a Founding Donor",
-      gradient: "from-accent-warm to-accent",
+      gradient: "from-accent to-accent-glow",
       highlight: true
     },
     {
@@ -17,35 +17,35 @@ const GetInvolvedSection = () => {
       title: "Industry Practitioners",
       description: "Water, wastewater, and public works professionals - your expertise is crucial for breaking traditional barriers.",
       cta: "Join the Guild",
-      gradient: "from-primary to-primary-bright"
+      gradient: "from-primary to-primary-glow"
     },
     {
       icon: Building2,
       title: "Cross-Sector Experts",
       description: "Procurement, policy makers, bureaucrats - we need diverse perspectives to transform infrastructure.",
       cta: "Get Connected",
-      gradient: "from-secondary to-secondary-bright"
+      gradient: "from-secondary to-secondary-glow"
     },
     {
       icon: Database,
       title: "Tech Innovators",
       description: "AI, blockchain, data scientists - help us harness cutting-edge technology for public good.",
       cta: "Join the Innovation",
-      gradient: "from-accent to-accent-bright"
+      gradient: "from-accent to-primary"
     },
     {
       icon: Shield,
       title: "Financial & Risk Experts",
       description: "Insurance, rating agencies, financial analysts - help us build sustainable economic models.",
       cta: "Shape the Future",
-      gradient: "from-primary-dark to-primary"
+      gradient: "from-primary to-accent"
     },
     {
       icon: Globe,
       title: "Everyone Else",
       description: "Water belongs to everybody. Whether you're a citizen, student, or changemaker - we need you.",
       cta: "Get Involved",
-      gradient: "from-secondary-dark to-secondary"
+      gradient: "from-secondary to-primary"
     }
   ];
 
@@ -53,8 +53,8 @@ const GetInvolvedSection = () => {
     <section className="relative py-24 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-background-deep via-background to-background-deep" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(var(--primary-rgb),0.15),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(var(--accent-rgb),0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radix-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
       
       <div className="container relative z-10">
         {/* Urgent Call Header */}
