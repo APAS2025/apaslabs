@@ -29,6 +29,11 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-hero z-20" />
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-96 bg-gradient-glow z-30" />
       
+      {/* Flowing Ribbon */}
+      <div className="absolute top-1/3 left-0 w-full h-1 z-25 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/30 to-transparent h-full w-full animate-[ribbon-flow_8s_ease-in-out_infinite]" />
+      </div>
+      
       {/* Decorative Elements - Responsive with Parallax */}
       <div 
         className="absolute top-20 left-4 sm:left-10 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-primary/10 rounded-full blur-3xl animate-pulse transform-gpu" 
