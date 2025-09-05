@@ -20,6 +20,11 @@ import heroBackground from "@/assets/hero-background-blue-pink.jpg";
 const Guild = () => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
   const [activeAnimation, setActiveAnimation] = useState(0);
+  const [isTyping, setIsTyping] = useState(false);
+  const [typedQuestion, setTypedQuestion] = useState("");
+  const [isAiResponding, setIsAiResponding] = useState(false);
+  const [streamedResponse, setStreamedResponse] = useState("");
+  const [showTypingIndicator, setShowTypingIndicator] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,12 +45,59 @@ const Guild = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Animation cycle effect
   useEffect(() => {
+    const runAnimation = async () => {
+      const currentQuestion = llmQuestions[activeAnimation];
+      const currentAnswer = llmAnswers[activeAnimation];
+      
+      // Reset states
+      setTypedQuestion("");
+      setStreamedResponse("");
+      setIsTyping(false);
+      setIsAiResponding(false);
+      setShowTypingIndicator(false);
+      
+      // Wait a bit before starting
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      // Start typing the question
+      setIsTyping(true);
+      for (let i = 0; i <= currentQuestion.length; i++) {
+        setTypedQuestion(currentQuestion.slice(0, i));
+        await new Promise(resolve => setTimeout(resolve, 50 + Math.random() * 50));
+      }
+      setIsTyping(false);
+      
+      // Wait a bit, then show typing indicator
+      await new Promise(resolve => setTimeout(resolve, 300));
+      setShowTypingIndicator(true);
+      
+      // Wait for AI "thinking" time
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setShowTypingIndicator(false);
+      
+      // Start streaming the response
+      setIsAiResponding(true);
+      const words = currentAnswer.split(' ');
+      for (let i = 0; i <= words.length; i++) {
+        setStreamedResponse(words.slice(0, i).join(' '));
+        await new Promise(resolve => setTimeout(resolve, 100 + Math.random() * 100));
+      }
+      setIsAiResponding(false);
+    };
+
+    runAnimation();
+    
     const interval = setInterval(() => {
-      setActiveAnimation(prev => (prev + 1) % 3);
-    }, 4000);
+      setActiveAnimation(prev => {
+        const next = (prev + 1) % 3;
+        return next;
+      });
+    }, 8000); // Longer interval to accommodate animation
+    
     return () => clearInterval(interval);
-  }, []);
+  }, [activeAnimation]);
 
   const guilds = [
     {
@@ -295,24 +347,45 @@ const Guild = () => {
                       
                       <div className="flex-1 space-y-4">
                         {/* User Question */}
-                        <div className="flex justify-end">
-                          <div className="bg-primary text-primary-foreground rounded-2xl rounded-br-md px-4 py-3 max-w-[250px] text-sm">
-                            {llmQuestions[activeAnimation]}
+                        {(typedQuestion || isTyping) && (
+                          <div className="flex justify-end">
+                            <div className="bg-primary text-primary-foreground rounded-2xl rounded-br-md px-4 py-3 max-w-[250px] text-sm">
+                              {typedQuestion}
+                              {isTyping && <span className="animate-pulse">|</span>}
+                            </div>
                           </div>
-                        </div>
+                        )}
+                        
+                        {/* Typing Indicator */}
+                        {showTypingIndicator && (
+                          <div className="flex justify-start">
+                            <div className="bg-card border rounded-2xl rounded-bl-md px-4 py-3">
+                              <div className="flex space-x-1">
+                                <div className="w-2 h-2 bg-foreground/40 rounded-full animate-bounce"></div>
+                                <div className="w-2 h-2 bg-foreground/40 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                                <div className="w-2 h-2 bg-foreground/40 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
                         
                         {/* AI Response */}
-                        <div className="flex justify-start">
-                          <div className="bg-card border rounded-2xl rounded-bl-md px-4 py-3 max-w-[250px]">
-                            <div className="text-sm text-foreground/90">
-                              {llmAnswers[activeAnimation]}
-                            </div>
-                            <div className="flex items-center gap-2 mt-2 text-xs text-foreground/60">
-                              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                              Verified by guild experts
+                        {(streamedResponse || isAiResponding) && (
+                          <div className="flex justify-start">
+                            <div className="bg-card border rounded-2xl rounded-bl-md px-4 py-3 max-w-[250px]">
+                              <div className="text-sm text-foreground/90">
+                                {streamedResponse}
+                                {isAiResponding && <span className="animate-pulse">|</span>}
+                              </div>
+                              {streamedResponse && !isAiResponding && (
+                                <div className="flex items-center gap-2 mt-2 text-xs text-foreground/60">
+                                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                  Verified by guild experts
+                                </div>
+                              )}
                             </div>
                           </div>
-                        </div>
+                        )}
                       </div>
                       
                       {/* Input Area */}
