@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send, Users, FileText, Briefcase, MessageCircle, Camera, Building } from "lucide-react";
 
 const ContactSection = () => {
+  console.log("ContactSection: Component rendering");
   const sectionRef = useRef<HTMLElement>(null);
   const [selectedCategory, setSelectedCategory] = useState("General Inquiry");
   const [formData, setFormData] = useState({
@@ -18,10 +19,12 @@ const ContactSection = () => {
   });
 
   useEffect(() => {
+    console.log("ContactSection: Component mounted, setting up intersection observer");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            console.log("ContactSection: Element intersecting, adding animation");
             entry.target.classList.remove("opacity-0");
             entry.target.classList.add("animate-fade-in");
           }
@@ -31,6 +34,7 @@ const ContactSection = () => {
     );
 
     const elements = sectionRef.current?.querySelectorAll(".animate-on-scroll");
+    console.log("ContactSection: Found elements to observe:", elements?.length);
     elements?.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
