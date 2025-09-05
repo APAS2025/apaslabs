@@ -1,0 +1,470 @@
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { 
+  Droplets, 
+  Shield, 
+  CloudRain, 
+  Brain, 
+  DollarSign,
+  Users,
+  BookOpen,
+  Target,
+  Zap,
+  ArrowRight,
+  MessageSquare,
+  Smartphone
+} from "lucide-react";
+import heroBackground from "@/assets/hero-background-blue-pink.jpg";
+
+const Guild = () => {
+  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
+  const [activeAnimation, setActiveAnimation] = useState(0);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            setVisibleItems(prev => new Set([...prev, index]));
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    const elements = document.querySelectorAll('[data-index]');
+    elements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveAnimation(prev => (prev + 1) % 3);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const guilds = [
+    {
+      id: "pfas",
+      title: "PFAS & Emerging Contaminants",
+      description: "Leading the fight against forever chemicals with cutting-edge treatment technologies and regulatory frameworks.",
+      icon: Droplets,
+      color: "from-blue-500 to-cyan-400",
+      bgColor: "bg-blue-500/10",
+      borderColor: "border-blue-500/20",
+      experts: "Environmental Scientists, Regulators, Treatment Engineers",
+      challenge: "PFAS contamination affects 200M+ Americans with fragmented treatment approaches"
+    },
+    {
+      id: "microplastics",
+      title: "Microplastics & Wastewater",
+      description: "Revolutionizing wastewater treatment to combat microplastic pollution through innovative monitoring and removal technologies.",
+      icon: Shield,
+      color: "from-emerald-500 to-teal-400",
+      bgColor: "bg-emerald-500/10",
+      borderColor: "border-emerald-500/20",
+      experts: "Wastewater Engineers, Environmental Chemists, Policy Leaders",
+      challenge: "Microplastics in water systems require immediate comprehensive monitoring solutions"
+    },
+    {
+      id: "climate-resilience",
+      title: "Climate Resilience & Utilities",
+      description: "Building adaptive infrastructure that withstands climate impacts through resilient design and smart adaptation strategies.",
+      icon: CloudRain,
+      color: "from-orange-500 to-red-400",
+      bgColor: "bg-orange-500/10",
+      borderColor: "border-orange-500/20",
+      experts: "Resilience Officers, City Planners, Infrastructure Engineers",
+      challenge: "Climate threats require $2.6T in infrastructure adaptation by 2030"
+    },
+    {
+      id: "ai-governance",
+      title: "AI & Data Governance",
+      description: "Establishing ethical AI frameworks and data governance standards for responsible innovation in public infrastructure.",
+      icon: Brain,
+      color: "from-purple-500 to-violet-400",
+      bgColor: "bg-purple-500/10",
+      borderColor: "border-purple-500/20",
+      experts: "AI Researchers, Data Security Professionals, Tech Regulators",
+      challenge: "Public sector needs immediate AI ethics and governance frameworks"
+    },
+    {
+      id: "infrastructure-finance",
+      title: "Infrastructure Finance & ROI",
+      description: "Transforming infrastructure funding through innovative financing models and clear ROI frameworks for sustainable development.",
+      icon: DollarSign,
+      color: "from-amber-500 to-yellow-400",
+      bgColor: "bg-amber-500/10",
+      borderColor: "border-amber-500/20",
+      experts: "Utility CFOs, Infrastructure Funders, PPP Specialists",
+      challenge: "$2.6T infrastructure funding gap requires innovative financing solutions"
+    }
+  ];
+
+  const problems = [
+    {
+      icon: Users,
+      title: "Knowledge Exists in Silos",
+      description: "Decades of expertise trapped in isolated systems, preventing collaborative innovation and solution-sharing."
+    },
+    {
+      icon: BookOpen,
+      title: "Brain Drain Crisis",
+      description: "Centuries of collective wisdom disappearing as experienced professionals retire without knowledge transfer."
+    },
+    {
+      icon: Target,
+      title: "Workforce Learning Gap",
+      description: "New professionals lack accelerated paths to master complex infrastructure challenges and industry expertise."
+    },
+    {
+      icon: Zap,
+      title: "Academia-Industry Disconnect",
+      description: "Educational institutions operate separately from real-world practitioner challenges, limiting innovation potential."
+    }
+  ];
+
+  const llmQuestions = [
+    "How do I design a PFAS treatment system for 50,000 people?",
+    "What's the ROI on climate resilience infrastructure?",
+    "How do I implement AI governance in public utilities?"
+  ];
+
+  const llmAnswers = [
+    "Based on current EPA guidelines and treatment data from 200+ installations...",
+    "Climate adaptation investments typically yield 4:1 ROI through avoided damages...",
+    "Start with data classification frameworks, then establish AI ethics committees..."
+  ];
+
+  return (
+    <main className="min-h-screen bg-background-deep">
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBackground})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background-deep/90 via-background/60 to-background-deep/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.2),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(139,92,246,0.15),transparent_50%)]" />
+        
+        <div className="container relative z-10 text-center">
+          <div 
+            className={`transition-all duration-1000 ${visibleItems.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            data-index="0"
+          >
+            <h1 className="text-7xl md:text-8xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6">
+              The Guild
+            </h1>
+            <p className="text-2xl md:text-3xl text-foreground/90 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Where Practitioners Power the AI Stack
+            </p>
+            <p className="text-lg text-foreground/80 mb-12 max-w-3xl mx-auto">
+              Expertise captured, curated, and advanced into tools for the workforce of tomorrow.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="xl" variant="hero" className="group">
+                Join The Guild
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button size="xl" variant="glass">
+                Learn More
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What is The Guild */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background-deep to-background" />
+        <div className="container relative z-10">
+          <div 
+            className={`text-center mb-16 transition-all duration-1000 delay-200 ${visibleItems.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            data-index="1"
+          >
+            <h2 className="text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+              Modern Guilds for the AI Age
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-4xl mx-auto leading-relaxed">
+              Just as historical guilds brought together skilled practitioners to set standards and train apprentices, 
+              The Guild creates <span className="text-primary font-semibold">expert collectives</span> that curate knowledge into 
+              <span className="text-accent font-semibold"> AI-powered models</span>, ensuring trusted expertise guides the future workforce.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Problems We're Solving */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-background-deep via-background to-background-deep" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
+        
+        <div className="container relative z-10">
+          <div 
+            className={`text-center mb-16 transition-all duration-1000 delay-300 ${visibleItems.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            data-index="2"
+          >
+            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+              The Crisis We're Solving
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              Critical infrastructure knowledge is fragmenting, disappearing, and failing to reach the next generation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {problems.map((problem, index) => (
+              <div
+                key={problem.title}
+                className={`transition-all duration-1000 ${visibleItems.has(3 + index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${400 + index * 100}ms` }}
+                data-index={3 + index}
+              >
+                <Card className="h-full bg-card/50 border-destructive/20 backdrop-blur-sm hover:shadow-glow transition-all duration-500 group">
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-lg bg-destructive/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <problem.icon className="h-6 w-6 text-destructive" />
+                    </div>
+                    <CardTitle className="text-lg text-destructive">{problem.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-foreground/70">
+                      {problem.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LLM Animation Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background-deep to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.15),transparent_70%)]" />
+        
+        <div className="container relative z-10">
+          <div 
+            className={`text-center mb-16 transition-all duration-1000 delay-200 ${visibleItems.has(7) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            data-index="7"
+          >
+            <h2 className="text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+              The Future of Expert Knowledge
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              AI-powered models trained by practitioners, for practitioners. Knowledge that never gets lost.
+            </p>
+          </div>
+
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            {/* iPhone Animation */}
+            <div 
+              className={`lg:w-1/2 flex justify-center transition-all duration-1000 delay-400 ${visibleItems.has(8) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
+              data-index="8"
+            >
+              <div className="relative">
+                {/* iPhone Frame */}
+                <div className="relative w-80 h-[640px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] p-2 shadow-2xl">
+                  <div className="w-full h-full bg-background rounded-[2.5rem] overflow-hidden relative">
+                    {/* Status Bar */}
+                    <div className="h-12 bg-background-deep flex items-center justify-between px-6">
+                      <span className="text-xs font-medium">9:41</span>
+                      <div className="flex gap-1">
+                        <div className="w-4 h-2 bg-foreground rounded-sm"></div>
+                        <div className="w-6 h-2 bg-foreground rounded-sm"></div>
+                      </div>
+                    </div>
+                    
+                    {/* Chat Interface */}
+                    <div className="p-4 h-full flex flex-col">
+                      <div className="flex items-center gap-3 mb-4 pb-3 border-b border-border">
+                        <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
+                          <Brain className="h-5 w-5 text-foreground" />
+                        </div>
+                        <div>
+                          <div className="font-semibold text-sm">Guild AI Assistant</div>
+                          <div className="text-xs text-foreground/60">Expert-trained knowledge</div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex-1 space-y-4">
+                        {/* User Question */}
+                        <div className="flex justify-end">
+                          <div className="bg-primary text-primary-foreground rounded-2xl rounded-br-md px-4 py-3 max-w-[250px] text-sm">
+                            {llmQuestions[activeAnimation]}
+                          </div>
+                        </div>
+                        
+                        {/* AI Response */}
+                        <div className="flex justify-start">
+                          <div className="bg-card border rounded-2xl rounded-bl-md px-4 py-3 max-w-[250px]">
+                            <div className="text-sm text-foreground/90">
+                              {llmAnswers[activeAnimation]}
+                            </div>
+                            <div className="flex items-center gap-2 mt-2 text-xs text-foreground/60">
+                              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                              Verified by guild experts
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Input Area */}
+                      <div className="mt-4 flex items-center gap-2 p-3 bg-card rounded-2xl border">
+                        <MessageSquare className="h-4 w-4 text-foreground/40" />
+                        <span className="text-sm text-foreground/40 flex-1">Ask the guild...</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-[3rem] blur-xl -z-10 animate-pulse-glow"></div>
+              </div>
+            </div>
+
+            {/* Features */}
+            <div 
+              className={`lg:w-1/2 transition-all duration-1000 delay-600 ${visibleItems.has(9) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}
+              data-index="9"
+            >
+              <div className="space-y-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <Shield className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Expert Guardrails</h3>
+                    <p className="text-foreground/70">Every response verified by guild practitioners. No hallucinations, only trusted knowledge.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                    <BookOpen className="h-6 w-6 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Living Knowledge Base</h3>
+                    <p className="text-foreground/70">Continuously updated by active practitioners. Knowledge that evolves with the industry.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <Zap className="h-6 w-6 text-secondary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Instant Expertise</h3>
+                    <p className="text-foreground/70">Access decades of experience instantly. Accelerate learning and decision-making.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Guilds */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-background-deep via-background to-background-deep" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+        
+        <div className="container relative z-10">
+          <div 
+            className={`text-center mb-16 transition-all duration-1000 delay-200 ${visibleItems.has(10) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            data-index="10"
+          >
+            <h2 className="text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+              The Five Founding Guilds
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              Critical domains where expert knowledge becomes AI-powered tools for the next generation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {guilds.map((guild, index) => (
+              <div
+                key={guild.id}
+                className={`transition-all duration-1000 ${visibleItems.has(11 + index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${300 + index * 100}ms` }}
+                data-index={11 + index}
+              >
+                <Card className={`h-full ${guild.bgColor} ${guild.borderColor} backdrop-blur-sm hover:shadow-glow transition-all duration-500 group cursor-pointer`}>
+                  <CardHeader>
+                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${guild.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <guild.icon className="h-8 w-8 text-white" />
+                    </div>
+                    <CardTitle className="text-xl mb-2">{guild.title}</CardTitle>
+                    <CardDescription className="text-foreground/70">
+                      {guild.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <div className="text-sm font-medium text-foreground/80 mb-1">Key Experts:</div>
+                      <div className="text-xs text-foreground/60">{guild.experts}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-destructive mb-1">Critical Challenge:</div>
+                      <div className="text-xs text-foreground/70">{guild.challenge}</div>
+                    </div>
+                    <div className="pt-2 space-y-2">
+                      <Button className="w-full" variant="ghost" size="sm">
+                        Learn More
+                      </Button>
+                      <Button className="w-full" size="sm">
+                        Join Guild
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.2),transparent_70%)]" />
+        
+        <div className="container relative z-10">
+          <div 
+            className={`text-center transition-all duration-1000 delay-200 ${visibleItems.has(16) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            data-index="16"
+          >
+            <h2 className="text-6xl font-bold mb-8 bg-gradient-primary bg-clip-text text-transparent">
+              Shape the Future of Infrastructure
+            </h2>
+            <p className="text-2xl text-foreground/80 mb-12 max-w-4xl mx-auto">
+              Join the movement to preserve knowledge, accelerate learning, and build AI tools that serve humanity.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button size="xl" variant="hero" className="group">
+                Join as an Expert
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button size="xl" variant="glass">
+                Join as a Participant
+              </Button>
+              <Button size="xl" variant="glow">
+                Become a Founding Donor
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default Guild;
