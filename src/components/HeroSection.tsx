@@ -30,8 +30,8 @@ const HeroSection = () => {
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-96 bg-gradient-glow z-30" />
       
       {/* Flowing Ribbon */}
-      <div className="absolute top-1/3 left-0 w-full h-1 z-25 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/30 to-transparent h-full w-full animate-[ribbon-flow_8s_ease-in-out_infinite]" />
+      <div className="absolute top-1/3 left-0 w-full h-0.5 z-30 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/80 to-transparent h-full w-full animate-[ribbon-flow_8s_ease-in-out_infinite] shadow-glow" />
       </div>
       
       {/* Decorative Elements - Responsive with Parallax */}
