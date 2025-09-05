@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useState, useEffect } from "react";
-import { CheckCircle, Shield, Database, Lock, GitBranch, Users, BarChart3, FileText, ExternalLink, Smartphone } from "lucide-react";
+import { CheckCircle, Shield, Database, Lock, GitBranch, Users, BarChart3, FileText, ExternalLink, Smartphone, Brain } from "lucide-react";
 
 const AIDataGovernanceGuild = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -120,80 +120,101 @@ const AIDataGovernanceGuild = () => {
         </div>
       </section>
 
-      {/* iPhone Demonstration */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-indigo-500/5 to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              See It In Action
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Watch how the Guild handles complex governance questions with transparency and accountability
-            </p>
-          </div>
-          
-          <div className="flex justify-center">
-            <div className="relative">
-              {/* iPhone Frame */}
-              <div className="relative w-80 h-[600px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl">
-                <div className="w-full h-full bg-black rounded-[2.5rem] overflow-hidden relative">
-                  {/* Notch */}
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-10"></div>
-                  
-                  {/* Screen Content */}
-                  <div className="h-full bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900 flex flex-col">
-                    {/* Header */}
-                    <div className="pt-12 pb-4 px-6 border-b border-gray-700">
-                      <div className="flex items-center justify-center gap-2">
-                        <Smartphone className="w-5 h-5 text-indigo-400" />
-                        <span className="text-white font-semibold">APAS AI Guild</span>
+      {/* A Living Lab */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background-deep to-background" />
+        <div className="container relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="transition-all duration-1000 delay-200 opacity-100 translate-y-0">
+              <h2 className="text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+                A Living Lab
+              </h2>
+              <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
+                <p>
+                  This Guild is not a one-time project. It is a <span className="text-primary font-semibold">living lab</span> — 
+                  continuously enriched by new governance frameworks, blockchain applications, and real-world data integrity practices.
+                </p>
+                <p>
+                  Each new contribution reduces risk and raises trust. Over time, it becomes the 
+                  <span className="text-primary font-semibold"> critical trust layer</span> underpinning all other Labs — from PFAS, to Climate, to Finance. 
+                  Without governance, none of them can scale.
+                </p>
+                <div className="bg-primary/10 border border-primary/20 rounded-lg p-6 mt-8">
+                  <h3 className="text-xl font-semibold text-primary mb-3 flex items-center gap-2">
+                    <Smartphone className="h-5 w-5" />
+                    Governance Intelligence in Your Pocket
+                  </h3>
+                  <p className="text-foreground/90">
+                    Access blockchain-verified frameworks, audit trails, and compliance standards 
+                    wherever critical governance decisions need to be made.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Phone Mockup Animation */}
+            <div className="relative transition-all duration-1000 delay-300 opacity-100 translate-x-0">
+              <div className="relative mx-auto w-80 h-[640px]">
+                {/* Phone Frame */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] p-2 shadow-2xl">
+                  <div className="w-full h-full bg-background rounded-[2.5rem] overflow-hidden relative">
+                    {/* Phone Screen */}
+                    <div className="absolute inset-4 bg-gradient-to-br from-background-deep to-background rounded-3xl overflow-hidden">
+                      {/* Status Bar */}
+                      <div className="flex justify-between items-center px-6 py-4 text-xs text-foreground/60">
+                        <span>9:41</span>
+                        <span>AI Governance Guild</span>
+                        <div className="flex items-center gap-1">
+                          <div className="w-4 h-2 border border-foreground/60 rounded-sm">
+                            <div className="w-3/4 h-full bg-green-400 rounded-sm" />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    
-                    {/* Question */}
-                    <div className="flex-1 p-6 overflow-hidden">
-                      <div className="space-y-4">
-                        <div className="bg-indigo-600 text-white p-4 rounded-2xl rounded-br-sm max-w-[85%] ml-auto">
-                          <p className="text-sm font-medium">
-                            How do we make fragmented legacy systems interoperable without costly overhauls?
+                      
+                      {/* App Content */}
+                      <div className="px-6 py-4 space-y-4">
+                        <div className="bg-primary/20 border border-primary/30 rounded-lg p-4 animate-pulse">
+                          <div className="flex items-center gap-2 mb-2">
+                            <Shield className="h-4 w-4 text-indigo-400" />
+                            <span className="text-sm font-medium">Interoperability Query</span>
+                          </div>
+                          <p className="text-xs text-foreground/80">
+                            "How do we make fragmented legacy systems interoperable without costly overhauls?"
                           </p>
                         </div>
                         
-                        <div className="bg-gray-800 text-gray-200 p-4 rounded-2xl rounded-bl-sm max-w-[85%]">
+                        <div className="bg-glass border border-glass-border rounded-lg p-4 animate-fade-in">
                           <div className="flex items-center gap-2 mb-2">
-                            <div className="w-6 h-6 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
-                              <Shield className="w-3 h-3 text-white" />
-                            </div>
-                            <span className="text-xs font-medium text-indigo-400">AI & Governance Guild</span>
+                            <Brain className="h-4 w-4 text-primary" />
+                            <span className="text-xs font-medium">Expert Analysis</span>
                           </div>
-                          <p className="text-sm leading-relaxed">
-                            The Guild is building governance fabrics that connect existing systems into one auditable stack. Instead of replacing infrastructure at enormous cost, we create standards and guardrails that allow legacy systems to interoperate safely, transparently, and efficiently — backed by blockchain for accountability.
-                          </p>
-                          <div className="flex items-center gap-2 mt-3 pt-2 border-t border-gray-700">
-                            <CheckCircle className="w-4 h-4 text-green-400" />
-                            <span className="text-xs text-gray-400">Verified by experts • Blockchain audited</span>
+                          <div className="space-y-2 text-xs text-foreground/80">
+                            <p>Legacy system integration requires API standardization:</p>
+                            <ul className="list-disc list-inside space-y-1 ml-2">
+                              <li>Implement RESTful middleware layers</li>
+                              <li>Use data mapping protocols (JSON/XML)</li>
+                              <li>Deploy event-driven architecture</li>
+                              <li>Establish blockchain audit trails</li>
+                            </ul>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    
-                    {/* Bottom indicator */}
-                    <div className="p-4 border-t border-gray-700">
-                      <div className="flex justify-center">
-                        <div className="flex gap-1">
-                          <div className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></div>
-                          <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse delay-100"></div>
-                          <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse delay-200"></div>
+
+                        <div className="bg-accent/20 border border-accent/30 rounded-lg p-3">
+                          <div className="flex items-center gap-2 mb-1">
+                            <CheckCircle className="h-3 w-3 text-green-400" />
+                            <span className="text-xs font-medium text-green-400">Verified by 15 experts</span>
+                          </div>
+                          <p className="text-xs text-foreground/70">Last updated: 3 days ago</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                
+                {/* Floating Elements */}
+                <div className="absolute -top-8 -left-8 w-16 h-16 bg-primary/20 rounded-full blur-xl animate-pulse" />
+                <div className="absolute -bottom-8 -right-8 w-20 h-20 bg-accent/20 rounded-full blur-xl animate-pulse delay-1000" />
               </div>
-              
-              {/* Floating elements */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-indigo-500 rounded-full opacity-20 animate-bounce"></div>
-              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-purple-500 rounded-full opacity-20 animate-bounce delay-500"></div>
             </div>
           </div>
         </div>
