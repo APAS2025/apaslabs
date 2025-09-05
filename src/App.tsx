@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Guild from "./pages/Guild";
 import PFASGuild from "./pages/PFASGuild";
+import ClimateResilienceGuild from "./pages/ClimateResilienceGuild";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -24,8 +25,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
-            <Route path="/guild" element={<Guild />} />
-            <Route path="/guild/pfas" element={<PFASGuild />} />
+        <Route path="/guild" element={<Guild />} />
+        <Route path="/guild/pfas" element={<PFASGuild />} />
+        <Route path="/guild/climate-resilience" element={<ClimateResilienceGuild />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

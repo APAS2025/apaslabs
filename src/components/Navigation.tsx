@@ -21,9 +21,21 @@ const Navigation = () => {
             <a href="/about" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               About
             </a>
-            <a href="/guild" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              The Guild
-            </a>
+            <div className="relative group">
+              <a href="/guild" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+                Guilds
+              </a>
+              <div className="absolute top-full left-0 mt-2 w-64 bg-background/95 backdrop-blur-lg border border-border/50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="py-2">
+                  <a href="/guild/pfas" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
+                    PFAS & Emerging Contaminants
+                  </a>
+                  <a href="/guild/climate-resilience" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
+                    Climate & Resilience
+                  </a>
+                </div>
+              </div>
+            </div>
             <a href="#solutions" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Solutions
             </a>
@@ -67,7 +79,21 @@ const Navigation = () => {
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
-                The Guild
+                All Guilds
+              </a>
+              <a 
+                href="/guild/pfas" 
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                PFAS & Emerging Contaminants
+              </a>
+              <a 
+                href="/guild/climate-resilience" 
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Climate & Resilience
               </a>
               <a 
                 href="#solutions" 
