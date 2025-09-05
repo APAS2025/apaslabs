@@ -36,6 +36,9 @@ const Navigation = () => {
                   <a href="/guild/finance-roi" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
                     Finance, Ratings & ROI
                   </a>
+                  <a href="/guild/ai-data-governance" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
+                    AI, Data Governance & Transparency
+                  </a>
                 </div>
               </div>
             </div>
@@ -104,6 +107,13 @@ const Navigation = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Finance, Ratings & ROI
+              </a>
+              <a 
+                href="/guild/ai-data-governance" 
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                AI, Data Governance & Transparency
               </a>
               <a 
                 href="#solutions" 
