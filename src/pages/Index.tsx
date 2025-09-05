@@ -14,9 +14,9 @@ const Index = () => {
       <VSLSection />
       <WhyWeExistSection />
       <LabsOverviewSection />
+      <GetInvolvedSection />
       <FoundersSection />
       <JourneySection />
-      <GetInvolvedSection />
       <ContactSection />
     </main>
   );
