@@ -8,8 +8,8 @@ const Index = () => {
     <main>
       <HeroSection />
       <WhyWeExistSection />
-      <JourneySection />
       <LabsOverviewSection />
+      <JourneySection />
     </main>
   );
 };
