@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Checkbox } from "@/components/ui/checkbox";
 import { 
   Droplets, 
   Shield, 
@@ -13,7 +19,14 @@ import {
   Zap,
   ArrowRight,
   MessageSquare,
-  Smartphone
+  Smartphone,
+  Heart,
+  Sparkles,
+  CheckCircle,
+  Mail,
+  User,
+  Building,
+  GraduationCap
 } from "lucide-react";
 import heroBackground from "@/assets/hero-background-blue-pink.jpg";
 
@@ -30,6 +43,26 @@ const Guild = () => {
   const [isTypingFollowUp, setIsTypingFollowUp] = useState(false);
   const [streamedFollowUpResponse, setStreamedFollowUpResponse] = useState("");
   const [isAiRespondingFollowUp, setIsAiRespondingFollowUp] = useState(false);
+  
+  // Dialog state
+  const [openDialog, setOpenDialog] = useState<'expert' | 'participant' | 'donor' | null>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    organization: '',
+    role: '',
+    experience: '',
+    expertise: '',
+    motivation: '',
+    userType: '',
+    sector: '',
+    industries: [] as string[],
+    contribution: '',
+    amount: '',
+    frequency: '',
+    focus: ''
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -142,6 +175,40 @@ const Guild = () => {
     return () => clearInterval(interval);
   }, [activeAnimation]);
 
+  // Form handlers
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    // Here you would typically send data to your backend
+    console.log('Form submitted:', formData);
+  };
+
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      email: '',
+      organization: '',
+      role: '',
+      experience: '',
+      expertise: '',
+      motivation: '',
+      userType: '',
+      sector: '',
+      industries: [],
+      contribution: '',
+      amount: '',
+      frequency: '',
+      focus: ''
+    });
+    setIsSubmitted(false);
+  };
+
+  const closeDialog = () => {
+    setOpenDialog(null);
+    resetForm();
+  };
+
+  // ... keep existing data arrays (guilds, problems, llmQuestions, etc.)
   const guilds = [
     {
       id: "pfas",
@@ -246,6 +313,449 @@ const Guild = () => {
     "Use NOAA's Climate Explorer tool combined with local hydrologic modeling. Key metrics: 100-year flood elevation changes (typically +2-4 feet by 2050), temperature increases affecting treatment processes, and precipitation pattern shifts. Partner with regional climate science centers for downscaled projections. Conduct vulnerability assessments using CREAT tool from EPA. For coastal utilities, factor in 1-2 feet sea level rise by 2050. Critical: update risk assessments every 5 years as climate models improve and include compound events like heat waves during droughts.",
     "For utilities, I recommend: 1) Microsoft's Responsible AI dashboard for bias monitoring, 2) DataRobot for model performance tracking, 3) IBM Watson OpenScale for explainability, 4) Fiddler AI for continuous monitoring. Budget $50-200K annually depending on deployment scale. Key features needed: automated bias detection, performance drift alerts, audit trail capabilities, and integration with existing SCADA systems. Start with pilot deployment on non-critical systems like energy optimization before expanding to operational controls."
   ];
+
+  // Dialog components
+  const ExpertDialog = () => (
+    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      {!isSubmitted ? (
+        <>
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
+              <Sparkles className="h-8 w-8 text-primary" />
+              Join as a Guild Expert
+            </DialogTitle>
+            <DialogDescription className="text-lg text-foreground/80">
+              Share your expertise to power the next generation of infrastructure AI. Your knowledge becomes a guiding force for practitioners worldwide.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleFormSubmit} className="space-y-6 mt-6">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="name" className="text-foreground font-medium">Full Name</Label>
+                <Input
+                  id="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  required
+                  className="bg-background/50 border-primary/20 focus:border-primary"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-foreground font-medium">Email Address</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  required
+                  className="bg-background/50 border-primary/20 focus:border-primary"
+                />
+              </div>
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="organization" className="text-foreground font-medium">Organization</Label>
+              <Input
+                id="organization"
+                value={formData.organization}
+                onChange={(e) => setFormData({...formData, organization: e.target.value})}
+                required
+                className="bg-background/50 border-primary/20 focus:border-primary"
+              />
+            </div>
+
+            <div className="space-y-3">
+              <Label className="text-foreground font-medium">Years of Experience</Label>
+              <RadioGroup
+                value={formData.experience}
+                onValueChange={(value) => setFormData({...formData, experience: value})}
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="5-10" id="exp1" />
+                  <Label htmlFor="exp1">5-10 years</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="10-20" id="exp2" />
+                  <Label htmlFor="exp2">10-20 years</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="20+" id="exp3" />
+                  <Label htmlFor="exp3">20+ years (Senior Expert)</Label>
+                </div>
+              </RadioGroup>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="expertise" className="text-foreground font-medium">Primary Area of Expertise</Label>
+              <Textarea
+                id="expertise"
+                value={formData.expertise}
+                onChange={(e) => setFormData({...formData, expertise: e.target.value})}
+                placeholder="Describe your specialized knowledge and experience..."
+                className="bg-background/50 border-primary/20 focus:border-primary"
+                rows={3}
+                required
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="motivation" className="text-foreground font-medium">Why do you want to contribute to The Guild?</Label>
+              <Textarea
+                id="motivation"
+                value={formData.motivation}
+                onChange={(e) => setFormData({...formData, motivation: e.target.value})}
+                placeholder="Share your vision for advancing infrastructure knowledge..."
+                className="bg-background/50 border-primary/20 focus:border-primary"
+                rows={4}
+                required
+              />
+            </div>
+
+            <Button type="submit" size="lg" variant="hero" className="w-full">
+              <Heart className="mr-2 h-5 w-5" />
+              Submit Expert Application
+            </Button>
+          </form>
+        </>
+      ) : (
+        <div className="text-center py-12">
+          <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-6" />
+          <DialogTitle className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+            Thank You, Expert! 🚀
+          </DialogTitle>
+          <DialogDescription className="text-lg text-foreground/80 mb-6 leading-relaxed">
+            We are <span className="text-primary font-semibold">profusely grateful</span> for your time, expertise, and consideration. 
+            Your knowledge will help shape the future of infrastructure AI and empower the next generation of practitioners.
+          </DialogDescription>
+          <div className="bg-primary/10 border border-primary/20 rounded-lg p-6 mb-6">
+            <p className="text-foreground/90">
+              🎯 <strong>What's Next:</strong> Our team will review your application within 48 hours<br/>
+              📧 You'll receive onboarding materials and Guild access credentials<br/>
+              🤝 Welcome to the expert collective that's revolutionizing infrastructure knowledge!
+            </p>
+          </div>
+          <Button onClick={closeDialog} variant="glass">
+            Continue Exploring
+          </Button>
+        </div>
+      )}
+    </DialogContent>
+  );
+
+  const ParticipantDialog = () => (
+    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      {!isSubmitted ? (
+        <>
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
+              <Users className="h-8 w-8 text-primary" />
+              Join as a Participant
+            </DialogTitle>
+            <DialogDescription className="text-lg text-foreground/80">
+              Connect with experts, accelerate your learning, and contribute to the infrastructure community of the future.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleFormSubmit} className="space-y-6 mt-6">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="name" className="text-foreground font-medium">Full Name</Label>
+                <Input
+                  id="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  required
+                  className="bg-background/50 border-primary/20 focus:border-primary"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-foreground font-medium">Email Address</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  required
+                  className="bg-background/50 border-primary/20 focus:border-primary"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <Label className="text-foreground font-medium">Who are you representing?</Label>
+              <RadioGroup
+                value={formData.userType}
+                onValueChange={(value) => setFormData({...formData, userType: value})}
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="student" id="student" />
+                  <Label htmlFor="student" className="flex items-center gap-2">
+                    <GraduationCap className="h-4 w-4" /> Student / Academic Researcher
+                  </Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="academia" id="academia" />
+                  <Label htmlFor="academia" className="flex items-center gap-2">
+                    <BookOpen className="h-4 w-4" /> Academic Institution / Faculty
+                  </Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="government" id="government" />
+                  <Label htmlFor="government" className="flex items-center gap-2">
+                    <Building className="h-4 w-4" /> Government / Public Sector
+                  </Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="industry" id="industry" />
+                  <Label htmlFor="industry" className="flex items-center gap-2">
+                    <Zap className="h-4 w-4" /> Private Industry / Corporate
+                  </Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="individual" id="individual" />
+                  <Label htmlFor="individual" className="flex items-center gap-2">
+                    <User className="h-4 w-4" /> Individual / Independent
+                  </Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="community" id="community" />
+                  <Label htmlFor="community" className="flex items-center gap-2">
+                    <Users className="h-4 w-4" /> Community Member / Advocate
+                  </Label>
+                </div>
+              </RadioGroup>
+            </div>
+
+            <div className="space-y-3">
+              <Label className="text-foreground font-medium">Which sector describes your primary focus?</Label>
+              <RadioGroup
+                value={formData.sector}
+                onValueChange={(value) => setFormData({...formData, sector: value})}
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="water" id="water" />
+                  <Label htmlFor="water" className="flex items-center gap-2">
+                    <Droplets className="h-4 w-4 text-blue-400" /> Water & Environmental Infrastructure
+                  </Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="tech" id="tech" />
+                  <Label htmlFor="tech" className="flex items-center gap-2">
+                    <Brain className="h-4 w-4 text-purple-400" /> Technology & Innovation
+                  </Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="other" id="other" />
+                  <Label htmlFor="other" className="flex items-center gap-2">
+                    <Target className="h-4 w-4 text-orange-400" /> Other Industries
+                  </Label>
+                </div>
+              </RadioGroup>
+            </div>
+
+            {formData.sector === 'other' && (
+              <div className="space-y-3 animate-fade-in">
+                <Label className="text-foreground font-medium">Which industries interest you? (Select all that apply)</Label>
+                <div className="grid grid-cols-2 gap-3">
+                  {['Procurement', 'Policy & Regulations', 'Finance & Economics', 'Climate & Sustainability', 'Urban Planning', 'Energy Systems'].map((industry) => (
+                    <div key={industry} className="flex items-center space-x-2">
+                      <Checkbox
+                        id={industry}
+                        checked={formData.industries.includes(industry)}
+                        onCheckedChange={(checked) => {
+                          if (checked) {
+                            setFormData({...formData, industries: [...formData.industries, industry]});
+                          } else {
+                            setFormData({...formData, industries: formData.industries.filter(i => i !== industry)});
+                          }
+                        }}
+                      />
+                      <Label htmlFor={industry} className="text-sm">{industry}</Label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="space-y-2">
+              <Label htmlFor="motivation" className="text-foreground font-medium">What are you hoping to learn or contribute?</Label>
+              <Textarea
+                id="motivation"
+                value={formData.motivation}
+                onChange={(e) => setFormData({...formData, motivation: e.target.value})}
+                placeholder="Share your goals and interests..."
+                className="bg-background/50 border-primary/20 focus:border-primary"
+                rows={3}
+                required
+              />
+            </div>
+
+            <Button type="submit" size="lg" variant="hero" className="w-full">
+              <Sparkles className="mr-2 h-5 w-5" />
+              Join The Guild Community
+            </Button>
+          </form>
+        </>
+      ) : (
+        <div className="text-center py-12">
+          <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-6" />
+          <DialogTitle className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+            Welcome to The Guild! 🎉
+          </DialogTitle>
+          <DialogDescription className="text-lg text-foreground/80 mb-6 leading-relaxed">
+            <span className="text-primary font-semibold">Thank you</span> for joining our community of innovators and learners! 
+            You're now part of something extraordinary.
+          </DialogDescription>
+          <div className="bg-primary/10 border border-primary/20 rounded-lg p-6 mb-6">
+            <p className="text-foreground/90 mb-3">
+              🎯 <strong>What's Next:</strong><br/>
+              📧 Look out for an invitation to join our <span className="text-accent font-semibold">Circle Community</span><br/>
+              🤝 You'll interact directly with Guild experts and fellow participants<br/>
+              🚀 Access exclusive resources, workshops, and AI-powered learning tools!
+            </p>
+          </div>
+          <Button onClick={closeDialog} variant="glass">
+            Explore More
+          </Button>
+        </div>
+      )}
+    </DialogContent>
+  );
+
+  const DonorDialog = () => (
+    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      {!isSubmitted ? (
+        <>
+          <DialogHeader>
+            <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
+              <Heart className="h-8 w-8 text-red-400" />
+              Become a Founding Donor
+            </DialogTitle>
+            <DialogDescription className="text-lg text-foreground/80">
+              Invest in the future of infrastructure knowledge. Your support enables us to build AI tools that serve humanity and preserve critical expertise.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleFormSubmit} className="space-y-6 mt-6">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="name" className="text-foreground font-medium">Full Name / Organization</Label>
+                <Input
+                  id="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  required
+                  className="bg-background/50 border-primary/20 focus:border-primary"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-foreground font-medium">Contact Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  required
+                  className="bg-background/50 border-primary/20 focus:border-primary"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <Label className="text-foreground font-medium">Contribution Level</Label>
+              <RadioGroup
+                value={formData.amount}
+                onValueChange={(value) => setFormData({...formData, amount: value})}
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="supporter" id="supporter" />
+                  <Label htmlFor="supporter">🌱 Supporter ($100 - $1,000)</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="advocate" id="advocate" />
+                  <Label htmlFor="advocate">🚀 Advocate ($1,000 - $10,000)</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="champion" id="champion" />
+                  <Label htmlFor="champion">⭐ Champion ($10,000 - $100,000)</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="visionary" id="visionary" />
+                  <Label htmlFor="visionary">👑 Visionary ($100,000+)</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="custom" id="custom" />
+                  <Label htmlFor="custom">💡 Custom Amount</Label>
+                </div>
+              </RadioGroup>
+            </div>
+
+            <div className="space-y-3">
+              <Label className="text-foreground font-medium">Focus Area (Optional)</Label>
+              <RadioGroup
+                value={formData.focus}
+                onValueChange={(value) => setFormData({...formData, focus: value})}
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="research" id="research" />
+                  <Label htmlFor="research">🔬 Research & Development</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="education" id="education" />
+                  <Label htmlFor="education">🎓 Education & Training</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="infrastructure" id="infrastructure" />
+                  <Label htmlFor="infrastructure">🏗️ Platform Infrastructure</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="community" id="community" />
+                  <Label htmlFor="community">🤝 Community Building</Label>
+                </div>
+              </RadioGroup>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="motivation" className="text-foreground font-medium">Why do you believe in The Guild's mission?</Label>
+              <Textarea
+                id="motivation"
+                value={formData.motivation}
+                onChange={(e) => setFormData({...formData, motivation: e.target.value})}
+                placeholder="Share your vision for the future of infrastructure..."
+                className="bg-background/50 border-primary/20 focus:border-primary"
+                rows={4}
+              />
+            </div>
+
+            <Button type="submit" size="lg" variant="glow" className="w-full">
+              <Heart className="mr-2 h-5 w-5" />
+              Support The Guild
+            </Button>
+          </form>
+        </>
+      ) : (
+        <div className="text-center py-12">
+          <Heart className="h-16 w-16 text-red-400 mx-auto mb-6 animate-pulse" />
+          <DialogTitle className="text-3xl font-bold mb-4 bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
+            You're Changing the World! 💝
+          </DialogTitle>
+          <DialogDescription className="text-lg text-foreground/80 mb-6 leading-relaxed">
+            <span className="text-primary font-semibold">Thank you</span> for believing in our mission! 
+            Your contribution will directly impact the future of infrastructure knowledge and AI development.
+          </DialogDescription>
+          <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-lg p-6 mb-6">
+            <p className="text-foreground/90">
+              🎯 <strong>What's Next:</strong><br/>
+              📞 Our partnerships team will contact you within 24 hours<br/>
+              📋 We'll discuss contribution details and recognition opportunities<br/>
+              🏆 Join our exclusive Founding Donors community with special access and updates!
+            </p>
+          </div>
+          <Button onClick={closeDialog} variant="glass">
+            Continue Mission
+          </Button>
+        </div>
+      )}
+    </DialogContent>
+  );
 
   return (
     <main className="min-h-screen bg-background-deep">
@@ -588,7 +1098,7 @@ const Guild = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* Call to Action with Interactive Forms */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.2),transparent_70%)]" />
@@ -605,20 +1115,46 @@ const Guild = () => {
               Join the movement to preserve knowledge, accelerate learning, and build AI tools that serve humanity.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="xl" variant="hero" className="group">
+              <Button 
+                size="xl" 
+                variant="hero" 
+                className="group"
+                onClick={() => setOpenDialog('expert')}
+              >
                 Join as an Expert
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button size="xl" variant="glass">
+              <Button 
+                size="xl" 
+                variant="glass"
+                onClick={() => setOpenDialog('participant')}
+              >
                 Join as a Participant
               </Button>
-              <Button size="xl" variant="glow">
+              <Button 
+                size="xl" 
+                variant="glow"
+                onClick={() => setOpenDialog('donor')}
+              >
                 Become a Founding Donor
               </Button>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Dialogs */}
+      <Dialog open={openDialog === 'expert'} onOpenChange={(open) => !open && closeDialog()}>
+        <ExpertDialog />
+      </Dialog>
+      
+      <Dialog open={openDialog === 'participant'} onOpenChange={(open) => !open && closeDialog()}>
+        <ParticipantDialog />
+      </Dialog>
+      
+      <Dialog open={openDialog === 'donor'} onOpenChange={(open) => !open && closeDialog()}>
+        <DonorDialog />
+      </Dialog>
     </main>
   );
 };
