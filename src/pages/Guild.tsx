@@ -50,6 +50,8 @@ const Guild = () => {
     const runAnimation = async () => {
       const currentQuestion = llmQuestions[activeAnimation];
       const currentAnswer = llmAnswers[activeAnimation];
+      const currentFollowUp = followUpQuestions[activeAnimation];
+      const currentFollowUpAnswer = followUpAnswers[activeAnimation];
       
       // Reset states
       setTypedQuestion("");
@@ -61,11 +63,11 @@ const Guild = () => {
       // Wait a bit before starting
       await new Promise(resolve => setTimeout(resolve, 500));
       
-      // Start typing the question
+      // Start typing the first question
       setIsTyping(true);
       for (let i = 0; i <= currentQuestion.length; i++) {
         setTypedQuestion(currentQuestion.slice(0, i));
-        await new Promise(resolve => setTimeout(resolve, 50 + Math.random() * 50));
+        await new Promise(resolve => setTimeout(resolve, 30 + Math.random() * 30));
       }
       setIsTyping(false);
       
@@ -74,15 +76,43 @@ const Guild = () => {
       setShowTypingIndicator(true);
       
       // Wait for AI "thinking" time
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 1200));
       setShowTypingIndicator(false);
       
-      // Start streaming the response
+      // Start streaming the first response
       setIsAiResponding(true);
       const words = currentAnswer.split(' ');
       for (let i = 0; i <= words.length; i++) {
         setStreamedResponse(words.slice(0, i).join(' '));
-        await new Promise(resolve => setTimeout(resolve, 100 + Math.random() * 100));
+        await new Promise(resolve => setTimeout(resolve, 60 + Math.random() * 40));
+      }
+      setIsAiResponding(false);
+      
+      // Wait before follow-up question
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      // Type follow-up question
+      setIsTyping(true);
+      const fullFirstQuestion = currentQuestion;
+      for (let i = 0; i <= currentFollowUp.length; i++) {
+        setTypedQuestion(fullFirstQuestion + "\n\n" + currentFollowUp.slice(0, i));
+        await new Promise(resolve => setTimeout(resolve, 40 + Math.random() * 40));
+      }
+      setIsTyping(false);
+      
+      // Show typing indicator for follow-up
+      await new Promise(resolve => setTimeout(resolve, 400));
+      setShowTypingIndicator(true);
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setShowTypingIndicator(false);
+      
+      // Stream follow-up response
+      setIsAiResponding(true);
+      const fullFirstResponse = currentAnswer;
+      const followUpWords = currentFollowUpAnswer.split(' ');
+      for (let i = 0; i <= followUpWords.length; i++) {
+        setStreamedResponse(fullFirstResponse + "\n\n" + followUpWords.slice(0, i).join(' '));
+        await new Promise(resolve => setTimeout(resolve, 70 + Math.random() * 50));
       }
       setIsAiResponding(false);
     };
@@ -94,7 +124,7 @@ const Guild = () => {
         const next = (prev + 1) % 3;
         return next;
       });
-    }, 8000); // Longer interval to accommodate animation
+    }, 15000); // Much longer interval to accommodate full conversation
     
     return () => clearInterval(interval);
   }, [activeAnimation]);
@@ -187,9 +217,21 @@ const Guild = () => {
   ];
 
   const llmAnswers = [
-    "Based on current EPA guidelines and treatment data from 200+ installations...",
-    "Climate adaptation investments typically yield 4:1 ROI through avoided damages...",
-    "Start with data classification frameworks, then establish AI ethics committees..."
+    "Based on current EPA guidelines and treatment data from 200+ installations, I recommend a multi-barrier approach: Start with granular activated carbon (GAC) as primary treatment - expect 85-95% PFAS removal. For your population size, you'll need approximately 12-15 GAC vessels in series. Include reverse osmosis as secondary barrier for 99%+ removal efficiency. Budget $8-12M for initial installation, $2-3M annually for media replacement. Critical: Implement real-time monitoring for breakthrough detection and ensure proper concentrate management through deep well injection or incineration.",
+    "Climate adaptation investments typically yield 4:1 ROI through avoided damages and operational savings. For water utilities, key investments include: flood-resistant infrastructure ($2M investment prevents $8M in flood damage), smart grid integration (20% energy savings), and redundant treatment systems. Sea level rise protection shows highest returns - every $1 spent on coastal barriers saves $4-6 in avoided infrastructure damage. Include co-benefits: improved service reliability increases customer satisfaction 35%, reduced emergency repairs cut operational costs 25%. Federal funding through IIJA and IRA can cover 40-80% of initial costs.",
+    "Start with data classification frameworks to identify sensitive information, then establish AI ethics committees with cross-departmental representation. Implement these key steps: 1) Create AI governance policy defining acceptable use cases, 2) Establish data privacy protocols following NIST framework, 3) Deploy AI monitoring tools for bias detection and performance tracking, 4) Train staff on responsible AI practices, 5) Implement vendor assessment procedures for AI procurement. Budget 6-12 months for full implementation. Critical success factors: executive sponsorship, clear accountability structures, and regular policy updates as technology evolves."
+  ];
+
+  const followUpQuestions = [
+    "What about concentrate disposal costs and regulations?",
+    "How do I calculate climate risk for my specific region?",
+    "What AI monitoring tools do you recommend for utilities?"
+  ];
+
+  const followUpAnswers = [
+    "PFAS concentrate disposal is indeed a major cost driver. Current options: Deep well injection costs $0.50-2.00 per gallon (requires Class I well permit). High-temperature incineration runs $3-8 per gallon but ensures complete destruction. Emerging technologies like PFAS destruction reactors show promise at $1-3 per gallon. Regulatory landscape is evolving rapidly - EPA's proposed PFAS disposal rules may limit injection wells by 2025. I recommend budgeting 15-25% of total treatment costs for concentrate management and building flexibility for technology changes.",
+    "Use NOAA's Climate Explorer tool combined with local hydrologic modeling. Key metrics: 100-year flood elevation changes (typically +2-4 feet by 2050), temperature increases affecting treatment processes, and precipitation pattern shifts. Partner with regional climate science centers for downscaled projections. Conduct vulnerability assessments using CREAT tool from EPA. For coastal utilities, factor in 1-2 feet sea level rise by 2050. Critical: update risk assessments every 5 years as climate models improve and include compound events like heat waves during droughts.",
+    "For utilities, I recommend: 1) Microsoft's Responsible AI dashboard for bias monitoring, 2) DataRobot for model performance tracking, 3) IBM Watson OpenScale for explainability, 4) Fiddler AI for continuous monitoring. Budget $50-200K annually depending on deployment scale. Key features needed: automated bias detection, performance drift alerts, audit trail capabilities, and integration with existing SCADA systems. Start with pilot deployment on non-critical systems like energy optimization before expanding to operational controls."
   ];
 
   return (
@@ -349,7 +391,7 @@ const Guild = () => {
                         {/* User Question */}
                         {(typedQuestion || isTyping) && (
                           <div className="flex justify-end">
-                            <div className="bg-primary text-primary-foreground rounded-2xl rounded-br-md px-4 py-3 max-w-[250px] text-sm">
+                            <div className="bg-primary text-primary-foreground rounded-2xl rounded-br-md px-4 py-3 max-w-[280px] text-sm leading-relaxed whitespace-pre-line">
                               {typedQuestion}
                               {isTyping && <span className="animate-pulse">|</span>}
                             </div>
@@ -372,13 +414,13 @@ const Guild = () => {
                         {/* AI Response */}
                         {(streamedResponse || isAiResponding) && (
                           <div className="flex justify-start">
-                            <div className="bg-card border rounded-2xl rounded-bl-md px-4 py-3 max-w-[250px]">
-                              <div className="text-sm text-foreground/90">
+                            <div className="bg-card border rounded-2xl rounded-bl-md px-4 py-3 max-w-[280px]">
+                              <div className="text-sm text-foreground/90 leading-relaxed whitespace-pre-line">
                                 {streamedResponse}
                                 {isAiResponding && <span className="animate-pulse">|</span>}
                               </div>
                               {streamedResponse && !isAiResponding && (
-                                <div className="flex items-center gap-2 mt-2 text-xs text-foreground/60">
+                                <div className="flex items-center gap-2 mt-3 text-xs text-foreground/60">
                                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                                   Verified by guild experts
                                 </div>
