@@ -22,11 +22,16 @@ const LabsOverviewSection = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = parseInt(entry.target.getAttribute('data-index') || '0');
-            setVisibleItems(prev => [...new Set([...prev, index])]);
+            setTimeout(() => {
+              setVisibleItems(prev => [...new Set([...prev, index])]);
+            }, index * 100); // Staggered timing for better effect
           }
         });
       },
-      { threshold: 0.2 }
+      { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px' // Trigger animation slightly before element is fully visible
+      }
     );
 
     const elements = document.querySelectorAll('[data-index]');
@@ -88,14 +93,14 @@ const LabsOverviewSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div 
-            data-index="0"
-            className={`transition-all duration-1000 ${
-              visibleItems.includes(0) 
-                ? 'opacity-100 transform translate-y-0' 
-                : 'opacity-0 transform translate-y-8'
-            }`}
-          >
+        <div 
+          data-index="0"
+          className={`transition-all duration-1000 ease-out ${
+            visibleItems.includes(0) 
+              ? 'opacity-100 transform translate-y-0 scale-100' 
+              : 'opacity-0 transform translate-y-12 scale-95'
+          }`}
+        >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter mb-6">
               <span className="bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
                 The Labs Overview
@@ -111,10 +116,10 @@ const LabsOverviewSection = () => {
         {/* Biscayne Bay Lab - Signature Featured Section */}
         <div 
           data-index="1"
-          className={`mb-20 transition-all duration-1000 ${
+          className={`mb-20 transition-all duration-1200 ease-out delay-200 ${
             visibleItems.includes(1)
-              ? 'opacity-100 transform translate-y-0'
-              : 'opacity-0 transform translate-y-8'
+              ? 'opacity-100 transform translate-y-0 scale-100 rotate-0'
+              : 'opacity-0 transform translate-y-16 scale-95 -rotate-1'
           }`}
         >
           <div className="glass-card border border-primary/30 overflow-hidden">
@@ -229,16 +234,17 @@ const LabsOverviewSection = () => {
               <div
                 key={lab.id}
                 data-index={index + 2}
-                className={`transition-all duration-1000 delay-${index * 150} ${
+                className={`transition-all duration-1000 ease-out ${
                   visibleItems.includes(index + 2)
-                    ? 'opacity-100 transform translate-y-0'
-                    : 'opacity-0 transform translate-y-8'
+                    ? `opacity-100 transform translate-y-0 scale-100 ${index % 2 === 0 ? 'translate-x-0' : 'translate-x-0'}`
+                    : `opacity-0 transform translate-y-12 scale-90 ${index % 2 === 0 ? '-translate-x-8' : 'translate-x-8'}`
                 }`}
+                style={{ transitionDelay: `${(index + 2) * 150}ms` }}
               >
-                <Card className={`h-full glass-card ${lab.borderColor} hover:shadow-elegant transition-all duration-500 hover:scale-[1.02] group`}>
+                <Card className={`h-full glass-card ${lab.borderColor} hover:shadow-elegant transition-all duration-500 hover:scale-105 hover:-translate-y-2 group transform-gpu`}>
                   <CardHeader className="pb-4">
                     <div className="flex items-start gap-4">
-                      <div className={`bg-gradient-to-br ${lab.color} p-3 rounded-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={`bg-gradient-to-br ${lab.color} p-3 rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
                         <IconComponent size={28} className="text-foreground" />
                       </div>
                       <div className="flex-1">

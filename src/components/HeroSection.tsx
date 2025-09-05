@@ -1,7 +1,16 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background-blue-pink.jpg";
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -20,13 +29,25 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-hero z-20" />
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-96 bg-gradient-glow z-30" />
       
-      {/* Decorative Elements - Responsive */}
-      <div className="absolute top-20 left-4 sm:left-10 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-4 sm:right-10 w-40 sm:w-60 lg:w-80 h-40 sm:h-60 lg:h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000" />
-      <div className="absolute top-1/2 left-0 w-36 sm:w-54 lg:w-72 h-36 sm:h-54 lg:h-72 bg-accent/10 rounded-full blur-3xl animate-pulse delay-500" />
+      {/* Decorative Elements - Responsive with Parallax */}
+      <div 
+        className="absolute top-20 left-4 sm:left-10 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-primary/10 rounded-full blur-3xl animate-pulse transform-gpu" 
+        style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+      />
+      <div 
+        className="absolute bottom-20 right-4 sm:right-10 w-40 sm:w-60 lg:w-80 h-40 sm:h-60 lg:h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000 transform-gpu" 
+        style={{ transform: `translateY(${scrollY * -0.2}px)` }}
+      />
+      <div 
+        className="absolute top-1/2 left-0 w-36 sm:w-54 lg:w-72 h-36 sm:h-54 lg:h-72 bg-accent/10 rounded-full blur-3xl animate-pulse delay-500 transform-gpu" 
+        style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+      />
 
       {/* Content */}
-      <div className="relative z-40 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div 
+        className="relative z-40 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center transform-gpu"
+        style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+      >
         {/* Hero Headline */}
         <div className="mb-6 sm:mb-8">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-inter leading-tight mb-4 sm:mb-6">
@@ -71,11 +92,20 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        {/* Floating Elements */}
+        {/* Floating Elements with Parallax */}
         <div className="mt-12 sm:mt-16 lg:mt-20 relative">
-          <div className="absolute left-1/4 top-0 w-2 h-2 bg-primary rounded-full animate-ping" />
-          <div className="absolute right-1/3 top-4 w-1 h-1 bg-secondary rounded-full animate-ping delay-700" />
-          <div className="absolute left-1/3 top-8 w-1.5 h-1.5 bg-accent rounded-full animate-ping delay-1000" />
+          <div 
+            className="absolute left-1/4 top-0 w-2 h-2 bg-primary rounded-full animate-ping transform-gpu" 
+            style={{ transform: `translateY(${scrollY * -0.3}px)` }}
+          />
+          <div 
+            className="absolute right-1/3 top-4 w-1 h-1 bg-secondary rounded-full animate-ping delay-700 transform-gpu" 
+            style={{ transform: `translateY(${scrollY * 0.2}px)` }}
+          />
+          <div 
+            className="absolute left-1/3 top-8 w-1.5 h-1.5 bg-accent rounded-full animate-ping delay-1000 transform-gpu" 
+            style={{ transform: `translateY(${scrollY * -0.1}px)` }}
+          />
         </div>
       </div>
 

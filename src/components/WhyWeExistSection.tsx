@@ -14,7 +14,10 @@ const WhyWeExistSection = () => {
           }
         });
       },
-      { threshold: 0.3 }
+      { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px' // Trigger animation earlier for better UX
+      }
     );
 
     const elements = document.querySelectorAll('[data-index]');
@@ -62,10 +65,10 @@ const WhyWeExistSection = () => {
         <div className="text-center mb-16">
           <div 
             data-index="0"
-            className={`transition-all duration-1000 ${
+            className={`transition-all duration-1000 ease-out ${
               visibleItems.includes(0) 
-                ? 'opacity-100 transform translate-y-0' 
-                : 'opacity-0 transform translate-y-8'
+                ? 'opacity-100 transform translate-y-0 scale-100' 
+                : 'opacity-0 transform translate-y-12 scale-95'
             }`}
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter mb-6">
@@ -88,15 +91,16 @@ const WhyWeExistSection = () => {
               <div
                 key={index}
                 data-index={index + 1}
-                className={`group transition-all duration-1000 delay-${index * 150} ${
+                className={`group transition-all duration-1000 ease-out ${
                   visibleItems.includes(index + 1)
-                    ? 'opacity-100 transform translate-y-0'
-                    : 'opacity-0 transform translate-y-8'
+                    ? `opacity-100 transform translate-y-0 scale-100 ${index % 2 === 0 ? 'rotate-0' : 'rotate-0'}`
+                    : `opacity-0 transform translate-y-12 scale-90 ${index % 2 === 0 ? '-rotate-1' : 'rotate-1'}`
                 }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <div className="glass-card p-6 lg:p-8 h-full hover:shadow-elegant transition-all duration-500 hover:scale-[1.02] border border-white/10">
+                <div className="glass-card p-6 lg:p-8 h-full hover:shadow-elegant transition-all duration-500 hover:scale-105 hover:-translate-y-2 border border-white/10 transform-gpu">
                   <div className="flex items-start gap-4">
-                    <div className={`${problem.color} bg-white/5 p-3 rounded-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`${problem.color} bg-white/5 p-3 rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
                       <IconComponent size={28} />
                     </div>
                     <div className="flex-1">
@@ -117,10 +121,10 @@ const WhyWeExistSection = () => {
         {/* Solution Flow */}
         <div 
           data-index="5"
-          className={`transition-all duration-1000 ${
+          className={`transition-all duration-1200 ease-out delay-300 ${
             visibleItems.includes(5)
-              ? 'opacity-100 transform translate-y-0'
-              : 'opacity-0 transform translate-y-8'
+              ? 'opacity-100 transform translate-y-0 scale-100'
+              : 'opacity-0 transform translate-y-16 scale-95'
           }`}
         >
           <div className="glass-card p-8 lg:p-12 border border-primary/30 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5">
