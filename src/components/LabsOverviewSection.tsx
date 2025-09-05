@@ -226,6 +226,69 @@ const LabsOverviewSection = () => {
           </div>
         </div>
 
+        {/* Credibility / Proof Strip */}
+        <div 
+          data-index="6"
+          className={`mb-20 transition-all duration-1000 ease-out ${
+            visibleItems.includes(6)
+              ? 'opacity-100 transform translate-y-0 scale-100'
+              : 'opacity-0 transform translate-y-12 scale-95'
+          }`}
+          style={{ transitionDelay: '600ms' }}
+        >
+          <div className="glass-card border border-primary/20 p-8 lg:p-12 text-center">
+            <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Eight Years of Progress, Partnerships, and Proof
+            </h3>
+            <p className="text-muted-foreground text-lg max-w-4xl mx-auto leading-relaxed mb-12">
+              From the <strong>Resilient Utilities Coalition (2016)</strong> to <strong>One Water Academy (2018)</strong>, the <strong>Future Water Summit (2019, 400+ attendees)</strong>, and the <strong>Algorand blockchain pilot</strong>, APAS has consistently brought practitioners, governments, and innovators together to deliver results.
+            </p>
+            
+            {/* Logos Row */}
+            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12 mb-10">
+              {[
+                { name: "Resilient Utilities Coalition", year: "2016" },
+                { name: "One Water Academy", year: "2018" },
+                { name: "Future Water Summit", year: "2019" },
+                { name: "Algorand", year: "Pilot" }
+              ].map((partner, index) => (
+                <div
+                  key={partner.name}
+                  data-index={`7-${index}`}
+                  className={`transition-all duration-800 ease-out hover:scale-110 ${
+                    visibleItems.includes(6)
+                      ? 'opacity-100 transform translate-y-0'
+                      : 'opacity-0 transform translate-y-8'
+                  }`}
+                  style={{ transitionDelay: `${700 + index * 100}ms` }}
+                >
+                  <div className="group cursor-pointer">
+                    <div className="bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 rounded-lg p-6 lg:p-8 hover:border-primary/40 transition-all duration-300 grayscale hover:grayscale-0">
+                      <div className="text-center">
+                        <div className="text-2xl lg:text-3xl font-bold text-primary mb-2 group-hover:text-primary transition-colors">
+                          {partner.name.split(' ').map((word, i) => (
+                            <div key={i} className={i === 0 ? "text-primary" : "text-muted-foreground group-hover:text-secondary"}>
+                              {word}
+                            </div>
+                          ))}
+                        </div>
+                        <div className="text-sm text-muted-foreground font-medium">
+                          {partner.year}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <Button variant="glass" size="lg" className="group">
+              See Our Journey
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </div>
+        </div>
+
         {/* Other Labs Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {labs.map((lab, index) => {
