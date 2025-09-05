@@ -18,7 +18,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            <a href="#about" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+            <a href="/about" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               About
             </a>
             <a href="#solutions" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
@@ -53,7 +53,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-gradient-glass border-t border-glass-border backdrop-blur-xl">
               <a 
-                href="#about" 
+                href="/about" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
