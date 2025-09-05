@@ -4,6 +4,7 @@ import WhyWeExistSection from "@/components/WhyWeExistSection";
 import LabsOverviewSection from "@/components/LabsOverviewSection";
 import FoundersSection from "@/components/FoundersSection";
 import JourneySection from "@/components/JourneySection";
+import GetInvolvedSection from "@/components/GetInvolvedSection";
 import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       <LabsOverviewSection />
       <FoundersSection />
       <JourneySection />
+      <GetInvolvedSection />
       <ContactSection />
     </main>
   );
