@@ -8,10 +8,13 @@ const FoundersSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    console.log("FoundersSection: Setting up intersection observer");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            console.log("FoundersSection: Element intersecting, adding animation");
+            entry.target.classList.remove("opacity-0");
             entry.target.classList.add("animate-fade-in");
           }
         });
@@ -20,6 +23,7 @@ const FoundersSection = () => {
     );
 
     const elements = sectionRef.current?.querySelectorAll(".animate-on-scroll");
+    console.log("FoundersSection: Found elements to observe:", elements?.length);
     elements?.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
