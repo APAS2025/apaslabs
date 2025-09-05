@@ -9,8 +9,7 @@ import {
   CircleDot,
   ArrowRight,
   Heart,
-  Mic,
-  ExternalLink
+  Mic
 } from "lucide-react";
 
 const LabsOverviewSection = () => {
@@ -24,13 +23,13 @@ const LabsOverviewSection = () => {
             const index = parseInt(entry.target.getAttribute('data-index') || '0');
             setTimeout(() => {
               setVisibleItems(prev => [...new Set([...prev, index])]);
-            }, index * 100); // Staggered timing for better effect
+            }, index * 150);
           }
         });
       },
       { 
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px' // Trigger animation slightly before element is fully visible
+        rootMargin: '0px 0px -50px 0px'
       }
     );
 
@@ -45,295 +44,203 @@ const LabsOverviewSection = () => {
       id: "guild",
       title: "The Guild",
       tagline: "Where Practitioners Power the AI Stack",
-      description: "The Guild is a network of practitioner-led cohorts, each building custom GPTs powered by APAS technology. Experts curate real-world knowledge, preventing its loss and accelerating learning. Each Guild becomes a living Lab, continuously enriched with lessons from the field.",
+      description: "Practitioner-led cohorts capture and curate expertise into custom GPTs, turning field knowledge into usable intelligence. The Guild prevents knowledge loss and accelerates learning across sectors.",
       icon: Users,
-      cta: "Join a Guild",
+      cta: "Join a Guild →",
       color: "from-blue-500/20 to-purple-500/20",
-      borderColor: "border-blue-500/30"
+      borderColor: "border-blue-500/30",
+      glowColor: "shadow-blue-500/20"
+    },
+    {
+      id: "biscayne",
+      title: "Biscayne Bay Lab",
+      subtitle: "(Signature Project)",
+      tagline: "Giving a Voice to the Bay",
+      description: "Droobi, the Bay's first AI-powered voice, connects citizens and practitioners directly to decision-makers. This Lab makes funding priorities transparent and accountable — and secures the Bay's future.",
+      icon: Waves,
+      primaryCta: "Support Biscayne Bay →",
+      secondaryCta: "Voice the Bay →",
+      color: "from-blue-600/30 to-teal-600/30",
+      borderColor: "border-teal-500/40",
+      glowColor: "shadow-teal-500/30",
+      isSignature: true
     },
     {
       id: "oracles",
       title: "Oracles",
       tagline: "Knowledge Without Borders",
-      description: "Oracles tackles knowledge fragmentation in infrastructure. It delivers micro-learning and professional training across AI, data, and systems, while capturing expert insights and skills like communication and strategy. Oracles prepares consultants, vendors, governments, and students for an AI-driven future.",
+      description: "Oracles delivers micro-learning and practical training in AI, data, and systems — equipping consultants, vendors, governments, and students to operate at market speed.",
       icon: BookOpen,
-      cta: "Explore Oracles",
+      cta: "Explore Oracles →",
       color: "from-green-500/20 to-teal-500/20",
-      borderColor: "border-green-500/30"
+      borderColor: "border-green-500/30",
+      glowColor: "shadow-green-500/20"
     },
     {
       id: "droobi",
       title: "Droobi (Lexicon of Water)",
-      tagline: "Standardizing the Language of Infrastructure",
-      description: "Droobi began as a lexicon to standardize technical terms like \"digital twin\" or \"resilience.\" It has grown into a vendor-connected knowledge hub with microsites, manuals, and webinars — powered by the Droobi AI mascot. Free for students and governments, funded by vendors and consultants, Droobi makes technical language accessible and usable across the sector.",
+      tagline: "Language Made Operable",
+      description: "From jargon to clarity: Droobi standardizes technical terms, connects vendors, and hosts knowledge in one place. Free to governments and students, funded by vendors, it makes language usable.",
       icon: Brain,
-      cta: "Explore Droobi",
-      color: "from-purple-500/20 to-pink-500/20",
-      borderColor: "border-purple-500/30"
+      cta: "Explore Droobi →",
+      color: "from-purple-500/20 to-blue-500/20",
+      borderColor: "border-purple-500/30",
+      glowColor: "shadow-purple-500/20"
     },
     {
       id: "community",
-      title: "Community Lab (Circle)",
+      title: "Community (Circle)",
       tagline: "A Circle That Connects All Labs",
-      description: "All APAS Labs converge in a shared Circle community, where practitioners, students, vendors, funders, and citizens exchange insights and co-create solutions. This keeps every Lab alive, adaptive, and accountable.",
+      description: "The Circle is where governments, practitioners, citizens, and funders come together. A shared space that keeps every Lab adaptive, accountable, and connected.",
       icon: CircleDot,
-      cta: "Join the Community",
+      cta: "Join the Community →",
       color: "from-orange-500/20 to-red-500/20",
-      borderColor: "border-orange-500/30"
+      borderColor: "border-orange-500/30",
+      glowColor: "shadow-orange-500/20",
+      isFullWidth: true
     }
   ];
 
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden">
+    <section className="relative py-16 lg:py-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background-deep via-background to-background-deep z-0" />
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Intro Block */}
         <div className="text-center mb-16">
-        <div 
-          data-index="0"
-          className={`transition-all duration-1000 ease-out ${
-            visibleItems.includes(0) 
-              ? 'opacity-100 transform translate-y-0 scale-100' 
-              : 'opacity-0 transform translate-y-12 scale-95'
-          }`}
-        >
+          <div 
+            data-index="0"
+            className={`transition-all duration-1000 ease-out ${
+              visibleItems.includes(0) 
+                ? 'opacity-100 transform translate-y-0 scale-100' 
+                : 'opacity-0 transform translate-y-12 scale-95'
+            }`}
+          >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter mb-6">
-              <span className="bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
-                The Labs Overview
+              <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                From Fragmentation to Clarity: The Power of Five Labs
               </span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-600 mx-auto rounded-full shadow-glow mb-8" />
-            <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto leading-relaxed">
-              Living laboratories where practitioners, citizens, and governments collaborate to build AI-powered infrastructure solutions.
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full shadow-glow mb-8" />
+            <p className="text-xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed mb-8">
+              Each Lab tackles a critical gap — together they create accountable, data-powered platforms for governments, practitioners, citizens, and funders.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed">
+              APAS Labs are not reports or conferences. They are practical solutions designed to fix what's broken: fragmented data, opaque decisions, and wasted resources. Each Lab addresses a specific domain — from practitioner knowledge to citizen voice — and delivers tools that make decisions clearer, funding more transparent, and accountability measurable.
             </p>
           </div>
         </div>
 
-        {/* Biscayne Bay Lab - Signature Featured Section */}
-        <div 
-          data-index="1"
-          className={`mb-20 transition-all duration-1200 ease-out delay-200 ${
-            visibleItems.includes(1)
-              ? 'opacity-100 transform translate-y-0 scale-100 rotate-0'
-              : 'opacity-0 transform translate-y-16 scale-95 -rotate-1'
-          }`}
-        >
-          <div className="glass-card border border-primary/30 overflow-hidden">
-            <div className="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 p-8 lg:p-12">
-              <div className="flex flex-col lg:flex-row gap-8 items-center">
-                <div className="flex-1">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-primary/20 p-3 rounded-lg">
-                      <Waves size={32} className="text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-3xl lg:text-4xl font-bold text-foreground">
-                        Biscayne Bay Lab
-                      </h3>
-                      <p className="text-lg text-primary font-medium">Signature Project</p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-xl font-semibold text-secondary mb-4">
-                    Giving a Voice to the Bay
-                  </p>
-                  
-                  <p className="text-muted-foreground leading-relaxed mb-6 lg:text-lg">
-                    Biscayne Bay is our signature Lab. It is a living ecosystem under strain from neglect and mismanagement. 
-                    This Lab humanizes the Bay through Droobi, the Bay's first AI-powered voice, and builds a feedback loop between citizens, 
-                    practitioners, and government. For the first time, the Bay itself can be heard, and priorities for funding can be set openly and clearly.
-                  </p>
-
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                    <div className="text-center p-3 bg-white/5 rounded-lg">
-                      <div className="text-2xl font-bold text-primary">$2.4B</div>
-                      <div className="text-sm text-muted-foreground">Property Values</div>
-                    </div>
-                    <div className="text-center p-3 bg-white/5 rounded-lg">
-                      <div className="text-2xl font-bold text-secondary">15K</div>
-                      <div className="text-sm text-muted-foreground">Jobs Connected</div>
-                    </div>
-                    <div className="text-center p-3 bg-white/5 rounded-lg">
-                      <div className="text-2xl font-bold text-accent">92%</div>
-                      <div className="text-sm text-muted-foreground">Accountability Gap</div>
-                    </div>
-                    <div className="text-center p-3 bg-white/5 rounded-lg">
-                      <div className="text-2xl font-bold text-orange-400">68%</div>
-                      <div className="text-sm text-muted-foreground">Trust Decline</div>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg" className="group">
-                      <Heart className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                      Support Biscayne Bay Lab
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                    <Button variant="glass" size="lg" className="group">
-                      <Mic className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                      Voice the Bay
-                      <ExternalLink className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
-                    </Button>
-                  </div>
-                </div>
-                
-                <div className="flex-shrink-0 lg:w-96">
-                  <div className="relative">
-                    <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
-                      <div className="text-center mb-6">
-                        <div className="w-20 h-20 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center shadow-glow">
-                          <Waves size={32} className="text-white" />
-                        </div>
-                        <h4 className="text-xl font-bold text-foreground mb-2">Droobi AI</h4>
-                        <p className="text-sm text-muted-foreground">The Bay's Voice</p>
-                      </div>
-                      <div className="bg-white/5 rounded-lg p-4 text-center">
-                        <p className="text-sm text-muted-foreground italic">
-                          "Every contribution amplifies the Bay's voice, strengthens accountability, 
-                          and ensures funding aligns with measurable outcomes."
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Funding CTA Strip */}
-            <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-6 border-t border-white/10">
-              <div className="text-center">
-                <p className="text-muted-foreground mb-4">
-                  <strong>Your support keeps this Lab alive.</strong> Whether you are a citizen contributing $1, 
-                  a business stepping up to lead, or a sector partner investing in long-term resilience, 
-                  every contribution ensures the Bay's voice shapes tomorrow's priorities.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <Button variant="hero" size="sm">
-                    <Heart className="w-4 h-4 mr-2" />
-                    Support Bay Lab
-                  </Button>
-                  <Button variant="glass" size="sm">
-                    <Mic className="w-4 h-4 mr-2" />
-                    Voice the Bay
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Credibility / Proof Strip */}
-        <div 
-          data-index="6"
-          className={`mb-20 transition-all duration-1000 ease-out ${
-            visibleItems.includes(6)
-              ? 'opacity-100 transform translate-y-0 scale-100'
-              : 'opacity-0 transform translate-y-12 scale-95'
-          }`}
-          style={{ transitionDelay: '600ms' }}
-        >
-          <div className="glass-card border border-primary/20 p-8 lg:p-12 text-center">
-            <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Eight Years of Progress, Partnerships, and Proof
-            </h3>
-            <p className="text-muted-foreground text-lg max-w-4xl mx-auto leading-relaxed mb-12">
-              From the <strong>Resilient Utilities Coalition (2016)</strong> to <strong>One Water Academy (2018)</strong>, the <strong>Future Water Summit (2019, 400+ attendees)</strong>, and the <strong>Algorand blockchain pilot</strong>, APAS has consistently brought practitioners, governments, and innovators together to deliver results.
-            </p>
-            
-            {/* Logos Row */}
-            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12 mb-10">
-              {[
-                { name: "Resilient Utilities Coalition", year: "2016" },
-                { name: "One Water Academy", year: "2018" },
-                { name: "Future Water Summit", year: "2019" },
-                { name: "Algorand", year: "Pilot" }
-              ].map((partner, index) => (
-                <div
-                  key={partner.name}
-                  data-index={`7-${index}`}
-                  className={`transition-all duration-800 ease-out hover:scale-110 ${
-                    visibleItems.includes(6)
-                      ? 'opacity-100 transform translate-y-0'
-                      : 'opacity-0 transform translate-y-8'
-                  }`}
-                  style={{ transitionDelay: `${700 + index * 100}ms` }}
-                >
-                  <div className="group cursor-pointer">
-                    <div className="bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 rounded-lg p-6 lg:p-8 hover:border-primary/40 transition-all duration-300 grayscale hover:grayscale-0">
-                      <div className="text-center">
-                        <div className="text-2xl lg:text-3xl font-bold text-primary mb-2 group-hover:text-primary transition-colors">
-                          {partner.name.split(' ').map((word, i) => (
-                            <div key={i} className={i === 0 ? "text-primary" : "text-muted-foreground group-hover:text-secondary"}>
-                              {word}
-                            </div>
-                          ))}
-                        </div>
-                        <div className="text-sm text-muted-foreground font-medium">
-                          {partner.year}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            <Button variant="glass" size="lg" className="group">
-              See Our Journey
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
-        </div>
-
-        {/* Other Labs Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {labs.map((lab, index) => {
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {labs.filter(lab => !lab.isFullWidth).map((lab, index) => {
             const IconComponent = lab.icon;
+            const isSignature = lab.isSignature;
+            
             return (
               <div
                 key={lab.id}
-                data-index={index + 2}
-                className={`transition-all duration-1000 ease-out ${
-                  visibleItems.includes(index + 2)
-                    ? `opacity-100 transform translate-y-0 scale-100 ${index % 2 === 0 ? 'translate-x-0' : 'translate-x-0'}`
-                    : `opacity-0 transform translate-y-12 scale-90 ${index % 2 === 0 ? '-translate-x-8' : 'translate-x-8'}`
+                data-index={index + 1}
+                className={`${isSignature ? 'lg:col-span-2' : ''} transition-all duration-1000 ease-out ${
+                  visibleItems.includes(index + 1)
+                    ? 'opacity-100 transform translate-y-0 scale-100'
+                    : 'opacity-0 transform translate-y-16 scale-90'
                 }`}
-                style={{ transitionDelay: `${(index + 2) * 150}ms` }}
+                style={{ transitionDelay: `${(index + 1) * 200}ms` }}
               >
-                <Card className={`h-full glass-card ${lab.borderColor} hover:shadow-elegant transition-all duration-500 hover:scale-105 hover:-translate-y-2 group transform-gpu`}>
-                  <CardHeader className="pb-4">
+                <Card className={`h-full glass-card ${lab.borderColor} hover:${lab.glowColor} hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 group transform-gpu ${isSignature ? 'bg-gradient-to-br from-background/90 to-background/80' : 'bg-background/60'} backdrop-blur-xl border-opacity-50`}>
+                  <CardHeader className={isSignature ? "pb-6" : "pb-4"}>
                     <div className="flex items-start gap-4">
-                      <div className={`bg-gradient-to-br ${lab.color} p-3 rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
-                        <IconComponent size={28} className="text-foreground" />
+                      <div className={`bg-gradient-to-br ${lab.color} p-4 rounded-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg border border-white/10 ${isSignature ? 'animate-pulse' : ''}`}>
+                        <IconComponent size={isSignature ? 36 : 28} className="text-foreground" />
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-xl lg:text-2xl group-hover:text-primary transition-colors duration-300">
+                        <CardTitle className={`${isSignature ? 'text-2xl lg:text-3xl' : 'text-xl lg:text-2xl'} group-hover:text-primary transition-colors duration-300`}>
                           {lab.title}
+                          {lab.subtitle && <span className="text-primary text-base block">{lab.subtitle}</span>}
                         </CardTitle>
-                        <p className="text-sm font-medium text-primary mt-1">
+                        <p className={`${isSignature ? 'text-base' : 'text-sm'} font-medium text-primary mt-2`}>
                           {lab.tagline}
                         </p>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <CardDescription className="text-muted-foreground leading-relaxed mb-6">
+                    <CardDescription className={`text-muted-foreground leading-relaxed mb-6 ${isSignature ? 'text-base lg:text-lg' : 'text-sm'}`}>
                       {lab.description}
                     </CardDescription>
-                    <Button variant="ghost" className="group w-full justify-between">
-                      {lab.cta}
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    
+                    {/* CTAs */}
+                    {isSignature ? (
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Button size="lg" className="group flex-1">
+                          <Heart className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                          {lab.primaryCta}
+                        </Button>
+                        <Button variant="glass" size="lg" className="group flex-1">
+                          <Mic className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                          {lab.secondaryCta}
+                        </Button>
+                      </div>
+                    ) : (
+                      <Button variant="ghost" className="group w-full justify-between hover:bg-white/10">
+                        {lab.cta}
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    )}
                   </CardContent>
                 </Card>
               </div>
             );
           })}
         </div>
+
+        {/* Community Card - Full Width */}
+        {labs.filter(lab => lab.isFullWidth).map((lab, index) => {
+          const IconComponent = lab.icon;
+          return (
+            <div
+              key={lab.id}
+              data-index={5}
+              className={`transition-all duration-1000 ease-out ${
+                visibleItems.includes(5)
+                  ? 'opacity-100 transform translate-y-0 scale-100'
+                  : 'opacity-0 transform translate-y-16 scale-90'
+              }`}
+              style={{ transitionDelay: '1000ms' }}
+            >
+              <Card className={`glass-card ${lab.borderColor} hover:${lab.glowColor} hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 group transform-gpu bg-background/60 backdrop-blur-xl border-opacity-50 max-w-2xl mx-auto`}>
+                <CardHeader className="pb-4 text-center">
+                  <div className="flex items-center justify-center gap-4">
+                    <div className={`bg-gradient-to-br ${lab.color} p-4 rounded-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg border border-white/10`}>
+                      <IconComponent size={32} className="text-foreground" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl lg:text-3xl group-hover:text-primary transition-colors duration-300">
+                        {lab.title}
+                      </CardTitle>
+                      <p className="text-sm font-medium text-primary mt-2">
+                        {lab.tagline}
+                      </p>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-0 text-center">
+                  <CardDescription className="text-muted-foreground leading-relaxed mb-6 text-base">
+                    {lab.description}
+                  </CardDescription>
+                  <Button variant="ghost" className="group">
+                    {lab.cta}
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
