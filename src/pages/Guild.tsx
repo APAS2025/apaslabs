@@ -25,6 +25,11 @@ const Guild = () => {
   const [isAiResponding, setIsAiResponding] = useState(false);
   const [streamedResponse, setStreamedResponse] = useState("");
   const [showTypingIndicator, setShowTypingIndicator] = useState(false);
+  const [showFollowUp, setShowFollowUp] = useState(false);
+  const [typedFollowUp, setTypedFollowUp] = useState("");
+  const [isTypingFollowUp, setIsTypingFollowUp] = useState(false);
+  const [streamedFollowUpResponse, setStreamedFollowUpResponse] = useState("");
+  const [isAiRespondingFollowUp, setIsAiRespondingFollowUp] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -53,12 +58,17 @@ const Guild = () => {
       const currentFollowUp = followUpQuestions[activeAnimation];
       const currentFollowUpAnswer = followUpAnswers[activeAnimation];
       
-      // Reset states
+      // Reset all states
       setTypedQuestion("");
       setStreamedResponse("");
       setIsTyping(false);
       setIsAiResponding(false);
       setShowTypingIndicator(false);
+      setShowFollowUp(false);
+      setTypedFollowUp("");
+      setIsTypingFollowUp(false);
+      setStreamedFollowUpResponse("");
+      setIsAiRespondingFollowUp(false);
       
       // Wait a bit before starting
       await new Promise(resolve => setTimeout(resolve, 500));
@@ -82,23 +92,25 @@ const Guild = () => {
       // Start streaming the first response
       setIsAiResponding(true);
       const words = currentAnswer.split(' ');
+      let currentResponse = "";
       for (let i = 0; i <= words.length; i++) {
-        setStreamedResponse(words.slice(0, i).join(' '));
+        currentResponse = words.slice(0, i).join(' ');
+        setStreamedResponse(currentResponse);
         await new Promise(resolve => setTimeout(resolve, 60 + Math.random() * 40));
       }
       setIsAiResponding(false);
       
       // Wait before follow-up question
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Type follow-up question
-      setIsTyping(true);
-      const fullFirstQuestion = currentQuestion;
+      // Show follow-up question
+      setShowFollowUp(true);
+      setIsTypingFollowUp(true);
       for (let i = 0; i <= currentFollowUp.length; i++) {
-        setTypedQuestion(fullFirstQuestion + "\n\n" + currentFollowUp.slice(0, i));
+        setTypedFollowUp(currentFollowUp.slice(0, i));
         await new Promise(resolve => setTimeout(resolve, 40 + Math.random() * 40));
       }
-      setIsTyping(false);
+      setIsTypingFollowUp(false);
       
       // Show typing indicator for follow-up
       await new Promise(resolve => setTimeout(resolve, 400));
@@ -107,14 +119,15 @@ const Guild = () => {
       setShowTypingIndicator(false);
       
       // Stream follow-up response
-      setIsAiResponding(true);
-      const fullFirstResponse = currentAnswer;
+      setIsAiRespondingFollowUp(true);
       const followUpWords = currentFollowUpAnswer.split(' ');
+      let currentFollowUpResp = "";
       for (let i = 0; i <= followUpWords.length; i++) {
-        setStreamedResponse(fullFirstResponse + "\n\n" + followUpWords.slice(0, i).join(' '));
+        currentFollowUpResp = followUpWords.slice(0, i).join(' ');
+        setStreamedFollowUpResponse(currentFollowUpResp);
         await new Promise(resolve => setTimeout(resolve, 70 + Math.random() * 50));
       }
-      setIsAiResponding(false);
+      setIsAiRespondingFollowUp(false);
     };
 
     runAnimation();
@@ -124,7 +137,7 @@ const Guild = () => {
         const next = (prev + 1) % 3;
         return next;
       });
-    }, 15000); // Much longer interval to accommodate full conversation
+    }, 18000); // Extended interval for full conversation
     
     return () => clearInterval(interval);
   }, [activeAnimation]);
@@ -387,11 +400,11 @@ const Guild = () => {
                         </div>
                       </div>
                       
-                      <div className="flex-1 space-y-4">
+                      <div className="flex-1 space-y-4 max-h-[480px] overflow-y-auto scrollbar-thin">
                         {/* User Question */}
                         {(typedQuestion || isTyping) && (
                           <div className="flex justify-end">
-                            <div className="bg-primary text-primary-foreground rounded-2xl rounded-br-md px-4 py-3 max-w-[280px] text-sm leading-relaxed whitespace-pre-line">
+                            <div className="bg-primary text-primary-foreground rounded-2xl rounded-br-md px-4 py-3 max-w-[280px] text-sm leading-relaxed">
                               {typedQuestion}
                               {isTyping && <span className="animate-pulse">|</span>}
                             </div>
@@ -415,11 +428,39 @@ const Guild = () => {
                         {(streamedResponse || isAiResponding) && (
                           <div className="flex justify-start">
                             <div className="bg-card border rounded-2xl rounded-bl-md px-4 py-3 max-w-[280px]">
-                              <div className="text-sm text-foreground/90 leading-relaxed whitespace-pre-line">
+                              <div className="text-sm text-foreground/90 leading-relaxed">
                                 {streamedResponse}
                                 {isAiResponding && <span className="animate-pulse">|</span>}
                               </div>
                               {streamedResponse && !isAiResponding && (
+                                <div className="flex items-center gap-2 mt-3 text-xs text-foreground/60">
+                                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                  Verified by guild experts
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Follow-up Question */}
+                        {(showFollowUp && (typedFollowUp || isTypingFollowUp)) && (
+                          <div className="flex justify-end">
+                            <div className="bg-primary text-primary-foreground rounded-2xl rounded-br-md px-4 py-3 max-w-[280px] text-sm leading-relaxed">
+                              {typedFollowUp}
+                              {isTypingFollowUp && <span className="animate-pulse">|</span>}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Follow-up AI Response */}
+                        {(streamedFollowUpResponse || isAiRespondingFollowUp) && (
+                          <div className="flex justify-start">
+                            <div className="bg-card border rounded-2xl rounded-bl-md px-4 py-3 max-w-[280px]">
+                              <div className="text-sm text-foreground/90 leading-relaxed">
+                                {streamedFollowUpResponse}
+                                {isAiRespondingFollowUp && <span className="animate-pulse">|</span>}
+                              </div>
+                              {streamedFollowUpResponse && !isAiRespondingFollowUp && (
                                 <div className="flex items-center gap-2 mt-3 text-xs text-foreground/60">
                                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                                   Verified by guild experts
