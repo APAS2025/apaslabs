@@ -12,16 +12,16 @@ const Footer = () => {
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
 
-      <div className="container mx-auto max-w-7xl px-6 py-16 relative z-10">
+      <div className="container mx-auto max-w-7xl px-6 py-12 relative z-10">
         {/* Main Footer Content */}
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-12">
           {/* Brand & About */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <div className="text-2xl font-bold font-inter bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent mb-4">
+              <div className="text-2xl font-bold font-satoshi bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent mb-4">
                 APAS Labs
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed font-space">
                 Transforming fragmented systems into connected solutions that serve practitioners, governments, and communities through practical tools and transparent decision-making.
               </p>
             </div>
@@ -42,7 +42,7 @@ const Footer = () => {
 
           {/* Labs & Solutions */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Our Labs</h3>
+            <h3 className="text-white font-semibold mb-4 font-satoshi">Our Labs</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#guild" className="text-muted-foreground hover:text-primary transition-colors text-sm">
@@ -74,7 +74,7 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
+            <h3 className="text-white font-semibold mb-4 font-satoshi">Company</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm">
@@ -106,7 +106,7 @@ const Footer = () => {
 
           {/* Contact & Newsletter */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Stay Connected</h3>
+            <h3 className="text-white font-semibold mb-4 font-satoshi">Stay Connected</h3>
             
             {/* Contact Info */}
             <div className="space-y-3 mb-6">

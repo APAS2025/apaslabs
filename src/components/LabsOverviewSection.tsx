@@ -101,13 +101,13 @@ const LabsOverviewSection = () => {
               : 'opacity-0 transform translate-y-12 scale-95'
           }`}
         >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-satoshi mb-6">
               <span className="bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
                 The Labs Overview
               </span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-600 mx-auto rounded-full shadow-glow mb-8" />
-            <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted-foreground font-space font-light max-w-3xl mx-auto leading-relaxed">
               Living laboratories where practitioners, citizens, and governments collaborate to build AI-powered infrastructure solutions.
             </p>
           </div>
@@ -131,14 +131,14 @@ const LabsOverviewSection = () => {
                       <Waves size={32} className="text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-3xl lg:text-4xl font-bold text-foreground">
+                      <h3 className="text-3xl lg:text-4xl font-bold font-satoshi text-foreground">
                         Biscayne Bay Lab
                       </h3>
                       <p className="text-lg text-primary font-medium">Signature Project</p>
                     </div>
                   </div>
                   
-                  <p className="text-xl font-semibold text-secondary mb-4">
+                  <p className="text-xl font-semibold font-space text-secondary mb-4">
                     Giving a Voice to the Bay
                   </p>
                   

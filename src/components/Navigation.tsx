@@ -11,7 +11,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-xl sm:text-2xl font-bold font-inter bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
+            <div className="text-xl sm:text-2xl font-bold font-satoshi bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
               APAS Labs
             </div>
           </div>

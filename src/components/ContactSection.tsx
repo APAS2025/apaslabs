@@ -58,7 +58,7 @@ const ContactSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-24 px-6 bg-gradient-to-b from-slate-900/50 via-background-deep to-background-deep relative overflow-hidden"
+      className="py-16 px-6 bg-gradient-to-b from-slate-900/50 via-background-deep to-background-deep relative overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
@@ -68,10 +68,10 @@ const ContactSection = () => {
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header */}
         <div className="text-center mb-16 animate-on-scroll opacity-0">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold font-satoshi mb-6">
             Get in <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Touch</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-space">
             Ready to collaborate, have questions about our research, or want to join our community? We'd love to hear from you.
           </p>
         </div>

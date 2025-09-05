@@ -32,7 +32,7 @@ const FoundersSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-24 px-6 bg-gradient-to-b from-background-deep via-background-deep to-slate-900/50 relative overflow-hidden"
+      className="py-20 px-6 bg-gradient-to-b from-background-deep via-background-deep to-slate-900/50 relative overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
@@ -41,10 +41,10 @@ const FoundersSection = () => {
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Header */}
         <div className="text-center mb-16 animate-on-scroll opacity-0">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-bold font-satoshi mb-6 bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
             The Builders Behind the Labs
           </h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-space">
             APAS Labs is led by practitioners who have managed billion-dollar infrastructure programs and pioneered new ways to connect systems, people, and technology.
           </p>
         </div>
@@ -61,7 +61,7 @@ const FoundersSection = () => {
                   <AvatarFallback className="text-2xl font-bold bg-gradient-to-br from-primary/20 to-accent/20 text-white">SA</AvatarFallback>
                 </Avatar>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Simi Anand</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2 font-satoshi">Simi Anand</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Systems strategist and builder, focused on bridging knowledge, technology, and community.
                   </p>
@@ -80,7 +80,7 @@ const FoundersSection = () => {
                   <AvatarFallback className="text-2xl font-bold bg-gradient-to-br from-primary/20 to-accent/20 text-white">HA</AvatarFallback>
                 </Avatar>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Hardeep Anand</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2 font-satoshi">Hardeep Anand</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Infrastructure leader and systems synthesist, with decades of experience overseeing complex public works and regulatory frameworks.
                   </p>

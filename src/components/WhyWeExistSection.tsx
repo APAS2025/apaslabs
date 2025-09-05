@@ -54,9 +54,9 @@ const WhyWeExistSection = () => {
   ];
 
   return (
-    <section className="relative pt-0 pb-16 lg:pb-24 overflow-hidden">
+    <section className="relative py-16 lg:py-20 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background-deep to-background z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background-deep/95 to-background-deep z-0" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
       
@@ -71,13 +71,13 @@ const WhyWeExistSection = () => {
                 : 'opacity-0 transform translate-y-12 scale-95'
             }`}
           >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-satoshi mb-6">
               <span className="bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
                 The Infrastructure Crisis
               </span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-600 mx-auto rounded-full shadow-glow mb-8" />
-            <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted-foreground font-space font-light max-w-3xl mx-auto leading-relaxed">
               Critical systems fail because decisions are made in isolation, without data, accountability, or community input.
             </p>
           </div>

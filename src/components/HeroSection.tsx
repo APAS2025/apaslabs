@@ -50,7 +50,7 @@ const HeroSection = () => {
       >
         {/* Hero Headline */}
         <div className="mb-6 sm:mb-8">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-inter leading-tight mb-4 sm:mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-satoshi leading-tight mb-4 sm:mb-6">
             <span className="block bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent drop-shadow-lg">
               Advancing the Future
             </span>
@@ -64,7 +64,7 @@ const HeroSection = () => {
         </div>
 
         {/* Subheading */}
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-inter font-light max-w-4xl mx-auto mb-8 sm:mb-10 lg:mb-12 leading-relaxed px-4">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-space font-light max-w-4xl mx-auto mb-8 sm:mb-10 lg:mb-12 leading-relaxed px-4">
           Building AI powered solutions that governments, practitioners, citizens, and funders can trust.
         </p>
 
@@ -109,8 +109,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-background to-transparent z-30" />
+      {/* Bottom gradient fade - smoother transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background via-background/80 to-transparent z-30" />
     </section>
   );
 };
