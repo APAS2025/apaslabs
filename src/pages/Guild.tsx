@@ -316,18 +316,19 @@ const Guild = () => {
 
   // Dialog components
   const ExpertDialog = () => (
-    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-      {!isSubmitted ? (
-        <>
-          <DialogHeader>
-            <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
-              <Sparkles className="h-8 w-8 text-primary" />
-              Join as a Guild Expert
-            </DialogTitle>
-            <DialogDescription className="text-lg text-foreground/80">
-              Share your expertise to power the next generation of infrastructure AI. Your knowledge becomes a guiding force for practitioners worldwide.
-            </DialogDescription>
-          </DialogHeader>
+    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-background border-border shadow-elevation">
+      <div className="relative">
+        {!isSubmitted ? (
+          <div className="animate-fade-in">
+            <DialogHeader>
+              <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
+                <Sparkles className="h-8 w-8 text-primary" />
+                Join as a Guild Expert
+              </DialogTitle>
+              <DialogDescription className="text-lg text-foreground/80">
+                Share your expertise to power the next generation of infrastructure AI. Your knowledge becomes a guiding force for practitioners worldwide.
+              </DialogDescription>
+            </DialogHeader>
           <form onSubmit={handleFormSubmit} className="space-y-6 mt-6">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -416,9 +417,9 @@ const Guild = () => {
               Submit Expert Application
             </Button>
           </form>
-        </>
-      ) : (
-        <div className="text-center py-12">
+          </div>
+        ) : (
+          <div className="text-center py-12 animate-fade-in">
           <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-6" />
           <DialogTitle className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
             Thank You, Expert! 🚀
@@ -438,23 +439,25 @@ const Guild = () => {
             Continue Exploring
           </Button>
         </div>
-      )}
+        )}
+      </div>
     </DialogContent>
   );
 
   const ParticipantDialog = () => (
-    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-      {!isSubmitted ? (
-        <>
-          <DialogHeader>
-            <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
-              <Users className="h-8 w-8 text-primary" />
-              Join as a Participant
-            </DialogTitle>
-            <DialogDescription className="text-lg text-foreground/80">
-              Connect with experts, accelerate your learning, and contribute to the infrastructure community of the future.
-            </DialogDescription>
-          </DialogHeader>
+    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-background border-border shadow-elevation">
+      <div className="relative">
+        {!isSubmitted ? (
+          <div className="animate-fade-in">
+            <DialogHeader>
+              <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
+                <Users className="h-8 w-8 text-primary" />
+                Join as a Participant
+              </DialogTitle>
+              <DialogDescription className="text-lg text-foreground/80">
+                Connect with experts, accelerate your learning, and contribute to the infrastructure community of the future.
+              </DialogDescription>
+            </DialogHeader>
           <form onSubmit={handleFormSubmit} className="space-y-6 mt-6">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -594,9 +597,9 @@ const Guild = () => {
               Join The Guild Community
             </Button>
           </form>
-        </>
-      ) : (
-        <div className="text-center py-12">
+          </div>
+        ) : (
+          <div className="text-center py-12 animate-fade-in">
           <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-6" />
           <DialogTitle className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
             Welcome to The Guild! 🎉
@@ -617,23 +620,25 @@ const Guild = () => {
             Explore More
           </Button>
         </div>
-      )}
+        )}
+      </div>
     </DialogContent>
   );
 
   const DonorDialog = () => (
-    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-      {!isSubmitted ? (
-        <>
-          <DialogHeader>
-            <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
-              <Heart className="h-8 w-8 text-red-400" />
-              Become a Founding Donor
-            </DialogTitle>
-            <DialogDescription className="text-lg text-foreground/80">
-              Invest in the future of infrastructure knowledge. Your support enables us to build AI tools that serve humanity and preserve critical expertise.
-            </DialogDescription>
-          </DialogHeader>
+    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-background border-border shadow-elevation">
+      <div className="relative">
+        {!isSubmitted ? (
+          <div className="animate-fade-in">
+            <DialogHeader>
+              <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
+                <Heart className="h-8 w-8 text-red-400" />
+                Become a Founding Donor
+              </DialogTitle>
+              <DialogDescription className="text-lg text-foreground/80">
+                Invest in the future of infrastructure knowledge. Your support enables us to build AI tools that serve humanity and preserve critical expertise.
+              </DialogDescription>
+            </DialogHeader>
           <form onSubmit={handleFormSubmit} className="space-y-6 mt-6">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -730,9 +735,9 @@ const Guild = () => {
               Support The Guild
             </Button>
           </form>
-        </>
-      ) : (
-        <div className="text-center py-12">
+          </div>
+        ) : (
+          <div className="text-center py-12 animate-fade-in">
           <Heart className="h-16 w-16 text-red-400 mx-auto mb-6 animate-pulse" />
           <DialogTitle className="text-3xl font-bold mb-4 bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
             You're Changing the World! 💝
@@ -753,7 +758,8 @@ const Guild = () => {
             Continue Mission
           </Button>
         </div>
-      )}
+        )}
+      </div>
     </DialogContent>
   );
 
@@ -1144,15 +1150,24 @@ const Guild = () => {
       </section>
 
       {/* Dialogs */}
-      <Dialog open={openDialog === 'expert'} onOpenChange={(open) => !open && closeDialog()}>
+      <Dialog 
+        open={openDialog === 'expert'} 
+        onOpenChange={(open) => !open && closeDialog()}
+      >
         <ExpertDialog />
       </Dialog>
       
-      <Dialog open={openDialog === 'participant'} onOpenChange={(open) => !open && closeDialog()}>
+      <Dialog 
+        open={openDialog === 'participant'} 
+        onOpenChange={(open) => !open && closeDialog()}
+      >
         <ParticipantDialog />
       </Dialog>
       
-      <Dialog open={openDialog === 'donor'} onOpenChange={(open) => !open && closeDialog()}>
+      <Dialog 
+        open={openDialog === 'donor'} 
+        onOpenChange={(open) => !open && closeDialog()}
+      >
         <DonorDialog />
       </Dialog>
     </main>
