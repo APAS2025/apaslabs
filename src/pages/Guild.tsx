@@ -259,6 +259,14 @@ const Guild = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.2),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(139,92,246,0.15),transparent_50%)]" />
         
+        {/* Animated Ribbons */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-0 w-full h-2 bg-gradient-to-r from-transparent via-primary/30 to-transparent transform -skew-y-1 animate-[wave_8s_ease-in-out_infinite]"></div>
+          <div className="absolute top-40 right-0 w-full h-3 bg-gradient-to-r from-transparent via-accent/20 to-transparent transform skew-y-2 animate-[wave_10s_ease-in-out_infinite_reverse] opacity-60"></div>
+          <div className="absolute bottom-60 left-0 w-full h-2 bg-gradient-to-r from-transparent via-secondary/25 to-transparent transform -skew-y-3 animate-[wave_12s_ease-in-out_infinite] opacity-70"></div>
+          <div className="absolute bottom-32 right-0 w-full h-4 bg-gradient-to-r from-transparent via-primary/15 to-transparent transform skew-y-1 animate-[wave_9s_ease-in-out_infinite_reverse]"></div>
+        </div>
+        
         <div className="container relative z-10 text-center">
           <div 
             className={`transition-all duration-1000 ${visibleItems.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
@@ -355,6 +363,13 @@ const Guild = () => {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background-deep to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.15),transparent_70%)]" />
+        
+        {/* Flowing Ribbons */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent transform -skew-y-2 animate-[flow_15s_linear_infinite]"></div>
+          <div className="absolute top-32 right-0 w-full h-2 bg-gradient-to-r from-transparent via-accent/30 to-transparent transform skew-y-1 animate-[flow_18s_linear_infinite_reverse] opacity-70"></div>
+          <div className="absolute bottom-20 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary/35 to-transparent transform -skew-y-1 animate-[flow_20s_linear_infinite]"></div>
+        </div>
         
         <div className="container relative z-10">
           <div 
@@ -531,6 +546,13 @@ const Guild = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background-deep via-background to-background-deep" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
         
+        {/* Dynamic Wave Ribbons */}
+        <div className="absolute inset-0">
+          <div className="absolute top-16 left-0 w-full h-3 bg-gradient-to-r from-transparent via-primary/25 to-transparent transform rotate-1 animate-[wave_14s_ease-in-out_infinite]"></div>
+          <div className="absolute top-80 right-0 w-full h-2 bg-gradient-to-r from-transparent via-accent/20 to-transparent transform -rotate-2 animate-[wave_16s_ease-in-out_infinite_reverse] opacity-80"></div>
+          <div className="absolute bottom-40 left-0 w-full h-2 bg-gradient-to-r from-transparent via-secondary/30 to-transparent transform rotate-3 animate-[wave_11s_ease-in-out_infinite]"></div>
+        </div>
+        
         <div className="container relative z-10">
           <div 
             className={`text-center mb-16 transition-all duration-1000 delay-200 ${visibleItems.has(10) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
@@ -592,6 +614,14 @@ const Guild = () => {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.2),transparent_70%)]" />
+        
+        {/* Elegant Flowing Ribbons */}
+        <div className="absolute inset-0">
+          <div className="absolute top-8 left-0 w-full h-4 bg-gradient-to-r from-transparent via-primary/30 to-transparent transform -skew-y-1 animate-[elegantFlow_12s_ease-in-out_infinite] opacity-60"></div>
+          <div className="absolute top-20 right-0 w-full h-2 bg-gradient-to-r from-transparent via-accent/25 to-transparent transform skew-y-2 animate-[elegantFlow_15s_ease-in-out_infinite_reverse]"></div>
+          <div className="absolute bottom-16 left-0 w-full h-3 bg-gradient-to-r from-transparent via-secondary/20 to-transparent transform -skew-y-2 animate-[elegantFlow_18s_ease-in-out_infinite] opacity-70"></div>
+          <div className="absolute bottom-4 right-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent transform skew-y-1 animate-[elegantFlow_10s_ease-in-out_infinite_reverse]"></div>
+        </div>
         
         <div className="container relative z-10">
           <div 
