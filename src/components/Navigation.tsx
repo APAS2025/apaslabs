@@ -21,6 +21,9 @@ const Navigation = () => {
             <a href="/about" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               About
             </a>
+            <a href="/guild" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+              The Guild
+            </a>
             <a href="#solutions" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Solutions
             </a>
@@ -58,6 +61,13 @@ const Navigation = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
+              </a>
+              <a 
+                href="/guild" 
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                The Guild
               </a>
               <a 
                 href="#solutions" 

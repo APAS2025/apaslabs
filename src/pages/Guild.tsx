@@ -1104,7 +1104,16 @@ const Guild = () => {
                       <div className="text-xs text-foreground/70">{guild.challenge}</div>
                     </div>
                     <div className="pt-2 space-y-2">
-                      <Button className="w-full" variant="ghost" size="sm">
+                      <Button 
+                        className="w-full" 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={() => {
+                          if (guild.id === 'pfas') {
+                            window.location.href = '/guild/pfas';
+                          }
+                        }}
+                      >
                         Learn More
                       </Button>
                       <Button className="w-full" size="sm">
