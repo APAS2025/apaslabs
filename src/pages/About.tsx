@@ -85,8 +85,12 @@ const About = () => {
             {/* Simi Anand */}
             <Card className="bg-gradient-glass border-glass-border backdrop-blur-xl">
               <CardHeader className="text-center">
-                <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full flex items-center justify-center">
-                  <Heart className="h-16 w-16 text-purple-400" />
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-1">
+                  <img 
+                    src="/lovable-uploads/9b81ccd7-084c-4892-a5ab-13ded32d06b1.png" 
+                    alt="Simi Anand - Co-Founder & Impact Strategist" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
                 <CardTitle className="text-2xl font-satoshi">Simi Anand</CardTitle>
                 <p className="text-muted-foreground">Co-Founder & Impact Strategist</p>
