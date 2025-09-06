@@ -12,6 +12,7 @@ import FinanceROIGuild from "./pages/FinanceROIGuild";
 import AIDataGovernanceGuild from "./pages/AIDataGovernanceGuild";
 import StormwaterWatershedGuild from "./pages/StormwaterWatershedGuild";
 import BiscayneBayGPT from "./pages/BiscayneBayGPT";
+import DroobiLanguageLab from "./pages/Droobi";
 import Partnerships from "./pages/Partnerships";
 import Solutions from "./pages/Solutions";
 import Labs from "./pages/Labs";
@@ -41,7 +42,8 @@ const App = () => (
         <Route path="/guild/finance-roi" element={<FinanceROIGuild />} />
         <Route path="/guild/ai-data-governance" element={<AIDataGovernanceGuild />} />
         <Route path="/guild/stormwater-watershed" element={<StormwaterWatershedGuild />} />
-        <Route path="/biscayne-bay-gpt" element={<BiscayneBayGPT />} />
+            <Route path="/biscayne-bay-gpt" element={<BiscayneBayGPT />} />
+            <Route path="/droobi" element={<DroobiLanguageLab />} />
             <Route path="/partnerships" element={<Partnerships />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/labs" element={<Labs />} />

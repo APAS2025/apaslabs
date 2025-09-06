@@ -45,6 +45,9 @@ const Navigation = () => {
             <a href="/biscayne-bay-gpt" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Biscayne Bay GPT
             </a>
+            <a href="/droobi" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+              Droobi Lab
+            </a>
             <a href="/labs" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Our Labs
             </a>
@@ -134,6 +137,13 @@ const Navigation = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Biscayne Bay GPT
+              </a>
+              <a 
+                href="/droobi" 
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Droobi Lab
               </a>
               <a 
                 href="/labs" 
