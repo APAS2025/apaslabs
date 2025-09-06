@@ -223,51 +223,84 @@ const Guild = () => {
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-500/20",
       experts: "Environmental Scientists, Regulators, Treatment Engineers",
-      challenge: "PFAS contamination affects 200M+ Americans with fragmented treatment approaches"
-    },
-    {
-      id: "microplastics",
-      title: "Microplastics & Wastewater",
-      description: "Revolutionizing wastewater treatment to combat microplastic pollution through innovative monitoring and removal technologies.",
-      icon: Shield,
-      color: "from-emerald-500 to-teal-400",
-      bgColor: "bg-emerald-500/10",
-      borderColor: "border-emerald-500/20",
-      experts: "Wastewater Engineers, Environmental Chemists, Policy Leaders",
-      challenge: "Microplastics in water systems require immediate comprehensive monitoring solutions"
+      challenge: "PFAS contamination affects 200M+ Americans with fragmented treatment approaches",
+      url: "/guild/pfas"
     },
     {
       id: "climate-resilience",
-      title: "Climate Resilience & Utilities",
+      title: "Climate & Resilience",
       description: "Building adaptive infrastructure that withstands climate impacts through resilient design and smart adaptation strategies.",
       icon: CloudRain,
       color: "from-orange-500 to-red-400",
       bgColor: "bg-orange-500/10",
       borderColor: "border-orange-500/20",
       experts: "Resilience Officers, City Planners, Infrastructure Engineers",
-      challenge: "Climate threats require $2.6T in infrastructure adaptation by 2030"
+      challenge: "Climate threats require $2.6T in infrastructure adaptation by 2030",
+      url: "/guild/climate-resilience"
     },
     {
-      id: "ai-governance",
-      title: "AI & Data Governance",
-      description: "Establishing ethical AI frameworks and data governance standards for responsible innovation in public infrastructure.",
-      icon: Brain,
-      color: "from-purple-500 to-violet-400",
-      bgColor: "bg-purple-500/10",
-      borderColor: "border-purple-500/20",
-      experts: "AI Researchers, Data Security Professionals, Tech Regulators",
-      challenge: "Public sector needs immediate AI ethics and governance frameworks"
-    },
-    {
-      id: "infrastructure-finance",
-      title: "Infrastructure Finance & ROI",
+      id: "finance-roi",
+      title: "Finance, Ratings & ROI",
       description: "Transforming infrastructure funding through innovative financing models and clear ROI frameworks for sustainable development.",
       icon: DollarSign,
       color: "from-amber-500 to-yellow-400",
       bgColor: "bg-amber-500/10",
       borderColor: "border-amber-500/20",
       experts: "Utility CFOs, Infrastructure Funders, PPP Specialists",
-      challenge: "$2.6T infrastructure funding gap requires innovative financing solutions"
+      challenge: "$2.6T infrastructure funding gap requires innovative financing solutions",
+      url: "/guild/finance-roi"
+    },
+    {
+      id: "ai-governance",
+      title: "AI, Data Governance & Transparency",
+      description: "Establishing ethical AI frameworks and data governance standards for responsible innovation in public infrastructure.",
+      icon: Brain,
+      color: "from-purple-500 to-violet-400",
+      bgColor: "bg-purple-500/10",
+      borderColor: "border-purple-500/20",
+      experts: "AI Researchers, Data Security Professionals, Tech Regulators",
+      challenge: "Public sector needs immediate AI ethics and governance frameworks",
+      url: "/guild/ai-data-governance"
+    },
+    {
+      id: "stormwater-watershed",
+      title: "Stormwater & Watershed",
+      description: "Managing stormwater systems and watershed protection through innovative engineering solutions and green infrastructure.",
+      icon: Shield,
+      color: "from-emerald-500 to-teal-400",
+      bgColor: "bg-emerald-500/10",
+      borderColor: "border-emerald-500/20",
+      experts: "Stormwater Engineers, Watershed Specialists, Environmental Planners",
+      challenge: "Urban flooding and watershed degradation require comprehensive management solutions",
+      url: "/guild/stormwater-watershed"
+    }
+  ];
+
+  // Interactive Labs (separate from Guilds)
+  const labs = [
+    {
+      id: "biscayne-bay-gpt",
+      title: "Biscayne Bay GPT",
+      description: "AI-powered insights for Biscayne Bay ecosystem restoration and water quality management.",
+      icon: Brain,
+      color: "from-blue-500 to-cyan-400",
+      bgColor: "bg-blue-500/10",
+      borderColor: "border-blue-500/20",
+      type: "AI Assistant",
+      features: "Ecosystem Analysis, Water Quality Trends, Restoration Strategies",
+      url: "/biscayne-bay-gpt"
+    },
+    {
+      id: "droobi",
+      title: "Droobi Language Lab",
+      description: "The world's first living lab where language becomes infrastructure, standardizing technical terminology.",
+      icon: Smartphone,
+      color: "from-purple-500 to-violet-400",
+      bgColor: "bg-purple-500/10",
+      borderColor: "border-purple-500/20",
+      type: "Language Platform",
+      features: "Interactive Word Cards, Vendor Connections, AI-Powered Definitions",
+      url: "/droobi"
     }
   ];
 
@@ -1069,7 +1102,7 @@ const Guild = () => {
             data-index="10"
           >
             <h2 className="text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              The Five Founding Guilds
+              APAS Guild Communities
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
               Critical domains where expert knowledge becomes AI-powered tools for the next generation.
@@ -1109,15 +1142,80 @@ const Guild = () => {
                         variant="ghost" 
                         size="sm"
                         onClick={() => {
-                          if (guild.id === 'pfas') {
-                            window.location.href = '/guild/pfas';
-                          }
+                          window.location.href = guild.url;
                         }}
                       >
                         Learn More
                       </Button>
                       <Button className="w-full" size="sm">
                         Join Guild
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Labs Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/5 to-background-deep" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(34,197,94,0.1),transparent_50%)]" />
+        
+        <div className="container relative z-10">
+          <div 
+            className={`text-center mb-16 transition-all duration-1000 delay-200 ${visibleItems.has(17) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            data-index="17"
+          >
+            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-secondary via-accent to-primary bg-clip-text text-transparent">
+              Interactive Labs & AI Tools
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              Cutting-edge AI platforms that transform guild expertise into interactive tools for real-world application.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {labs.map((lab, index) => (
+              <div
+                key={lab.id}
+                className={`transition-all duration-1000 ${visibleItems.has(18 + index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${300 + index * 100}ms` }}
+                data-index={18 + index}
+              >
+                <Card className={`h-full ${lab.bgColor} ${lab.borderColor} backdrop-blur-sm hover:shadow-glow transition-all duration-500 group cursor-pointer`}
+                      onClick={() => window.location.href = lab.url}>
+                  <CardHeader>
+                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${lab.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <lab.icon className="h-8 w-8 text-white" />
+                    </div>
+                    <div className="flex items-center justify-between mb-2">
+                      <CardTitle className="text-xl">{lab.title}</CardTitle>
+                      <div className="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full">{lab.type}</div>
+                    </div>
+                    <CardDescription className="text-foreground/70">
+                      {lab.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <div className="text-sm font-medium text-foreground/80 mb-1">Key Features:</div>
+                      <div className="text-xs text-foreground/60">{lab.features}</div>
+                    </div>
+                    <div className="pt-2">
+                      <Button 
+                        className="w-full" 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.location.href = lab.url;
+                        }}
+                      >
+                        Try {lab.title.split(' ')[0]}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </div>
@@ -1136,8 +1234,8 @@ const Guild = () => {
         
         <div className="container relative z-10">
           <div 
-            className={`text-center transition-all duration-1000 delay-200 ${visibleItems.has(16) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            data-index="16"
+            className={`text-center transition-all duration-1000 delay-200 ${visibleItems.has(20) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            data-index="20"
           >
             <h2 className="text-6xl font-bold mb-8 bg-gradient-primary bg-clip-text text-transparent">
               Shape the Future of Infrastructure
