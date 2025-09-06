@@ -172,11 +172,37 @@ const BiscayneBayGPT = () => {
                 <div className="relative w-48 h-48 rounded-full bg-gradient-to-br from-cyan-300 via-blue-400 to-blue-600 shadow-2xl shadow-blue-500/60">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 via-transparent to-transparent"></div>
                   <div className="absolute inset-3 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center overflow-hidden">
-                    <img 
-                      src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
-                      alt="Droobi - The magical AI guardian of Biscayne Bay" 
-                      className="w-full h-full object-cover rounded-full scale-110 hover:scale-125 transition-transform duration-700 ease-out"
-                    />
+                    <div className="relative w-full h-full">
+                      <img 
+                        src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
+                        alt="Droobi - The magical AI guardian of Biscayne Bay" 
+                        className="w-full h-full object-cover rounded-full scale-110 hover:scale-125 transition-transform duration-700 ease-out"
+                      />
+                      
+                      {/* Animated talking mouth overlay */}
+                      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+                        <div className="relative">
+                          {/* Main mouth */}
+                          <div className="w-6 h-3 bg-gradient-to-b from-pink-400 to-red-500 rounded-full animate-talk-mouth shadow-lg"></div>
+                          
+                          {/* Upper lip */}
+                          <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-5 h-2 bg-gradient-to-b from-blue-300 to-cyan-400 rounded-full animate-talk-upper-lip"></div>
+                          
+                          {/* Lower lip */}
+                          <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-5 h-2 bg-gradient-to-t from-blue-300 to-cyan-400 rounded-full animate-talk-lower-lip"></div>
+                          
+                          {/* Speech bubbles */}
+                          <div className="absolute -top-8 -left-2 w-3 h-3 bg-white/80 rounded-full animate-speech-bubble-1 opacity-0"></div>
+                          <div className="absolute -top-6 -right-1 w-2 h-2 bg-white/60 rounded-full animate-speech-bubble-2 opacity-0"></div>
+                          <div className="absolute -top-10 left-1 w-1 h-1 bg-white/40 rounded-full animate-speech-bubble-3 opacity-0"></div>
+                        </div>
+                      </div>
+                      
+                      {/* Glowing speech indicator */}
+                      <div className="absolute top-4 right-4 w-4 h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse opacity-80">
+                        <div className="absolute inset-1 bg-white rounded-full animate-ping"></div>
+                      </div>
+                    </div>
                   </div>
                   
                   {/* Magical glow effect */}
@@ -184,16 +210,16 @@ const BiscayneBayGPT = () => {
                   
                   {/* Floating heart with chat bubble */}
                   <div className="absolute -top-3 -right-3 bg-gradient-to-r from-pink-400 to-red-400 rounded-full p-3 animate-float shadow-lg">
-                    <MessageCircle className="h-6 w-6 text-white" />
+                    <MessageCircle className="h-6 w-6 text-white animate-bounce" />
                   </div>
                   
-                  {/* Magical audio wave indicators */}
+                  {/* Magical audio wave indicators - now synced with talking */}
                   <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                    <div className="w-2 h-6 bg-gradient-to-t from-blue-400 to-cyan-300 rounded-full animate-pulse animation-delay-0"></div>
-                    <div className="w-2 h-4 bg-gradient-to-t from-cyan-400 to-blue-300 rounded-full animate-pulse animation-delay-200"></div>
-                    <div className="w-2 h-8 bg-gradient-to-t from-blue-500 to-cyan-400 rounded-full animate-pulse animation-delay-400"></div>
-                    <div className="w-2 h-5 bg-gradient-to-t from-cyan-500 to-blue-400 rounded-full animate-pulse animation-delay-600"></div>
-                    <div className="w-2 h-6 bg-gradient-to-t from-blue-400 to-cyan-300 rounded-full animate-pulse animation-delay-800"></div>
+                    <div className="w-2 h-6 bg-gradient-to-t from-blue-400 to-cyan-300 rounded-full animate-talk-wave-1"></div>
+                    <div className="w-2 h-4 bg-gradient-to-t from-cyan-400 to-blue-300 rounded-full animate-talk-wave-2"></div>
+                    <div className="w-2 h-8 bg-gradient-to-t from-blue-500 to-cyan-400 rounded-full animate-talk-wave-3"></div>
+                    <div className="w-2 h-5 bg-gradient-to-t from-cyan-500 to-blue-400 rounded-full animate-talk-wave-4"></div>
+                    <div className="w-2 h-6 bg-gradient-to-t from-blue-400 to-cyan-300 rounded-full animate-talk-wave-5"></div>
                   </div>
                 </div>
                 
@@ -294,14 +320,24 @@ const BiscayneBayGPT = () => {
                     <div className="w-full h-full bg-black rounded-[2rem] p-6 flex flex-col">
                       <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center space-x-2">
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center overflow-hidden animate-pulse">
+                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center overflow-hidden animate-pulse relative">
                             <img 
                               src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
                               alt="Droobi" 
                               className="w-full h-full object-cover scale-110"
                             />
+                            
+                            {/* Mobile talking mouth */}
+                            <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2">
+                              <div className="w-2 h-1 bg-gradient-to-b from-pink-300 to-red-400 rounded-full animate-talk-mouth"></div>
+                            </div>
+                            
+                            {/* Live speaking indicator */}
+                            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-bounce">
+                              <div className="absolute inset-1 bg-white rounded-full animate-ping"></div>
+                            </div>
                           </div>
-                          <span className="text-white font-medium">Droobi 🌊</span>
+                          <span className="text-white font-medium">Droobi</span>
                         </div>
                         <div className="flex space-x-1">
                           <div className="w-3 h-3 rounded-full bg-green-500"></div>
@@ -319,12 +355,22 @@ const BiscayneBayGPT = () => {
                         
                         <div className="bg-gray-800/50 rounded-2xl p-4">
                           <div className="flex items-start space-x-2">
-                            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center flex-shrink-0 overflow-hidden relative">
                               <img 
                                 src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
                                 alt="Droobi" 
                                 className="w-full h-full object-cover scale-110"
                               />
+                              
+                              {/* Mini talking mouth for chat */}
+                              <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2">
+                                <div className="w-2 h-1 bg-gradient-to-b from-pink-300 to-red-400 rounded-full animate-talk-mouth"></div>
+                              </div>
+                              
+                              {/* Speaking indicator */}
+                              <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-pulse">
+                                <div className="absolute inset-0 bg-white/50 rounded-full animate-ping"></div>
+                              </div>
                             </div>
                             <div className="flex-1">
                               <p className="text-gray-200 text-sm leading-relaxed">

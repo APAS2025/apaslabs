@@ -138,6 +138,110 @@ export default {
 				'pulse-glow': {
 					'0%, 100%': { boxShadow: '0 0 20px hsl(var(--primary) / 0.3)' },
 					'50%': { boxShadow: '0 0 40px hsl(var(--primary) / 0.6)' }
+				},
+				'talk-mouth': {
+					'0%, 100%': { 
+						transform: 'scaleY(0.3) scaleX(1)',
+						opacity: '0.8'
+					},
+					'25%': { 
+						transform: 'scaleY(1) scaleX(0.8)',
+						opacity: '1'
+					},
+					'50%': { 
+						transform: 'scaleY(0.6) scaleX(1.1)',
+						opacity: '0.9'
+					},
+					'75%': { 
+						transform: 'scaleY(1.2) scaleX(0.7)',
+						opacity: '1'
+					}
+				},
+				'talk-upper-lip': {
+					'0%, 100%': { 
+						transform: 'translateX(-50%) translateY(0px) scaleY(1)',
+					},
+					'50%': { 
+						transform: 'translateX(-50%) translateY(-1px) scaleY(0.8)',
+					}
+				},
+				'talk-lower-lip': {
+					'0%, 100%': { 
+						transform: 'translateX(-50%) translateY(0px) scaleY(1)',
+					},
+					'50%': { 
+						transform: 'translateX(-50%) translateY(1px) scaleY(0.8)',
+					}
+				},
+				'speech-bubble-1': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(0px) scale(0.5)'
+					},
+					'30%': { 
+						opacity: '0.8',
+						transform: 'translateY(-5px) scale(1)'
+					},
+					'70%': { 
+						opacity: '0.4',
+						transform: 'translateY(-10px) scale(0.8)'
+					},
+					'100%': { 
+						opacity: '0',
+						transform: 'translateY(-15px) scale(0.3)'
+					}
+				},
+				'speech-bubble-2': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(0px) scale(0.5)'
+					},
+					'40%': { 
+						opacity: '0.6',
+						transform: 'translateY(-3px) scale(1)'
+					},
+					'80%': { 
+						opacity: '0.3',
+						transform: 'translateY(-8px) scale(0.7)'
+					},
+					'100%': { 
+						opacity: '0',
+						transform: 'translateY(-12px) scale(0.2)'
+					}
+				},
+				'speech-bubble-3': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(0px) scale(0.5)'
+					},
+					'50%': { 
+						opacity: '0.4',
+						transform: 'translateY(-2px) scale(1)'
+					},
+					'100%': { 
+						opacity: '0',
+						transform: 'translateY(-6px) scale(0.5)'
+					}
+				},
+				'talk-wave-1': {
+					'0%, 100%': { height: '1.5rem', opacity: '0.6' },
+					'50%': { height: '2rem', opacity: '1' }
+				},
+				'talk-wave-2': {
+					'0%, 100%': { height: '1rem', opacity: '0.7' },
+					'50%': { height: '1.75rem', opacity: '1' }
+				},
+				'talk-wave-3': {
+					'0%, 100%': { height: '2rem', opacity: '0.8' },
+					'50%': { height: '2.5rem', opacity: '1' }
+				},
+				'talk-wave-4': {
+					'0%, 100%': { height: '1.25rem', opacity: '0.6' },
+					'50%': { height: '2rem', opacity: '1' }
+				},
+				'talk-wave-5': {
+					'0%, 100%': { height: '1.5rem', opacity: '0.7' },
+					'50%': { height: '1.75rem', opacity: '1' }
 				}
 			},
 			animation: {
@@ -147,7 +251,18 @@ export default {
 				'fade-in-scale': 'fade-in-scale 0.6s ease-out forwards',
 				'float': 'float 3s ease-in-out infinite',
 				'shimmer': 'shimmer 2s linear infinite',
-				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'talk-mouth': 'talk-mouth 1.2s ease-in-out infinite',
+				'talk-upper-lip': 'talk-upper-lip 0.8s ease-in-out infinite',
+				'talk-lower-lip': 'talk-lower-lip 0.8s ease-in-out infinite 0.1s',
+				'speech-bubble-1': 'speech-bubble-1 2s ease-out infinite',
+				'speech-bubble-2': 'speech-bubble-2 2.5s ease-out infinite 0.3s',
+				'speech-bubble-3': 'speech-bubble-3 3s ease-out infinite 0.6s',
+				'talk-wave-1': 'talk-wave-1 0.6s ease-in-out infinite',
+				'talk-wave-2': 'talk-wave-2 0.8s ease-in-out infinite 0.1s',
+				'talk-wave-3': 'talk-wave-3 0.7s ease-in-out infinite 0.2s',
+				'talk-wave-4': 'talk-wave-4 0.9s ease-in-out infinite 0.3s',
+				'talk-wave-5': 'talk-wave-5 0.6s ease-in-out infinite 0.4s'
 			},
 			animationDelay: {
 				'200': '200ms',
