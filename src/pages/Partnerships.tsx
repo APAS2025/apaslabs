@@ -49,8 +49,9 @@ const Partnerships = () => {
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
-              APAS Labs, in strategic partnership with APAS.AI, extends transformative relationships to businesses and governments. 
-              We're building the technical stacks, frameworks, and collaborative networks that make public infrastructure professionals AI-ready.
+              APAS Labs is a non-profit organization dedicated to making public infrastructure professionals AI-ready. 
+              Through comprehensive assessments, tailored training programs, and direct support to elected officials, 
+              we're building the educational foundation for AI-driven infrastructure transformation.
             </p>
           </div>
         </div>
@@ -66,17 +67,18 @@ const Partnerships = () => {
                 <span className="bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent"> APAS Labs</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                We cannot depend on others to become AI-ready. APAS Labs provides the mentoring, coaching, networks, 
-                and technical frameworks that transform centuries of guild knowledge into participative leadership and 
-                collaborative capacity for public infrastructure innovation.
+                We cannot depend on others to become AI-ready. As a non-profit, APAS Labs provides comprehensive 
+                educational programs, assessments, and training that transform public infrastructure professionals 
+                into AI-ready leaders. We're the only organization offering free consultation to elected officials, 
+                empowering them with the knowledge and tools to drive meaningful change in their spheres of influence.
               </p>
               <div className="space-y-4">
                 {[
-                  "Strategic partnership with APAS.AI for cutting-edge technical stacks",
-                  "Proven frameworks for resiliency, metrics, and transparency",
-                  "Collaborative ecosystem spanning academia, government, and industry",
-                  "Data governance solutions tailored for public infrastructure",
-                  "Participative leadership models that drive measurable outcomes"
+                  "Comprehensive AI readiness assessments for public infrastructure organizations",
+                  "Tailored training programs for both public and private sector professionals",
+                  "Subscription-based training platform (coming soon) for continuous learning",
+                  "Free consultation services for elected officials and government leaders",
+                  "Educational frameworks that bridge the gap between AI capabilities and infrastructure needs"
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-start space-x-3">
                     <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
@@ -114,34 +116,37 @@ const Partnerships = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
+            <Badge variant="outline" className="mb-4 text-sm font-medium">
+              Subscription Training Platform Coming Soon
+            </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold font-satoshi mb-6">
-              Partnership Opportunities
+              Educational Partnership Opportunities
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Strategic collaboration opportunities designed to deliver measurable ROI and transformative outcomes 
-              in public infrastructure resilience.
+              Transform your organization's AI readiness through our comprehensive educational programs, 
+              tailored assessments, and direct support for leadership development in public infrastructure.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: Database,
-                title: "Data & Analytics Partnerships",
-                description: "Joint development of data governance frameworks, predictive models, and transparency dashboards for public infrastructure projects.",
-                outcomes: ["Enhanced decision-making", "Risk mitigation", "Performance optimization"]
+                icon: Target,
+                title: "AI Readiness Assessment",
+                description: "Comprehensive evaluation of your organization's current AI capabilities and infrastructure readiness, followed by a tailored roadmap for transformation.",
+                outcomes: ["Clear AI readiness baseline", "Customized improvement plan", "Strategic implementation roadmap"]
               },
               {
-                icon: Shield,
-                title: "Resilience Solutions",
-                description: "Collaborative resilience planning, climate adaptation strategies, and infrastructure hardening programs with measurable metrics.",
-                outcomes: ["Reduced vulnerability", "Improved preparedness", "Cost-effective resilience"]
+                icon: Users,
+                title: "Tailored Training Programs",
+                description: "Custom educational programs designed for your public infrastructure teams, covering AI applications, data governance, and collaborative leadership frameworks.",
+                outcomes: ["Skilled AI-ready workforce", "Enhanced decision-making", "Improved operational efficiency"]
               },
               {
-                icon: TrendingUp,
-                title: "Technical Stack Development",
-                description: "Co-development of AI-ready technical frameworks, guild knowledge systems, and scalable infrastructure solutions.",
-                outcomes: ["Accelerated innovation", "Scalable solutions", "Competitive advantage"]
+                icon: Building2,
+                title: "Elected Official Consultation",
+                description: "Free consultation services for elected officials to understand AI applications in public infrastructure, empowering informed policy decisions and strategic investments.",
+                outcomes: ["Informed leadership", "Strategic policy development", "Enhanced public trust"]
               }
             ].map((opportunity, index) => (
               <Card key={index} className="bg-gradient-glass border-glass-border backdrop-blur-xl hover:border-primary/30 transition-all duration-300">
@@ -258,11 +263,11 @@ const Partnerships = () => {
                     className="w-full px-3 py-2 bg-background/50 border border-glass-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
                   >
                     <option value="">Select partnership type</option>
-                    <option value="data-analytics">Data & Analytics Partnership</option>
-                    <option value="resilience">Resilience Solutions</option>
-                    <option value="technical-stack">Technical Stack Development</option>
-                    <option value="consulting">Consulting & Advisory</option>
-                    <option value="other">Other</option>
+                    <option value="ai-assessment">AI Readiness Assessment</option>
+                    <option value="training-program">Tailored Training Program</option>
+                    <option value="elected-consultation">Elected Official Consultation</option>
+                    <option value="subscription-training">Subscription Training Platform</option>
+                    <option value="other">Other Educational Partnership</option>
                   </select>
                 </div>
 
@@ -314,11 +319,12 @@ const Partnerships = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary/10 via-blue-500/10 to-purple-500/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold font-satoshi mb-6">
-            Ready to Build AI-Ready Infrastructure?
+            Empowering Leaders, Transforming Infrastructure
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Join the ecosystem of forward-thinking organizations transforming public infrastructure 
-            with AI-driven resilience, transparency, and measurable outcomes.
+            We're the only organization boldly offering free consultation to elected officials, 
+            providing them with the knowledge and tools to make informed decisions about AI in public infrastructure. 
+            This is purposeful education that empowers leaders to drive real change in their communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="px-8">
