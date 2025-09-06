@@ -179,6 +179,266 @@ const About = () => {
         </div>
       </section>
 
+      {/* 8 Years of Impact */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge variant="outline" className="mb-6 text-sm font-medium border-primary/30 text-primary">
+              Since 2016
+            </Badge>
+            <h2 className="text-4xl sm:text-5xl font-bold font-satoshi mb-6">
+              <span className="text-foreground">8 Years of </span>
+              <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                Proven Impact
+              </span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
+              From organizing industry-leading summits to building transformative partnerships, 
+              our track record speaks to our commitment to infrastructure innovation.
+            </p>
+          </div>
+
+          {/* Timeline */}
+          <div className="mb-20">
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-1/2 transform -translate-x-0.5 w-0.5 h-full bg-gradient-to-b from-primary via-secondary to-accent"></div>
+              
+              <div className="space-y-16">
+                {/* 2016 - Foundation */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 text-right pr-8">
+                    <div className="bg-gradient-glass border-glass-border backdrop-blur-xl p-6 rounded-lg inline-block max-w-md">
+                      <h3 className="text-lg font-semibold mb-2">Foundation Year</h3>
+                      <p className="text-sm text-muted-foreground">APAS Labs founded with a vision to transform infrastructure through collaborative innovation</p>
+                      <span className="text-xs text-primary font-medium">2016</span>
+                    </div>
+                  </div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                  <div className="flex-1 pl-8"></div>
+                </div>
+
+                {/* 2018-2020 - Growing Network */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 pr-8"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-background"></div>
+                  <div className="flex-1 pl-8">
+                    <div className="bg-gradient-glass border-glass-border backdrop-blur-xl p-6 rounded-lg inline-block max-w-md">
+                      <h3 className="text-lg font-semibold mb-2">Building Networks</h3>
+                      <p className="text-sm text-muted-foreground">Established key partnerships with utilities, municipalities, and technology leaders across the infrastructure sector</p>
+                      <span className="text-xs text-secondary font-medium">2018-2020</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2021-2022 - Future of Water Summit */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 text-right pr-8">
+                    <div className="bg-gradient-to-r from-accent/20 to-primary/20 border border-accent/30 backdrop-blur-xl p-8 rounded-lg inline-block max-w-lg shadow-glow">
+                      <div className="flex items-center justify-end mb-3">
+                        <Award className="h-6 w-6 text-accent mr-2" />
+                        <h3 className="text-xl font-bold text-accent">Future of Water Summit</h3>
+                      </div>
+                      <p className="text-muted-foreground mb-4">
+                        <strong>Flagship Achievement:</strong> Successfully organized and hosted the Future of Water Summit, featuring keynote by the Mayor and attracting hundreds of water industry professionals, policymakers, and technology leaders.
+                      </p>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex items-center justify-end text-muted-foreground">
+                          <Users className="h-4 w-4 mr-2" />
+                          <span>500+ Industry Attendees</span>
+                        </div>
+                        <div className="flex items-center justify-end text-muted-foreground">
+                          <Target className="h-4 w-4 mr-2" />
+                          <span>Mayoral Keynote Address</span>
+                        </div>
+                        <div className="flex items-center justify-end text-muted-foreground">
+                          <Lightbulb className="h-4 w-4 mr-2" />
+                          <span>25+ Expert Speakers</span>
+                        </div>
+                      </div>
+                      <span className="text-sm text-accent font-medium">2021-2022</span>
+                    </div>
+                  </div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent rounded-full border-4 border-background shadow-lg"></div>
+                  <div className="flex-1 pl-8"></div>
+                </div>
+
+                {/* 2023 - Recognition */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 pr-8"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full border-4 border-background"></div>
+                  <div className="flex-1 pl-8">
+                    <div className="bg-gradient-glass border-glass-border backdrop-blur-xl p-6 rounded-lg inline-block max-w-md">
+                      <h3 className="text-lg font-semibold mb-2">Industry Recognition</h3>
+                      <p className="text-sm text-muted-foreground">Algorand Foundation grant recognition and expansion of guild-based collaborative networks</p>
+                      <span className="text-xs text-green-500 font-medium">2023</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2024 - APAS Labs Evolution */}
+                <div className="relative flex items-center">
+                  <div className="flex-1 text-right pr-8">
+                    <div className="bg-gradient-glass border-glass-border backdrop-blur-xl p-6 rounded-lg inline-block max-w-md">
+                      <h3 className="text-lg font-semibold mb-2">APAS Labs 2.0</h3>
+                      <p className="text-sm text-muted-foreground">Launch of interactive labs, AI-powered tools, and comprehensive guild ecosystem</p>
+                      <span className="text-xs text-primary font-medium">2024</span>
+                    </div>
+                  </div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+                  <div className="flex-1 pl-8"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Featured Video Section */}
+          <div className="mb-20">
+            <Card className="bg-gradient-glass border-glass-border backdrop-blur-xl overflow-hidden">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-satoshi mb-4">
+                  Resilient Utility Coalition: A Legacy of Leadership
+                </CardTitle>
+                <p className="text-muted-foreground max-w-3xl mx-auto">
+                  This 3-minute video captures the essence of our work in building resilient infrastructure communities. 
+                  See how we've brought together utilities, policymakers, and innovators to address critical challenges.
+                </p>
+              </CardHeader>
+              <CardContent>
+                <div className="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                  {/* Placeholder for video - will be replaced with actual embed */}
+                  <div className="text-center">
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
+                        <svg className="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      <strong>Resilient Utility Coalition Video</strong><br />
+                      [Video embed placeholder - replace with Vimeo/YouTube link]
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Photo Gallery from Future of Water Summit */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold font-satoshi mb-4">
+                Future of Water Summit Highlights
+              </h3>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                A visual journey through our flagship event that brought together water industry leaders, 
+                featuring the Mayor's keynote and breakthrough discussions on infrastructure innovation.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Placeholder images */}
+              <Card className="overflow-hidden hover:shadow-glow transition-all duration-300">
+                <div className="aspect-[4/3] bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
+                  <div className="text-center text-muted-foreground">
+                    <Users className="w-12 h-12 mx-auto mb-2 opacity-50" />
+                    <p className="text-sm">Mayor's Keynote Address</p>
+                    <p className="text-xs">[Photo placeholder]</p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="overflow-hidden hover:shadow-glow transition-all duration-300">
+                <div className="aspect-[4/3] bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center">
+                  <div className="text-center text-muted-foreground">
+                    <Lightbulb className="w-12 h-12 mx-auto mb-2 opacity-50" />
+                    <p className="text-sm">Panel Discussions</p>
+                    <p className="text-xs">[Photo placeholder]</p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="overflow-hidden hover:shadow-glow transition-all duration-300">
+                <div className="aspect-[4/3] bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+                  <div className="text-center text-muted-foreground">
+                    <Target className="w-12 h-12 mx-auto mb-2 opacity-50" />
+                    <p className="text-sm">Networking & Innovation</p>
+                    <p className="text-xs">[Photo placeholder]</p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="overflow-hidden hover:shadow-glow transition-all duration-300">
+                <div className="aspect-[4/3] bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center">
+                  <div className="text-center text-muted-foreground">
+                    <Award className="w-12 h-12 mx-auto mb-2 opacity-50" />
+                    <p className="text-sm">Industry Recognition</p>
+                    <p className="text-xs">[Photo placeholder]</p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="overflow-hidden hover:shadow-glow transition-all duration-300">
+                <div className="aspect-[4/3] bg-gradient-to-br from-teal-500/20 to-blue-500/20 flex items-center justify-center">
+                  <div className="text-center text-muted-foreground">
+                    <Users className="w-12 h-12 mx-auto mb-2 opacity-50" />
+                    <p className="text-sm">Expert Speakers</p>
+                    <p className="text-xs">[Photo placeholder]</p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="overflow-hidden hover:shadow-glow transition-all duration-300">
+                <div className="aspect-[4/3] bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center">
+                  <div className="text-center text-muted-foreground">
+                    <Heart className="w-12 h-12 mx-auto mb-2 opacity-50" />
+                    <p className="text-sm">Community Impact</p>
+                    <p className="text-xs">[Photo placeholder]</p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+
+          {/* Impact Metrics */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <Card className="bg-gradient-glass border-glass-border backdrop-blur-xl text-center p-6">
+              <div className="text-3xl font-bold text-primary mb-2">8+</div>
+              <div className="text-sm text-muted-foreground">Years of Innovation</div>
+            </Card>
+            <Card className="bg-gradient-glass border-glass-border backdrop-blur-xl text-center p-6">
+              <div className="text-3xl font-bold text-secondary mb-2">500+</div>
+              <div className="text-sm text-muted-foreground">Summit Attendees</div>
+            </Card>
+            <Card className="bg-gradient-glass border-glass-border backdrop-blur-xl text-center p-6">
+              <div className="text-3xl font-bold text-accent mb-2">25+</div>
+              <div className="text-sm text-muted-foreground">Expert Speakers</div>
+            </Card>
+            <Card className="bg-gradient-glass border-glass-border backdrop-blur-xl text-center p-6">
+              <div className="text-3xl font-bold text-green-500 mb-2">100+</div>
+              <div className="text-sm text-muted-foreground">Partner Organizations</div>
+            </Card>
+          </div>
+
+          {/* Testimonial/Quote */}
+          <Card className="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 border border-primary/20 backdrop-blur-xl">
+            <CardContent className="p-8 text-center">
+              <Quote className="h-12 w-12 text-primary mx-auto mb-6" />
+              <blockquote className="text-xl italic text-muted-foreground mb-6 max-w-4xl mx-auto">
+                "The Future of Water Summit demonstrated APAS Labs' unique ability to convene diverse 
+                stakeholders around critical infrastructure challenges. Their vision for collaborative 
+                innovation is exactly what our industry needs."
+              </blockquote>
+              <div className="text-sm text-muted-foreground">
+                <strong>Industry Leader</strong><br />
+                Future of Water Summit Participant
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Mission & Vision */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/20">
         <div className="max-w-7xl mx-auto">
