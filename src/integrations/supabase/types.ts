@@ -14,7 +14,306 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bay_health_data: {
+        Row: {
+          color_class: string | null
+          current_value: string
+          description: string | null
+          display_order: number | null
+          id: string
+          is_active: boolean | null
+          last_updated: string
+          metric_name: string
+          trend_direction: string | null
+        }
+        Insert: {
+          color_class?: string | null
+          current_value: string
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          last_updated?: string
+          metric_name: string
+          trend_direction?: string | null
+        }
+        Update: {
+          color_class?: string | null
+          current_value?: string
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          last_updated?: string
+          metric_name?: string
+          trend_direction?: string | null
+        }
+        Relationships: []
+      }
+      biscayne_conversations: {
+        Row: {
+          ai_response: string
+          conversation_context: Json | null
+          created_at: string
+          id: string
+          question: string
+          user_feedback: number | null
+          user_session: string
+        }
+        Insert: {
+          ai_response: string
+          conversation_context?: Json | null
+          created_at?: string
+          id?: string
+          question: string
+          user_feedback?: number | null
+          user_session: string
+        }
+        Update: {
+          ai_response?: string
+          conversation_context?: Json | null
+          created_at?: string
+          id?: string
+          question?: string
+          user_feedback?: number | null
+          user_session?: string
+        }
+        Relationships: []
+      }
+      contact_submissions: {
+        Row: {
+          category: string | null
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          message: string
+          organization: string | null
+          phone: string | null
+          status: string | null
+          subject: string | null
+          updated_at: string
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          message: string
+          organization?: string | null
+          phone?: string | null
+          status?: string | null
+          subject?: string | null
+          updated_at?: string
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          message?: string
+          organization?: string | null
+          phone?: string | null
+          status?: string | null
+          subject?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      content_blocks: {
+        Row: {
+          block_key: string
+          block_type: string
+          content: string
+          created_at: string
+          description: string | null
+          id: string
+          is_active: boolean | null
+          page_name: string
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          block_key: string
+          block_type: string
+          content: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean | null
+          page_name: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          block_key?: string
+          block_type?: string
+          content?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean | null
+          page_name?: string
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
+      donations: {
+        Row: {
+          amount: number
+          created_at: string
+          donor_email: string
+          donor_name: string | null
+          id: string
+          message: string | null
+          payment_id: string | null
+          payment_status: string | null
+          tier_name: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          donor_email: string
+          donor_name?: string | null
+          id?: string
+          message?: string | null
+          payment_id?: string | null
+          payment_status?: string | null
+          tier_name: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          donor_email?: string
+          donor_name?: string | null
+          id?: string
+          message?: string | null
+          payment_id?: string | null
+          payment_status?: string | null
+          tier_name?: string
+        }
+        Relationships: []
+      }
+      partnership_inquiries: {
+        Row: {
+          contact_name: string
+          created_at: string
+          email: string
+          id: string
+          organization: string
+          partnership_type: string
+          phone: string | null
+          project_description: string
+          status: string | null
+          timeline: string | null
+          updated_at: string
+        }
+        Insert: {
+          contact_name: string
+          created_at?: string
+          email: string
+          id?: string
+          organization: string
+          partnership_type: string
+          phone?: string | null
+          project_description: string
+          status?: string | null
+          timeline?: string | null
+          updated_at?: string
+        }
+        Update: {
+          contact_name?: string
+          created_at?: string
+          email?: string
+          id?: string
+          organization?: string
+          partnership_type?: string
+          phone?: string | null
+          project_description?: string
+          status?: string | null
+          timeline?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          role: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      site_metrics: {
+        Row: {
+          category: string | null
+          created_at: string
+          description: string | null
+          display_order: number | null
+          id: string
+          is_active: boolean | null
+          key: string
+          label: string
+          updated_at: string
+          updated_by: string | null
+          value: string
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          key: string
+          label: string
+          updated_at?: string
+          updated_by?: string | null
+          value: string
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          key?: string
+          label?: string
+          updated_at?: string
+          updated_by?: string | null
+          value?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
