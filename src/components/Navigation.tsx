@@ -18,6 +18,9 @@ const Navigation = () => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <a href="/biscayne-bay-gpt" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+              Biscayne Bay GPT
+            </a>
             <a href="/labs" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Labs
             </a>
@@ -73,6 +76,13 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-gradient-glass border-t border-glass-border backdrop-blur-xl">
+              <a 
+                href="/biscayne-bay-gpt" 
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Biscayne Bay GPT
+              </a>
               <a 
                 href="/labs" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
