@@ -89,7 +89,7 @@ const About = () => {
                   <img 
                     src="/lovable-uploads/9b81ccd7-084c-4892-a5ab-13ded32d06b1.png" 
                     alt="Simi Anand - Co-Founder & Impact Strategist" 
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-full h-full object-cover object-center rounded-full"
                   />
                 </div>
                 <CardTitle className="text-2xl font-satoshi">Simi Anand</CardTitle>
