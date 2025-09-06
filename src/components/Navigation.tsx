@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import SearchButton from "./SearchButton";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,7 +58,11 @@ const Navigation = () => {
             <a href="/about" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               About Us
             </a>
-            <Button 
+            <a href="/faq" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+              FAQ
+            </a>
+            <SearchButton variant="ghost" showText={false} />
+            <Button
               className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow" 
               size="sm" 
               asChild
@@ -163,6 +168,16 @@ const Navigation = () => {
               >
                 About Us
               </a>
+              <a 
+                href="/faq" 
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                FAQ
+              </a>
+              <div className="px-3 py-2 border-t border-border/20 mt-2">
+                <SearchButton variant="outline" className="w-full mb-2" />
+              </div>
               <div className="px-3 py-2">
                 <Button 
                   className="w-full bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-lg mb-2" 
