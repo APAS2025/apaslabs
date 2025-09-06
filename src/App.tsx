@@ -17,6 +17,7 @@ import Solutions from "./pages/Solutions";
 import Labs from "./pages/Labs";
 import Community from "./pages/Community";
 import Contact from "./pages/Contact";
+import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -45,6 +46,7 @@ const App = () => (
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/labs" element={<Labs />} />
             <Route path="/community" element={<Community />} />
+            <Route path="/support" element={<Support />} />
             <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

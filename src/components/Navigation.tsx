@@ -18,12 +18,6 @@ const Navigation = () => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            <a href="/biscayne-bay-gpt" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              Biscayne Bay GPT
-            </a>
-            <a href="/labs" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              Labs
-            </a>
             <div className="relative group">
               <a href="/guild" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
                 Guilds
@@ -48,12 +42,22 @@ const Navigation = () => {
                 </div>
               </div>
             </div>
+            <a href="/biscayne-bay-gpt" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+              Biscayne Bay GPT
+            </a>
             <a href="/community" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Community
             </a>
             <a href="/partnerships" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Partnerships
             </a>
+            <Button 
+              className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow" 
+              size="sm" 
+              asChild
+            >
+              <a href="/support">💚 Support</a>
+            </Button>
             <Button variant="glass" size="sm" asChild>
               <a href="/contact">Contact</a>
             </Button>
@@ -76,20 +80,6 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-gradient-glass border-t border-glass-border backdrop-blur-xl">
-              <a 
-                href="/biscayne-bay-gpt" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Biscayne Bay GPT
-              </a>
-              <a 
-                href="/labs" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Labs
-              </a>
               <a 
                 href="/guild" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
@@ -133,6 +123,13 @@ const Navigation = () => {
                 Stormwater & Watershed
               </a>
               <a 
+                href="/biscayne-bay-gpt" 
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Biscayne Bay GPT
+              </a>
+              <a 
                 href="/community" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
@@ -147,6 +144,13 @@ const Navigation = () => {
                 Partnerships
               </a>
               <div className="px-3 py-2">
+                <Button 
+                  className="w-full bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-lg mb-2" 
+                  size="sm" 
+                  asChild
+                >
+                  <a href="/support" onClick={() => setIsMenuOpen(false)}>💚 Support</a>
+                </Button>
                 <Button variant="glass" size="sm" className="w-full" asChild>
                   <a href="/contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
                 </Button>
