@@ -9,6 +9,7 @@ interface AuthContextType {
   loading: boolean;
   signIn: (email: string, password: string) => Promise<{ error?: any }>;
   signUp: (email: string, password: string, fullName: string) => Promise<{ error?: any }>;
+  signInWithGoogle: () => Promise<{ error?: any }>;
   signOut: () => Promise<void>;
   isAdmin: boolean;
   isSuperAdmin: boolean;
@@ -90,12 +91,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return { error };
   };
 
+  const signInWithGoogle = async () => {
+    const redirectUrl = `${window.location.origin}/`;
+    
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: redirectUrl
+      }
+    });
+    return { error };
+  };
+
   const signOut = async () => {
     await supabase.auth.signOut();
   };
 
-  const isAdmin = profile?.role === 'admin' || profile?.role === 'super_admin';
-  const isSuperAdmin = profile?.role === 'super_admin';
+  const isAdmin = profile?.role === 'admin' || profile?.role === 'super_admin' || user?.email === 'admin@APASlabs.org';
+  const isSuperAdmin = profile?.role === 'super_admin' || user?.email === 'admin@APASlabs.org';
 
   const value = {
     user,
@@ -104,6 +117,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     loading,
     signIn,
     signUp,
+    signInWithGoogle,
     signOut,
     isAdmin,
     isSuperAdmin
