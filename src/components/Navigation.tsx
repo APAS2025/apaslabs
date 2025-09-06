@@ -39,6 +39,9 @@ const Navigation = () => {
                   <a href="/guild/ai-data-governance" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
                     AI, Data Governance & Transparency
                   </a>
+                  <a href="/guild/stormwater-watershed" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
+                    Stormwater & Watershed
+                  </a>
                 </div>
               </div>
             </div>
@@ -114,6 +117,13 @@ const Navigation = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 AI, Data Governance & Transparency
+              </a>
+              <a 
+                href="/guild/stormwater-watershed" 
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Stormwater & Watershed
               </a>
               <a 
                 href="#solutions" 
