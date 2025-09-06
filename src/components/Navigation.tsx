@@ -20,7 +20,7 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <div className="relative group">
               <a href="/guild" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-                Guilds
+                Our Labs
               </a>
               <div className="absolute top-full left-0 mt-2 w-64 bg-background/95 backdrop-blur-lg border border-border/50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="py-2">
@@ -47,9 +47,6 @@ const Navigation = () => {
             </a>
             <a href="/droobi" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Droobi Lab
-            </a>
-            <a href="/labs" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              Our Labs
             </a>
             <a href="/community" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Community
@@ -94,7 +91,7 @@ const Navigation = () => {
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
-                All Guilds
+                Our Labs
               </a>
               <a 
                 href="/guild/pfas" 
@@ -146,14 +143,7 @@ const Navigation = () => {
                 Droobi Lab
               </a>
               <a 
-                href="/labs" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Our Labs
-              </a>
-              <a 
-                href="/community" 
+                href="/community"
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
