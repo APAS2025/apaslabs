@@ -43,6 +43,75 @@ const FinanceROIGuild = () => {
     resources: ''
   });
   const [isGuildFormSubmitted, setIsGuildFormSubmitted] = useState(false);
+  const [questionText, setQuestionText] = useState("");
+  const [answerText, setAnswerText] = useState("");
+  const [isTypingQuestion, setIsTypingQuestion] = useState(true);
+  const [isTypingAnswer, setIsTypingAnswer] = useState(false);
+
+  const fullQuestion = "Is there a standard rating system for the United States, where infrastructure or utilities could be benchmarked against one another for transparency and accountability?";
+  const fullAnswer = "No standardized national rating system exists for benchmarking US infrastructure or utilities.\n\nThis creates accountability gaps, inconsistent investment decisions, and makes it difficult for citizens to compare utility performance across regions.";
+
+  useEffect(() => {
+    let questionTimeout: NodeJS.Timeout;
+    let answerTimeout: NodeJS.Timeout;
+    
+    // Start typing question after 2 seconds
+    const startQuestion = setTimeout(() => {
+      setIsTypingQuestion(true);
+      let questionIndex = 0;
+      
+      const typeQuestion = () => {
+        if (questionIndex <= fullQuestion.length) {
+          setQuestionText(fullQuestion.slice(0, questionIndex));
+          questionIndex++;
+          questionTimeout = setTimeout(typeQuestion, 40);
+        } else {
+          setIsTypingQuestion(false);
+          // Start typing answer after question is complete
+          setTimeout(() => {
+            setIsTypingAnswer(true);
+            let answerIndex = 0;
+            
+            const typeAnswer = () => {
+              if (answerIndex <= fullAnswer.length) {
+                setAnswerText(fullAnswer.slice(0, answerIndex));
+                answerIndex++;
+                answerTimeout = setTimeout(typeAnswer, 30);
+              } else {
+                setIsTypingAnswer(false);
+                // Reset after 5 seconds
+                setTimeout(() => {
+                  setQuestionText("");
+                  setAnswerText("");
+                  setIsTypingQuestion(true);
+                }, 5000);
+              }
+            };
+            typeAnswer();
+          }, 500);
+        }
+      };
+      typeQuestion();
+    }, 2000);
+
+    return () => {
+      clearTimeout(startQuestion);
+      clearTimeout(questionTimeout);
+      clearTimeout(answerTimeout);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Reset animation cycle every 30 seconds (longer question)
+    const resetCycle = setInterval(() => {
+      setQuestionText("");
+      setAnswerText("");
+      setIsTypingQuestion(true);
+      setIsTypingAnswer(false);
+    }, 30000);
+
+    return () => clearInterval(resetCycle);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -319,34 +388,41 @@ const FinanceROIGuild = () => {
                       
                       {/* App Content */}
                       <div className="px-6 py-4 space-y-4">
-                        <div className="bg-primary/20 border border-primary/30 rounded-lg p-4 animate-pulse">
+                        <div className="bg-primary/20 border border-primary/30 rounded-lg p-4">
                           <div className="flex items-center gap-2 mb-2">
                             <BarChart3 className="h-4 w-4 text-amber-400" />
                             <span className="text-sm font-medium">Rating System Query</span>
                           </div>
-                          <p className="text-xs text-foreground/80">
-                            "Is there a standard rating system for the United States, where infrastructure or utilities could be benchmarked against one another for transparency and accountability?"
+                          <p className="text-xs text-foreground/80 min-h-[3rem]">
+                            {questionText}
+                            {isTypingQuestion && <span className="animate-pulse">|</span>}
                           </p>
                         </div>
                         
-                        <div className="bg-glass border border-glass-border rounded-lg p-4 animate-fade-in">
-                          <div className="flex items-center gap-2 mb-2">
-                            <AlertTriangle className="h-4 w-4 text-red-500" />
-                            <span className="text-xs font-medium text-red-600">Critical Gap Identified</span>
+                        {answerText && (
+                          <div className="bg-glass border border-glass-border rounded-lg p-4 animate-fade-in">
+                            <div className="flex items-center gap-2 mb-2">
+                              <AlertTriangle className="h-4 w-4 text-red-500" />
+                              <span className="text-xs font-medium text-red-600">Critical Gap Identified</span>
+                            </div>
+                            <div className="space-y-2 text-xs text-foreground/80">
+                              <div className="whitespace-pre-line min-h-[4rem]">
+                                {answerText}
+                                {isTypingAnswer && <span className="animate-pulse">|</span>}
+                              </div>
+                            </div>
                           </div>
-                          <div className="space-y-2 text-xs text-foreground/80">
-                            <p className="font-semibold">No standardized rating system exists across US infrastructure and utilities.</p>
-                            <p>Current systems are fragmented by sector, region, and agency - exactly why the Finance Guild exists to create unified accountability frameworks.</p>
-                          </div>
-                        </div>
+                        )}
 
-                        <div className="bg-accent/20 border border-accent/30 rounded-lg p-3">
-                          <div className="flex items-center gap-2 mb-1">
-                            <CheckCircle className="h-3 w-3 text-green-400" />
-                            <span className="text-xs font-medium text-green-400">Verified by 15 experts</span>
+                        {answerText && !isTypingAnswer && (
+                          <div className="bg-accent/20 border border-accent/30 rounded-lg p-3 animate-fade-in">
+                            <div className="flex items-center gap-2 mb-1">
+                              <CheckCircle className="h-3 w-3 text-green-400" />
+                              <span className="text-xs font-medium text-green-400">Verified by 15 experts</span>
+                            </div>
+                            <p className="text-xs text-foreground/70">Last updated: 3 hours ago</p>
                           </div>
-                          <p className="text-xs text-foreground/70">Last updated: 3 hours ago</p>
-                        </div>
+                        )}
                       </div>
                     </div>
                   </div>

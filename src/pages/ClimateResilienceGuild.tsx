@@ -43,6 +43,75 @@ const ClimateResilienceGuild = () => {
     resources: ''
   });
   const [isGuildFormSubmitted, setIsGuildFormSubmitted] = useState(false);
+  const [questionText, setQuestionText] = useState("");
+  const [answerText, setAnswerText] = useState("");
+  const [isTypingQuestion, setIsTypingQuestion] = useState(true);
+  const [isTypingAnswer, setIsTypingAnswer] = useState(false);
+
+  const fullQuestion = "What is the definition of resiliency as defined by chapter 24 of the code of Miami-Dade County?";
+  const fullAnswer = "There is NO definition of resiliency in Chapter 24 of the Miami-Dade County Code.\n\nThis gap represents exactly why the Climate Guild exists - to identify and address missing frameworks that leave communities vulnerable.";
+
+  useEffect(() => {
+    let questionTimeout: NodeJS.Timeout;
+    let answerTimeout: NodeJS.Timeout;
+    
+    // Start typing question after 2 seconds
+    const startQuestion = setTimeout(() => {
+      setIsTypingQuestion(true);
+      let questionIndex = 0;
+      
+      const typeQuestion = () => {
+        if (questionIndex <= fullQuestion.length) {
+          setQuestionText(fullQuestion.slice(0, questionIndex));
+          questionIndex++;
+          questionTimeout = setTimeout(typeQuestion, 50);
+        } else {
+          setIsTypingQuestion(false);
+          // Start typing answer after question is complete
+          setTimeout(() => {
+            setIsTypingAnswer(true);
+            let answerIndex = 0;
+            
+            const typeAnswer = () => {
+              if (answerIndex <= fullAnswer.length) {
+                setAnswerText(fullAnswer.slice(0, answerIndex));
+                answerIndex++;
+                answerTimeout = setTimeout(typeAnswer, 30);
+              } else {
+                setIsTypingAnswer(false);
+                // Reset after 5 seconds
+                setTimeout(() => {
+                  setQuestionText("");
+                  setAnswerText("");
+                  setIsTypingQuestion(true);
+                }, 5000);
+              }
+            };
+            typeAnswer();
+          }, 500);
+        }
+      };
+      typeQuestion();
+    }, 2000);
+
+    return () => {
+      clearTimeout(startQuestion);
+      clearTimeout(questionTimeout);
+      clearTimeout(answerTimeout);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Reset animation cycle every 25 seconds
+    const resetCycle = setInterval(() => {
+      setQuestionText("");
+      setAnswerText("");
+      setIsTypingQuestion(true);
+      setIsTypingAnswer(false);
+    }, 25000);
+
+    return () => clearInterval(resetCycle);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -319,34 +388,41 @@ const ClimateResilienceGuild = () => {
                       
                       {/* App Content */}
                       <div className="px-6 py-4 space-y-4">
-                        <div className="bg-primary/20 border border-primary/30 rounded-lg p-4 animate-pulse">
+                        <div className="bg-primary/20 border border-primary/30 rounded-lg p-4">
                           <div className="flex items-center gap-2 mb-2">
                             <CloudRain className="h-4 w-4 text-orange-400" />
                             <span className="text-sm font-medium">Resilience Query</span>
                           </div>
-                          <p className="text-xs text-foreground/80">
-                            "What is the definition of resiliency as defined by chapter 24 of the code of Miami-Dade County?"
+                          <p className="text-xs text-foreground/80 min-h-[2.5rem]">
+                            {questionText}
+                            {isTypingQuestion && <span className="animate-pulse">|</span>}
                           </p>
                         </div>
                         
-                        <div className="bg-glass border border-glass-border rounded-lg p-4 animate-fade-in">
-                          <div className="flex items-center gap-2 mb-2">
-                            <AlertTriangle className="h-4 w-4 text-red-500" />
-                            <span className="text-xs font-medium text-red-600">Critical Gap Identified</span>
+                        {answerText && (
+                          <div className="bg-glass border border-glass-border rounded-lg p-4 animate-fade-in">
+                            <div className="flex items-center gap-2 mb-2">
+                              <AlertTriangle className="h-4 w-4 text-red-500" />
+                              <span className="text-xs font-medium text-red-600">Critical Gap Identified</span>
+                            </div>
+                            <div className="space-y-2 text-xs text-foreground/80">
+                              <div className="whitespace-pre-line min-h-[4rem]">
+                                {answerText}
+                                {isTypingAnswer && <span className="animate-pulse">|</span>}
+                              </div>
+                            </div>
                           </div>
-                          <div className="space-y-2 text-xs text-foreground/80">
-                            <p className="font-semibold">There is NO definition of resiliency in Chapter 24 of the Miami-Dade County Code.</p>
-                            <p>This gap represents exactly why the Climate Guild exists - to identify and address missing frameworks that leave communities vulnerable.</p>
-                          </div>
-                        </div>
+                        )}
 
-                        <div className="bg-accent/20 border border-accent/30 rounded-lg p-3">
-                          <div className="flex items-center gap-2 mb-1">
-                            <CheckCircle className="h-3 w-3 text-green-400" />
-                            <span className="text-xs font-medium text-green-400">Verified by 8 experts</span>
+                        {answerText && !isTypingAnswer && (
+                          <div className="bg-accent/20 border border-accent/30 rounded-lg p-3 animate-fade-in">
+                            <div className="flex items-center gap-2 mb-1">
+                              <CheckCircle className="h-3 w-3 text-green-400" />
+                              <span className="text-xs font-medium text-green-400">Verified by 8 experts</span>
+                            </div>
+                            <p className="text-xs text-foreground/70">Last updated: 1 day ago</p>
                           </div>
-                          <p className="text-xs text-foreground/70">Last updated: 1 day ago</p>
-                        </div>
+                        )}
                       </div>
                     </div>
                   </div>

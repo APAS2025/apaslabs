@@ -6,12 +6,81 @@ import { CheckCircle, Shield, Database, Lock, GitBranch, Users, BarChart3, FileT
 
 const AIDataGovernanceGuild = () => {
   const [currentStep, setCurrentStep] = useState(0);
+  const [questionText, setQuestionText] = useState("");
+  const [answerText, setAnswerText] = useState("");
+  const [isTypingQuestion, setIsTypingQuestion] = useState(true);
+  const [isTypingAnswer, setIsTypingAnswer] = useState(false);
+
+  const fullQuestion = "How do we make fragmented legacy systems interoperable without costly overhauls?";
+  const fullAnswer = "Legacy system integration requires API standardization:\n• Implement RESTful middleware layers\n• Use data mapping protocols (JSON/XML)\n• Deploy event-driven architecture\n• Establish blockchain audit trails";
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentStep((prev) => (prev + 1) % 4);
     }, 3000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    let questionTimeout: NodeJS.Timeout;
+    let answerTimeout: NodeJS.Timeout;
+    
+    // Start typing question after 2 seconds
+    const startQuestion = setTimeout(() => {
+      setIsTypingQuestion(true);
+      let questionIndex = 0;
+      
+      const typeQuestion = () => {
+        if (questionIndex <= fullQuestion.length) {
+          setQuestionText(fullQuestion.slice(0, questionIndex));
+          questionIndex++;
+          questionTimeout = setTimeout(typeQuestion, 50);
+        } else {
+          setIsTypingQuestion(false);
+          // Start typing answer after question is complete
+          setTimeout(() => {
+            setIsTypingAnswer(true);
+            let answerIndex = 0;
+            
+            const typeAnswer = () => {
+              if (answerIndex <= fullAnswer.length) {
+                setAnswerText(fullAnswer.slice(0, answerIndex));
+                answerIndex++;
+                answerTimeout = setTimeout(typeAnswer, 30);
+              } else {
+                setIsTypingAnswer(false);
+                // Reset after 5 seconds
+                setTimeout(() => {
+                  setQuestionText("");
+                  setAnswerText("");
+                  setIsTypingQuestion(true);
+                }, 5000);
+              }
+            };
+            typeAnswer();
+          }, 500);
+        }
+      };
+      typeQuestion();
+    }, 2000);
+
+    return () => {
+      clearTimeout(startQuestion);
+      clearTimeout(questionTimeout);
+      clearTimeout(answerTimeout);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Reset animation cycle every 20 seconds
+    const resetCycle = setInterval(() => {
+      setQuestionText("");
+      setAnswerText("");
+      setIsTypingQuestion(true);
+      setIsTypingAnswer(false);
+    }, 20000);
+
+    return () => clearInterval(resetCycle);
   }, []);
 
   const steps = [
@@ -173,39 +242,41 @@ const AIDataGovernanceGuild = () => {
                       
                       {/* App Content */}
                       <div className="px-6 py-4 space-y-4">
-                        <div className="bg-primary/20 border border-primary/30 rounded-lg p-4 animate-pulse">
+                        <div className="bg-primary/20 border border-primary/30 rounded-lg p-4">
                           <div className="flex items-center gap-2 mb-2">
                             <Shield className="h-4 w-4 text-indigo-400" />
                             <span className="text-sm font-medium">Interoperability Query</span>
                           </div>
-                          <p className="text-xs text-foreground/80">
-                            "How do we make fragmented legacy systems interoperable without costly overhauls?"
+                          <p className="text-xs text-foreground/80 min-h-[2.5rem]">
+                            {questionText}
+                            {isTypingQuestion && <span className="animate-pulse">|</span>}
                           </p>
                         </div>
                         
-                        <div className="bg-glass border border-glass-border rounded-lg p-4 animate-fade-in">
-                          <div className="flex items-center gap-2 mb-2">
-                            <Brain className="h-4 w-4 text-primary" />
-                            <span className="text-xs font-medium">Expert Analysis</span>
+                        {answerText && (
+                          <div className="bg-glass border border-glass-border rounded-lg p-4 animate-fade-in">
+                            <div className="flex items-center gap-2 mb-2">
+                              <Brain className="h-4 w-4 text-primary" />
+                              <span className="text-xs font-medium">Expert Analysis</span>
+                            </div>
+                            <div className="space-y-2 text-xs text-foreground/80">
+                              <div className="whitespace-pre-line min-h-[4rem]">
+                                {answerText}
+                                {isTypingAnswer && <span className="animate-pulse">|</span>}
+                              </div>
+                            </div>
                           </div>
-                          <div className="space-y-2 text-xs text-foreground/80">
-                            <p>Legacy system integration requires API standardization:</p>
-                            <ul className="list-disc list-inside space-y-1 ml-2">
-                              <li>Implement RESTful middleware layers</li>
-                              <li>Use data mapping protocols (JSON/XML)</li>
-                              <li>Deploy event-driven architecture</li>
-                              <li>Establish blockchain audit trails</li>
-                            </ul>
-                          </div>
-                        </div>
+                        )}
 
-                        <div className="bg-accent/20 border border-accent/30 rounded-lg p-3">
-                          <div className="flex items-center gap-2 mb-1">
-                            <CheckCircle className="h-3 w-3 text-green-400" />
-                            <span className="text-xs font-medium text-green-400">Verified by 15 experts</span>
+                        {answerText && !isTypingAnswer && (
+                          <div className="bg-accent/20 border border-accent/30 rounded-lg p-3 animate-fade-in">
+                            <div className="flex items-center gap-2 mb-1">
+                              <CheckCircle className="h-3 w-3 text-green-400" />
+                              <span className="text-xs font-medium text-green-400">Verified by 15 experts</span>
+                            </div>
+                            <p className="text-xs text-foreground/70">Last updated: 3 days ago</p>
                           </div>
-                          <p className="text-xs text-foreground/70">Last updated: 3 days ago</p>
-                        </div>
+                        )}
                       </div>
                     </div>
                   </div>
