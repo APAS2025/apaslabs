@@ -45,29 +45,43 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4 font-satoshi">Our Labs</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#guild" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  The Guild
-                </a>
+                <Link to="/biscayne-bay-gpt" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Biscayne Bay GPT
+                </Link>
               </li>
               <li>
-                <a href="#biscayne-bay" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Biscayne Bay Lab
-                </a>
+                <Link to="/droobi" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Droobi Language Lab
+                </Link>
+              </li>
+            </ul>
+            
+            <h3 className="text-white font-semibold mb-4 mt-6 font-satoshi">Guild Communities</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to="/guild/pfas" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  PFAS & Emerging Contaminants
+                </Link>
               </li>
               <li>
-                <a href="#oracles" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Oracles
-                </a>
+                <Link to="/guild/climate-resilience" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Climate & Resilience
+                </Link>
               </li>
               <li>
-                <a href="#droobi" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Droobi
-                </a>
+                <Link to="/guild/finance-roi" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Finance, Ratings & ROI
+                </Link>
               </li>
               <li>
-                <a href="#community" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Community Circle
-                </a>
+                <Link to="/guild/ai-data-governance" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  AI & Data Governance
+                </Link>
+              </li>
+              <li>
+                <Link to="/guild/stormwater-watershed" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Stormwater & Watershed
+                </Link>
               </li>
             </ul>
           </div>
@@ -82,24 +96,24 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="#journey" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Our Journey
-                </a>
+                <Link to="/community" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Community
+                </Link>
               </li>
               <li>
-                <a href="#research" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Research
-                </a>
-              </li>
-              <li>
-                <a href="#partnerships" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <Link to="/partnerships" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Partnerships
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#careers" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Careers
-                </a>
+                <Link to="/faq" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
