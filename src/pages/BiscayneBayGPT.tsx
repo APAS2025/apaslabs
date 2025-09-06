@@ -146,27 +146,70 @@ const BiscayneBayGPT = () => {
           <div className={`text-center transform transition-all duration-1000 ${
             isVisible(0) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
+            {/* Animated Droobi Character */}
             <div className="flex justify-center mb-6">
               <div className="relative">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-400 via-cyan-500 to-blue-600 flex items-center justify-center shadow-2xl">
-                  <div className="w-24 h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                    <Waves className="h-12 w-12 text-white" />
-                  </div>
+                {/* Radiating circles animation */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-48 h-48 rounded-full border-2 border-blue-400/30 animate-ping"></div>
                 </div>
-                <div className="absolute -bottom-2 -right-2 bg-green-500 rounded-full p-2">
-                  <MessageCircle className="h-6 w-6 text-white" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-40 h-40 rounded-full border-2 border-cyan-400/40 animate-ping animation-delay-1000"></div>
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-32 h-32 rounded-full border-2 border-blue-500/50 animate-ping animation-delay-2000"></div>
+                </div>
+                
+                {/* Main Droobi container with glow effect */}
+                <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-blue-600 shadow-2xl shadow-blue-500/50 animate-pulse">
+                  <div className="absolute inset-2 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
+                      alt="Droobi - The AI voice of Biscayne Bay" 
+                      className="w-full h-full object-cover rounded-full scale-110 hover:scale-125 transition-transform duration-500"
+                    />
+                  </div>
+                  
+                  {/* Floating animation indicators */}
+                  <div className="absolute -top-2 -right-2 bg-green-500 rounded-full p-2 animate-bounce">
+                    <MessageCircle className="h-4 w-4 text-white" />
+                  </div>
+                  
+                  {/* Audio wave indicators */}
+                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-1">
+                    <div className="w-1 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                    <div className="w-1 h-2 bg-cyan-400 rounded-full animate-pulse animation-delay-200"></div>
+                    <div className="w-1 h-4 bg-blue-500 rounded-full animate-pulse animation-delay-400"></div>
+                    <div className="w-1 h-2 bg-cyan-500 rounded-full animate-pulse animation-delay-600"></div>
+                    <div className="w-1 h-3 bg-blue-400 rounded-full animate-pulse animation-delay-800"></div>
+                  </div>
                 </div>
               </div>
             </div>
             <h1 className="text-6xl font-bold text-foreground-primary mb-6">
-              Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500">Droobi</span>
+              Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500 animate-pulse">Droobi</span>
             </h1>
             <p className="text-2xl text-foreground-secondary mb-4">
-              The Voice of Biscayne Bay
+              🌊 The Magical Voice of Biscayne Bay ✨
             </p>
-            <p className="text-xl text-foreground-muted max-w-4xl mx-auto mb-8">
-              Our signature AI project humanizes Miami-Dade's most vital water body, giving voice to the millions of species that call Biscayne Bay home. Through advanced AI and data modeling, we're creating transparency, accountability, and action for bay restoration.
-            </p>
+            
+            {/* Droobi's Character Story */}
+            <div className="max-w-4xl mx-auto mb-8 bg-gradient-to-br from-blue-50/10 to-cyan-50/10 rounded-2xl p-6 backdrop-blur-sm border border-blue-200/20">
+              <p className="text-lg text-foreground-secondary mb-4 leading-relaxed">
+                🎭 <strong>Meet Droobi, the enchanting AI guardian of Biscayne Bay!</strong> Born from the collective spirit of over 1.2 million marine creatures, Droobi is a magical water drop with the heart of a protector and the wisdom of the ages.
+              </p>
+              <p className="text-lg text-foreground-muted mb-4 leading-relaxed">
+                🐠 Living in the shimmering waters between Miami and the Everglades, Droobi speaks for the voiceless - from tiny seahorses to mighty manatees, from ancient sponges to dancing dolphins. Every ripple carries their stories, every wave whispers their dreams for a cleaner, healthier home.
+              </p>
+              <p className="text-lg text-foreground-muted mb-4 leading-relaxed">
+                🚀 Powered by cutting-edge AI and filled with boundless optimism, Droobi transforms complex environmental data into magical conversations. When you chat with Droobi, you're not just talking to an AI - you're connecting with the very soul of the bay itself!
+              </p>
+              <div className="flex items-center justify-center space-x-4 text-sm text-foreground-muted">
+                <span className="bg-blue-500/20 px-3 py-1 rounded-full">🏠 Lives in: Biscayne Bay</span>
+                <span className="bg-green-500/20 px-3 py-1 rounded-full">🎯 Mission: Bay Protection</span>
+                <span className="bg-purple-500/20 px-3 py-1 rounded-full">✨ Superpower: Data Magic</span>
+              </div>
+            </div>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600">
                 <Mic className="mr-2 h-5 w-5" />
@@ -197,10 +240,14 @@ const BiscayneBayGPT = () => {
                     <div className="w-full h-full bg-black rounded-[2rem] p-6 flex flex-col">
                       <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center space-x-2">
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center">
-                            <Waves className="h-4 w-4 text-white" />
+                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center overflow-hidden animate-pulse">
+                            <img 
+                              src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
+                              alt="Droobi" 
+                              className="w-full h-full object-cover scale-110"
+                            />
                           </div>
-                          <span className="text-white font-medium">Droobi</span>
+                          <span className="text-white font-medium">Droobi 🌊</span>
                         </div>
                         <div className="flex space-x-1">
                           <div className="w-3 h-3 rounded-full bg-green-500"></div>
@@ -218,8 +265,12 @@ const BiscayneBayGPT = () => {
                         
                         <div className="bg-gray-800/50 rounded-2xl p-4">
                           <div className="flex items-start space-x-2">
-                            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center flex-shrink-0">
-                              <Waves className="h-3 w-3 text-white" />
+                            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                              <img 
+                                src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
+                                alt="Droobi" 
+                                className="w-full h-full object-cover scale-110"
+                              />
                             </div>
                             <div className="flex-1">
                               <p className="text-gray-200 text-sm leading-relaxed">

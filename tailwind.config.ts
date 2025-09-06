@@ -148,6 +148,16 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'shimmer': 'shimmer 2s linear infinite',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+			},
+			animationDelay: {
+				'200': '200ms',
+				'400': '400ms',
+				'600': '600ms',
+				'800': '800ms',
+				'1000': '1000ms',
+				'1200': '1200ms',
+				'1500': '1500ms',
+				'2000': '2000ms',
 			}
 		}
 	},
