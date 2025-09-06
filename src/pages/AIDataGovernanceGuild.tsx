@@ -278,6 +278,15 @@ const AIDataGovernanceGuild = () => {
                           </div>
                         )}
                       </div>
+                      
+                      {/* Bottom Footer */}
+                      <div className="absolute bottom-2 left-0 right-0 px-6">
+                        <div className="text-center py-2 border-t border-foreground/10">
+                          <p className="text-xs text-foreground/40 font-light">
+                            Powered by <span className="font-medium text-primary/60">APAS.AI</span>
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
