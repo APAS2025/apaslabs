@@ -40,46 +40,61 @@ const LabsOverviewSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const labs = [
+  const guilds = [
     {
-      id: "guild",
-      title: "The Guild",
-      tagline: "Where Practitioners Power the AI Stack",
-      description: "The Guild is a network of practitioner-led cohorts, each building custom GPTs powered by APAS technology. Experts curate real-world knowledge, preventing its loss and accelerating learning. Each Guild becomes a living Lab, continuously enriched with lessons from the field.",
-      icon: Users,
-      cta: "Join a Guild",
-      color: "from-blue-500/20 to-purple-500/20",
-      borderColor: "border-blue-500/30"
+      id: "pfas",
+      title: "PFAS & Emerging Contaminants Guild",
+      tagline: "Forever Chemicals, Forever Solutions",
+      description: "Tackling the most persistent environmental contaminants through AI-powered detection, treatment innovation, and regulatory framework development. Our guild combines cutting-edge research with practical implementation strategies.",
+      icon: Brain,
+      cta: "Join PFAS Guild",
+      href: "/guild/pfas",
+      color: "from-red-500/20 to-orange-500/20",
+      borderColor: "border-red-500/30"
     },
     {
-      id: "oracles",
-      title: "Oracles",
-      tagline: "Knowledge Without Borders",
-      description: "Oracles tackles knowledge fragmentation in infrastructure. It delivers micro-learning and professional training across AI, data, and systems, while capturing expert insights and skills like communication and strategy. Oracles prepares consultants, vendors, governments, and students for an AI-driven future.",
-      icon: BookOpen,
-      cta: "Explore Oracles",
+      id: "climate",
+      title: "Climate & Resilience Guild",
+      tagline: "Building Tomorrow's Climate Defense",
+      description: "Developing adaptive infrastructure solutions for climate change impacts. From sea-level rise to extreme weather events, we create resilient systems that protect communities and ecosystems.",
+      icon: Waves,
+      cta: "Join Climate Guild",
+      href: "/guild/climate-resilience",
       color: "from-green-500/20 to-teal-500/20",
       borderColor: "border-green-500/30"
     },
     {
-      id: "droobi",
-      title: "Droobi (Lexicon of Water)",
-      tagline: "Standardizing the Language of Infrastructure",
-      description: "Droobi began as a lexicon to standardize technical terms like \"digital twin\" or \"resilience.\" It has grown into a vendor-connected knowledge hub with microsites, manuals, and webinars — powered by the Droobi AI mascot. Free for students and governments, funded by vendors and consultants, Droobi makes technical language accessible and usable across the sector.",
-      icon: Brain,
-      cta: "Explore Droobi",
+      id: "finance",
+      title: "Finance, Ratings & ROI Guild",
+      tagline: "Quantifying Environmental Impact",
+      description: "Transforming environmental initiatives into measurable financial outcomes. We develop metrics, rating systems, and ROI models that make sustainability profitable and accountable.",
+      icon: CircleDot,
+      cta: "Join Finance Guild", 
+      href: "/guild/finance-roi",
+      color: "from-blue-500/20 to-purple-500/20",
+      borderColor: "border-blue-500/30"
+    },
+    {
+      id: "ai-governance",
+      title: "AI, Data Governance & Transparency Guild",
+      tagline: "Ethical AI for Environmental Good",
+      description: "Ensuring AI systems serve environmental justice through transparent algorithms, ethical data practices, and inclusive governance frameworks that put communities first.",
+      icon: BookOpen,
+      cta: "Join AI Guild",
+      href: "/guild/ai-data-governance", 
       color: "from-purple-500/20 to-pink-500/20",
       borderColor: "border-purple-500/30"
     },
     {
-      id: "community",
-      title: "Community Lab (Circle)",
-      tagline: "A Circle That Connects All Labs",
-      description: "All APAS Labs converge in a shared Circle community, where practitioners, students, vendors, funders, and citizens exchange insights and co-create solutions. This keeps every Lab alive, adaptive, and accountable.",
-      icon: CircleDot,
-      cta: "Join the Community",
-      color: "from-orange-500/20 to-red-500/20",
-      borderColor: "border-orange-500/30"
+      id: "stormwater",
+      title: "Stormwater & Watershed Guild", 
+      tagline: "Managing Water's Journey",
+      description: "Revolutionizing stormwater management and watershed protection through smart infrastructure, green solutions, and integrated water system approaches that work with nature.",
+      icon: Users,
+      cta: "Join Watershed Guild",
+      href: "/guild/stormwater-watershed",
+      color: "from-cyan-500/20 to-blue-500/20", 
+      borderColor: "border-cyan-500/30"
     }
   ];
 
@@ -103,12 +118,12 @@ const LabsOverviewSection = () => {
         >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-satoshi mb-6">
               <span className="bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
-                The Labs Overview
+                Our Guilds
               </span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-600 mx-auto rounded-full shadow-glow mb-8" />
             <p className="text-xl text-muted-foreground font-space font-light max-w-3xl mx-auto leading-relaxed">
-              Living laboratories where practitioners, citizens, and governments collaborate to build AI-powered infrastructure solutions.
+              Specialized practitioner communities tackling the world's most pressing environmental challenges through AI-powered collaboration and innovation.
             </p>
           </div>
         </div>
@@ -226,13 +241,13 @@ const LabsOverviewSection = () => {
           </div>
         </div>
 
-        {/* Other Labs Grid */}
+        {/* Guilds Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {labs.map((lab, index) => {
-            const IconComponent = lab.icon;
+          {guilds.map((guild, index) => {
+            const IconComponent = guild.icon;
             return (
               <div
-                key={lab.id}
+                key={guild.id}
                 data-index={index + 2}
                 className={`transition-all duration-1000 ease-out ${
                   visibleItems.includes(index + 2)
@@ -241,29 +256,31 @@ const LabsOverviewSection = () => {
                 }`}
                 style={{ transitionDelay: `${(index + 2) * 150}ms` }}
               >
-                <Card className={`h-full glass-card ${lab.borderColor} hover:shadow-elegant transition-all duration-500 hover:scale-105 hover:-translate-y-2 group transform-gpu`}>
+                <Card className={`h-full glass-card ${guild.borderColor} hover:shadow-elegant transition-all duration-500 hover:scale-105 hover:-translate-y-2 group transform-gpu`}>
                   <CardHeader className="pb-4">
                     <div className="flex items-start gap-4">
-                      <div className={`bg-gradient-to-br ${lab.color} p-3 rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
+                      <div className={`bg-gradient-to-br ${guild.color} p-3 rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
                         <IconComponent size={28} className="text-foreground" />
                       </div>
                       <div className="flex-1">
                         <CardTitle className="text-xl lg:text-2xl group-hover:text-primary transition-colors duration-300">
-                          {lab.title}
+                          {guild.title}
                         </CardTitle>
                         <p className="text-sm font-medium text-primary mt-1">
-                          {lab.tagline}
+                          {guild.tagline}
                         </p>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
                     <CardDescription className="text-muted-foreground leading-relaxed mb-6">
-                      {lab.description}
+                      {guild.description}
                     </CardDescription>
-                    <Button variant="ghost" className="group w-full justify-between">
-                      {lab.cta}
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <Button variant="ghost" className="group w-full justify-between" asChild>
+                      <a href={guild.href}>
+                        {guild.cta}
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </a>
                     </Button>
                   </CardContent>
                 </Card>
