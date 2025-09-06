@@ -45,20 +45,20 @@ const Navigation = () => {
                 </div>
               </div>
             </div>
-            <a href="#solutions" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+            <a href="/solutions" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Solutions
             </a>
-            <a href="#labs" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+            <a href="/labs" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Labs
             </a>
-            <a href="#community" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+            <a href="/community" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Community
             </a>
             <a href="/partnerships" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Partnerships
             </a>
-            <Button variant="glass" size="sm">
-              Contact
+            <Button variant="glass" size="sm" asChild>
+              <a href="/contact">Contact</a>
             </Button>
           </div>
 
@@ -129,21 +129,21 @@ const Navigation = () => {
                 Stormwater & Watershed
               </a>
               <a 
-                href="#solutions" 
+                href="/solutions" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Solutions
               </a>
               <a 
-                href="#labs" 
+                href="/labs" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Labs
               </a>
               <a 
-                href="#community" 
+                href="/community" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -157,8 +157,8 @@ const Navigation = () => {
                 Partnerships
               </a>
               <div className="px-3 py-2">
-                <Button variant="glass" size="sm" className="w-full">
-                  Contact
+                <Button variant="glass" size="sm" className="w-full" asChild>
+                  <a href="/contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
                 </Button>
               </div>
             </div>

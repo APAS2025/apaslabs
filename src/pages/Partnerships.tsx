@@ -19,8 +19,18 @@ const Partnerships = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Partnership inquiry submitted:", formData);
+    // Handle form submission - could integrate with email service
+    alert("Thank you for your partnership inquiry! We'll be in touch within 48 hours.");
+    // Reset form
+    setFormData({
+      organization: "",
+      contactName: "",
+      email: "",
+      phone: "",
+      partnershipType: "",
+      projectDescription: "",
+      timeline: ""
+    });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

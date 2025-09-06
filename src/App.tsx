@@ -12,6 +12,10 @@ import FinanceROIGuild from "./pages/FinanceROIGuild";
 import AIDataGovernanceGuild from "./pages/AIDataGovernanceGuild";
 import StormwaterWatershedGuild from "./pages/StormwaterWatershedGuild";
 import Partnerships from "./pages/Partnerships";
+import Solutions from "./pages/Solutions";
+import Labs from "./pages/Labs";
+import Community from "./pages/Community";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -36,6 +40,10 @@ const App = () => (
         <Route path="/guild/ai-data-governance" element={<AIDataGovernanceGuild />} />
         <Route path="/guild/stormwater-watershed" element={<StormwaterWatershedGuild />} />
             <Route path="/partnerships" element={<Partnerships />} />
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/labs" element={<Labs />} />
+            <Route path="/community" element={<Community />} />
+            <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
