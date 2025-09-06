@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useBayHealthData } from "@/hooks/useBayHealthData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -27,10 +28,22 @@ import {
 } from "lucide-react";
 
 const BiscayneBayGPT = () => {
+  const { bayMetrics, loading: metricsLoading } = useBayHealthData();
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [aiResponse, setAiResponse] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+
+  // Fallback metrics if database is empty
+  const defaultMetrics = [
+    { label: "Water Quality Score", value: "Fair-Poor", trend: "down", color: "text-orange-500" },
+    { label: "Seagrass Coverage", value: "Recovering", trend: "up", color: "text-green-500" },
+    { label: "Nutrient Loading", value: "High", trend: "down", color: "text-red-500" },
+    { label: "Species Count", value: "1,200+", trend: "stable", color: "text-blue-500" }
+  ];
+
+  // Use database metrics if available, otherwise use defaults
+  const displayMetrics = bayMetrics.length > 0 ? bayMetrics : defaultMetrics;
 
   const aiQuestions = [
     "What's the current health status of Biscayne Bay?",
@@ -77,7 +90,7 @@ const BiscayneBayGPT = () => {
     }
   ];
 
-  const bayMetrics = [
+  const bayMetricsToRemove = [
     { label: "Water Quality Score", value: "Fair-Poor", trend: "down", color: "text-orange-500" },
     { label: "Seagrass Coverage", value: "Recovering", trend: "up", color: "text-green-500" },
     { label: "Nutrient Loading", value: "High", trend: "down", color: "text-red-500" },
@@ -411,7 +424,7 @@ const BiscayneBayGPT = () => {
               Real-Time Bay Health Dashboard
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {bayMetrics.map((metric, index) => (
+              {displayMetrics.map((metric, index) => (
                 <Card key={index} className="glass-card border-0 hover:scale-105 transition-transform duration-300">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-lg text-foreground-primary flex items-center justify-between">
