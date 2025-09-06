@@ -23,6 +23,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [profile, setProfile] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
+  console.log('AuthProvider Debug:', { user: user?.email, profileRole: profile?.role, isAdmin: profile?.role === 'admin' || profile?.role === 'super_admin' });
+
   useEffect(() => {
     // Set up auth state listener FIRST
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
@@ -107,8 +109,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     await supabase.auth.signOut();
   };
 
-  const isAdmin = profile?.role === 'admin' || profile?.role === 'super_admin' || user?.email === 'admin@APASlabs.org';
-  const isSuperAdmin = profile?.role === 'super_admin' || user?.email === 'admin@APASlabs.org';
+  const isAdmin = profile?.role === 'admin' || profile?.role === 'super_admin' || user?.email?.toLowerCase() === 'admin@apaslabs.org';
+  const isSuperAdmin = profile?.role === 'super_admin' || user?.email?.toLowerCase() === 'admin@apaslabs.org';
+  
+  console.log('Auth Status:', { isAdmin, isSuperAdmin, role: profile?.role, email: user?.email });
 
   const value = {
     user,

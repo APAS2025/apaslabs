@@ -65,9 +65,6 @@ const Navigation = () => {
             <a href="/about" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               About Us
             </a>
-            <a href="/faq" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              FAQ
-            </a>
             {isAdmin && (
               <a href="/admin" className="text-primary hover:text-primary-dark transition-smooth text-sm lg:text-base flex items-center gap-1">
                 <Settings className="h-4 w-4" />
@@ -81,9 +78,6 @@ const Navigation = () => {
               asChild
             >
               <a href="/support">💚 Support</a>
-            </Button>
-            <Button variant="glass" size="sm" asChild>
-              <a href="/contact">Contact</a>
             </Button>
             <div className="flex items-center gap-2 ml-4 pl-4 border-l border-border/20">
               <span className="text-sm text-muted-foreground">
@@ -189,13 +183,6 @@ const Navigation = () => {
               >
                 About Us
               </a>
-              <a 
-                href="/faq" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                FAQ
-              </a>
               {isAdmin && (
                 <a 
                   href="/admin" 
@@ -221,9 +208,6 @@ const Navigation = () => {
                   asChild
                 >
                   <a href="/support" onClick={() => setIsMenuOpen(false)}>💚 Support</a>
-                </Button>
-                <Button variant="glass" size="sm" className="w-full mb-2" asChild>
-                  <a href="/contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
                 </Button>
                 <Button 
                   variant="outline" 
