@@ -11,6 +11,7 @@ import ClimateResilienceGuild from "./pages/ClimateResilienceGuild";
 import FinanceROIGuild from "./pages/FinanceROIGuild";
 import AIDataGovernanceGuild from "./pages/AIDataGovernanceGuild";
 import StormwaterWatershedGuild from "./pages/StormwaterWatershedGuild";
+import Partnerships from "./pages/Partnerships";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -34,6 +35,7 @@ const App = () => (
         <Route path="/guild/finance-roi" element={<FinanceROIGuild />} />
         <Route path="/guild/ai-data-governance" element={<AIDataGovernanceGuild />} />
         <Route path="/guild/stormwater-watershed" element={<StormwaterWatershedGuild />} />
+            <Route path="/partnerships" element={<Partnerships />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
