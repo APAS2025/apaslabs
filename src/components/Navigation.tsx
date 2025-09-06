@@ -11,9 +11,9 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-xl sm:text-2xl font-bold font-satoshi bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
+            <a href="/" className="text-xl sm:text-2xl font-bold font-satoshi bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
               APAS Labs
-            </div>
+            </a>
           </div>
 
           {/* Desktop Navigation Links */}
@@ -45,11 +45,17 @@ const Navigation = () => {
             <a href="/biscayne-bay-gpt" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Biscayne Bay GPT
             </a>
+            <a href="/labs" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+              Our Labs
+            </a>
             <a href="/community" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Community
             </a>
             <a href="/partnerships" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Partnerships
+            </a>
+            <a href="/about" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+              About Us
             </a>
             <Button 
               className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow" 
@@ -130,6 +136,13 @@ const Navigation = () => {
                 Biscayne Bay GPT
               </a>
               <a 
+                href="/labs" 
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Our Labs
+              </a>
+              <a 
                 href="/community" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
@@ -142,6 +155,13 @@ const Navigation = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Partnerships
+              </a>
+              <a 
+                href="/about" 
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About Us
               </a>
               <div className="px-3 py-2">
                 <Button 
