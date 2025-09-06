@@ -43,7 +43,7 @@ const DroobiLanguageLab = () => {
       englishDef: "Safe drinking water that meets health standards",
       technicalDef: "Water treated and tested to meet EPA drinking water standards under the Safe Drinking Water Act",
       etymology: "From Latin 'potare' meaning 'to drink'",
-      vendors: ["Aqua Systems", "H2O Technologies", "PureFlow Inc."],
+      vendors: ["APAS AI", "APAS Labs", "Core and Main", "Aqua Systems", "H2O Technologies"],
       icon: <Droplets className="h-6 w-6" />
     },
     {
@@ -53,7 +53,7 @@ const DroobiLanguageLab = () => {
       englishDef: "Landscaped depression that collects rainwater runoff from roads and parking lots",
       technicalDef: "Linear stormwater conveyance system designed to remove silt and pollution through vegetation, soil, and biological processes",
       etymology: "Bio (life) + Swale (low-lying wet ground)",
-      vendors: ["GreenTech Solutions", "EcoFlow Systems", "BioStorm Inc."],
+      vendors: ["APAS AI", "APAS Labs", "Core and Main", "GreenTech Solutions", "EcoFlow Systems"],
       icon: <Waves className="h-6 w-6" />
     },
     {
@@ -63,7 +63,7 @@ const DroobiLanguageLab = () => {
       englishDef: "Living bacteria mixture that eats pollution in wastewater treatment",
       technicalDef: "Biological flocs composed of bacteria and protozoa used in secondary treatment to remove dissolved organic matter",
       etymology: "Activated (made active) + Sludge (semi-solid waste)",
-      vendors: ["BioTreat Corp", "Sludge Masters", "AquaBio Systems"],
+      vendors: ["APAS AI", "APAS Labs", "Core and Main", "BioTreat Corp", "Sludge Masters"],
       icon: <Filter className="h-6 w-6" />
     }
   ];
@@ -89,15 +89,15 @@ const DroobiLanguageLab = () => {
       mockupType: "vendors"
     },
     {
-      title: "AI-Powered Drew",
-      content: "Drew explains: Bioswales are...",
+      title: "AI-Powered Droobi",
+      content: "Droobi explains: Bioswales are...",
       description: "AI streams intelligent responses with vendor connections",
       mockupType: "ai-response"
     }
   ];
 
-  // Drew's streaming response simulation
-  const drewResponse = "Bioswales are engineered landscape features designed to remove silt and pollution from surface runoff water. They consist of a swaled drainage course with gently sloped sides and are filled with vegetation, compost and/or riprap. The water is ponded and treated through filtration, biological processes, and evapotranspiration. They're particularly effective for managing stormwater in urban areas and can reduce flooding while improving water quality.";
+  // Droobi's streaming response simulation
+  const droobiResponse = "Bioswales are engineered landscape features designed to remove silt and pollution from surface runoff water. They consist of a swaled drainage course with gently sloped sides and are filled with vegetation, compost and/or riprap. The water is ponded and treated through filtration, biological processes, and evapotranspiration. They're particularly effective for managing stormwater in urban areas and can reduce flooding while improving water quality.";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -127,15 +127,15 @@ const DroobiLanguageLab = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Simulate Drew's streaming response
+  // Simulate Droobi's streaming response
   useEffect(() => {
     if (currentSlide === 3) { // AI response slide
       setIsStreaming(true);
       setStreamingText("");
       let index = 0;
       const streamInterval = setInterval(() => {
-        if (index < drewResponse.length) {
-          setStreamingText(drewResponse.slice(0, index + 1));
+        if (index < droobiResponse.length) {
+          setStreamingText(droobiResponse.slice(0, index + 1));
           index += 2; // Stream faster
         } else {
           setIsStreaming(false);
@@ -302,7 +302,7 @@ const DroobiLanguageLab = () => {
                         
                         <Button size="sm" variant="ghost" className="w-full text-primary hover:bg-primary/10">
                           <MessageCircle className="mr-2 h-4 w-4" />
-                          Ask Drew About This
+                          Ask Droobi About This
                         </Button>
                       </div>
                     </CardContent>
