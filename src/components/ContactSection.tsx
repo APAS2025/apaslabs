@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,8 +10,10 @@ import { Mail, Phone, MapPin, Send, Users, FileText, Briefcase, MessageCircle, C
 
 const ContactSection = () => {
   console.log("ContactSection: Component rendering");
+  const { toast } = useToast();
   const sectionRef = useRef<HTMLElement>(null);
   const [selectedCategory, setSelectedCategory] = useState("General Inquiry");
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -49,10 +53,48 @@ const ContactSection = () => {
     { name: "Careers", icon: Building }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", { ...formData, category: selectedCategory });
-    // Add form submission logic here
+    setLoading(true);
+
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([{
+          full_name: formData.fullName,
+          email: formData.email,
+          organization: null,
+          subject: formData.subject,
+          message: formData.message,
+          phone: null,
+          category: selectedCategory
+        }]);
+
+      if (error) throw error;
+
+      toast({
+        title: "Success!",
+        description: "Thank you for your message! We'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        fullName: "",
+        email: "",
+        subject: "",
+        message: "",
+        newsletter: ""
+      });
+      setSelectedCategory("General Inquiry");
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

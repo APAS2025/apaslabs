@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,6 +9,8 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Building2, Users, Target, TrendingUp, Database, Shield, Network } from "lucide-react";
 
 const Partnerships = () => {
+  const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     organization: "",
     contactName: "",
@@ -17,20 +21,49 @@ const Partnerships = () => {
     timeline: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission - could integrate with email service
-    alert("Thank you for your partnership inquiry! We'll be in touch within 48 hours.");
-    // Reset form
-    setFormData({
-      organization: "",
-      contactName: "",
-      email: "",
-      phone: "",
-      partnershipType: "",
-      projectDescription: "",
-      timeline: ""
-    });
+    setLoading(true);
+
+    try {
+      const { error } = await supabase
+        .from('partnership_inquiries')
+        .insert([{
+          organization: formData.organization,
+          contact_name: formData.contactName,
+          email: formData.email,
+          phone: formData.phone,
+          partnership_type: formData.partnershipType,
+          project_description: formData.projectDescription,
+          timeline: formData.timeline
+        }]);
+
+      if (error) throw error;
+
+      toast({
+        title: "Success!",
+        description: "Thank you for your partnership inquiry! We'll be in touch within 48 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        organization: "",
+        contactName: "",
+        email: "",
+        phone: "",
+        partnershipType: "",
+        projectDescription: "",
+        timeline: ""
+      });
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to submit inquiry. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -312,8 +345,8 @@ const Partnerships = () => {
                 </div>
 
                 <div className="text-center">
-                  <Button type="submit" size="lg" className="w-full md:w-auto px-12">
-                    Submit Partnership Inquiry
+                  <Button type="submit" size="lg" className="w-full md:w-auto px-12" disabled={loading}>
+                    {loading ? "Submitting..." : "Submit Partnership Inquiry"}
                   </Button>
                   <p className="text-sm text-muted-foreground mt-4">
                     Our team will review your inquiry and respond within 48 hours.
