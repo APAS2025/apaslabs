@@ -170,16 +170,16 @@ const Footer = () => {
           </div>
           
           <div className="flex flex-wrap items-center space-x-6 text-sm">
-            <a href="#privacy" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
               Privacy Policy
             </a>
-            <a href="#terms" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">
               Terms of Service
             </a>
-            <a href="#accessibility" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="/accessibility" className="text-muted-foreground hover:text-primary transition-colors">
               Accessibility
             </a>
-            <a href="#sitemap" className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-1">
+            <a href="/sitemap" className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-1">
               <span>Sitemap</span>
               <ExternalLink className="w-3 h-3" />
             </a>

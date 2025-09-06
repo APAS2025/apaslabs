@@ -20,6 +20,10 @@ import Community from "./pages/Community";
 import Contact from "./pages/Contact";
 import Support from "./pages/Support";
 import FAQ from "./pages/FAQ";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import Accessibility from "./pages/Accessibility";
+import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -52,6 +56,10 @@ const App = () => (
             <Route path="/support" element={<Support />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/accessibility" element={<Accessibility />} />
+            <Route path="/sitemap" element={<Sitemap />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
