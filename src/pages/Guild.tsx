@@ -273,8 +273,7 @@ const Guild = () => {
 
   const closeDialog = React.useCallback(() => {
     setOpenDialog(null);
-    // Delay reset to prevent flickering
-    setTimeout(resetForm, 150);
+    resetForm();
   }, [resetForm]);
 
   // ... keep existing data arrays (guilds, problems, llmQuestions, etc.)
@@ -416,65 +415,73 @@ const Guild = () => {
     "For utilities, I recommend: 1) Microsoft's Responsible AI dashboard for bias monitoring, 2) DataRobot for model performance tracking, 3) IBM Watson OpenScale for explainability, 4) Fiddler AI for continuous monitoring. Budget $50-200K annually depending on deployment scale. Key features needed: automated bias detection, performance drift alerts, audit trail capabilities, and integration with existing SCADA systems. Start with pilot deployment on non-critical systems like energy optimization before expanding to operational controls."
   ];
 
-  // Dialog components
-  const ExpertDialog = () => {
-    if (!openDialog || openDialog !== 'expert') return null;
+  // Single Stable Dialog Component
+  const DialogForm = () => {
+    if (!openDialog) return null;
     
     return (
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card border-border">
-        <div className="p-1">
-          {!isSubmitted ? (
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle>
+            {openDialog === 'expert' && 'Apply as Expert'}
+            {openDialog === 'participant' && 'Join as Participant'}  
+            {openDialog === 'donor' && 'Become a Donor'}
+          </DialogTitle>
+          <DialogDescription>
+            {openDialog === 'expert' && 'Share your expertise to help solve critical infrastructure challenges.'}
+            {openDialog === 'participant' && 'Participate in guild activities and access expert knowledge.'}
+            {openDialog === 'donor' && 'Support our mission to democratize expert knowledge.'}
+          </DialogDescription>
+        </DialogHeader>
+        
+        {isSubmitted ? (
+          <div className="text-center py-6">
+            <CheckCircle className="mx-auto h-12 w-12 text-green-500 mb-4" />
+            <h3 className="text-lg font-medium mb-2">Application Submitted!</h3>
+            <p className="text-muted-foreground">Thank you for your interest. We'll be in touch soon.</p>
+          </div>
+        ) : (
+          <form onSubmit={handleFormSubmit} className="space-y-4">
+            {/* Common fields */}
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="name">Full Name *</Label>
+                <Input
+                  id="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="email">Email *</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                  required
+                />
+              </div>
+            </div>
+            
             <div>
-              <DialogHeader className="mb-6">
-                <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
-                  <Sparkles className="h-8 w-8 text-primary" />
-                  Join as a Guild Expert
-                </DialogTitle>
-                <DialogDescription className="text-lg text-muted-foreground">
-                  Share your expertise to power the next generation of infrastructure AI. Your knowledge becomes a guiding force for practitioners worldwide.
-                </DialogDescription>
-              </DialogHeader>
-                <form onSubmit={handleFormSubmit} className="space-y-6" autoComplete="off">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="expert-name" className="text-foreground font-medium">Full Name</Label>
-                    <Input
-                      id="expert-name"
-                      value={formData.name}
-                      onChange={(e) => setFormData(prev => ({...prev, name: e.target.value}))}
-                      required
-                      className="bg-input"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="expert-email" className="text-foreground font-medium">Email Address</Label>
-                    <Input
-                      id="expert-email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData(prev => ({...prev, email: e.target.value}))}
-                      required
-                      className="bg-input"
-                    />
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="expert-org" className="text-foreground font-medium">Organization</Label>
-                  <Input
-                    id="expert-org"
-                    value={formData.organization}
-                    onChange={(e) => setFormData(prev => ({...prev, organization: e.target.value}))}
-                    required
-                    className="bg-input"
-                  />
-                </div>
+              <Label htmlFor="organization">Organization</Label>
+              <Input
+                id="organization"
+                value={formData.organization}
+                onChange={(e) => setFormData(prev => ({ ...prev, organization: e.target.value }))}
+              />
+            </div>
 
-                <div className="space-y-3">
-                  <Label className="text-foreground font-medium">Years of Experience</Label>
-                  <RadioGroup
-                    value={formData.experience}
-                    onValueChange={(value) => setFormData(prev => ({...prev, experience: value}))}
+            {/* Expert-specific fields */}
+            {openDialog === 'expert' && (
+              <>
+                <div>
+                  <Label htmlFor="experience">Years of Experience</Label>
+                  <RadioGroup 
+                    value={formData.experience} 
+                    onValueChange={(value) => setFormData(prev => ({ ...prev, experience: value }))}
                   >
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="5-10" id="exp1" />
@@ -486,429 +493,149 @@ const Guild = () => {
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="20+" id="exp3" />
-                      <Label htmlFor="exp3">20+ years (Senior Expert)</Label>
+                      <Label htmlFor="exp3">20+ years</Label>
                     </div>
                   </RadioGroup>
                 </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="expert-expertise" className="text-foreground font-medium">Primary Area of Expertise</Label>
+                <div>
+                  <Label htmlFor="expertise">Areas of Expertise</Label>
                   <Textarea
-                    id="expert-expertise"
+                    id="expertise"
                     value={formData.expertise}
-                    onChange={(e) => setFormData(prev => ({...prev, expertise: e.target.value}))}
-                    placeholder="Describe your specialized knowledge and experience..."
-                    className="bg-input"
+                    onChange={(e) => setFormData(prev => ({ ...prev, expertise: e.target.value }))}
+                    rows={3}
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="motivation">Why do you want to join? *</Label>
+                  <Textarea
+                    id="motivation"
+                    value={formData.motivation}
+                    onChange={(e) => setFormData(prev => ({ ...prev, motivation: e.target.value }))}
                     rows={3}
                     required
                   />
                 </div>
+              </>
+            )}
 
-                <div className="space-y-2">
-                  <Label htmlFor="expert-motivation" className="text-foreground font-medium">Why do you want to contribute to The Guild?</Label>
-                  <Textarea
-                    id="expert-motivation"
-                    value={formData.motivation}
-                    onChange={(e) => setFormData(prev => ({...prev, motivation: e.target.value}))}
-                    placeholder="Share your vision for advancing infrastructure knowledge..."
-                    className="bg-input"
-                    rows={4}
-                    required
-                  />
-                </div>
-
-                  <Button 
-                    type="submit" 
-                    className="w-full" 
-                    size="lg"
-                    disabled={isLoading}
-                  >
-                    {isLoading ? "Submitting..." : "Submit Expert Application"}
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-              </form>
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-6" />
-              <DialogTitle className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Thank You, Expert! 🚀
-              </DialogTitle>
-              <DialogDescription className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                We are <span className="text-primary font-semibold">profusely grateful</span> for your time, expertise, and consideration. 
-                Your knowledge will help shape the future of infrastructure AI and empower the next generation of practitioners.
-              </DialogDescription>
-              <div className="bg-primary/10 border border-primary/20 rounded-lg p-6 mb-6">
-                <p className="text-foreground/90">
-                  🎯 <strong>What's Next:</strong> Our team will review your application within 48 hours<br/>
-                  📧 You'll receive onboarding materials and Guild access credentials<br/>
-                  🤝 Welcome to the expert collective that's revolutionizing infrastructure knowledge!
-                </p>
-              </div>
-              <Button onClick={closeDialog} variant="glass">
-                Continue Exploring
-              </Button>
-            </div>
-          )}
-        </div>
-      </DialogContent>
-    );
-  };
-
-  const ParticipantDialog = () => {
-    if (!openDialog || openDialog !== 'participant') return null;
-    
-    return (
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card border-border">
-        <div className="p-1">
-          {!isSubmitted ? (
-            <div>
-              <DialogHeader className="mb-6">
-                <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
-                  <Users className="h-8 w-8 text-primary" />
-                  Join as a Participant
-                </DialogTitle>
-                <DialogDescription className="text-lg text-muted-foreground">
-                  Connect with experts, accelerate your learning, and contribute to the infrastructure community of the future.
-                </DialogDescription>
-              </DialogHeader>
-                <form onSubmit={handleFormSubmit} className="space-y-6" autoComplete="off">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="participant-name" className="text-foreground font-medium">Full Name</Label>
-                    <Input
-                      id="participant-name"
-                      value={formData.name}
-                      onChange={(e) => setFormData(prev => ({...prev, name: e.target.value}))}
-                      required
-                      className="bg-input"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="participant-email" className="text-foreground font-medium">Email Address</Label>
-                    <Input
-                      id="participant-email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData(prev => ({...prev, email: e.target.value}))}
-                      required
-                      className="bg-input"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <Label className="text-foreground font-medium">Who are you representing?</Label>
-                  <RadioGroup
-                    value={formData.userType}
-                    onValueChange={(value) => setFormData(prev => ({...prev, userType: value}))}
+            {/* Participant-specific fields */}
+            {openDialog === 'participant' && (
+              <>
+                <div>
+                  <Label>I am a:</Label>
+                  <RadioGroup 
+                    value={formData.userType} 
+                    onValueChange={(value) => setFormData(prev => ({ ...prev, userType: value }))}
                   >
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="student" id="student" />
-                      <Label htmlFor="student" className="flex items-center gap-2">
-                        <GraduationCap className="h-4 w-4" /> Student / Academic Researcher
-                      </Label>
+                      <Label htmlFor="student">Student/Researcher</Label>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="academia" id="academia" />
-                      <Label htmlFor="academia" className="flex items-center gap-2">
-                        <BookOpen className="h-4 w-4" /> Academic Institution / Faculty
-                      </Label>
+                      <RadioGroupItem value="professional" id="professional" />
+                      <Label htmlFor="professional">Working Professional</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="government" id="government" />
-                      <Label htmlFor="government" className="flex items-center gap-2">
-                        <Building className="h-4 w-4" /> Government / Public Sector
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="industry" id="industry" />
-                      <Label htmlFor="industry" className="flex items-center gap-2">
-                        <Zap className="h-4 w-4" /> Private Industry / Corporate
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="individual" id="individual" />
-                      <Label htmlFor="individual" className="flex items-center gap-2">
-                        <User className="h-4 w-4" /> Individual / Independent
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="community" id="community" />
-                      <Label htmlFor="community" className="flex items-center gap-2">
-                        <Users className="h-4 w-4" /> Community Member / Advocate
-                      </Label>
+                      <Label htmlFor="government">Government Employee</Label>
                     </div>
                   </RadioGroup>
                 </div>
-
-                <div className="space-y-3">
-                  <Label className="text-foreground font-medium">Which sector describes your primary focus?</Label>
-                  <RadioGroup
+                <div>
+                  <Label htmlFor="sector">Primary Sector</Label>
+                  <Input
+                    id="sector"
                     value={formData.sector}
-                    onValueChange={(value) => setFormData(prev => ({...prev, sector: value}))}
-                  >
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="water" id="water" />
-                      <Label htmlFor="water" className="flex items-center gap-2">
-                        <Droplets className="h-4 w-4 text-blue-400" /> Water & Environmental Infrastructure
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="tech" id="tech" />
-                      <Label htmlFor="tech" className="flex items-center gap-2">
-                        <Brain className="h-4 w-4 text-purple-400" /> Technology & Innovation
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="other" id="other" />
-                      <Label htmlFor="other" className="flex items-center gap-2">
-                        <Target className="h-4 w-4 text-orange-400" /> Other Industries
-                      </Label>
-                    </div>
-                  </RadioGroup>
-                </div>
-
-                {formData.sector === 'other' && (
-                  <div className="space-y-3">
-                    <Label className="text-foreground font-medium">Which industries interest you? (Select all that apply)</Label>
-                    <div className="grid grid-cols-2 gap-3">
-                      {['Procurement', 'Policy & Regulations', 'Finance & Economics', 'Climate & Sustainability', 'Urban Planning', 'Energy Systems'].map((industry) => (
-                        <div key={industry} className="flex items-center space-x-2">
-                          <Checkbox
-                            id={industry}
-                            checked={formData.industries.includes(industry)}
-                            onCheckedChange={(checked) => {
-                              if (checked) {
-                                setFormData(prev => ({...prev, industries: [...prev.industries, industry]}));
-                              } else {
-                                setFormData(prev => ({...prev, industries: prev.industries.filter(i => i !== industry)}));
-                              }
-                            }}
-                          />
-                          <Label htmlFor={industry} className="text-sm">{industry}</Label>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                <div className="space-y-2">
-                  <Label htmlFor="participant-contribution" className="text-foreground font-medium">What are you hoping to learn or contribute?</Label>
-                  <Textarea
-                    id="participant-contribution"
-                    value={formData.contribution}
-                    onChange={(e) => setFormData(prev => ({...prev, contribution: e.target.value}))}
-                    placeholder="Share your goals and interests..."
-                    className="bg-input"
-                    rows={3}
-                    required
+                    onChange={(e) => setFormData(prev => ({ ...prev, sector: e.target.value }))}
+                    placeholder="e.g., Water, Transportation, Energy"
                   />
                 </div>
-
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  variant="hero" 
-                  className="w-full"
-                  disabled={isLoading}
-                >
-                  {isLoading ? "Submitting..." : (
-                    <>
-                      <Sparkles className="mr-2 h-5 w-5" />
-                      Join The Guild Community
-                    </>
-                  )}
-                </Button>
-              </form>
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-6" />
-              <DialogTitle className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Welcome to The Guild! 🎉
-              </DialogTitle>
-              <DialogDescription className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                <span className="text-primary font-semibold">Thank you</span> for joining our community of innovators and learners! 
-                You're now part of something extraordinary.
-              </DialogDescription>
-              <div className="bg-primary/10 border border-primary/20 rounded-lg p-6 mb-6">
-                <p className="text-foreground/90 mb-3">
-                  🎯 <strong>What's Next:</strong><br/>
-                  📧 Look out for an invitation to join our <span className="text-accent font-semibold">Circle Community</span><br/>
-                  🤝 You'll interact directly with Guild experts and fellow participants<br/>
-                  🚀 Access exclusive resources, workshops, and AI-powered learning tools!
-                </p>
-              </div>
-              <Button onClick={closeDialog} variant="glass">
-                Explore More
-              </Button>
-            </div>
-          )}
-        </div>
-      </DialogContent>
-    );
-  };
-
-  const DonorDialog = () => {
-    if (!openDialog || openDialog !== 'donor') return null;
-    
-    return (
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card border-border">
-        <div className="p-1">
-          {!isSubmitted ? (
-            <div>
-              <DialogHeader className="mb-6">
-                <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
-                  <Heart className="h-8 w-8 text-red-400" />
-                  Become a Founding Donor
-                </DialogTitle>
-                <DialogDescription className="text-lg text-muted-foreground">
-                  Invest in the future of infrastructure knowledge. Your support enables us to build AI tools that serve humanity and preserve critical expertise.
-                </DialogDescription>
-              </DialogHeader>
-              <form onSubmit={handleFormSubmit} className="space-y-6" autoComplete="off">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="donor-name" className="text-foreground font-medium">Full Name / Organization</Label>
-                    <Input
-                      id="donor-name"
-                      value={formData.name}
-                      onChange={(e) => setFormData(prev => ({...prev, name: e.target.value}))}
-                      required
-                      className="bg-input"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="donor-email" className="text-foreground font-medium">Contact Email</Label>
-                    <Input
-                      id="donor-email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData(prev => ({...prev, email: e.target.value}))}
-                      required
-                      className="bg-input"
-                    />
-                  </div>
+                <div>
+                  <Label htmlFor="contribution">How would you like to contribute?</Label>
+                  <Textarea
+                    id="contribution"
+                    value={formData.contribution}
+                    onChange={(e) => setFormData(prev => ({ ...prev, contribution: e.target.value }))}
+                    rows={3}
+                  />
                 </div>
+              </>
+            )}
 
-                <div className="space-y-3">
-                  <Label className="text-foreground font-medium">Contribution Level</Label>
-                  <RadioGroup
-                    value={formData.amount}
-                    onValueChange={(value) => setFormData(prev => ({...prev, amount: value}))}
+            {/* Donor-specific fields */}
+            {openDialog === 'donor' && (
+              <>
+                <div>
+                  <Label>Contribution Amount</Label>
+                  <RadioGroup 
+                    value={formData.amount} 
+                    onValueChange={(value) => setFormData(prev => ({ ...prev, amount: value }))}
                   >
                     <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="supporter" id="supporter" />
-                      <Label htmlFor="supporter">🌱 Supporter ($100 - $1,000)</Label>
+                      <RadioGroupItem value="25" id="25" />
+                      <Label htmlFor="25">$25/month</Label>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="advocate" id="advocate" />
-                      <Label htmlFor="advocate">🚀 Advocate ($1,000 - $10,000)</Label>
+                      <RadioGroupItem value="50" id="50" />
+                      <Label htmlFor="50">$50/month</Label>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="champion" id="champion" />
-                      <Label htmlFor="champion">⭐ Champion ($10,000 - $100,000)</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="visionary" id="visionary" />
-                      <Label htmlFor="visionary">👑 Visionary ($100,000+)</Label>
+                      <RadioGroupItem value="100" id="100" />
+                      <Label htmlFor="100">$100/month</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="custom" id="custom" />
-                      <Label htmlFor="custom">💡 Custom Amount</Label>
+                      <Label htmlFor="custom">Custom Amount</Label>
                     </div>
                   </RadioGroup>
                 </div>
-
-                <div className="space-y-3">
-                  <Label className="text-foreground font-medium">Contribution Frequency</Label>
-                  <RadioGroup
-                    value={formData.frequency}
-                    onValueChange={(value) => setFormData(prev => ({...prev, frequency: value}))}
+                <div>
+                  <Label>Frequency</Label>
+                  <RadioGroup 
+                    value={formData.frequency} 
+                    onValueChange={(value) => setFormData(prev => ({ ...prev, frequency: value }))}
                   >
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="monthly" id="monthly" />
+                      <Label htmlFor="monthly">Monthly</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="quarterly" id="quarterly" />
+                      <Label htmlFor="quarterly">Quarterly</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="annually" id="annually" />
+                      <Label htmlFor="annually">Annually</Label>
+                    </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="one-time" id="one-time" />
-                      <Label htmlFor="one-time">One-time Contribution</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="annual" id="annual" />
-                      <Label htmlFor="annual">Annual Contribution</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="ongoing" id="ongoing" />
-                      <Label htmlFor="ongoing">Ongoing Partnership</Label>
+                      <Label htmlFor="one-time">One-time</Label>
                     </div>
                   </RadioGroup>
                 </div>
-
-                <div className="space-y-3">
-                  <Label className="text-foreground font-medium">Focus Area (Optional)</Label>
-                  <RadioGroup
+                <div>
+                  <Label htmlFor="focus">Focus Area (Optional)</Label>
+                  <Input
+                    id="focus"
                     value={formData.focus}
-                    onValueChange={(value) => setFormData(prev => ({...prev, focus: value}))}
-                  >
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="research" id="research" />
-                      <Label htmlFor="research">🔬 Research & Development</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="education" id="education" />
-                      <Label htmlFor="education">🎓 Education & Training</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="infrastructure" id="infrastructure" />
-                      <Label htmlFor="infrastructure">🏗️ Platform Infrastructure</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="community" id="community" />
-                      <Label htmlFor="community">🤝 Community Building</Label>
-                    </div>
-                  </RadioGroup>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="donor-motivation" className="text-foreground font-medium">Why do you believe in The Guild's mission?</Label>
-                  <Textarea
-                    id="donor-motivation"
-                    value={formData.focus}
-                    onChange={(e) => setFormData(prev => ({...prev, motivation: e.target.value}))}
-                    placeholder="Share your vision for the future of infrastructure..."
-                    className="bg-input"
-                    rows={4}
+                    onChange={(e) => setFormData(prev => ({ ...prev, focus: e.target.value }))}
+                    placeholder="e.g., PFAS Research, Climate Resilience"
                   />
                 </div>
+              </>
+            )}
 
-                <Button type="submit" size="lg" variant="glow" className="w-full">
-                  <Heart className="mr-2 h-5 w-5" />
-                  Support The Guild
-                </Button>
-              </form>
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <Heart className="h-16 w-16 text-red-400 mx-auto mb-6 animate-pulse" />
-              <DialogTitle className="text-3xl font-bold mb-4 bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
-                You're Changing the World! 💝
-              </DialogTitle>
-              <DialogDescription className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                <span className="text-primary font-semibold">Thank you</span> for believing in our mission! 
-                Your contribution will directly impact the future of infrastructure knowledge and AI development.
-              </DialogDescription>
-              <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-lg p-6 mb-6">
-                <p className="text-foreground/90">
-                  🎯 <strong>What's Next:</strong><br/>
-                  📞 Our partnerships team will contact you within 24 hours<br/>
-                  📋 We'll discuss contribution details and recognition opportunities<br/>
-                  🏆 Join our exclusive Founding Donors community with special access and updates!
-                </p>
-              </div>
-              <Button onClick={closeDialog} variant="glass">
-                Continue Mission
+            <div className="flex justify-end space-x-2 pt-4">
+              <Button type="button" variant="outline" onClick={closeDialog}>
+                Cancel
+              </Button>
+              <Button type="submit" disabled={isLoading}>
+                {isLoading ? "Submitting..." : "Submit Application"}
               </Button>
             </div>
-          )}
-        </div>
+          </form>
+        )}
       </DialogContent>
     );
   };
@@ -1387,24 +1114,10 @@ const Guild = () => {
         </div>
       </section>
 
-      {/* Dialogs - Stable Implementation */}
-      {openDialog === 'expert' && (
-        <Dialog open={true} onOpenChange={() => setOpenDialog(null)}>
-          <ExpertDialog />
-        </Dialog>
-      )}
-      
-      {openDialog === 'participant' && (
-        <Dialog open={true} onOpenChange={() => setOpenDialog(null)}>
-          <ParticipantDialog />
-        </Dialog>
-      )}
-      
-      {openDialog === 'donor' && (
-        <Dialog open={true} onOpenChange={() => setOpenDialog(null)}>
-          <DonorDialog />
-        </Dialog>
-      )}
+      {/* Single Stable Dialog */}
+      <Dialog open={openDialog !== null} onOpenChange={(open) => !open && closeDialog()}>
+        <DialogForm />
+      </Dialog>
     </main>
   );
 };
