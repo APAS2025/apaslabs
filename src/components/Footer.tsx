@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, ExternalLink, Github, Linkedin, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
+import NewsletterSignup from "./NewsletterSignup";
 
 const Footer = () => {
   return (
@@ -28,14 +29,35 @@ const Footer = () => {
             
             {/* Social Links */}
             <div className="flex space-x-3">
-              <Button variant="ghost" size="icon" className="bg-white/5 hover:bg-primary/20 border border-white/10">
-                <Twitter className="w-4 h-4" />
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="bg-white/5 hover:bg-primary/20 border border-white/10"
+                asChild
+              >
+                <a href="https://twitter.com/apaslabs" target="_blank" rel="noopener noreferrer">
+                  <Twitter className="w-4 h-4" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="bg-white/5 hover:bg-primary/20 border border-white/10">
-                <Linkedin className="w-4 h-4" />
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="bg-white/5 hover:bg-primary/20 border border-white/10"
+                asChild
+              >
+                <a href="https://linkedin.com/company/apaslabs" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-4 h-4" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="bg-white/5 hover:bg-primary/20 border border-white/10">
-                <Github className="w-4 h-4" />
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="bg-white/5 hover:bg-primary/20 border border-white/10"
+                asChild
+              >
+                <a href="https://github.com/apaslabs" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-4 h-4" />
+                </a>
               </Button>
             </div>
           </div>
@@ -145,18 +167,7 @@ const Footer = () => {
             {/* Newsletter Signup */}
             <div>
               <p className="text-white text-sm font-medium mb-3">Newsletter</p>
-              <div className="flex space-x-2">
-                <Input
-                  placeholder="Your email"
-                  className="bg-white/5 border-white/10 text-white placeholder:text-muted-foreground focus:border-primary text-sm"
-                />
-                <Button size="sm" className="bg-primary hover:bg-primary-glow shrink-0">
-                  Subscribe
-                </Button>
-              </div>
-              <p className="text-xs text-muted-foreground mt-2">
-                Get updates on research and new lab developments
-              </p>
+              <NewsletterSignup />
             </div>
           </div>
         </div>
@@ -170,19 +181,19 @@ const Footer = () => {
           </div>
           
           <div className="flex flex-wrap items-center space-x-6 text-sm">
-            <a href="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
               Privacy Policy
-            </a>
-            <a href="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">
               Terms of Service
-            </a>
-            <a href="/accessibility" className="text-muted-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/accessibility" className="text-muted-foreground hover:text-primary transition-colors">
               Accessibility
-            </a>
-            <a href="/sitemap" className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-1">
+            </Link>
+            <Link to="/sitemap" className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-1">
               <span>Sitemap</span>
               <ExternalLink className="w-3 h-3" />
-            </a>
+            </Link>
           </div>
         </div>
 

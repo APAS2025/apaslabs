@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Menu, X, Settings, LogOut } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
+import { Link } from "react-router-dom";
 import SearchButton from "./SearchButton";
 
 const Navigation = () => {
@@ -19,57 +20,57 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="text-xl sm:text-2xl font-bold font-satoshi bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+            <Link to="/" className="text-xl sm:text-2xl font-bold font-satoshi bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
               APAS Labs
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <div className="relative group">
-              <a href="/guild" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+              <Link to="/guild" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
                 Our Labs
-              </a>
+              </Link>
               <div className="absolute top-full left-0 mt-2 w-64 bg-background/95 backdrop-blur-lg border border-border/50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="py-2">
-                  <a href="/guild/pfas" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
+                  <Link to="/guild/pfas" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
                     PFAS & Emerging Contaminants
-                  </a>
-                  <a href="/guild/climate-resilience" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
+                  </Link>
+                  <Link to="/guild/climate-resilience" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
                     Climate & Resilience
-                  </a>
-                  <a href="/guild/finance-roi" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
+                  </Link>
+                  <Link to="/guild/finance-roi" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
                     Finance, Ratings & ROI
-                  </a>
-                  <a href="/guild/ai-data-governance" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
+                  </Link>
+                  <Link to="/guild/ai-data-governance" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
                     AI, Data Governance & Transparency
-                  </a>
-                  <a href="/guild/stormwater-watershed" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
+                  </Link>
+                  <Link to="/guild/stormwater-watershed" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
                     Stormwater & Watershed
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
-            <a href="/biscayne-bay-gpt" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+            <Link to="/biscayne-bay-gpt" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Biscayne Bay GPT
-            </a>
-            <a href="/droobi" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+            </Link>
+            <Link to="/droobi" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Droobi Lab
-            </a>
-            <a href="/community" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+            </Link>
+            <Link to="/community" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Community
-            </a>
-            <a href="/partnerships" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+            </Link>
+            <Link to="/partnerships" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Partnerships
-            </a>
-            <a href="/about" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+            </Link>
+            <Link to="/about" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               About Us
-            </a>
+            </Link>
             {isAdmin && (
-              <a href="/admin" className="text-primary hover:text-primary-dark transition-smooth text-sm lg:text-base flex items-center gap-1">
+              <Link to="/admin" className="text-primary hover:text-primary-dark transition-smooth text-sm lg:text-base flex items-center gap-1">
                 <Settings className="h-4 w-4" />
                 Admin
-              </a>
+              </Link>
             )}
             <SearchButton variant="ghost" showText={false} />
             <Button
@@ -77,7 +78,7 @@ const Navigation = () => {
               size="sm" 
               asChild
             >
-              <a href="/support">💚 Support</a>
+              <Link to="/support">💚 Support</Link>
             </Button>
             <div className="flex items-center gap-2 ml-4 pl-4 border-l border-border/20">
               <span className="text-sm text-muted-foreground">
@@ -106,86 +107,86 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-gradient-glass border-t border-glass-border backdrop-blur-xl">
-              <a 
-                href="/guild" 
+              <Link 
+                to="/guild" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Our Labs
-              </a>
-              <a 
-                href="/guild/pfas" 
+              </Link>
+              <Link 
+                to="/guild/pfas" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
                 onClick={() => setIsMenuOpen(false)}
               >
                 PFAS & Emerging Contaminants
-              </a>
-              <a 
-                href="/guild/climate-resilience" 
+              </Link>
+              <Link 
+                to="/guild/climate-resilience" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Climate & Resilience
-              </a>
-              <a 
-                href="/guild/finance-roi" 
+              </Link>
+              <Link 
+                to="/guild/finance-roi" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Finance, Ratings & ROI
-              </a>
-              <a 
-                href="/guild/ai-data-governance" 
+              </Link>
+              <Link 
+                to="/guild/ai-data-governance" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
                 onClick={() => setIsMenuOpen(false)}
               >
                 AI, Data Governance & Transparency
-              </a>
-              <a 
-                href="/guild/stormwater-watershed" 
+              </Link>
+              <Link 
+                to="/guild/stormwater-watershed" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Stormwater & Watershed
-              </a>
-              <a 
-                href="/biscayne-bay-gpt" 
+              </Link>
+              <Link 
+                to="/biscayne-bay-gpt" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Biscayne Bay GPT
-              </a>
-              <a 
-                href="/droobi" 
+              </Link>
+              <Link 
+                to="/droobi" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Droobi Lab
-              </a>
-              <a 
-                href="/community"
+              </Link>
+              <Link 
+                to="/community"
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Community
-              </a>
-              <a 
-                href="/partnerships" 
+              </Link>
+              <Link 
+                to="/partnerships" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Partnerships
-              </a>
-              <a 
-                href="/about" 
+              </Link>
+              <Link 
+                to="/about" 
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
-              </a>
+              </Link>
               {isAdmin && (
-                <a 
-                  href="/admin" 
+                <Link 
+                  to="/admin" 
                   className="block px-3 py-2 text-base font-medium text-primary hover:text-primary-dark transition-smooth"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -193,7 +194,7 @@ const Navigation = () => {
                     <Settings className="h-4 w-4" />
                     Admin Dashboard
                   </div>
-                </a>
+                </Link>
               )}
               <div className="px-3 py-2 border-t border-border/20 mt-2">
                 <div className="mb-2 text-sm text-muted-foreground">
@@ -207,7 +208,7 @@ const Navigation = () => {
                   size="sm" 
                   asChild
                 >
-                  <a href="/support" onClick={() => setIsMenuOpen(false)}>💚 Support</a>
+                  <Link to="/support" onClick={() => setIsMenuOpen(false)}>💚 Support</Link>
                 </Button>
                 <Button 
                   variant="outline" 

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, Zap, Globe, HandCoins, UserCheck, Building2, Database, Shield, TrendingUp, Clock, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const GetInvolvedSection = () => {
   const participationPaths = [
@@ -122,9 +123,12 @@ const GetInvolvedSection = () => {
                   <Button 
                     variant={path.highlight ? "default" : "outline"}
                     className={`w-full group-hover:scale-105 transition-transform duration-200 ${path.highlight ? 'bg-gradient-to-r from-accent to-primary hover:opacity-90' : ''}`}
+                    asChild
                   >
-                    <span>{path.cta}</span>
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <Link to={path.title === "Founding Donors" ? "/support" : "/community"}>
+                      <span>{path.cta}</span>
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </Button>
                 </CardContent>
 
@@ -149,13 +153,17 @@ const GetInvolvedSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="bg-gradient-to-r from-accent to-primary hover:opacity-90 text-white font-semibold px-8 py-4">
-                <Heart className="w-5 h-5 mr-2" />
-                Become a Founding Donor
+              <Button size="lg" className="bg-gradient-to-r from-accent to-primary hover:opacity-90 text-white font-semibold px-8 py-4" asChild>
+                <Link to="/support">
+                  <Heart className="w-5 h-5 mr-2" />
+                  Become a Founding Donor
+                </Link>
               </Button>
-              <Button variant="outline" size="lg" className="border-primary/30 hover:bg-primary/10 px-8 py-4">
-                <Users className="w-5 h-5 mr-2" />
-                Join Our Community
+              <Button variant="outline" size="lg" className="border-primary/30 hover:bg-primary/10 px-8 py-4" asChild>
+                <Link to="/community">
+                  <Users className="w-5 h-5 mr-2" />
+                  Join Our Community
+                </Link>
               </Button>
             </div>
           </div>

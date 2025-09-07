@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send, Users, FileText, Briefcase, MessageCircle, Camera, Building } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ContactSection = () => {
   console.log("ContactSection: Component rendering");
@@ -267,18 +268,18 @@ const ContactSection = () => {
               <p className="text-muted-foreground text-sm mb-6">Direct access to our platforms</p>
               
               <div className="space-y-3">
-                <a href="#community" className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors group">
+                <Link to="/community" className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors group">
                   <Users className="w-4 h-4 group-hover:scale-110 transition-transform" />
                   <span>Join Circle Community</span>
-                </a>
-                <a href="#research" className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors group">
+                </Link>
+                <Link to="/guild" className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors group">
                   <FileText className="w-4 h-4 group-hover:scale-110 transition-transform" />
                   <span>Research Collaboration</span>
-                </a>
-                <a href="#partnership" className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors group">
+                </Link>
+                <Link to="/partnerships" className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors group">
                   <Briefcase className="w-4 h-4 group-hover:scale-110 transition-transform" />
                   <span>Partnership Opportunities</span>
-                </a>
+                </Link>
               </div>
             </Card>
 
