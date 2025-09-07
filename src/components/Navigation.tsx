@@ -15,210 +15,236 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-gradient-glass border-b border-glass-border backdrop-blur-xl">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed top-0 w-full z-50 bg-gradient-glass border-b border-glass-border/30 backdrop-blur-xl shadow-glass">
+      <div className="absolute inset-0 bg-gradient-glow opacity-20 pointer-events-none"></div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-xl sm:text-2xl font-bold font-satoshi bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
-              APAS Labs
+            <Link 
+              to="/" 
+              className="text-2xl lg:text-3xl font-bold font-space bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-all duration-300 ease-out group"
+            >
+              <span className="drop-shadow-lg group-hover:text-glow transition-all duration-300">APAS Labs</span>
             </Link>
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden lg:flex items-center space-x-1">
             <div className="relative group">
-              <Link to="/guild" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-                Our Labs
+              <Link 
+                to="/guild" 
+                className="px-4 py-2 text-muted-foreground hover:text-primary transition-smooth text-base font-medium rounded-lg hover:bg-primary/5 group relative overflow-hidden"
+              >
+                <span className="relative z-10">Our Labs</span>
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-all duration-300 rounded-lg"></div>
               </Link>
-              <div className="absolute top-full left-0 mt-2 w-64 bg-background/95 backdrop-blur-lg border border-border/50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="py-2">
-                  <Link to="/guild/pfas" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
-                    PFAS & Emerging Contaminants
+              <div className="absolute top-full left-0 mt-3 w-80 bg-card/95 backdrop-blur-xl border border-glass-border/50 rounded-xl shadow-elevation opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                <div className="p-3 space-y-1">
+                  <Link to="/guild/pfas" className="block px-4 py-3 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-200 rounded-lg group/item">
+                    <div className="font-medium group-hover/item:text-primary">PFAS & Emerging Contaminants</div>
+                    <div className="text-xs opacity-70 mt-1">Advanced water treatment solutions</div>
                   </Link>
-                  <Link to="/guild/climate-resilience" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
-                    Climate & Resilience
+                  <Link to="/guild/climate-resilience" className="block px-4 py-3 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-200 rounded-lg group/item">
+                    <div className="font-medium group-hover/item:text-primary">Climate & Resilience</div>
+                    <div className="text-xs opacity-70 mt-1">Sustainable environmental strategies</div>
                   </Link>
-                  <Link to="/guild/finance-roi" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
-                    Finance, Ratings & ROI
+                  <Link to="/guild/finance-roi" className="block px-4 py-3 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-200 rounded-lg group/item">
+                    <div className="font-medium group-hover/item:text-primary">Finance, Ratings & ROI</div>
+                    <div className="text-xs opacity-70 mt-1">Investment and impact analysis</div>
                   </Link>
-                  <Link to="/guild/ai-data-governance" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
-                    AI, Data Governance & Transparency
+                  <Link to="/guild/ai-data-governance" className="block px-4 py-3 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-200 rounded-lg group/item">
+                    <div className="font-medium group-hover/item:text-primary">AI, Data Governance & Transparency</div>
+                    <div className="text-xs opacity-70 mt-1">Ethical AI and data management</div>
                   </Link>
-                  <Link to="/guild/stormwater-watershed" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
-                    Stormwater & Watershed
+                  <Link to="/guild/stormwater-watershed" className="block px-4 py-3 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-200 rounded-lg group/item">
+                    <div className="font-medium group-hover/item:text-primary">Stormwater & Watershed</div>
+                    <div className="text-xs opacity-70 mt-1">Water management and conservation</div>
                   </Link>
                 </div>
               </div>
             </div>
-            <Link to="/biscayne-bay-gpt" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              Biscayne Bay GPT
-            </Link>
-            <Link to="/droobi" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              Droobi Lab
-            </Link>
-            <Link to="/community" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              Community
-            </Link>
-            <Link to="/partnerships" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              Partnerships
-            </Link>
-            <Link to="/about" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              About Us
-            </Link>
+            {[
+              { to: '/biscayne-bay-gpt', label: 'Bay GPT' },
+              { to: '/droobi', label: 'Droobi Lab' },
+              { to: '/community', label: 'Community' },
+              { to: '/partnerships', label: 'Partners' },
+              { to: '/about', label: 'About' },
+            ].map((item) => (
+              <Link 
+                key={item.to}
+                to={item.to} 
+                className="px-4 py-2 text-muted-foreground hover:text-primary transition-smooth text-base font-medium rounded-lg hover:bg-primary/5 group relative overflow-hidden"
+              >
+                <span className="relative z-10">{item.label}</span>
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-10 transition-all duration-300 rounded-lg"></div>
+              </Link>
+            ))}
             {isAdmin && (
-              <Link to="/admin" className="text-primary hover:text-primary-dark transition-smooth text-sm lg:text-base flex items-center gap-1">
-                <Settings className="h-4 w-4" />
-                Admin
+              <Link 
+                to="/admin" 
+                className="px-4 py-2 text-primary hover:text-primary-glow transition-smooth text-base font-medium rounded-lg hover:bg-primary/10 flex items-center gap-2 group relative overflow-hidden"
+              >
+                <Settings className="h-4 w-4 group-hover:rotate-90 transition-transform duration-300" />
+                <span className="relative z-10">Admin</span>
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-15 transition-all duration-300 rounded-lg"></div>
               </Link>
             )}
-            <SearchButton variant="ghost" showText={false} />
+          </div>
+
+          {/* Action Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
+            <SearchButton variant="ghost" showText={false} className="hover:bg-primary/5 hover:text-primary" />
             <Button
-              className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow" 
+              className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 transform hover:scale-105 font-medium px-6 rounded-xl" 
               size="sm" 
               asChild
             >
-              <Link to="/support">💚 Support</Link>
+              <Link to="/support" className="flex items-center gap-2">
+                <span>💚</span>
+                <span>Support</span>
+              </Link>
             </Button>
-            <div className="flex items-center gap-2 ml-4 pl-4 border-l border-border/20">
-              <span className="text-sm text-muted-foreground">
-                {profile?.full_name || user?.email}
-              </span>
-              <Button variant="ghost" size="sm" onClick={handleSignOut}>
+            <div className="flex items-center gap-3 ml-3 pl-6 border-l border-glass-border/40">
+              <div className="text-sm">
+                <div className="font-medium text-foreground">{profile?.full_name || 'User'}</div>
+                <div className="text-xs text-muted-foreground truncate max-w-32">{user?.email}</div>
+              </div>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={handleSignOut}
+                className="hover:bg-primary/5 hover:text-primary transition-all duration-200 rounded-lg"
+              >
                 <LogOut className="h-4 w-4" />
               </Button>
             </div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden flex items-center gap-2">
+            <SearchButton variant="ghost" showText={false} className="hover:bg-primary/5 hover:text-primary" />
             <Button 
               variant="ghost" 
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-foreground"
+              className="text-foreground hover:bg-primary/5 hover:text-primary transition-all duration-200 rounded-lg group"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <div className="relative">
+                {isMenuOpen ? (
+                  <X className="h-6 w-6 group-hover:rotate-90 transition-transform duration-300" />
+                ) : (
+                  <Menu className="h-6 w-6 group-hover:scale-110 transition-transform duration-200" />
+                )}
+              </div>
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-gradient-glass border-t border-glass-border backdrop-blur-xl">
-              <Link 
-                to="/guild" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Our Labs
-              </Link>
-              <Link 
-                to="/guild/pfas" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                PFAS & Emerging Contaminants
-              </Link>
-              <Link 
-                to="/guild/climate-resilience" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Climate & Resilience
-              </Link>
-              <Link 
-                to="/guild/finance-roi" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Finance, Ratings & ROI
-              </Link>
-              <Link 
-                to="/guild/ai-data-governance" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                AI, Data Governance & Transparency
-              </Link>
-              <Link 
-                to="/guild/stormwater-watershed" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Stormwater & Watershed
-              </Link>
-              <Link 
-                to="/biscayne-bay-gpt" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Biscayne Bay GPT
-              </Link>
-              <Link 
-                to="/droobi" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Droobi Lab
-              </Link>
-              <Link 
-                to="/community"
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Community
-              </Link>
-              <Link 
-                to="/partnerships" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Partnerships
-              </Link>
-              <Link 
-                to="/about" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About Us
-              </Link>
-              {isAdmin && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-card/95 backdrop-blur-xl border-b border-glass-border/30 shadow-elevation animate-fade-in">
+            <div className="max-w-7xl mx-auto px-6 py-6 space-y-4">
+              {/* Main Navigation */}
+              <div className="space-y-2">
                 <Link 
-                  to="/admin" 
-                  className="block px-3 py-2 text-base font-medium text-primary hover:text-primary-dark transition-smooth"
+                  to="/guild" 
+                  className="block px-4 py-3 text-base font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-200 rounded-lg group"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <div className="flex items-center gap-2">
-                    <Settings className="h-4 w-4" />
-                    Admin Dashboard
+                  <div className="flex items-center justify-between">
+                    <span className="group-hover:translate-x-1 transition-transform duration-200">Our Labs</span>
+                    <div className="h-px flex-1 bg-gradient-primary opacity-20 mx-4"></div>
                   </div>
                 </Link>
-              )}
-              <div className="px-3 py-2 border-t border-border/20 mt-2">
-                <div className="mb-2 text-sm text-muted-foreground">
-                  {profile?.full_name || user?.email}
+                
+                {/* Sub-labs */}
+                <div className="ml-6 space-y-1">
+                  {[
+                    { to: '/guild/pfas', label: 'PFAS & Emerging Contaminants', desc: 'Water treatment solutions' },
+                    { to: '/guild/climate-resilience', label: 'Climate & Resilience', desc: 'Environmental strategies' },
+                    { to: '/guild/finance-roi', label: 'Finance, Ratings & ROI', desc: 'Impact analysis' },
+                    { to: '/guild/ai-data-governance', label: 'AI & Data Governance', desc: 'Ethical AI solutions' },
+                    { to: '/guild/stormwater-watershed', label: 'Stormwater & Watershed', desc: 'Water management' },
+                  ].map((item) => (
+                    <Link 
+                      key={item.to}
+                      to={item.to} 
+                      className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-200 rounded-lg group"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <div className="group-hover:translate-x-1 transition-transform duration-200">
+                        <div className="font-medium">{item.label}</div>
+                        <div className="text-xs opacity-60 mt-1">{item.desc}</div>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
-                <SearchButton variant="outline" className="w-full mb-2" />
+
+                {/* Other main links */}
+                {[
+                  { to: '/biscayne-bay-gpt', label: 'Biscayne Bay GPT' },
+                  { to: '/droobi', label: 'Droobi Lab' },
+                  { to: '/community', label: 'Community' },
+                  { to: '/partnerships', label: 'Partnerships' },
+                  { to: '/about', label: 'About Us' },
+                ].map((item) => (
+                  <Link 
+                    key={item.to}
+                    to={item.to} 
+                    className="block px-4 py-3 text-base font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-200 rounded-lg group"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="group-hover:translate-x-1 transition-transform duration-200">{item.label}</span>
+                      <div className="h-px flex-1 bg-gradient-primary opacity-20 mx-4"></div>
+                    </div>
+                  </Link>
+                ))}
+                
+                {isAdmin && (
+                  <Link 
+                    to="/admin" 
+                    className="block px-4 py-3 text-base font-medium text-primary hover:text-primary-glow hover:bg-primary/10 transition-all duration-200 rounded-lg group"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <div className="flex items-center gap-3">
+                      <Settings className="h-5 w-5 group-hover:rotate-90 transition-transform duration-300" />
+                      <span className="group-hover:translate-x-1 transition-transform duration-200">Admin Dashboard</span>
+                    </div>
+                  </Link>
+                )}
               </div>
-              <div className="px-3 py-2">
-                <Button 
-                  className="w-full bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-lg mb-2" 
-                  size="sm" 
-                  asChild
-                >
-                  <Link to="/support" onClick={() => setIsMenuOpen(false)}>💚 Support</Link>
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full"
-                  onClick={handleSignOut}
-                >
-                  <LogOut className="h-4 w-4 mr-2" />
-                  Sign Out
-                </Button>
+
+              {/* User Section */}
+              <div className="border-t border-glass-border/30 pt-4 space-y-4">
+                <div className="px-4 py-3 bg-glass/30 rounded-lg">
+                  <div className="font-medium text-foreground mb-1">{profile?.full_name || 'User'}</div>
+                  <div className="text-sm text-muted-foreground">{user?.email}</div>
+                </div>
+                
+                {/* Action Buttons */}
+                <div className="space-y-3">
+                  <Button 
+                    className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white shadow-lg font-medium rounded-xl" 
+                    size="sm" 
+                    asChild
+                  >
+                    <Link to="/support" onClick={() => setIsMenuOpen(false)} className="flex items-center justify-center gap-2">
+                      <span>💚</span>
+                      <span>Support APAS Labs</span>
+                    </Link>
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full border-glass-border hover:bg-primary/5 hover:text-primary hover:border-primary/30 transition-all duration-200 rounded-lg"
+                    onClick={handleSignOut}
+                  >
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Sign Out
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
