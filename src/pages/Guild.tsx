@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -69,10 +70,6 @@ const Guild = () => {
   const [isLoading, setIsLoading] = useState(false);
   
   const { toast } = useToast();
-
-  // Prevent re-renders on form data changes
-  const stableFormData = formData;
-  const stableIsSubmitted = isSubmitted;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -253,7 +250,7 @@ const Guild = () => {
     }
   };
 
-  const resetForm = () => {
+  const resetForm = React.useCallback(() => {
     setFormData({
       name: '',
       email: '',
@@ -271,12 +268,14 @@ const Guild = () => {
       focus: ''
     });
     setIsSubmitted(false);
-  };
+    setIsLoading(false);
+  }, []);
 
-  const closeDialog = () => {
+  const closeDialog = React.useCallback(() => {
     setOpenDialog(null);
-    resetForm();
-  };
+    // Delay reset to prevent flickering
+    setTimeout(resetForm, 150);
+  }, [resetForm]);
 
   // ... keep existing data arrays (guilds, problems, llmQuestions, etc.)
   const guilds = [
@@ -417,14 +416,14 @@ const Guild = () => {
     "For utilities, I recommend: 1) Microsoft's Responsible AI dashboard for bias monitoring, 2) DataRobot for model performance tracking, 3) IBM Watson OpenScale for explainability, 4) Fiddler AI for continuous monitoring. Budget $50-200K annually depending on deployment scale. Key features needed: automated bias detection, performance drift alerts, audit trail capabilities, and integration with existing SCADA systems. Start with pilot deployment on non-critical systems like energy optimization before expanding to operational controls."
   ];
 
-  // Dialog components with stable rendering
+  // Dialog components
   const ExpertDialog = () => {
     if (!openDialog || openDialog !== 'expert') return null;
     
     return (
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card border-border">
         <div className="p-1">
-          {!stableIsSubmitted ? (
+          {!isSubmitted ? (
             <div>
               <DialogHeader className="mb-6">
                 <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
@@ -441,7 +440,7 @@ const Guild = () => {
                     <Label htmlFor="expert-name" className="text-foreground font-medium">Full Name</Label>
                     <Input
                       id="expert-name"
-                      value={stableFormData.name}
+                      value={formData.name}
                       onChange={(e) => setFormData(prev => ({...prev, name: e.target.value}))}
                       required
                       className="bg-input"
@@ -452,7 +451,7 @@ const Guild = () => {
                     <Input
                       id="expert-email"
                       type="email"
-                      value={stableFormData.email}
+                      value={formData.email}
                       onChange={(e) => setFormData(prev => ({...prev, email: e.target.value}))}
                       required
                       className="bg-input"
@@ -464,7 +463,7 @@ const Guild = () => {
                   <Label htmlFor="expert-org" className="text-foreground font-medium">Organization</Label>
                   <Input
                     id="expert-org"
-                    value={stableFormData.organization}
+                    value={formData.organization}
                     onChange={(e) => setFormData(prev => ({...prev, organization: e.target.value}))}
                     required
                     className="bg-input"
@@ -474,7 +473,7 @@ const Guild = () => {
                 <div className="space-y-3">
                   <Label className="text-foreground font-medium">Years of Experience</Label>
                   <RadioGroup
-                    value={stableFormData.experience}
+                    value={formData.experience}
                     onValueChange={(value) => setFormData(prev => ({...prev, experience: value}))}
                   >
                     <div className="flex items-center space-x-2">
@@ -496,7 +495,7 @@ const Guild = () => {
                   <Label htmlFor="expert-expertise" className="text-foreground font-medium">Primary Area of Expertise</Label>
                   <Textarea
                     id="expert-expertise"
-                    value={stableFormData.expertise}
+                    value={formData.expertise}
                     onChange={(e) => setFormData(prev => ({...prev, expertise: e.target.value}))}
                     placeholder="Describe your specialized knowledge and experience..."
                     className="bg-input"
@@ -509,7 +508,7 @@ const Guild = () => {
                   <Label htmlFor="expert-motivation" className="text-foreground font-medium">Why do you want to contribute to The Guild?</Label>
                   <Textarea
                     id="expert-motivation"
-                    value={stableFormData.motivation}
+                    value={formData.motivation}
                     onChange={(e) => setFormData(prev => ({...prev, motivation: e.target.value}))}
                     placeholder="Share your vision for advancing infrastructure knowledge..."
                     className="bg-input"
@@ -562,7 +561,7 @@ const Guild = () => {
     return (
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card border-border">
         <div className="p-1">
-          {!stableIsSubmitted ? (
+          {!isSubmitted ? (
             <div>
               <DialogHeader className="mb-6">
                 <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
@@ -579,7 +578,7 @@ const Guild = () => {
                     <Label htmlFor="participant-name" className="text-foreground font-medium">Full Name</Label>
                     <Input
                       id="participant-name"
-                      value={stableFormData.name}
+                      value={formData.name}
                       onChange={(e) => setFormData(prev => ({...prev, name: e.target.value}))}
                       required
                       className="bg-input"
@@ -590,7 +589,7 @@ const Guild = () => {
                     <Input
                       id="participant-email"
                       type="email"
-                      value={stableFormData.email}
+                      value={formData.email}
                       onChange={(e) => setFormData(prev => ({...prev, email: e.target.value}))}
                       required
                       className="bg-input"
@@ -601,7 +600,7 @@ const Guild = () => {
                 <div className="space-y-3">
                   <Label className="text-foreground font-medium">Who are you representing?</Label>
                   <RadioGroup
-                    value={stableFormData.userType}
+                    value={formData.userType}
                     onValueChange={(value) => setFormData(prev => ({...prev, userType: value}))}
                   >
                     <div className="flex items-center space-x-2">
@@ -646,7 +645,7 @@ const Guild = () => {
                 <div className="space-y-3">
                   <Label className="text-foreground font-medium">Which sector describes your primary focus?</Label>
                   <RadioGroup
-                    value={stableFormData.sector}
+                    value={formData.sector}
                     onValueChange={(value) => setFormData(prev => ({...prev, sector: value}))}
                   >
                     <div className="flex items-center space-x-2">
@@ -670,7 +669,7 @@ const Guild = () => {
                   </RadioGroup>
                 </div>
 
-                {stableFormData.sector === 'other' && (
+                {formData.sector === 'other' && (
                   <div className="space-y-3">
                     <Label className="text-foreground font-medium">Which industries interest you? (Select all that apply)</Label>
                     <div className="grid grid-cols-2 gap-3">
@@ -678,7 +677,7 @@ const Guild = () => {
                         <div key={industry} className="flex items-center space-x-2">
                           <Checkbox
                             id={industry}
-                            checked={stableFormData.industries.includes(industry)}
+                            checked={formData.industries.includes(industry)}
                             onCheckedChange={(checked) => {
                               if (checked) {
                                 setFormData(prev => ({...prev, industries: [...prev.industries, industry]}));
@@ -698,7 +697,7 @@ const Guild = () => {
                   <Label htmlFor="participant-contribution" className="text-foreground font-medium">What are you hoping to learn or contribute?</Label>
                   <Textarea
                     id="participant-contribution"
-                    value={stableFormData.contribution}
+                    value={formData.contribution}
                     onChange={(e) => setFormData(prev => ({...prev, contribution: e.target.value}))}
                     placeholder="Share your goals and interests..."
                     className="bg-input"
@@ -757,7 +756,7 @@ const Guild = () => {
     return (
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card border-border">
         <div className="p-1">
-          {!stableIsSubmitted ? (
+          {!isSubmitted ? (
             <div>
               <DialogHeader className="mb-6">
                 <DialogTitle className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent flex items-center gap-2">
@@ -774,7 +773,7 @@ const Guild = () => {
                     <Label htmlFor="donor-name" className="text-foreground font-medium">Full Name / Organization</Label>
                     <Input
                       id="donor-name"
-                      value={stableFormData.name}
+                      value={formData.name}
                       onChange={(e) => setFormData(prev => ({...prev, name: e.target.value}))}
                       required
                       className="bg-input"
@@ -785,7 +784,7 @@ const Guild = () => {
                     <Input
                       id="donor-email"
                       type="email"
-                      value={stableFormData.email}
+                      value={formData.email}
                       onChange={(e) => setFormData(prev => ({...prev, email: e.target.value}))}
                       required
                       className="bg-input"
@@ -796,7 +795,7 @@ const Guild = () => {
                 <div className="space-y-3">
                   <Label className="text-foreground font-medium">Contribution Level</Label>
                   <RadioGroup
-                    value={stableFormData.amount}
+                    value={formData.amount}
                     onValueChange={(value) => setFormData(prev => ({...prev, amount: value}))}
                   >
                     <div className="flex items-center space-x-2">
@@ -825,7 +824,7 @@ const Guild = () => {
                 <div className="space-y-3">
                   <Label className="text-foreground font-medium">Contribution Frequency</Label>
                   <RadioGroup
-                    value={stableFormData.frequency}
+                    value={formData.frequency}
                     onValueChange={(value) => setFormData(prev => ({...prev, frequency: value}))}
                   >
                     <div className="flex items-center space-x-2">
@@ -846,7 +845,7 @@ const Guild = () => {
                 <div className="space-y-3">
                   <Label className="text-foreground font-medium">Focus Area (Optional)</Label>
                   <RadioGroup
-                    value={stableFormData.focus}
+                    value={formData.focus}
                     onValueChange={(value) => setFormData(prev => ({...prev, focus: value}))}
                   >
                     <div className="flex items-center space-x-2">
@@ -872,7 +871,7 @@ const Guild = () => {
                   <Label htmlFor="donor-motivation" className="text-foreground font-medium">Why do you believe in The Guild's mission?</Label>
                   <Textarea
                     id="donor-motivation"
-                    value={stableFormData.motivation}
+                    value={formData.focus}
                     onChange={(e) => setFormData(prev => ({...prev, motivation: e.target.value}))}
                     placeholder="Share your vision for the future of infrastructure..."
                     className="bg-input"
