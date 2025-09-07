@@ -197,6 +197,129 @@ export type Database = {
         }
         Relationships: []
       }
+      guild_donor_applications: {
+        Row: {
+          amount: string
+          created_at: string
+          email: string
+          focus: string | null
+          frequency: string
+          id: string
+          name: string
+          organization: string | null
+          status: string | null
+          updated_at: string
+        }
+        Insert: {
+          amount: string
+          created_at?: string
+          email: string
+          focus?: string | null
+          frequency: string
+          id?: string
+          name: string
+          organization?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          amount?: string
+          created_at?: string
+          email?: string
+          focus?: string | null
+          frequency?: string
+          id?: string
+          name?: string
+          organization?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      guild_expert_applications: {
+        Row: {
+          created_at: string
+          email: string
+          experience: string | null
+          expertise: string | null
+          id: string
+          motivation: string | null
+          name: string
+          organization: string | null
+          role: string | null
+          status: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          experience?: string | null
+          expertise?: string | null
+          id?: string
+          motivation?: string | null
+          name: string
+          organization?: string | null
+          role?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          experience?: string | null
+          expertise?: string | null
+          id?: string
+          motivation?: string | null
+          name?: string
+          organization?: string | null
+          role?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      guild_participant_applications: {
+        Row: {
+          contribution: string | null
+          created_at: string
+          email: string
+          id: string
+          industries: string[] | null
+          name: string
+          organization: string | null
+          sector: string | null
+          status: string | null
+          updated_at: string
+          user_type: string | null
+        }
+        Insert: {
+          contribution?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          industries?: string[] | null
+          name: string
+          organization?: string | null
+          sector?: string | null
+          status?: string | null
+          updated_at?: string
+          user_type?: string | null
+        }
+        Update: {
+          contribution?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          industries?: string[] | null
+          name?: string
+          organization?: string | null
+          sector?: string | null
+          status?: string | null
+          updated_at?: string
+          user_type?: string | null
+        }
+        Relationships: []
+      }
       newsletter_subscriptions: {
         Row: {
           email: string

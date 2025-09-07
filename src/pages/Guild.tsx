@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -7,6 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { 
   Droplets, 
   Shield, 
@@ -63,6 +66,9 @@ const Guild = () => {
     focus: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  
+  const { toast } = useToast();
 
   // Prevent re-renders on form data changes
   const stableFormData = formData;
@@ -180,11 +186,71 @@ const Guild = () => {
   }, [activeAnimation]);
 
   // Form handlers
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    // Here you would typically send data to your backend
-    console.log('Form submitted:', formData);
+    setIsLoading(true);
+    
+    try {
+      let error = null;
+      
+      if (openDialog === 'expert') {
+        const { error: submitError } = await supabase
+          .from('guild_expert_applications')
+          .insert([{
+            name: formData.name,
+            email: formData.email,
+            organization: formData.organization,
+            role: formData.role,
+            experience: formData.experience,
+            expertise: formData.expertise,
+            motivation: formData.motivation
+          }]);
+        error = submitError;
+      } else if (openDialog === 'participant') {
+        const { error: submitError } = await supabase
+          .from('guild_participant_applications')
+          .insert([{
+            name: formData.name,
+            email: formData.email,
+            organization: formData.organization,
+            user_type: formData.userType,
+            sector: formData.sector,
+            industries: formData.industries,
+            contribution: formData.contribution
+          }]);
+        error = submitError;
+      } else if (openDialog === 'donor') {
+        const { error: submitError } = await supabase
+          .from('guild_donor_applications')
+          .insert([{
+            name: formData.name,
+            email: formData.email,
+            organization: formData.organization,
+            amount: formData.amount,
+            frequency: formData.frequency,
+            focus: formData.focus
+          }]);
+        error = submitError;
+      }
+      
+      if (error) throw error;
+      
+      setIsSubmitted(true);
+      toast({
+        title: "Application Submitted!",
+        description: "Thank you for your interest. We'll be in touch soon.",
+      });
+      
+    } catch (error: any) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Submission Failed",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const resetForm = () => {
@@ -369,7 +435,7 @@ const Guild = () => {
                   Share your expertise to power the next generation of infrastructure AI. Your knowledge becomes a guiding force for practitioners worldwide.
                 </DialogDescription>
               </DialogHeader>
-              <form onSubmit={handleFormSubmit} className="space-y-6">
+                <form onSubmit={handleFormSubmit} className="space-y-6" autoComplete="off">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="expert-name" className="text-foreground font-medium">Full Name</Label>
@@ -452,10 +518,15 @@ const Guild = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" variant="hero" className="w-full">
-                  <Heart className="mr-2 h-5 w-5" />
-                  Submit Expert Application
-                </Button>
+                  <Button 
+                    type="submit" 
+                    className="w-full" 
+                    size="lg"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? "Submitting..." : "Submit Expert Application"}
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
               </form>
             </div>
           ) : (
@@ -502,7 +573,7 @@ const Guild = () => {
                   Connect with experts, accelerate your learning, and contribute to the infrastructure community of the future.
                 </DialogDescription>
               </DialogHeader>
-              <form onSubmit={handleFormSubmit} className="space-y-6">
+                <form onSubmit={handleFormSubmit} className="space-y-6" autoComplete="off">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="participant-name" className="text-foreground font-medium">Full Name</Label>
@@ -624,11 +695,11 @@ const Guild = () => {
                 )}
 
                 <div className="space-y-2">
-                  <Label htmlFor="participant-motivation" className="text-foreground font-medium">What are you hoping to learn or contribute?</Label>
+                  <Label htmlFor="participant-contribution" className="text-foreground font-medium">What are you hoping to learn or contribute?</Label>
                   <Textarea
-                    id="participant-motivation"
-                    value={stableFormData.motivation}
-                    onChange={(e) => setFormData(prev => ({...prev, motivation: e.target.value}))}
+                    id="participant-contribution"
+                    value={stableFormData.contribution}
+                    onChange={(e) => setFormData(prev => ({...prev, contribution: e.target.value}))}
                     placeholder="Share your goals and interests..."
                     className="bg-input"
                     rows={3}
@@ -636,9 +707,19 @@ const Guild = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" variant="hero" className="w-full">
-                  <Sparkles className="mr-2 h-5 w-5" />
-                  Join The Guild Community
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  variant="hero" 
+                  className="w-full"
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Submitting..." : (
+                    <>
+                      <Sparkles className="mr-2 h-5 w-5" />
+                      Join The Guild Community
+                    </>
+                  )}
                 </Button>
               </form>
             </div>
@@ -687,7 +768,7 @@ const Guild = () => {
                   Invest in the future of infrastructure knowledge. Your support enables us to build AI tools that serve humanity and preserve critical expertise.
                 </DialogDescription>
               </DialogHeader>
-              <form onSubmit={handleFormSubmit} className="space-y-6">
+              <form onSubmit={handleFormSubmit} className="space-y-6" autoComplete="off">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="donor-name" className="text-foreground font-medium">Full Name / Organization</Label>
@@ -737,6 +818,27 @@ const Guild = () => {
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="custom" id="custom" />
                       <Label htmlFor="custom">💡 Custom Amount</Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+
+                <div className="space-y-3">
+                  <Label className="text-foreground font-medium">Contribution Frequency</Label>
+                  <RadioGroup
+                    value={stableFormData.frequency}
+                    onValueChange={(value) => setFormData(prev => ({...prev, frequency: value}))}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="one-time" id="one-time" />
+                      <Label htmlFor="one-time">One-time Contribution</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="annual" id="annual" />
+                      <Label htmlFor="annual">Annual Contribution</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="ongoing" id="ongoing" />
+                      <Label htmlFor="ongoing">Ongoing Partnership</Label>
                     </div>
                   </RadioGroup>
                 </div>
@@ -839,11 +941,23 @@ const Guild = () => {
               Expertise captured, curated, and advanced into tools for the workforce of tomorrow.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="xl" variant="hero" className="group">
+              <Button 
+                size="xl" 
+                variant="hero" 
+                className="group"
+                onClick={() => setOpenDialog('expert')}
+              >
                 Join The Guild
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button size="xl" variant="glass">
+              <Button 
+                size="xl" 
+                variant="glass"
+                onClick={() => {
+                  const guildsSection = document.querySelector('[data-index="10"]');
+                  guildsSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Learn More
               </Button>
             </div>
@@ -1141,13 +1255,17 @@ const Guild = () => {
                         className="w-full" 
                         variant="ghost" 
                         size="sm"
-                        onClick={() => {
-                          window.location.href = guild.url;
-                        }}
+                        asChild
                       >
-                        Learn More
+                        <Link to={guild.url}>
+                          Learn More
+                        </Link>
                       </Button>
-                      <Button className="w-full" size="sm">
+                      <Button 
+                        className="w-full" 
+                        size="sm"
+                        onClick={() => setOpenDialog('expert')}
+                      >
                         Join Guild
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
@@ -1186,8 +1304,7 @@ const Guild = () => {
                 style={{ transitionDelay: `${300 + index * 100}ms` }}
                 data-index={18 + index}
               >
-                <Card className={`h-full ${lab.bgColor} ${lab.borderColor} backdrop-blur-sm hover:shadow-glow transition-all duration-500 group cursor-pointer`}
-                      onClick={() => window.location.href = lab.url}>
+                <Card className={`h-full ${lab.bgColor} ${lab.borderColor} backdrop-blur-sm hover:shadow-glow transition-all duration-500 group cursor-pointer`}>
                   <CardHeader>
                     <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${lab.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                       <lab.icon className="h-8 w-8 text-white" />
@@ -1210,13 +1327,12 @@ const Guild = () => {
                         className="w-full" 
                         variant="ghost" 
                         size="sm"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          window.location.href = lab.url;
-                        }}
+                        asChild
                       >
-                        Try {lab.title.split(' ')[0]}
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        <Link to={lab.url}>
+                          Try {lab.title.split(' ')[0]}
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
                       </Button>
                     </div>
                   </CardContent>
