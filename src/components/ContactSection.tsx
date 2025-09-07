@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send, Users, FileText, Briefcase, MessageCircle, Camera, Building } from "lucide-react";
 import { Link } from "react-router-dom";
+import NewsletterSignup from "./NewsletterSignup";
 
 const ContactSection = () => {
   console.log("ContactSection: Component rendering");
@@ -290,17 +291,7 @@ const ContactSection = () => {
                 Subscribe to our newsletter for the latest research updates and announcements.
               </p>
               
-              <div className="flex space-x-2">
-                <Input
-                  placeholder="Enter your email"
-                  value={formData.newsletter}
-                  onChange={(e) => setFormData(prev => ({ ...prev, newsletter: e.target.value }))}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-primary"
-                />
-                <Button size="sm" className="bg-primary hover:bg-primary-glow shrink-0">
-                  Subscribe
-                </Button>
-              </div>
+              <NewsletterSignup />
             </Card>
           </div>
         </div>
