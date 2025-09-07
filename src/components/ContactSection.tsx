@@ -20,8 +20,7 @@ const ContactSection = () => {
     fullName: "",
     email: "",
     subject: "",
-    message: "",
-    newsletter: ""
+    message: ""
   });
 
   useEffect(() => {
@@ -84,8 +83,7 @@ const ContactSection = () => {
         fullName: "",
         email: "",
         subject: "",
-        message: "",
-        newsletter: ""
+        message: ""
       });
       setSelectedCategory("General Inquiry");
     } catch (error: any) {

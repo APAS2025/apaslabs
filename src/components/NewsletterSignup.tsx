@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface NewsletterSignupProps {
   className?: string;
@@ -18,16 +19,29 @@ const NewsletterSignup = ({ className = "" }: NewsletterSignupProps) => {
 
     setIsLoading(true);
     try {
-      // Simulate newsletter signup - you would replace this with actual newsletter service
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast({
-        title: "Successfully subscribed!",
-        description: "Thank you for subscribing to our newsletter.",
-      });
-      
-      setEmail("");
+      const { error } = await supabase
+        .from('newsletter_subscriptions')
+        .insert([{ email: email.toLowerCase().trim() }]);
+
+      if (error) {
+        if (error.code === '23505') { // Unique constraint violation
+          toast({
+            title: "Already subscribed!",
+            description: "This email is already subscribed to our newsletter.",
+            variant: "destructive",
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        toast({
+          title: "Successfully subscribed!",
+          description: "Thank you for subscribing to our newsletter.",
+        });
+        setEmail("");
+      }
     } catch (error) {
+      console.error('Newsletter subscription error:', error);
       toast({
         title: "Subscription failed",
         description: "Please try again later.",
