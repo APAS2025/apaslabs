@@ -76,28 +76,28 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
-          <Button variant="hero" size="lg" className="group w-full sm:w-auto" asChild>
+          <Button variant="hero" size="lg" className="group w-full sm:w-auto transition-transform hover:scale-105" asChild>
             <Link to="/guild">
               <span>Explore the Labs</span>
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
           </Button>
           
-          <Button variant="glass" size="lg" className="group w-full sm:w-auto" asChild>
+          <Button variant="glass" size="lg" className="group w-full sm:w-auto transition-transform hover:scale-105" asChild>
             <Link to="/community">
               <span>Join the Community</span>
-              <svg className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
               </svg>
             </Link>
           </Button>
           
-          <Button variant="glow" size="lg" className="group w-full sm:w-auto" asChild>
+          <Button variant="glow" size="lg" className="group w-full sm:w-auto transition-transform hover:scale-105" asChild>
             <Link to="/support">
               <span>Support Biscayne Bay</span>
-              <svg className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </Link>
