@@ -12,3 +12,23 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://apaslabs.com/sitemap.xml
+
+# Block crawlers from accessing sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /community
+Allow: /partnerships
+Allow: /guild/
+Allow: /biscayne-bay-gpt
+Allow: /droobi
+
+# Crawl-delay to be respectful
+Crawl-delay: 1
