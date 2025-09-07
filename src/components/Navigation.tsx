@@ -23,13 +23,9 @@ const Navigation = () => {
           <div className="flex items-center">
             <Link 
               to="/" 
-              className="hover:scale-105 transition-all duration-300 ease-out group"
+              className="text-2xl lg:text-3xl font-bold font-space bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-all duration-300 ease-out group"
             >
-              <img 
-                src="/lovable-uploads/f5cd0ce7-8b1c-47a9-9817-5e0ffcd12eec.png" 
-                alt="APAS Labs" 
-                className="h-8 lg:h-10 w-auto drop-shadow-lg group-hover:drop-shadow-xl transition-all duration-300"
-              />
+              <span className="drop-shadow-lg group-hover:text-glow transition-all duration-300">APAS Labs</span>
             </Link>
           </div>
 
