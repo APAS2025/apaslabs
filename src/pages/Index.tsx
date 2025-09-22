@@ -72,9 +72,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Orakles Demo Section */}
-      <OraklesDemo />
-
       {/* The Problem Section */}
       <section className="py-24 bg-background/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -225,6 +222,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Orakles Demo Section */}
+      <OraklesDemo />
 
       {/* Biscayne Bay GPT Section */}
       <section className="py-24 bg-background/50 backdrop-blur-sm">
