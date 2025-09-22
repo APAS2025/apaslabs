@@ -22,7 +22,7 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <div className="relative group">
               <Link to="/guild" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-                Our Labs
+                Initiatives
               </Link>
               <div className="absolute top-full left-0 mt-2 w-64 bg-background/95 backdrop-blur-lg border border-border/50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="py-2">
@@ -41,14 +41,14 @@ const Navigation = () => {
                   <Link to="/guild/stormwater-watershed" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
                     Stormwater & Watershed
                   </Link>
+                  <Link to="/biscayne-bay-gpt" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
+                    Biscayne Bay GPT
+                  </Link>
                 </div>
               </div>
             </div>
-            <Link to="/biscayne-bay-gpt" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              Biscayne Bay GPT
-            </Link>
             <Link to="/droobi" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              Droobi Lab
+              Lexicon
             </Link>
             <Link to="/community" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Community
@@ -91,7 +91,7 @@ const Navigation = () => {
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Our Labs
+                Initiatives
               </Link>
               <Link 
                 to="/guild/pfas" 
@@ -130,7 +130,7 @@ const Navigation = () => {
               </Link>
               <Link 
                 to="/biscayne-bay-gpt" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Biscayne Bay GPT
@@ -140,7 +140,7 @@ const Navigation = () => {
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Droobi Lab
+                Lexicon
               </Link>
               <Link 
                 to="/community"
