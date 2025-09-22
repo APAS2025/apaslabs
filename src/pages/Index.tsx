@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import OraklesDemo from "@/components/OraklesDemo";
 import { 
   Mail, 
   Phone, 
@@ -70,6 +71,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Orakles Demo Section */}
+      <OraklesDemo />
 
       {/* The Problem Section */}
       <section className="py-24 bg-background/50 backdrop-blur-sm">
