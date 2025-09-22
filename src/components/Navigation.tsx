@@ -1,18 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Menu, X, Settings, LogOut } from "lucide-react";
-import { useAuth } from "@/hooks/useAuth";
+import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import SearchButton from "./SearchButton";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, profile, isAdmin, signOut } = useAuth();
-
-  const handleSignOut = async () => {
-    await signOut();
-    setIsMenuOpen(false);
-  };
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-gradient-glass border-b border-glass-border backdrop-blur-xl">
@@ -66,12 +59,6 @@ const Navigation = () => {
             <Link to="/about" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               About Us
             </Link>
-            {isAdmin && (
-              <Link to="/admin" className="text-primary hover:text-primary-dark transition-smooth text-sm lg:text-base flex items-center gap-1">
-                <Settings className="h-4 w-4" />
-                Admin
-              </Link>
-            )}
             <SearchButton variant="ghost" showText={false} />
             <Button
               className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow" 
@@ -80,14 +67,6 @@ const Navigation = () => {
             >
               <Link to="/support">💚 Support</Link>
             </Button>
-            <div className="flex items-center gap-2 ml-4 pl-4 border-l border-border/20">
-              <span className="text-sm text-muted-foreground">
-                {profile?.full_name || user?.email}
-              </span>
-              <Button variant="ghost" size="sm" onClick={handleSignOut}>
-                <LogOut className="h-4 w-4" />
-              </Button>
-            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -184,40 +163,16 @@ const Navigation = () => {
               >
                 About Us
               </Link>
-              {isAdmin && (
-                <Link 
-                  to="/admin" 
-                  className="block px-3 py-2 text-base font-medium text-primary hover:text-primary-dark transition-smooth"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <div className="flex items-center gap-2">
-                    <Settings className="h-4 w-4" />
-                    Admin Dashboard
-                  </div>
-                </Link>
-              )}
               <div className="px-3 py-2 border-t border-border/20 mt-2">
-                <div className="mb-2 text-sm text-muted-foreground">
-                  {profile?.full_name || user?.email}
-                </div>
                 <SearchButton variant="outline" className="w-full mb-2" />
               </div>
               <div className="px-3 py-2">
                 <Button 
-                  className="w-full bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-lg mb-2" 
+                  className="w-full bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-lg" 
                   size="sm" 
                   asChild
                 >
                   <Link to="/support" onClick={() => setIsMenuOpen(false)}>💚 Support</Link>
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full"
-                  onClick={handleSignOut}
-                >
-                  <LogOut className="h-4 w-4 mr-2" />
-                  Sign Out
                 </Button>
               </div>
             </div>
