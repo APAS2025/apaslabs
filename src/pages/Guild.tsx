@@ -658,7 +658,7 @@ const Guild = () => {
             data-index="0"
           >
             <h1 className="text-7xl md:text-8xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6">
-              The Guild
+              Our Initiatives
             </h1>
             <p className="text-2xl md:text-3xl text-foreground/90 mb-8 max-w-4xl mx-auto leading-relaxed">
               Where Practitioners Power the AI Stack

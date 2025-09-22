@@ -20,33 +20,12 @@ const Navigation = () => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            <div className="relative group">
-              <Link to="/guild" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-                Initiatives
-              </Link>
-              <div className="absolute top-full left-0 mt-2 w-64 bg-background/95 backdrop-blur-lg border border-border/50 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="py-2">
-                  <Link to="/guild/pfas" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
-                    PFAS & Emerging Contaminants
-                  </Link>
-                  <Link to="/guild/climate-resilience" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
-                    Climate & Resilience
-                  </Link>
-                  <Link to="/guild/finance-roi" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
-                    Finance, Ratings & ROI
-                  </Link>
-                  <Link to="/guild/ai-data-governance" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
-                    AI, Data Governance & Transparency
-                  </Link>
-                  <Link to="/guild/stormwater-watershed" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
-                    Stormwater & Watershed
-                  </Link>
-                  <Link to="/biscayne-bay-gpt" className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-colors">
-                    Biscayne Bay GPT
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <Link to="/guild" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+              Initiatives
+            </Link>
+            <Link to="/biscayne-bay-gpt" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+              Biscayne Bay GPT
+            </Link>
             <Link to="/droobi" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Lexicon
             </Link>
@@ -94,43 +73,8 @@ const Navigation = () => {
                 Initiatives
               </Link>
               <Link 
-                to="/guild/pfas" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                PFAS & Emerging Contaminants
-              </Link>
-              <Link 
-                to="/guild/climate-resilience" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Climate & Resilience
-              </Link>
-              <Link 
-                to="/guild/finance-roi" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Finance, Ratings & ROI
-              </Link>
-              <Link 
-                to="/guild/ai-data-governance" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                AI, Data Governance & Transparency
-              </Link>
-              <Link 
-                to="/guild/stormwater-watershed" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Stormwater & Watershed
-              </Link>
-              <Link 
                 to="/biscayne-bay-gpt" 
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth pl-6"
+                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Biscayne Bay GPT
