@@ -50,38 +50,23 @@ const Index = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-6xl md:text-8xl font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
-                APAS Labs
+            <div className="space-y-6">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
+                The Living Knowledge System for Infrastructure
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-                The Operating System for Public Works Infrastructure
+              <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed">
+                Turning scattered knowledge into connected, AI-powered systems that vendors, consultants, and governments trust.
               </p>
             </div>
 
-            <div className="max-w-4xl mx-auto space-y-6">
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">
-                Orakles: The Living Knowledge System for Infrastructure
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Public works is breaking under fragmentation, inefficiency, and wasted dollars. 
-                Orakles fixes it by turning scattered knowledge into a connected, AI-powered system 
-                that vendors, consultants, and governments can trust.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button size="lg" className="text-lg px-8 py-4" asChild>
                 <Link to="/lexicon">Explore Orakles <ArrowRight className="ml-2 h-5 w-5" /></Link>
               </Button>
               <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                Subscribe Now
+                Get Started
               </Button>
             </div>
-
-            <p className="text-sm text-muted-foreground">
-              Free for students and academia. Subscription for vendors, consultants, and governments.
-            </p>
           </div>
         </div>
       </section>
