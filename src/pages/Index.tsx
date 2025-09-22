@@ -53,7 +53,7 @@ const Index = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-primary bg-clip-text text-transparent leading-tight">
-                The Living Knowledge System for Infrastructure
+                Advancing the Future of Infrastructure
               </h1>
               <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed">
                 Turning scattered knowledge into connected, AI-powered systems that vendors, consultants, and governments trust.
