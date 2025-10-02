@@ -45,12 +45,12 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Gradient background - minimalistic single color */}
         <div className="absolute inset-0 bg-gradient-to-b from-background-deep via-background to-background-deep" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/8" />
         
         {/* Strategic accent glows - single color blue */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/8 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[300px] bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[300px] bg-primary/10 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -100,12 +100,12 @@ const Index = () => {
       <WhyWeExistSection />
 
       {/* Gradient Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
       {/* Our Solution - What We Build */}
       <section className="py-32 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background-deep/50 via-background to-background-deep" />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/3 via-transparent to-primary/2" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/8 via-transparent to-primary/5" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24">
@@ -232,7 +232,7 @@ const Index = () => {
       </section>
 
       {/* Gradient Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
       {/* Orakles Interactive Demo */}
       <OraklesDemo />
@@ -362,13 +362,13 @@ const Index = () => {
       </section>
 
       {/* Gradient Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
       {/* Track Record & Impact */}
       <section className="py-32 bg-background-deep relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background-deep to-background" />
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/6 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/12 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -458,17 +458,17 @@ const Index = () => {
       <JourneySection />
 
       {/* Gradient Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
       {/* Leadership Team */}
       <FoundersSection />
 
       {/* Gradient Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
       {/* Partner With Us */}
       <section className="py-32 bg-gradient-to-b from-background to-background-deep relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-primary/2" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-primary/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
@@ -530,12 +530,12 @@ const Index = () => {
       </section>
 
       {/* Gradient Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
       {/* Contact Section */}
       <section className="py-32 bg-background-deep relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-background-deep" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/3 via-transparent to-primary/2" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary/8 via-transparent to-primary/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-start">
             {/* Left: Contact Info & Quick Actions */}
