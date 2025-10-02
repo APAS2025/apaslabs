@@ -474,7 +474,7 @@ const Index = () => {
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
               Let's Build <span className="text-primary">Together</span>
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
               Whether you're a vendor seeking to connect with decision-makers, a government looking 
               to modernize infrastructure, or a consultant ready to scale your expertise—we're here to collaborate.
             </p>
