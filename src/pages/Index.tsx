@@ -6,6 +6,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import OraklesDemo from "@/components/OraklesDemo";
+import WhyWeExistSection from "@/components/WhyWeExistSection";
+import FoundersSection from "@/components/FoundersSection";
+import JourneySection from "@/components/JourneySection";
 import { 
   Mail, 
   Phone, 
@@ -419,6 +422,15 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Why We Exist Section */}
+      <WhyWeExistSection />
+
+      {/* Founders Section */}
+      <FoundersSection />
+
+      {/* Journey Section */}
+      <JourneySection />
 
       {/* Why APAS Labs Section */}
       <section className="py-24 bg-gradient-to-br from-primary/10 to-secondary/10">
