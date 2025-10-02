@@ -13,7 +13,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight font-satoshi bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent hover:opacity-90 transition-all duration-300 hover:scale-105">
+            <Link to="/" className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight font-satoshi bg-gradient-to-r from-primary via-blue-400 to-primary-glow bg-clip-text text-transparent hover:opacity-90 transition-all duration-300 hover:scale-105">
               APAS Labs
             </Link>
           </div>
