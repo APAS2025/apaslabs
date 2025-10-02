@@ -176,8 +176,14 @@ const OraklesDemo = () => {
                       </div>
                     </div>
                     
-                    <div className="flex-1 space-y-4 max-h-[480px] overflow-y-auto scrollbar-thin">
-                      {/* User Question */}
+                      <div className="flex-1 space-y-4 max-h-[480px] overflow-y-auto scrollbar-thin">
+                        {/* Restored Sample Message */}
+                        <div className="flex justify-end">
+                          <div className="bg-primary text-primary-foreground rounded-2xl rounded-br-md px-4 py-3 max-w-[280px] text-sm leading-relaxed">
+                            Can you show me case studies of successful implementations?
+                          </div>
+                        </div>
+                        {/* User Question */}
                       {(typedQuestion || isTyping) && (
                         <div className="flex justify-end">
                           <div className="bg-primary text-primary-foreground rounded-2xl rounded-br-md px-4 py-3 max-w-[280px] text-sm leading-relaxed">
