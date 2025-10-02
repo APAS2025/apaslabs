@@ -538,7 +538,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-tr from-primary/8 via-transparent to-primary/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-start">
-            {/* Left: Interactive Demo */}
+            {/* Left: Contact Info & Quick Actions */}
             <div className="space-y-12">
               <div>
                 <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
@@ -549,8 +549,69 @@ const Index = () => {
                 </p>
               </div>
 
-              {/* Orakles Demo */}
-              <OraklesDemo />
+              {/* Contact Methods */}
+              <div className="space-y-8">
+                <div className="flex items-start gap-5">
+                  <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-8 w-8 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold text-foreground mb-2">Email Us</p>
+                    <p className="text-base text-muted-foreground">contact@apaslabs.org</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-5">
+                  <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-8 w-8 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold text-foreground mb-2">Location</p>
+                    <p className="text-base text-muted-foreground">Miami, FL | Serving Infrastructure Leaders Globally</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div className="space-y-4 pt-8 border-t border-border">
+                <p className="font-semibold text-foreground mb-4">Quick Access</p>
+                <div className="grid grid-cols-2 gap-4">
+                  <Button variant="outline" className="justify-start" asChild>
+                    <Link to="/community">
+                      <Users className="h-4 w-4 mr-2" />
+                      Join Community
+                    </Link>
+                  </Button>
+                  <Button variant="outline" className="justify-start" asChild>
+                    <Link to="/partnerships">
+                      <Handshake className="h-4 w-4 mr-2" />
+                      Partnerships
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Newsletter */}
+              <Card className="bg-primary/5 border-primary/20">
+                <CardHeader>
+                  <CardTitle className="text-xl">Stay Informed</CardTitle>
+                  <CardDescription>
+                    Get updates on infrastructure innovation and new platform releases
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex gap-2">
+                    <Input
+                      type="email"
+                      placeholder="your.email@example.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="bg-background/50"
+                    />
+                    <Button className="flex-shrink-0 bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg hover:shadow-primary/50 transition-all duration-300">Subscribe</Button>
+                  </div>
+                </CardContent>
+              </Card>
 
             </div>
 
