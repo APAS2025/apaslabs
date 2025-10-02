@@ -53,26 +53,26 @@ const Index = () => {
           <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[300px] bg-primary/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-24">
+          <div className="space-y-8 sm:space-y-12">
             {/* Main headline */}
-            <div className="space-y-8">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight">
+            <div className="space-y-4 sm:space-y-8">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
                 Building the Operating System<br />
                 <span className="text-primary">for Public Infrastructure</span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4">
                 AI-powered platforms that connect communities, regulators, and innovators—creating transparent, 
                 accountable systems society can trust.
               </p>
             </div>
 
             {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
-              <Button size="lg" className="text-lg px-10 py-6 h-auto font-semibold bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105" asChild>
-                <Link to="/partnerships">Partner With Us <ArrowRight className="ml-2 h-5 w-5" /></Link>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center pt-4 sm:pt-8 px-4">
+              <Button size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 h-auto font-semibold bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]" asChild>
+                <Link to="/partnerships">Partner With Us <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" /></Link>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-10 py-6 h-auto font-semibold border-2 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105" asChild>
+              <Button variant="outline" size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 h-auto font-semibold border-2 border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[3rem]" asChild>
                 <Link to="/labs">Explore Our Labs</Link>
               </Button>
             </div>
@@ -467,60 +467,60 @@ const Index = () => {
       <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
       {/* Partner With Us */}
-      <section className="py-32 bg-gradient-to-b from-background to-background-deep relative overflow-hidden">
+      <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-background to-background-deep relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-primary/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight px-2">
               Let's Build <span className="text-primary">Together</span>
             </h2>
-            <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed px-4">
               Whether you're a vendor seeking to connect with decision-makers, a government looking 
               to modernize infrastructure, or a consultant ready to scale your expertise—we're here to collaborate.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-10 mb-16">
-            <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 duration-500">
-              <CardHeader className="text-center p-8">
-                <Building className="h-20 w-20 text-primary mx-auto mb-6" />
-                <CardTitle className="text-2xl md:text-3xl">For Vendors</CardTitle>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-12 sm:mb-16">
+            <Card className="bg-card/50 backdrop-blur-sm border-border active:border-primary/50 transition-all active:scale-95 duration-300">
+              <CardHeader className="text-center p-6 sm:p-8">
+                <Building className="h-16 w-16 sm:h-20 sm:w-20 text-primary mx-auto mb-4 sm:mb-6" />
+                <CardTitle className="text-xl sm:text-2xl md:text-3xl">For Vendors</CardTitle>
               </CardHeader>
-              <CardContent className="text-center p-8 pt-0">
-                <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
+              <CardContent className="text-center p-6 sm:p-8 pt-0">
+                <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                   Showcase your solutions where infrastructure leaders are making decisions
                 </p>
-                <Button variant="outline" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300" asChild>
+                <Button variant="outline" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[2.75rem]" asChild>
                   <Link to="/partnerships">Partner With Us</Link>
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 duration-500">
-              <CardHeader className="text-center p-8">
-                <Users className="h-20 w-20 text-primary mx-auto mb-6" />
-                <CardTitle className="text-2xl md:text-3xl">For Consultants</CardTitle>
+            <Card className="bg-card/50 backdrop-blur-sm border-border active:border-primary/50 transition-all active:scale-95 duration-300">
+              <CardHeader className="text-center p-6 sm:p-8">
+                <Users className="h-16 w-16 sm:h-20 sm:w-20 text-primary mx-auto mb-4 sm:mb-6" />
+                <CardTitle className="text-xl sm:text-2xl md:text-3xl">For Consultants</CardTitle>
               </CardHeader>
-              <CardContent className="text-center p-8 pt-0">
-                <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
+              <CardContent className="text-center p-6 sm:p-8 pt-0">
+                <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                   Amplify your expertise through AI-powered knowledge systems
                 </p>
-                <Button variant="outline" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300" asChild>
+                <Button variant="outline" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[2.75rem]" asChild>
                   <Link to="/community">Join Our Community</Link>
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 duration-500">
-              <CardHeader className="text-center p-8">
-                <CheckCircle className="h-20 w-20 text-primary mx-auto mb-6" />
-                <CardTitle className="text-2xl md:text-3xl">For Governments</CardTitle>
+            <Card className="bg-card/50 backdrop-blur-sm border-border active:border-primary/50 transition-all active:scale-95 duration-300 sm:col-span-2 lg:col-span-1">
+              <CardHeader className="text-center p-6 sm:p-8">
+                <CheckCircle className="h-16 w-16 sm:h-20 sm:w-20 text-primary mx-auto mb-4 sm:mb-6" />
+                <CardTitle className="text-xl sm:text-2xl md:text-3xl">For Governments</CardTitle>
               </CardHeader>
-              <CardContent className="text-center p-8 pt-0">
-                <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
+              <CardContent className="text-center p-6 sm:p-8 pt-0">
+                <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                   Build transparent, accountable systems your communities can trust
                 </p>
-                <Button variant="outline" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300" asChild>
+                <Button variant="outline" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[2.75rem]" asChild>
                   <Link to="/partnerships">Explore Solutions</Link>
                 </Button>
               </CardContent>
@@ -533,69 +533,70 @@ const Index = () => {
       <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
       {/* Contact Section */}
-      <section className="py-32 bg-background-deep relative overflow-hidden">
+      <section className="py-16 sm:py-24 lg:py-32 bg-background-deep relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-background-deep" />
         <div className="absolute inset-0 bg-gradient-to-tr from-primary/8 via-transparent to-primary/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-20 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-start">
             {/* Left: Contact Info & Quick Actions */}
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               <div>
-                <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight">
                   Get in <span className="text-primary">Touch</span>
                 </h2>
-                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
                   Ready to transform infrastructure decision-making? Let's start the conversation.
                 </p>
               </div>
 
               {/* Contact Methods */}
-              <div className="space-y-8">
-                <div className="flex items-start gap-5">
-                  <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-8 w-8 text-primary" />
+              <div className="space-y-6 sm:space-y-8">
+                <a href="mailto:contact@apaslabs.org" className="flex items-start gap-4 sm:gap-5 active:opacity-70 transition-opacity">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                   </div>
                   <div>
-                    <p className="text-lg font-semibold text-foreground mb-2">Email Us</p>
-                    <p className="text-base text-muted-foreground">contact@apaslabs.org</p>
+                    <p className="text-base sm:text-lg font-semibold text-foreground mb-1 sm:mb-2">Email Us</p>
+                    <p className="text-sm sm:text-base text-primary">contact@apaslabs.org</p>
+                  </div>
+                </a>
+
+                <div className="flex items-start gap-4 sm:gap-5">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-base sm:text-lg font-semibold text-foreground mb-1 sm:mb-2">Headquarters</p>
+                    <p className="text-sm sm:text-base text-muted-foreground">Miami, FL • Serving Infrastructure Leaders Globally</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-5">
-                  <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-8 w-8 text-primary" />
+                <a href="tel:+15551234567" className="flex items-start gap-4 sm:gap-5 active:opacity-70 transition-opacity">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                   </div>
                   <div>
-                    <p className="text-lg font-semibold text-foreground mb-2">Headquarters</p>
-                    <p className="text-base text-muted-foreground">Miami, FL • Serving Infrastructure Leaders Globally</p>
+                    <p className="text-base sm:text-lg font-semibold text-foreground mb-1 sm:mb-2">Phone</p>
+                    <p className="text-sm sm:text-base text-primary">+1 (555) 123-4567</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Mon–Fri, 9am–6pm ET</p>
                   </div>
-                </div>
-
-                <div className="flex items-start gap-5">
-                  <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-8 w-8 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-lg font-semibold text-foreground mb-2">Phone</p>
-                    <p className="text-base text-muted-foreground">+1 (555) 123-4567 • Mon–Fri, 9am–6pm ET</p>
-                  </div>
-                </div>
+                </a>
               </div>
 
               {/* Quick Links */}
-              <div className="space-y-4 pt-8 border-t border-border">
-                <p className="font-semibold text-foreground mb-4">Quick Access</p>
-                <div className="grid grid-cols-2 gap-4">
-                  <Button variant="outline" className="justify-start" asChild>
+              <div className="space-y-3 sm:space-y-4 pt-6 sm:pt-8 border-t border-border">
+                <p className="font-semibold text-foreground text-sm sm:text-base mb-3 sm:mb-4">Quick Access</p>
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  <Button variant="outline" className="justify-start min-h-[2.75rem] active:scale-95 transition-transform" asChild>
                     <Link to="/community">
-                      <Users className="h-4 w-4 mr-2" />
-                      Join Community
+                      <Users className="h-4 w-4 mr-2 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm">Join Community</span>
                     </Link>
                   </Button>
-                  <Button variant="outline" className="justify-start" asChild>
+                  <Button variant="outline" className="justify-start min-h-[2.75rem] active:scale-95 transition-transform" asChild>
                     <Link to="/partnerships">
-                      <Handshake className="h-4 w-4 mr-2" />
-                      Partnerships
+                      <Handshake className="h-4 w-4 mr-2 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm">Partnerships</span>
                     </Link>
                   </Button>
                 </div>
@@ -603,22 +604,22 @@ const Index = () => {
 
               {/* Newsletter */}
               <Card className="bg-primary/5 border-primary/20">
-                <CardHeader>
-                  <CardTitle className="text-xl">Stay Informed</CardTitle>
-                  <CardDescription>
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="text-lg sm:text-xl">Stay Informed</CardTitle>
+                  <CardDescription className="text-sm sm:text-base">
                     Get updates on infrastructure innovation and new platform releases
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex gap-2">
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <Input
                       type="email"
                       placeholder="your.email@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="bg-background/50"
+                      className="bg-background/50 min-h-[2.75rem]"
                     />
-                    <Button className="flex-shrink-0 bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg hover:shadow-primary/50 transition-all duration-300">Subscribe</Button>
+                    <Button className="flex-shrink-0 bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[2.75rem] whitespace-nowrap">Subscribe</Button>
                   </div>
                 </CardContent>
               </Card>
@@ -627,29 +628,29 @@ const Index = () => {
 
             {/* Right: Contact Form */}
             <Card className="bg-card/50 backdrop-blur-sm border-border">
-              <CardHeader>
-                <CardTitle className="text-2xl">Send a Message</CardTitle>
-                <CardDescription className="text-base text-foreground/80">
+              <CardHeader className="p-4 sm:p-6">
+                <CardTitle className="text-xl sm:text-2xl">Send a Message</CardTitle>
+                <CardDescription className="text-sm sm:text-base text-foreground/80">
                   Tell us about your infrastructure challenges and goals
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-5 sm:space-y-6 p-4 sm:p-6 pt-0">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-3 block">I'm interested in:</label>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     {inquiryTypes.map((type) => {
                       const Icon = type.icon;
                       return (
                         <button
                           key={type.id}
                           onClick={() => setSelectedInquiry(type.id)}
-                          className={`p-3 rounded-lg border text-sm font-medium transition-all flex flex-col items-center gap-2 ${
+                          className={`p-3 sm:p-3.5 rounded-lg border text-sm font-medium transition-all active:scale-95 flex flex-col items-center gap-2 min-h-[4.5rem] ${
                             selectedInquiry === type.id
                               ? 'bg-primary text-primary-foreground border-primary shadow-lg'
-                              : 'bg-background/50 text-muted-foreground border-border hover:border-primary/50 hover:bg-background/80'
+                              : 'bg-background/50 text-muted-foreground border-border active:bg-background/80'
                           }`}
                         >
-                          <Icon className="h-5 w-5" />
+                          <Icon className="h-5 w-5 flex-shrink-0" />
                           <span className="text-xs text-center leading-tight">{type.label}</span>
                         </button>
                       );
@@ -660,11 +661,11 @@ const Index = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">Name</label>
-                    <Input placeholder="Your name" className="bg-background/50" />
+                    <Input placeholder="Your name" className="bg-background/50 min-h-[2.75rem]" />
                   </div>
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">Email</label>
-                    <Input placeholder="your@email.com" className="bg-background/50" />
+                    <Input placeholder="your@email.com" className="bg-background/50 min-h-[2.75rem]" />
                   </div>
                 </div>
 
@@ -672,11 +673,11 @@ const Index = () => {
                   <label className="text-sm font-medium text-foreground mb-2 block">Message</label>
                   <Textarea 
                     placeholder="Tell us about your infrastructure challenges or partnership interests..." 
-                    className="bg-background/50 min-h-32"
+                    className="bg-background/50 min-h-32 resize-none"
                   />
                 </div>
 
-                <Button className="w-full bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105" size="lg">
+                <Button className="w-full bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]" size="lg">
                   <Mail className="mr-2 h-4 w-4" />
                   Send Message
                 </Button>
