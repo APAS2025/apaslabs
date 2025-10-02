@@ -618,7 +618,7 @@ const Index = () => {
             <Card className="bg-card/50 backdrop-blur-sm border-border">
               <CardHeader>
                 <CardTitle className="text-2xl">Send a Message</CardTitle>
-                <CardDescription className="text-base">
+                <CardDescription className="text-base text-foreground/80">
                   Tell us about your infrastructure challenges and goals
                 </CardDescription>
               </CardHeader>
