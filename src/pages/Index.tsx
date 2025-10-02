@@ -360,63 +360,80 @@ const Index = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            <div className="inline-block mb-6">
+              <span className="text-sm font-semibold tracking-wider text-primary uppercase px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
+                Built by Infrastructure Veterans
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-tight">
               Proven at Scale
             </h2>
+            <p className="text-2xl md:text-3xl text-foreground max-w-4xl mx-auto leading-relaxed font-light mb-4">
+              We don't just build platforms—we deliver systems that work in the real world.
+            </p>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We don't just build platforms—we deliver systems that work in the real world, 
-              backed by decades of infrastructure leadership.
+              Backed by decades of infrastructure leadership managing billions in public works programs.
             </p>
           </div>
 
           {/* Key Metrics */}
           <div className="grid md:grid-cols-3 gap-12 mb-20">
-            <div className="text-center space-y-4">
-              <div className="text-6xl font-bold text-primary">$9B+</div>
-              <p className="text-lg text-foreground font-semibold">Public Works Programs Managed</p>
-              <p className="text-muted-foreground">End-to-end oversight from SCADA integration to financial systems</p>
+            <div className="group text-center space-y-6 p-8 rounded-2xl border border-border hover:border-primary/50 bg-card/30 backdrop-blur-sm transition-all duration-300">
+              <div className="text-7xl md:text-8xl font-bold text-primary transition-transform group-hover:scale-110">$9B+</div>
+              <div className="space-y-2">
+                <p className="text-xl text-foreground font-bold">Public Works Programs</p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  End-to-end oversight from SCADA integration to financial systems—proven at municipal scale
+                </p>
+              </div>
             </div>
 
-            <div className="text-center space-y-4">
-              <div className="text-6xl font-bold text-primary">35+</div>
-              <p className="text-lg text-foreground font-semibold">Cities & Regions Served</p>
-              <p className="text-muted-foreground">Regional infrastructure strategy delivered across South Florida</p>
+            <div className="group text-center space-y-6 p-8 rounded-2xl border border-border hover:border-primary/50 bg-card/30 backdrop-blur-sm transition-all duration-300">
+              <div className="text-7xl md:text-8xl font-bold text-primary transition-transform group-hover:scale-110">35+</div>
+              <div className="space-y-2">
+                <p className="text-xl text-foreground font-bold">Cities & Regions</p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Delivered regional infrastructure strategy across South Florida's most complex systems
+                </p>
+              </div>
             </div>
 
-            <div className="text-center space-y-4">
-              <div className="text-6xl font-bold text-primary">Global</div>
-              <p className="text-lg text-foreground font-semibold">Infrastructure Leadership</p>
-              <p className="text-muted-foreground">Featured at Singapore Water Week and Rockefeller's 100 Resilient Cities</p>
+            <div className="group text-center space-y-6 p-8 rounded-2xl border border-border hover:border-primary/50 bg-card/30 backdrop-blur-sm transition-all duration-300">
+              <div className="text-7xl md:text-8xl font-bold text-primary transition-transform group-hover:scale-110">Global</div>
+              <div className="space-y-2">
+                <p className="text-xl text-foreground font-bold">Leadership Recognition</p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Featured at Singapore Water Week and Rockefeller Foundation's 100 Resilient Cities
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Core Capabilities */}
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
-              <CardHeader>
-                <Building className="h-12 w-12 text-primary mb-4" />
-                <CardTitle className="text-2xl">Systems Integration Expertise</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  From SCADA to finance, we build cohesive infrastructure where none existed—connecting 
-                  technology, governance, and operations into unified frameworks.
+          <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl border-2 border-primary/20 p-12">
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="space-y-4">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <Building className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-3xl font-bold text-foreground">Built Complex Systems from Scratch</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Our team has integrated SCADA, finance, operations, and governance into unified frameworks 
+                  for some of the largest municipal infrastructure programs in the country.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
 
-            <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
-              <CardHeader>
-                <CheckCircle className="h-12 w-12 text-primary mb-4" />
-                <CardTitle className="text-2xl">Resilience by Design</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  Every initiative built with governance, accountability, and measurable ROI as core 
-                  principles—not afterthoughts.
+              <div className="space-y-4">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <CheckCircle className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-3xl font-bold text-foreground">Resilience Under Pressure</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Every system designed with accountability, measurable ROI, and governance as foundational 
+                  principles—proven through decades of real-world execution.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
