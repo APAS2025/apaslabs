@@ -40,29 +40,29 @@ const FoundersSection = () => {
 
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 animate-on-scroll opacity-0">
-          <h2 className="text-5xl md:text-6xl font-bold font-satoshi mb-6 bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
+        <div className="text-center mb-20 animate-on-scroll opacity-0">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold font-satoshi mb-8 leading-tight bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
             The Builders Behind the Labs
           </h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-space">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-space">
             APAS Labs is led by practitioners who have managed billion-dollar infrastructure programs and pioneered new ways to connect systems, people, and technology.
           </p>
         </div>
 
         {/* Founder Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-12 mb-16">
           {/* Simi Anand */}
-          <Card className="animate-on-scroll opacity-0 group relative bg-white/5 border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 p-8">
+          <Card className="animate-on-scroll opacity-0 group relative bg-white/5 border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 p-10">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
-              <div className="flex flex-col items-center text-center space-y-6">
-                <Avatar className="w-24 h-24 ring-4 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300">
+              <div className="flex flex-col items-center text-center space-y-8">
+                <Avatar className="w-32 h-32 ring-4 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300">
                   <AvatarImage src="/placeholder.svg" alt="Simi Anand" />
-                  <AvatarFallback className="text-2xl font-bold bg-gradient-to-br from-primary/20 to-accent/20 text-white">SA</AvatarFallback>
+                  <AvatarFallback className="text-3xl font-bold bg-gradient-to-br from-primary/20 to-accent/20 text-white">SA</AvatarFallback>
                 </Avatar>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2 font-satoshi">Simi Anand</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <h3 className="text-3xl font-bold text-white mb-3 font-satoshi">Simi Anand</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
                     Systems strategist and builder, focused on bridging knowledge, technology, and community.
                   </p>
                 </div>
@@ -71,17 +71,17 @@ const FoundersSection = () => {
           </Card>
 
           {/* Hardeep Anand */}
-          <Card className="animate-on-scroll opacity-0 group relative bg-white/5 border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 p-8" style={{ animationDelay: "0.2s" }}>
+          <Card className="animate-on-scroll opacity-0 group relative bg-white/5 border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 p-10" style={{ animationDelay: "0.2s" }}>
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
-              <div className="flex flex-col items-center text-center space-y-6">
-                <Avatar className="w-24 h-24 ring-4 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300">
+              <div className="flex flex-col items-center text-center space-y-8">
+                <Avatar className="w-32 h-32 ring-4 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300">
                   <AvatarImage src="/placeholder.svg" alt="Hardeep Anand" />
-                  <AvatarFallback className="text-2xl font-bold bg-gradient-to-br from-primary/20 to-accent/20 text-white">HA</AvatarFallback>
+                  <AvatarFallback className="text-3xl font-bold bg-gradient-to-br from-primary/20 to-accent/20 text-white">HA</AvatarFallback>
                 </Avatar>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2 font-satoshi">Hardeep Anand</h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <h3 className="text-3xl font-bold text-white mb-3 font-satoshi">Hardeep Anand</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
                     Infrastructure leader and systems synthesist, with decades of experience overseeing complex public works and regulatory frameworks.
                   </p>
                 </div>

@@ -60,23 +60,23 @@ const WhyWeExistSection = () => {
         {/* Header */}
         <div 
           data-index="0"
-          className={`mb-24 transition-all duration-700 ${
+          className={`mb-28 transition-all duration-700 ${
             visibleItems.includes(0) 
               ? "opacity-100 translate-y-0" 
               : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 tracking-tight leading-tight">
             The Problem<br />
             <span className="text-primary">Is Simple</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
             Infrastructure spending happens in a black box. No visibility, no accountability, no trust.
           </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-24">
+        <div className="grid md:grid-cols-2 gap-10 mb-28">
           {problems.map((item, index) => (
             <div
               key={index}
@@ -88,18 +88,18 @@ const WhyWeExistSection = () => {
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="group relative bg-card/30 backdrop-blur-sm border border-border hover:border-primary/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl">
-                <div className="space-y-4">
+              <div className="group relative bg-card/30 backdrop-blur-sm border border-border hover:border-primary/50 rounded-2xl p-10 transition-all duration-300 hover:shadow-xl">
+                <div className="space-y-6">
                   <div>
-                    <div className="text-6xl font-bold text-primary mb-2">{item.stat}</div>
-                    <div className="text-sm text-muted-foreground uppercase tracking-wider">{item.label}</div>
+                    <div className="text-7xl md:text-8xl font-bold text-primary mb-3">{item.stat}</div>
+                    <div className="text-base text-muted-foreground uppercase tracking-wider">{item.label}</div>
                   </div>
                   
                   <div className="h-px bg-border group-hover:bg-primary/20 transition-colors" />
                   
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">{item.problem}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{item.detail}</p>
+                    <h3 className="text-2xl font-bold text-foreground mb-3">{item.problem}</h3>
+                    <p className="text-base text-muted-foreground leading-relaxed">{item.detail}</p>
                   </div>
                 </div>
               </div>
@@ -116,23 +116,23 @@ const WhyWeExistSection = () => {
               : "opacity-0 translate-y-12"
           }`}
         >
-          <div className="bg-card/50 backdrop-blur-sm border-2 border-primary/20 rounded-2xl p-12">
+          <div className="bg-card/50 backdrop-blur-sm border-2 border-primary/20 rounded-2xl p-14">
             <div className="max-w-3xl">
-              <h3 className="text-4xl font-bold text-foreground mb-6">
+              <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
                 We Build Systems That Work
               </h3>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed">
                 Real-time data platforms that connect the dots. Show where money goes. 
                 Track what actually gets done. Give communities a voice that gets heard.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium border border-primary/20">
+              <div className="flex flex-wrap gap-4">
+                <span className="px-6 py-3 bg-primary/10 text-primary rounded-lg text-base font-medium border border-primary/20">
                   Live Data
                 </span>
-                <span className="px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium border border-primary/20">
+                <span className="px-6 py-3 bg-primary/10 text-primary rounded-lg text-base font-medium border border-primary/20">
                   Clear Metrics
                 </span>
-                <span className="px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium border border-primary/20">
+                <span className="px-6 py-3 bg-primary/10 text-primary rounded-lg text-base font-medium border border-primary/20">
                   Public Access
                 </span>
               </div>

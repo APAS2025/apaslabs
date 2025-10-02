@@ -102,46 +102,46 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background-deep/50 to-background" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+          <div className="text-center mb-24">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
               Our Solution: Living Labs for Infrastructure
             </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We build AI-powered platforms that transform fragmented systems into connected, 
               transparent ecosystems where decisions are data-driven and outcomes are measurable.
             </p>
           </div>
 
           {/* Three Core Platforms */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-20">
+          <div className="grid lg:grid-cols-3 gap-10 mb-20">
             {/* Orakles */}
             <Card className="group bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2">
-              <CardHeader className="space-y-4">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <BookOpen className="h-8 w-8 text-primary" />
+              <CardHeader className="space-y-6 p-8">
+                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <BookOpen className="h-10 w-10 text-primary" />
                 </div>
-                <CardTitle className="text-2xl">Orakles</CardTitle>
-                <CardDescription className="text-base">
+                <CardTitle className="text-3xl">Orakles</CardTitle>
+                <CardDescription className="text-lg">
                   The Infrastructure Knowledge Platform
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+              <CardContent className="space-y-6 p-8 pt-0">
+                <p className="text-base text-muted-foreground leading-relaxed">
                   Unifies language, connects vendors to decision-makers, proves ROI, and transforms 
                   training into daily practice through integrated learning pathways.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Standardized infrastructure lexicon</span>
+                    <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-base">Standardized infrastructure lexicon</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Vendor marketplace with verified case studies</span>
+                    <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-base">Vendor marketplace with verified case studies</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Integrated LMS for continuous learning</span>
+                    <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-base">Integrated LMS for continuous learning</span>
                   </li>
                 </ul>
                 <Button variant="outline" className="w-full mt-4" asChild>
@@ -152,32 +152,32 @@ const Index = () => {
 
             {/* Biscayne Bay GPT */}
             <Card className="group bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2">
-              <CardHeader className="space-y-4">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <span className="text-3xl">🌊</span>
+              <CardHeader className="space-y-6 p-8">
+                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <span className="text-5xl">🌊</span>
                 </div>
-                <CardTitle className="text-2xl">Biscayne Bay GPT</CardTitle>
-                <CardDescription className="text-base">
+                <CardTitle className="text-3xl">Biscayne Bay GPT</CardTitle>
+                <CardDescription className="text-lg">
                   AI-Powered Ecosystem Guardian
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+              <CardContent className="space-y-6 p-8 pt-0">
+                <p className="text-base text-muted-foreground leading-relaxed">
                   Brings transparency and accountability to environmental restoration through 
                   real-time data, citizen engagement, and Droobi, the Bay's AI advocate.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Live sensor data and historical analysis</span>
+                    <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-base">Live sensor data and historical analysis</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Citizen voice portal for community feedback</span>
+                    <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-base">Citizen voice portal for community feedback</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">ROI tracking for restoration investments</span>
+                    <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-base">ROI tracking for restoration investments</span>
                   </li>
                 </ul>
                 <Button variant="outline" className="w-full mt-4" asChild>
@@ -188,32 +188,32 @@ const Index = () => {
 
             {/* Practitioner GPTs */}
             <Card className="group bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2">
-              <CardHeader className="space-y-4">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Users className="h-8 w-8 text-primary" />
+              <CardHeader className="space-y-6 p-8">
+                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Users className="h-10 w-10 text-primary" />
                 </div>
-                <CardTitle className="text-2xl">Practitioner GPTs</CardTitle>
-                <CardDescription className="text-base">
+                <CardTitle className="text-3xl">Practitioner GPTs</CardTitle>
+                <CardDescription className="text-lg">
                   Capturing Expert Knowledge at Scale
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+              <CardContent className="space-y-6 p-8 pt-0">
+                <p className="text-base text-muted-foreground leading-relaxed">
                   Specialized AI agents trained on decades of infrastructure expertise, 
                   preserving institutional knowledge before it walks out the door.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Guild-specific knowledge bases</span>
+                    <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-base">Guild-specific knowledge bases</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">Expert-verified AI responses</span>
+                    <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-base">Expert-verified AI responses</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">24/7 access to critical expertise</span>
+                    <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-base">24/7 access to critical expertise</span>
                   </li>
                 </ul>
                 <Button variant="outline" className="w-full mt-4" asChild>
@@ -244,57 +244,57 @@ const Index = () => {
                 <span className="text-primary font-semibold">Environmental AI Guardian</span>
               </div>
               
-              <h2 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
                 Biscayne Bay Has a Voice—<br />
                 <span className="text-primary">And It's Powered by AI</span>
               </h2>
 
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 For decades, Biscayne Bay has been dying while millions in restoration funds vanished into reports nobody reads. 
                 <strong className="text-foreground"> Droobi changes that.</strong>
               </p>
 
-              <div className="bg-card/50 backdrop-blur-sm border-2 border-primary/20 rounded-2xl p-8 space-y-6">
-                <h3 className="text-2xl font-bold text-foreground">What Droobi Does</h3>
+              <div className="bg-card/50 backdrop-blur-sm border-2 border-primary/20 rounded-2xl p-10 space-y-8">
+                <h3 className="text-3xl md:text-4xl font-bold text-foreground">What Droobi Does</h3>
                 
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="h-6 w-6 text-primary" />
+                <div className="space-y-6">
+                  <div className="flex items-start gap-5">
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="h-7 w-7 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">Real-Time Environmental Intelligence</h4>
-                      <p className="text-muted-foreground">Live sensor data + decades of reports = instant answers on water quality, pollution sources, and ecosystem health</p>
+                      <h4 className="text-xl font-semibold text-foreground mb-2">Real-Time Environmental Intelligence</h4>
+                      <p className="text-base text-muted-foreground">Live sensor data + decades of reports = instant answers on water quality, pollution sources, and ecosystem health</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="h-6 w-6 text-primary" />
+                  <div className="flex items-start gap-5">
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="h-7 w-7 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">Citizen Voice Portal</h4>
-                      <p className="text-muted-foreground">Anyone can ask Droobi about bay conditions, report issues, or track restoration progress—no PhD required</p>
+                      <h4 className="text-xl font-semibold text-foreground mb-2">Citizen Voice Portal</h4>
+                      <p className="text-base text-muted-foreground">Anyone can ask Droobi about bay conditions, report issues, or track restoration progress—no PhD required</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="h-6 w-6 text-primary" />
+                  <div className="flex items-start gap-5">
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="h-7 w-7 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">Follow the Money Dashboards</h4>
-                      <p className="text-muted-foreground">Tracks every restoration dollar spent and ties it to measurable outcomes—because "trust us" isn't good enough</p>
+                      <h4 className="text-xl font-semibold text-foreground mb-2">Follow the Money Dashboards</h4>
+                      <p className="text-base text-muted-foreground">Tracks every restoration dollar spent and ties it to measurable outcomes—because "trust us" isn't good enough</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="h-6 w-6 text-primary" />
+                  <div className="flex items-start gap-5">
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="h-7 w-7 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">Early Warning System</h4>
-                      <p className="text-muted-foreground">Alerts regulators, businesses, and communities before the next fish kill or algae bloom makes headlines</p>
+                      <h4 className="text-xl font-semibold text-foreground mb-2">Early Warning System</h4>
+                      <p className="text-base text-muted-foreground">Alerts regulators, businesses, and communities before the next fish kill or algae bloom makes headlines</p>
                     </div>
                   </div>
                 </div>
@@ -447,24 +447,24 @@ const Index = () => {
       {/* Partner With Us */}
       <section className="py-32 bg-gradient-to-b from-background to-background-deep">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
               Let's Build Together
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Whether you're a vendor seeking to connect with decision-makers, a government looking 
               to modernize infrastructure, or a consultant ready to scale your expertise—we're here to collaborate.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all">
-              <CardHeader className="text-center">
-                <Building className="h-16 w-16 text-primary mx-auto mb-4" />
-                <CardTitle className="text-xl">For Vendors</CardTitle>
+          <div className="grid lg:grid-cols-3 gap-10 mb-16">
+            <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 duration-500">
+              <CardHeader className="text-center p-8">
+                <Building className="h-20 w-20 text-primary mx-auto mb-6" />
+                <CardTitle className="text-2xl md:text-3xl">For Vendors</CardTitle>
               </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-muted-foreground mb-6">
+              <CardContent className="text-center p-8 pt-0">
+                <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
                   Showcase your solutions where infrastructure leaders are making decisions
                 </p>
                 <Button variant="outline" className="w-full" asChild>
@@ -473,13 +473,13 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all">
-              <CardHeader className="text-center">
-                <Users className="h-16 w-16 text-primary mx-auto mb-4" />
-                <CardTitle className="text-xl">For Consultants</CardTitle>
+            <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 duration-500">
+              <CardHeader className="text-center p-8">
+                <Users className="h-20 w-20 text-primary mx-auto mb-6" />
+                <CardTitle className="text-2xl md:text-3xl">For Consultants</CardTitle>
               </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-muted-foreground mb-6">
+              <CardContent className="text-center p-8 pt-0">
+                <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
                   Amplify your expertise through AI-powered knowledge systems
                 </p>
                 <Button variant="outline" className="w-full" asChild>
@@ -488,13 +488,13 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all">
-              <CardHeader className="text-center">
-                <CheckCircle className="h-16 w-16 text-primary mx-auto mb-4" />
-                <CardTitle className="text-xl">For Governments</CardTitle>
+            <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 duration-500">
+              <CardHeader className="text-center p-8">
+                <CheckCircle className="h-20 w-20 text-primary mx-auto mb-6" />
+                <CardTitle className="text-2xl md:text-3xl">For Governments</CardTitle>
               </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-muted-foreground mb-6">
+              <CardContent className="text-center p-8 pt-0">
+                <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
                   Build transparent, accountable systems your communities can trust
                 </p>
                 <Button variant="outline" className="w-full" asChild>
@@ -509,37 +509,37 @@ const Index = () => {
       {/* Contact Section */}
       <section className="py-32 bg-background-deep">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-20 items-start">
             {/* Left: Contact Info & Quick Actions */}
             <div className="space-y-12">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
                   Get in Touch
                 </h2>
-                <p className="text-xl text-muted-foreground leading-relaxed">
+                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                   Ready to transform infrastructure decision-making? Let's start the conversation.
                 </p>
               </div>
 
               {/* Contact Methods */}
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-primary" />
+              <div className="space-y-8">
+                <div className="flex items-start gap-5">
+                  <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-8 w-8 text-primary" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground mb-1">Email Us</p>
-                    <p className="text-muted-foreground">contact@apaslabs.org</p>
+                    <p className="text-lg font-semibold text-foreground mb-2">Email Us</p>
+                    <p className="text-base text-muted-foreground">contact@apaslabs.org</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-primary" />
+                <div className="flex items-start gap-5">
+                  <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-8 w-8 text-primary" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground mb-1">Location</p>
-                    <p className="text-muted-foreground">Miami, FL | Serving Infrastructure Leaders Globally</p>
+                    <p className="text-lg font-semibold text-foreground mb-2">Location</p>
+                    <p className="text-base text-muted-foreground">Miami, FL | Serving Infrastructure Leaders Globally</p>
                   </div>
                 </div>
               </div>
