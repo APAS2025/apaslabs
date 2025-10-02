@@ -57,11 +57,11 @@ const Index = () => {
           <div className="space-y-8 sm:space-y-12">
             {/* Main headline */}
             <div className="space-y-4 sm:space-y-8">
-              <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
+              <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
                 Building the Operating System<br />
                 <span className="text-primary">for Public Infrastructure</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4">
+              <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4">
                 AI-powered platforms that connect communities, regulators, and innovators—creating transparent, 
                 accountable systems society can trust.
               </p>
@@ -69,10 +69,10 @@ const Index = () => {
 
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center pt-4 sm:pt-8 px-4">
-              <Button size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 h-auto font-semibold bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]" asChild>
+              <Button size="lg" className="text-sm sm:text-lg px-6 sm:px-10 py-4 sm:py-6 h-auto font-semibold bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]" asChild>
                 <Link to="/partnerships">Partner With Us <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" /></Link>
               </Button>
-              <Button variant="outline" size="lg" className="text-base sm:text-lg px-8 sm:px-10 py-5 sm:py-6 h-auto font-semibold border-2 border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[3rem]" asChild>
+              <Button variant="outline" size="lg" className="text-sm sm:text-lg px-6 sm:px-10 py-4 sm:py-6 h-auto font-semibold border-2 border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[3rem]" asChild>
                 <Link to="/labs">Explore Our Labs</Link>
               </Button>
             </div>
@@ -471,10 +471,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-primary/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight px-2">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight px-2">
               Let's Build <span className="text-primary">Together</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed px-4">
               Whether you're a vendor seeking to connect with decision-makers, a government looking 
               to modernize infrastructure, or a consultant ready to scale your expertise—we're here to collaborate.
             </p>
@@ -483,11 +483,11 @@ const Index = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-12 sm:mb-16">
             <Card className="bg-card/50 backdrop-blur-sm border-border active:border-primary/50 transition-all active:scale-95 duration-300">
               <CardHeader className="text-center p-6 sm:p-8">
-                <Building className="h-16 w-16 sm:h-20 sm:w-20 text-primary mx-auto mb-4 sm:mb-6" />
-                <CardTitle className="text-xl sm:text-2xl md:text-3xl">For Vendors</CardTitle>
+                <Building className="h-14 w-14 sm:h-20 sm:w-20 text-primary mx-auto mb-4 sm:mb-6" />
+                <CardTitle className="text-lg sm:text-2xl md:text-3xl">For Vendors</CardTitle>
               </CardHeader>
               <CardContent className="text-center p-6 sm:p-8 pt-0">
-                <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
+                <p className="text-xs sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                   Showcase your solutions where infrastructure leaders are making decisions
                 </p>
                 <Button variant="outline" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[2.75rem]" asChild>
@@ -498,11 +498,11 @@ const Index = () => {
 
             <Card className="bg-card/50 backdrop-blur-sm border-border active:border-primary/50 transition-all active:scale-95 duration-300">
               <CardHeader className="text-center p-6 sm:p-8">
-                <Users className="h-16 w-16 sm:h-20 sm:w-20 text-primary mx-auto mb-4 sm:mb-6" />
-                <CardTitle className="text-xl sm:text-2xl md:text-3xl">For Consultants</CardTitle>
+                <Users className="h-14 w-14 sm:h-20 sm:w-20 text-primary mx-auto mb-4 sm:mb-6" />
+                <CardTitle className="text-lg sm:text-2xl md:text-3xl">For Consultants</CardTitle>
               </CardHeader>
               <CardContent className="text-center p-6 sm:p-8 pt-0">
-                <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
+                <p className="text-xs sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                   Amplify your expertise through AI-powered knowledge systems
                 </p>
                 <Button variant="outline" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[2.75rem]" asChild>
@@ -513,11 +513,11 @@ const Index = () => {
 
             <Card className="bg-card/50 backdrop-blur-sm border-border active:border-primary/50 transition-all active:scale-95 duration-300 sm:col-span-2 lg:col-span-1">
               <CardHeader className="text-center p-6 sm:p-8">
-                <CheckCircle className="h-16 w-16 sm:h-20 sm:w-20 text-primary mx-auto mb-4 sm:mb-6" />
-                <CardTitle className="text-xl sm:text-2xl md:text-3xl">For Governments</CardTitle>
+                <CheckCircle className="h-14 w-14 sm:h-20 sm:w-20 text-primary mx-auto mb-4 sm:mb-6" />
+                <CardTitle className="text-lg sm:text-2xl md:text-3xl">For Governments</CardTitle>
               </CardHeader>
               <CardContent className="text-center p-6 sm:p-8 pt-0">
-                <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
+                <p className="text-xs sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                   Build transparent, accountable systems your communities can trust
                 </p>
                 <Button variant="outline" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[2.75rem]" asChild>
@@ -541,10 +541,10 @@ const Index = () => {
             {/* Left: Contact Info & Quick Actions */}
             <div className="space-y-8 sm:space-y-12">
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight">
                   Get in <span className="text-primary">Touch</span>
                 </h2>
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
+                <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
                   Ready to transform infrastructure decision-making? Let's start the conversation.
                 </p>
               </div>
