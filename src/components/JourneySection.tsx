@@ -65,32 +65,34 @@ const JourneySection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-16 lg:py-20 bg-gradient-to-b from-background-deep via-background to-background-deep overflow-hidden">
+    <section ref={sectionRef} className="relative py-32 bg-gradient-to-b from-background-deep via-background to-background-deep overflow-hidden">
       {/* Modern Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-accent/3" />
-      <div className="absolute top-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/3 right-1/3 w-72 h-72 bg-gradient-to-r from-secondary/10 to-primary/10 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-gradient-to-r from-secondary/10 to-primary/10 rounded-full blur-3xl animate-pulse delay-1000" />
       
-      <div className="container mx-auto px-6 relative z-10 max-w-6xl">
-        {/* Compact Header */}
+      <div className="container mx-auto px-6 relative z-10 max-w-7xl">
+        {/* Header */}
         <div 
           data-index="0"
-          className={`text-center mb-12 transition-all duration-1000 ${
+          className={`text-center mb-20 transition-all duration-1000 ${
             visibleItems.has(0) 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-satoshi bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent mb-3">
-            Our Journey
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
+              Our Journey
+            </span>
           </h2>
-          <p className="text-lg text-muted-foreground font-space max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             From resilience, to knowledge, to collaboration, to innovation.
           </p>
         </div>
 
-        {/* Compact Timeline Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        {/* Timeline Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {milestones.map((milestone, index) => {
             const Icon = milestone.icon;
             const isVisible = visibleItems.has(index + 1);
@@ -109,46 +111,46 @@ const JourneySection = () => {
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                {/* Compact Milestone Card */}
-                <div className={`relative h-full backdrop-blur-xl bg-white/5 border ${milestone.borderColor} rounded-2xl p-6 
+                {/* Milestone Card */}
+                <div className={`relative h-full backdrop-blur-xl bg-white/5 border ${milestone.borderColor} rounded-2xl p-8
                   transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20
                   ${isActive ? 'bg-white/10 scale-105 -translate-y-2 shadow-2xl shadow-primary/20' : ''}
                 `}>
                   
                   {/* Year Badge */}
-                  <div className={`absolute -top-3 -left-3 w-12 h-12 rounded-full bg-gradient-to-r ${milestone.color} 
+                  <div className={`absolute -top-4 -left-4 w-16 h-16 rounded-full bg-gradient-to-r ${milestone.color} 
                     flex items-center justify-center shadow-xl border-2 border-white/20 group-hover:scale-110 transition-transform duration-300`}>
-                    <span className="text-white font-bold text-sm">{milestone.year.slice(-2)}</span>
+                    <span className="text-white font-bold text-base">{milestone.year.slice(-2)}</span>
                   </div>
                   
                   {/* Icon */}
-                  <div className={`${milestone.bgColor} ${milestone.borderColor} border rounded-xl p-3 mb-4 w-fit
+                  <div className={`${milestone.bgColor} ${milestone.borderColor} border rounded-xl p-4 mb-6 w-fit
                     group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                    <Icon className="w-6 h-6 text-primary" />
+                    <Icon className="w-8 h-8 text-primary" />
                   </div>
                   
                   {/* Content */}
                   <div>
-                    <h3 className="text-lg font-bold font-satoshi text-foreground mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-tight">
                       {milestone.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                    <p className="text-base text-muted-foreground leading-relaxed">
                       {milestone.description}
                     </p>
                   </div>
 
                   {/* Progress Connector */}
                   {index < milestones.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2">
-                      <div className="w-6 h-0.5 bg-gradient-to-r from-primary/50 to-transparent"></div>
-                      <ArrowRight className="w-4 h-4 text-primary/50 absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1" />
+                    <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                      <div className="w-8 h-0.5 bg-gradient-to-r from-primary/50 to-transparent"></div>
+                      <ArrowRight className="w-5 h-5 text-primary/50 absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1" />
                     </div>
                   )}
                   
                   {/* Completion Checkmark for all except last */}
                   {index < milestones.length - 1 && (
-                    <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-                      <CheckCircle2 className="w-4 h-4 text-white" />
+                    <div className="absolute -bottom-3 -right-3 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
+                      <CheckCircle2 className="w-5 h-5 text-white" />
                     </div>
                   )}
                 </div>
@@ -157,32 +159,32 @@ const JourneySection = () => {
           })}
         </div>
 
-        {/* Compact Progress Bar */}
+        {/* Progress Bar */}
         <div 
           data-index={milestones.length + 1}
-          className={`transition-all duration-1000 mb-8 ${
+          className={`transition-all duration-1000 mb-12 ${
             visibleItems.has(milestones.length + 1) 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-8'
           }`}
         >
-          <div className="flex items-center justify-center space-x-2">
+          <div className="flex items-center justify-center space-x-3">
             {milestones.map((_, index) => (
               <div key={index} className="flex items-center">
-                <div className={`w-3 h-3 rounded-full transition-all duration-500 ${
+                <div className={`w-4 h-4 rounded-full transition-all duration-500 ${
                   index < milestones.length - 1 
                     ? 'bg-green-500 shadow-lg shadow-green-500/30' 
                     : 'bg-primary shadow-lg shadow-primary/30 animate-pulse'
                 }`} />
                 {index < milestones.length - 1 && (
-                  <div className="w-8 h-0.5 bg-gradient-to-r from-green-500/50 to-primary/50 mx-2" />
+                  <div className="w-12 h-0.5 bg-gradient-to-r from-green-500/50 to-primary/50 mx-2" />
                 )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Compact Bottom CTA */}
+        {/* Bottom CTA */}
         <div 
           data-index={milestones.length + 2}
           className={`text-center transition-all duration-1000 ${
@@ -192,14 +194,14 @@ const JourneySection = () => {
           }`}
         >
           <div className="backdrop-blur-xl bg-gradient-to-r from-primary/10 via-secondary/5 to-accent/10 
-            border border-primary/20 rounded-2xl p-6 max-w-2xl mx-auto hover:bg-primary/15 transition-all duration-500">
-            <div className="flex items-center justify-center space-x-3 mb-3">
-              <Zap className="w-5 h-5 text-primary animate-pulse" />
-              <p className="text-lg font-semibold font-satoshi text-foreground">
+            border-2 border-primary/20 rounded-2xl p-10 max-w-3xl mx-auto hover:bg-primary/15 transition-all duration-500">
+            <div className="flex items-center justify-center space-x-4 mb-4">
+              <Zap className="w-8 h-8 text-primary animate-pulse" />
+              <p className="text-2xl md:text-3xl font-bold text-foreground">
                 And it's only the beginning.
               </p>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-lg md:text-xl text-muted-foreground">
               Join us as we transform infrastructure decisions in the age of AI.
             </p>
           </div>
