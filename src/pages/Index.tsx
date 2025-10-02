@@ -110,7 +110,7 @@ const Index = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24">
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
-              Our Solution: Living Labs for Infrastructure
+              Our Solution: <span className="text-primary">Living Labs</span> for Infrastructure
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We build AI-powered platforms that transform fragmented systems into connected, 
@@ -378,8 +378,8 @@ const Index = () => {
                 Built by Infrastructure Veterans
               </span>
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-8 leading-tight">
-              Proven at Scale
+            <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+              Proven at <span className="text-primary">Scale</span>
             </h2>
             <p className="text-2xl md:text-3xl text-foreground max-w-4xl mx-auto leading-relaxed font-light mb-4">
               We don't just build platforms—we deliver systems that work in the real world.
@@ -471,8 +471,8 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-primary/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
-              Let's Build Together
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+              Let's Build <span className="text-primary">Together</span>
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Whether you're a vendor seeking to connect with decision-makers, a government looking 
@@ -541,8 +541,8 @@ const Index = () => {
             {/* Left: Contact Info & Quick Actions */}
             <div className="space-y-12">
               <div>
-                <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
-                  Get in Touch
+                <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+                  Get in <span className="text-primary">Touch</span>
                 </h2>
                 <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                   Ready to transform infrastructure decision-making? Let's start the conversation.
