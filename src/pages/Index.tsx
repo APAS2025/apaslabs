@@ -566,8 +566,18 @@ const Index = () => {
                     <MapPin className="h-8 w-8 text-primary" />
                   </div>
                   <div>
-                    <p className="text-lg font-semibold text-foreground mb-2">Location</p>
-                    <p className="text-base text-muted-foreground">Miami, FL | Serving Infrastructure Leaders Globally</p>
+                    <p className="text-lg font-semibold text-foreground mb-2">Headquarters</p>
+                    <p className="text-base text-muted-foreground">Miami, FL • Serving Infrastructure Leaders Globally</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-5">
+                  <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-8 w-8 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold text-foreground mb-2">Phone</p>
+                    <p className="text-base text-muted-foreground">+1 (555) 123-4567 • Mon–Fri, 9am–6pm ET</p>
                   </div>
                 </div>
               </div>
