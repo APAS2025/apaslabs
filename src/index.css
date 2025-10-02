@@ -2,69 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-/* APAS Labs Futuristic Design System */
+/* APAS Brand Design System - Professional, Bold, Minimalistic */
 
 @layer base {
   :root {
-    /* Core Dark Theme Colors */
-    --background: 220 15% 6%;
-    --background-deep: 220 20% 3%;
-    --foreground: 210 40% 98%;
+    /* Primary Brand Colors - Black & White Foundation */
+    --background: 0 0% 100%;
+    --background-alt: 42 6% 98%;
+    --foreground: 0 0% 0%;
 
     /* Card & Surface Colors */
-    --card: 220 15% 8%;
-    --card-foreground: 210 40% 98%;
-    --glass: 220 15% 10%;
-    --glass-border: 220 40% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    
+    /* Primary - Deep Ocean Blue (Strategic Accent) */
+    --primary: 210 100% 16%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Primary Brand Colors - Cyber Blue */
-    --primary: 210 100% 65%;
-    --primary-glow: 210 100% 75%;
-    --primary-foreground: 220 15% 6%;
+    /* Secondary - Ultramarine (Subtle Accent) */
+    --secondary: 215 90% 47%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Secondary - Hot Pink */
-    --secondary: 330 100% 65%;
-    --secondary-glow: 330 100% 75%;
-    --secondary-foreground: 220 15% 6%;
-
-    /* Accent - Electric Pink */
-    --accent: 320 100% 70%;
-    --accent-glow: 320 100% 80%;
-    --accent-foreground: 220 15% 6%;
+    /* Accent - Sky Blue (Lighter Accent) */
+    --accent: 205 89% 75%;
+    --accent-foreground: 210 100% 16%;
 
     /* Neutral Tones */
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 60%;
-    --border: 220 20% 20%;
-    --input: 220 15% 12%;
-    --ring: 210 100% 60%;
+    --muted: 42 6% 98%;
+    --muted-foreground: 0 0% 40%;
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 215 90% 47%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 65%), hsl(330 100% 65%));
-    --gradient-hero: linear-gradient(180deg, hsl(220 15% 8%) 0%, hsl(220 20% 3%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center top, hsl(210 100% 65% / 0.15) 0%, hsl(330 100% 65% / 0.1) 50%, transparent 70%);
-    --gradient-glass: linear-gradient(135deg, hsl(220 15% 10% / 0.8) 0%, hsl(220 15% 8% / 0.4) 100%);
+    /* Semantic Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Shadows & Effects */
-    --shadow-glow: 0 0 40px hsl(210 100% 65% / 0.4), 0 0 80px hsl(330 100% 65% / 0.2);
-    --shadow-glass: 0 8px 32px hsl(220 20% 3% / 0.6);
-    --shadow-elevation: 0 20px 40px hsl(220 20% 3% / 0.8);
+    /* Popover & Dropdown */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    /* Brand-Specific Colors */
+    --deep-space: 210 100% 6%;
+    --deep-ocean: 210 100% 16%;
+    --glacier: 222 81% 95%;
+    --periwinkle: 215 81% 84%;
+    --sky: 205 89% 75%;
+    --ultramarine: 215 90% 47%;
+
+    /* Professional Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1);
+
+    /* Gradients - Strategic Blue Accents */
+    --gradient-primary: linear-gradient(135deg, hsl(215 90% 47%), hsl(205 89% 75%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(42 6% 98%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(222 81% 95%) 0%, hsl(0 0% 100%) 100%);
 
     /* Animation Timing */
-    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: all 0.15s ease;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    /* Sidebar */
-    --sidebar-background: 220 15% 8%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 210 100% 60%;
-    --sidebar-primary-foreground: 220 15% 6%;
-    --sidebar-accent: 220 15% 12%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 220 20% 20%;
-    --sidebar-ring: 210 100% 60%;
+    /* Sidebar - Professional Light Theme */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 215 90% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 42 6% 98%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 215 90% 47%;
   }
 }
 
@@ -74,101 +85,132 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: "kern" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6, button, .font-heading {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
 @layer components {
-  /* Glassmorphism utility classes */
-  .glass-card {
-    @apply bg-gradient-glass border border-glass-border backdrop-blur-xl shadow-glass;
+  /* Professional Card Styles */
+  .card-elevated {
+    @apply bg-card border border-border shadow-md;
   }
   
-  .glass-surface {
-    @apply bg-glass/60 border border-glass-border backdrop-blur-sm;
+  .card-subtle {
+    @apply bg-muted border border-transparent;
   }
 
-  /* Glow effects */
-  .glow-primary {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  /* Strategic Blue Accents */
+  .accent-primary {
+    @apply text-primary;
   }
   
-  .glow-secondary {
-    box-shadow: 0 0 20px hsl(var(--secondary) / 0.5);
-  }
-  
-  .glow-accent {
-    box-shadow: 0 0 20px hsl(var(--accent) / 0.5);
+  .accent-secondary {
+    @apply text-secondary;
   }
 
-  /* Text glow effects */
-  .text-glow {
-    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  /* Typography Helpers */
+  .heading-hero {
+    @apply font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
   }
 
-  /* Floating animation */
-  .float {
-    animation: float 3s ease-in-out infinite;
+  .heading-section {
+    @apply font-heading text-3xl md:text-4xl font-semibold tracking-tight;
   }
-  
-  .float-delayed {
-    animation: float 3s ease-in-out infinite 1.5s;
+
+  .heading-subsection {
+    @apply font-heading text-xl md:text-2xl font-semibold;
+  }
+
+  .body-text {
+    font-family: 'Open Sans', sans-serif;
+    @apply text-base leading-relaxed;
+  }
+
+  /* Professional Hover Effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .hover-accent {
+    @apply transition-colors duration-300 hover:text-primary;
   }
 }
 
 @layer utilities {
-  /* Custom scrollbar */
+  /* Professional scrollbar */
   .scrollbar-thin::-webkit-scrollbar {
-    width: 4px;
+    width: 8px;
   }
   
   .scrollbar-thin::-webkit-scrollbar-track {
-    @apply bg-background;
+    @apply bg-muted;
   }
   
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    @apply bg-primary/30 rounded-full;
+    @apply bg-muted-foreground/30 rounded;
   }
   
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/50;
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Brand-specific utilities */
+  .bg-deep-space {
+    background-color: hsl(var(--deep-space));
+  }
+
+  .bg-deep-ocean {
+    background-color: hsl(var(--deep-ocean));
+  }
+
+  .bg-glacier {
+    background-color: hsl(var(--glacier));
+  }
+
+  .text-deep-ocean {
+    color: hsl(var(--deep-ocean));
   }
 }
 
-/* Additional keyframes */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+/* Professional keyframes */
+@keyframes fade-in {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+@keyframes slide-in {
+  from { 
+    opacity: 0; 
+    transform: translateX(-20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
 }
 
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
-  50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
-}
-
-@keyframes ribbon-flow {
-  0% { 
-    transform: translateX(-100%) scaleY(1);
-    opacity: 0;
+@keyframes scale-in {
+  from { 
+    opacity: 0; 
+    transform: scale(0.95); 
   }
-  10% {
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateX(0%) scaleY(1.1);
-    opacity: 0.8;
-  }
-  90% {
-    opacity: 0.6;
-  }
-  100% { 
-    transform: translateX(100%) scaleY(1);
-    opacity: 0;
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
   }
 }
