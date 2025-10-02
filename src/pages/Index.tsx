@@ -228,6 +228,130 @@ const Index = () => {
       {/* Orakles Interactive Demo */}
       <OraklesDemo />
 
+      {/* Biscayne Bay GPT - Deep Dive */}
+      <section className="py-32 bg-gradient-to-b from-background to-background-deep relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Content */}
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-3 bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+                <span className="text-4xl">🌊</span>
+                <span className="text-primary font-semibold">Environmental AI Guardian</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+                Biscayne Bay Has a Voice—<br />
+                <span className="text-primary">And It's Powered by AI</span>
+              </h2>
+
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                For decades, Biscayne Bay has been dying while millions in restoration funds vanished into reports nobody reads. 
+                <strong className="text-foreground"> Droobi changes that.</strong>
+              </p>
+
+              <div className="bg-card/50 backdrop-blur-sm border-2 border-primary/20 rounded-2xl p-8 space-y-6">
+                <h3 className="text-2xl font-bold text-foreground">What Droobi Does</h3>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-1">Real-Time Environmental Intelligence</h4>
+                      <p className="text-muted-foreground">Live sensor data + decades of reports = instant answers on water quality, pollution sources, and ecosystem health</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-1">Citizen Voice Portal</h4>
+                      <p className="text-muted-foreground">Anyone can ask Droobi about bay conditions, report issues, or track restoration progress—no PhD required</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-1">Follow the Money Dashboards</h4>
+                      <p className="text-muted-foreground">Tracks every restoration dollar spent and ties it to measurable outcomes—because "trust us" isn't good enough</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-1">Early Warning System</h4>
+                      <p className="text-muted-foreground">Alerts regulators, businesses, and communities before the next fish kill or algae bloom makes headlines</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <Button size="lg" className="text-lg px-8 py-6 h-auto font-semibold" asChild>
+                <Link to="/biscayne-bay-gpt">
+                  Meet Droobi & Explore the Bay <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+
+            {/* Right: Interactive Preview */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-2xl" />
+              <Card className="relative bg-card/80 backdrop-blur-xl border-2 border-primary/20 overflow-hidden">
+                <CardHeader className="bg-gradient-to-br from-primary/10 to-secondary/10">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-3xl">🌊</span>
+                    <div>
+                      <CardTitle className="text-2xl">Ask Droobi Anything</CardTitle>
+                      <CardDescription>Real-time Bay intelligence at your fingertips</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="p-6 space-y-4">
+                  <div className="space-y-3">
+                    <div className="bg-primary/10 border border-primary/20 p-4 rounded-xl hover:bg-primary/20 transition-colors cursor-pointer group">
+                      <p className="text-sm font-medium group-hover:text-primary transition-colors">
+                        "What's the current water quality near Virginia Key?"
+                      </p>
+                    </div>
+                    <div className="bg-secondary/10 border border-secondary/20 p-4 rounded-xl hover:bg-secondary/20 transition-colors cursor-pointer group">
+                      <p className="text-sm font-medium group-hover:text-secondary transition-colors">
+                        "Show me where restoration dollars were spent in 2024"
+                      </p>
+                    </div>
+                    <div className="bg-accent/10 border border-accent/20 p-4 rounded-xl hover:bg-accent/20 transition-colors cursor-pointer group">
+                      <p className="text-sm font-medium group-hover:text-accent transition-colors">
+                        "What are the biggest threats to seagrass this season?"
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-border">
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                      <span>Live data from 12 monitoring stations</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Track Record & Impact */}
       <section className="py-32 bg-background-deep relative overflow-hidden">
         <div className="absolute inset-0">

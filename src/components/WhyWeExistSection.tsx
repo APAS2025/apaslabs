@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Database, AlertTriangle, Users, Wrench, ArrowRight } from "lucide-react";
+import { Database, AlertTriangle, Users, Wrench, ArrowRight, Droplets, TrendingDown, XCircle, Clock } from "lucide-react";
 
 const WhyWeExistSection = () => {
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -15,8 +16,8 @@ const WhyWeExistSection = () => {
         });
       },
       { 
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px' // Trigger animation earlier for better UX
+        threshold: 0.15,
+        rootMargin: '0px 0px -100px 0px'
       }
     );
 
@@ -28,89 +29,128 @@ const WhyWeExistSection = () => {
 
   const problems = [
     {
-      title: "Siloed Data Architecture",
-      description: "$2.4B lost annually due to disconnected systems preventing coordinated infrastructure response.",
-      icon: Database,
-      color: "text-destructive"
+      title: "When Your Water Bill Funds a Mystery",
+      description: "Miami-Dade spent $500M on infrastructure upgrades last year. Ask anyone where the money went—crickets. No dashboards. No metrics. Just hope and a promise that pipes underground got fixed. Your tax dollars deserve better.",
+      statistic: "$2.4B",
+      statLabel: "wasted annually on disconnected systems",
+      icon: Droplets,
+      color: "text-blue-400",
+      gradient: "from-blue-500/20 to-cyan-500/20"
     },
     {
-      title: "Zero Accountability Framework", 
-      description: "92% of infrastructure projects exceed budget with no measurable ROI tracking systems.",
-      icon: AlertTriangle,
-      color: "text-orange-400"
+      title: "The 'Trust Me, It'll Work' Budget", 
+      description: "A city council approves a $50M stormwater project. Two years later: 92% over budget, delayed by 18 months, and no clear evidence it solved the flooding. But hey, at least someone got paid. This isn't accountability—it's expensive theater.",
+      statistic: "92%",
+      statLabel: "of projects exceed budget with zero ROI tracking",
+      icon: TrendingDown,
+      color: "text-orange-400",
+      gradient: "from-orange-500/20 to-red-500/20"
     },
     {
-      title: "Broken Stakeholder Trust",
-      description: "68% decline in citizen confidence as governments operate without transparency or clear metrics.",
-      icon: Users,
-      color: "text-yellow-400"
+      title: "When Citizens Give Up Asking",
+      description: "Your neighbor stopped going to town halls because 'nothing ever changes.' She asked about water quality three times—got three different answers. Trust isn't just broken; it's buried under decades of opaque operations and missing answers.",
+      statistic: "68%",
+      statLabel: "decline in citizen trust due to zero transparency",
+      icon: XCircle,
+      color: "text-red-400",
+      gradient: "from-red-500/20 to-pink-500/20"
     },
     {
-      title: "Legacy Decision Systems",
-      description: "Infrastructure decisions made on 20-year-old processes cost communities 40% more than necessary.",
-      icon: Wrench,
-      color: "text-blue-400"
+      title: "Decision-Making Stuck in 2004",
+      description: "Infrastructure decisions rely on spreadsheets older than the iPhone, paper reports nobody reads, and tribal knowledge from staff about to retire. Meanwhile, Miami floods during high tide. Outdated systems don't just cost money—they cost lives.",
+      statistic: "40%",
+      statLabel: "higher costs from 20-year-old decision processes",
+      icon: Clock,
+      color: "text-yellow-400",
+      gradient: "from-yellow-500/20 to-amber-500/20"
     }
   ];
 
   return (
-    <section className="relative py-16 lg:py-20 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background-deep/95 to-background-deep z-0" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
+    <section className="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-background-deep via-background to-background-deep">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+      </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <div 
             data-index="0"
             className={`transition-all duration-1000 ease-out ${
               visibleItems.includes(0) 
-                ? 'opacity-100 transform translate-y-0 scale-100' 
-                : 'opacity-0 transform translate-y-12 scale-95'
+                ? 'opacity-100 transform translate-y-0' 
+                : 'opacity-0 transform translate-y-12'
             }`}
           >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-satoshi mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
-                The Infrastructure Crisis
+                The Infrastructure Crisis<br />Nobody Talks About
               </span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-600 mx-auto rounded-full shadow-glow mb-8" />
-            <p className="text-xl text-muted-foreground font-space font-light max-w-3xl mx-auto leading-relaxed">
-              Critical systems fail because decisions are made in isolation, without data, accountability, or community input.
+            <div className="w-32 h-1.5 bg-gradient-to-r from-primary via-blue-400 to-blue-600 mx-auto rounded-full shadow-glow mb-8" />
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              These aren't abstract problems—they're your money, your safety, and your community's future.
             </p>
           </div>
         </div>
 
-        {/* Problems Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-16">
+        {/* Problems Grid - Staggered Layout */}
+        <div className="space-y-8 mb-20">
           {problems.map((problem, index) => {
             const IconComponent = problem.icon;
+            const isEven = index % 2 === 0;
+            
             return (
               <div
                 key={index}
                 data-index={index + 1}
-                className={`group transition-all duration-1000 ease-out ${
+                onMouseEnter={() => setHoveredCard(index)}
+                onMouseLeave={() => setHoveredCard(null)}
+                className={`transition-all duration-1000 ease-out ${
                   visibleItems.includes(index + 1)
-                    ? `opacity-100 transform translate-y-0 scale-100 ${index % 2 === 0 ? 'rotate-0' : 'rotate-0'}`
-                    : `opacity-0 transform translate-y-12 scale-90 ${index % 2 === 0 ? '-rotate-1' : 'rotate-1'}`
+                    ? 'opacity-100 transform translate-y-0 translate-x-0'
+                    : `opacity-0 transform translate-y-16 ${isEven ? '-translate-x-12' : 'translate-x-12'}`
                 }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
+                style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div className="glass-card p-6 lg:p-8 h-full hover:shadow-elegant transition-all duration-500 hover:scale-105 hover:-translate-y-2 border border-white/10 transform-gpu">
-                  <div className="flex items-start gap-4">
-                    <div className={`${problem.color} bg-white/5 p-3 rounded-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
-                      <IconComponent size={28} />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl lg:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                        {problem.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
+                <div className={`relative group ${isEven ? 'lg:pr-16' : 'lg:pl-16'}`}>
+                  {/* Connecting line for desktop */}
+                  <div className={`hidden lg:block absolute top-1/2 ${isEven ? 'right-0' : 'left-0'} w-12 h-0.5 bg-gradient-to-r ${isEven ? 'from-primary/50 to-transparent' : 'from-transparent to-primary/50'}`} />
+                  
+                  <div className={`relative glass-card p-8 lg:p-10 border-2 transition-all duration-500 
+                    ${hoveredCard === index ? 'border-primary/50 shadow-2xl shadow-primary/20 scale-[1.02]' : 'border-border hover:border-primary/30'}
+                    bg-gradient-to-br ${problem.gradient}`}
+                  >
+                    {/* Animated background glow on hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${problem.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg`} />
+                    
+                    <div className="relative">
+                      <div className="flex items-start gap-6 mb-6">
+                        <div className={`${problem.color} bg-background-deep/50 p-4 rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl flex-shrink-0`}>
+                          <IconComponent size={32} />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                            {problem.title}
+                          </h3>
+                          <div className="flex items-baseline gap-3 mb-4">
+                            <span className={`text-4xl font-bold ${problem.color}`}>{problem.statistic}</span>
+                            <span className="text-sm text-muted-foreground">{problem.statLabel}</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <p className="text-lg text-muted-foreground leading-relaxed">
                         {problem.description}
                       </p>
                     </div>
+
+                    {/* Pulse indicator */}
+                    <div className={`absolute -top-2 -right-2 w-4 h-4 rounded-full ${problem.color} opacity-75 animate-ping`} />
+                    <div className={`absolute -top-2 -right-2 w-4 h-4 rounded-full ${problem.color}`} />
                   </div>
                 </div>
               </div>
@@ -118,43 +158,47 @@ const WhyWeExistSection = () => {
           })}
         </div>
 
-        {/* Solution Flow */}
+        {/* Solution CTA */}
         <div 
           data-index="5"
-          className={`transition-all duration-1200 ease-out delay-300 ${
+          className={`transition-all duration-1200 ease-out ${
             visibleItems.includes(5)
               ? 'opacity-100 transform translate-y-0 scale-100'
               : 'opacity-0 transform translate-y-16 scale-95'
           }`}
         >
-          <div className="glass-card p-8 lg:p-12 border border-primary/30 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5">
-            <div className="flex flex-col lg:flex-row items-center gap-8">
+          <div className="relative group glass-card p-10 lg:p-16 border-2 border-primary/30 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 hover:border-primary/50 transition-all duration-500">
+            {/* Animated gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
+            
+            <div className="relative flex flex-col lg:flex-row items-center gap-8">
               <div className="flex-1 text-center lg:text-left">
-                <h3 className="text-3xl lg:text-4xl font-bold mb-4">
+                <h3 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight">
                   <span className="bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
-                    Living Labs Solution
+                    We're Building the Fix
                   </span>
                 </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Data-connected systems that transform fragmented infrastructure decisions into 
-                  transparent, accountable, and measurable outcomes for communities.
+                <p className="text-xl text-foreground leading-relaxed mb-8">
+                  AI-powered platforms that turn chaos into clarity. Real-time data. Proven ROI. 
+                  Community voice. And accountability that actually means something.
                 </p>
-                <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                  <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                    Real-time Data
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                  <span className="bg-primary/20 text-primary px-5 py-2 rounded-full text-base font-semibold border border-primary/30 hover:bg-primary/30 transition-colors">
+                    Real-time Intelligence
                   </span>
-                  <span className="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
-                    Clear Metrics
+                  <span className="bg-secondary/20 text-secondary px-5 py-2 rounded-full text-base font-semibold border border-secondary/30 hover:bg-secondary/30 transition-colors">
+                    Measurable Outcomes
                   </span>
-                  <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium">
-                    Community Voice
+                  <span className="bg-accent/20 text-accent px-5 py-2 rounded-full text-base font-semibold border border-accent/30 hover:bg-accent/30 transition-colors">
+                    Citizen Transparency
                   </span>
                 </div>
               </div>
               
-              <div className="flex-shrink-0">
-                <div className="bg-gradient-primary p-4 rounded-full shadow-glow">
-                  <ArrowRight size={32} className="text-white" />
+              <div className="flex-shrink-0 relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent rounded-full blur-2xl opacity-50 group-hover:opacity-75 transition-opacity animate-pulse" />
+                <div className="relative bg-gradient-primary p-6 rounded-full shadow-2xl group-hover:scale-110 transition-transform duration-500">
+                  <ArrowRight size={40} className="text-white" />
                 </div>
               </div>
             </div>
