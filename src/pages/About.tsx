@@ -15,17 +15,16 @@ const About = () => {
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-satoshi mb-6">
               <span className="bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
-                About APAS Labs
+                We're Not Waiting
               </span>
               <br />
               <span className="text-foreground">
-                Transforming Infrastructure with AI
+                For Someone Else to Fix This
               </span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
-              Born from a vision to make public infrastructure AI-ready, APAS Labs represents the convergence 
-              of decades of expertise, unwavering dedication to public service, and a bold commitment to 
-              collaborative innovation.
+              The infrastructure keeping our cities alive is drowning in data it can't use. 
+              We're building the tools to change that—not someday, but right now.
             </p>
           </div>
         </div>
@@ -36,11 +35,11 @@ const About = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold font-satoshi mb-6">
-              Meet Our Founders
+              Who We Are
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              The visionaries behind APAS Labs bring together diverse expertise in technology, 
-              public service, and transformational leadership.
+              Two people who got tired of watching billion-dollar infrastructure programs 
+              struggle with problems AI could actually solve.
             </p>
           </div>
 
@@ -52,27 +51,25 @@ const About = () => {
                   <Users className="h-16 w-16 text-primary" />
                 </div>
                 <CardTitle className="text-2xl font-satoshi">Hardeep Anand</CardTitle>
-                <p className="text-muted-foreground">Co-Founder & Infrastructure Visionary</p>
+                <p className="text-muted-foreground">Co-Founder</p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start space-x-3 mb-4">
                   <Quote className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <p className="text-muted-foreground italic">
-                    "We cannot wait for someone else to make public infrastructure AI-ready. 
-                    The time is now, and the responsibility is ours."
+                    "After managing $9 billion in infrastructure programs, I realized we're asking the wrong questions. 
+                    It's not 'Can AI help?' It's 'Why are we still doing this without AI?'"
                   </p>
                 </div>
                 <p className="text-muted-foreground">
-                  With decades of experience in billion-dollar program management and public works oversight, 
-                  Hardeep recognized the critical gap between AI capabilities and real-world infrastructure 
-                  challenges. His vision for APAS Labs emerged from years of witnessing how traditional 
-                  approaches fall short in addressing modern infrastructure complexities.
+                  Hardeep spent decades in the trenches—managing massive stormwater programs, dealing with regulatory 
+                  nightmares, watching smart people waste months on problems that pattern recognition could solve in minutes. 
+                  He got tired of being the person who knew what needed to change but had no platform to actually change it.
                 </p>
                 <p className="text-muted-foreground">
-                  As an infrastructure leader and systems synthesist, Hardeep specializes in translating 
-                  policy into actionable solutions. His leadership philosophy centers on collaborative 
-                  innovation—bringing together diverse stakeholders to create solutions that are not just 
-                  technically sound, but practically implementable and socially responsible.
+                  So he built one. Not to "disrupt" anything (that word is overused anyway), but to give infrastructure 
+                  professionals the tools they deserve. The kind that don't require a CS degree to use. The kind that 
+                  actually understand how messy real-world data is.
                 </p>
                 <div className="bg-primary/5 p-4 rounded-lg">
                   <p className="text-sm text-muted-foreground">
@@ -93,28 +90,26 @@ const About = () => {
                   />
                 </div>
                 <CardTitle className="text-2xl font-satoshi">Simi Anand</CardTitle>
-                <p className="text-muted-foreground">Co-Founder & Impact Strategist</p>
+                <p className="text-muted-foreground">Co-Founder</p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start space-x-3 mb-4">
                   <Quote className="h-6 w-6 text-purple-400 mt-1 flex-shrink-0" />
                   <p className="text-muted-foreground italic">
-                    "True innovation happens when storytelling meets actionable impact. 
-                    Every infrastructure project is a story of community resilience."
+                    "Nobody cares about your AI model until you show them what problem it actually solves. 
+                    That's where the story comes in."
                   </p>
                 </div>
                 <p className="text-muted-foreground">
-                  A TEDx speaker, creator, and podcaster with a 130K+ audience, Simi brings 
-                  a unique blend of storytelling prowess and strategic thinking to APAS Labs. 
-                  From founding a non-profit at 15 that impacted 500+ students to raising 
-                  significant funds for girls' education in India, her journey has always 
-                  been about creating meaningful change through purposeful action.
+                  Simi built a 130K+ audience by talking about things that matter. Started a nonprofit at 15. 
+                  Gave TEDx talks. Raised money for girls' education in India. But when she looked at infrastructure, 
+                  she saw the same problem everywhere: brilliant technology that nobody could explain in a way 
+                  that made people actually care.
                 </p>
                 <p className="text-muted-foreground">
-                  At APAS Labs, Simi focuses on systems design, community engagement, and 
-                  translating complex AI and infrastructure concepts into compelling narratives 
-                  that drive stakeholder engagement and community buy-in. Her approach bridges 
-                  the gap between technical capabilities and human-centered solutions.
+                  At APAS Labs, she's the translator. She turns "machine learning algorithms for predictive maintenance" 
+                  into "here's how we stop your pipes from exploding." She designs systems that humans actually want to use. 
+                  And she makes sure every tool we build tells a story worth paying attention to.
                 </p>
                 <div className="bg-purple-500/5 p-4 rounded-lg">
                   <p className="text-sm text-muted-foreground">
@@ -133,46 +128,41 @@ const About = () => {
           <Card className="bg-gradient-glass border-glass-border backdrop-blur-xl">
             <CardHeader>
               <CardTitle className="text-3xl font-satoshi text-center mb-4">
-                How APAS Labs Came to Be
+                The Real Origin Story
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6 text-lg text-muted-foreground">
               <p>
-                The story of APAS Labs began with a simple yet profound realization: while AI 
-                technology was advancing at unprecedented speed, public infrastructure—the 
-                backbone of our communities—was being left behind.
+                Here's the thing nobody talks about: AI was supposed to revolutionize everything. 
+                But somehow, the systems keeping our cities running—water, stormwater, sewers, the stuff 
+                people literally can't live without—were stuck using the same spreadsheets from 2005.
               </p>
               
               <p>
-                Hardeep and Simi witnessed firsthand how traditional infrastructure management 
-                approaches struggled with modern challenges like climate resilience, data 
-                transparency, and predictive maintenance. They saw brilliant engineers, dedicated 
-                public servants, and innovative technology vendors working in silos, each possessing 
-                pieces of the solution but lacking a unified framework to bring it all together.
+                Hardeep was managing multi-billion dollar programs and watching engineers manually 
+                comb through decades of inspection reports. Simi was building tech communities and seeing 
+                how excited people got about AI... until you mentioned "municipal infrastructure" and their 
+                eyes glazed over.
               </p>
 
               <p>
-                The breakthrough moment came when they realized that the solution wasn't just about 
-                technology—it was about education, collaboration, and building bridges between 
-                diverse communities of practice. They envisioned an organization that would serve 
-                as both a catalyst and a facilitator, helping public infrastructure professionals 
-                become AI-ready through structured learning, peer collaboration, and practical 
-                application.
+                The breaking point? Watching a room full of brilliant people—engineers, city officials, 
+                tech vendors—all trying to solve the same problem from different angles, speaking different 
+                languages, and getting nowhere.
               </p>
 
               <p>
-                APAS Labs was founded on the principle that we cannot wait for someone else to 
-                solve these challenges. The organization became a living laboratory where centuries 
-                of infrastructure knowledge meets cutting-edge AI capabilities, all guided by the 
-                belief that the best solutions emerge from collaborative effort rather than 
-                isolated innovation.
+                So we built APAS Labs. Not as a consulting firm (the world has enough of those). Not as a 
+                SaaS company (ditto). But as an actual laboratory—a place where you can experiment with AI 
+                on real infrastructure problems, learn from people who've been in your shoes, and build 
+                tools that don't require a PhD to understand.
               </p>
 
               <p>
-                Today, through strategic partnerships with APAS.AI and recognition from organizations 
-                like the Algorand Foundation, APAS Labs continues to pioneer new approaches to 
-                infrastructure challenges, always with the mission of making AI capabilities 
-                accessible and actionable for public infrastructure professionals.
+                We're here because nobody else was doing this. Because the gap between what AI can do and 
+                what infrastructure professionals can access is ridiculous. And because waiting for some 
+                big tech company or government agency to solve this felt like watching paint dry—while 
+                pipes were literally bursting.
               </p>
             </CardContent>
           </Card>
@@ -193,8 +183,7 @@ const About = () => {
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed">
-              From organizing industry-leading summits to building transformative partnerships, 
-              our track record speaks to our commitment to infrastructure innovation.
+              We've been at this since 2016. Here's what we've actually built (not just talked about).
             </p>
           </div>
 
@@ -209,8 +198,8 @@ const About = () => {
                 <div className="relative flex items-center">
                   <div className="flex-1 text-right pr-8">
                     <div className="bg-gradient-glass border-glass-border backdrop-blur-xl p-6 rounded-lg inline-block max-w-md">
-                      <h3 className="text-lg font-semibold mb-2">Foundation Year</h3>
-                      <p className="text-sm text-muted-foreground">APAS Labs founded with a vision to transform infrastructure through collaborative innovation</p>
+                      <h3 className="text-lg font-semibold mb-2">Year One</h3>
+                      <p className="text-sm text-muted-foreground">Started in a living room with a crazy idea: what if infrastructure professionals could actually use AI?</p>
                       <span className="text-xs text-primary font-medium">2016</span>
                     </div>
                   </div>
@@ -224,8 +213,8 @@ const About = () => {
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-background"></div>
                   <div className="flex-1 pl-8">
                     <div className="bg-gradient-glass border-glass-border backdrop-blur-xl p-6 rounded-lg inline-block max-w-md">
-                      <h3 className="text-lg font-semibold mb-2">Building Networks</h3>
-                      <p className="text-sm text-muted-foreground">Established key partnerships with utilities, municipalities, and technology leaders across the infrastructure sector</p>
+                      <h3 className="text-lg font-semibold mb-2">Building the Network</h3>
+                      <p className="text-sm text-muted-foreground">Connected utilities, cities, and tech folks who all wanted the same thing but didn't know each other existed</p>
                       <span className="text-xs text-secondary font-medium">2018-2020</span>
                     </div>
                   </div>
@@ -240,7 +229,8 @@ const About = () => {
                         <h3 className="text-xl font-bold text-accent">Future of Water Summit</h3>
                       </div>
                       <p className="text-muted-foreground mb-4">
-                        <strong>Flagship Achievement:</strong> Successfully organized and hosted the Future of Water Summit, featuring keynote by the Mayor and attracting hundreds of water industry professionals, policymakers, and technology leaders.
+                        <strong>The Big One:</strong> Pulled off a summit with 500+ water professionals, got the Mayor to keynote, 
+                        and proved that people actually care about making infrastructure smarter.
                       </p>
                       <div className="space-y-2 text-sm">
                         <div className="flex items-center justify-end text-muted-foreground">
@@ -269,8 +259,8 @@ const About = () => {
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full border-4 border-background"></div>
                   <div className="flex-1 pl-8">
                     <div className="bg-gradient-glass border-glass-border backdrop-blur-xl p-6 rounded-lg inline-block max-w-md">
-                      <h3 className="text-lg font-semibold mb-2">Industry Recognition</h3>
-                      <p className="text-sm text-muted-foreground">Algorand Foundation grant recognition and expansion of guild-based collaborative networks</p>
+                      <h3 className="text-lg font-semibold mb-2">Getting Noticed</h3>
+                      <p className="text-sm text-muted-foreground">Algorand Foundation backed us. Started building guild networks where people actually help each other instead of just networking.</p>
                       <span className="text-xs text-green-500 font-medium">2023</span>
                     </div>
                   </div>
@@ -280,8 +270,8 @@ const About = () => {
                 <div className="relative flex items-center">
                   <div className="flex-1 text-right pr-8">
                     <div className="bg-gradient-glass border-glass-border backdrop-blur-xl p-6 rounded-lg inline-block max-w-md">
-                      <h3 className="text-lg font-semibold mb-2">APAS Labs 2.0</h3>
-                      <p className="text-sm text-muted-foreground">Launch of interactive labs, AI-powered tools, and comprehensive guild ecosystem</p>
+                      <h3 className="text-lg font-semibold mb-2">Now</h3>
+                      <p className="text-sm text-muted-foreground">Live labs. Real AI tools. A community that's actually doing the work. This is what we built it all for.</p>
                       <span className="text-xs text-primary font-medium">2024</span>
                     </div>
                   </div>
@@ -297,11 +287,11 @@ const About = () => {
             <Card className="bg-gradient-glass border-glass-border backdrop-blur-xl overflow-hidden">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl font-satoshi mb-4">
-                  Resilient Utility Coalition: A Legacy of Leadership
+                  See It in Action
                 </CardTitle>
                 <p className="text-muted-foreground max-w-3xl mx-auto">
-                  This 3-minute video captures the essence of our work in building resilient infrastructure communities. 
-                  See how we've brought together utilities, policymakers, and innovators to address critical challenges.
+                  Three minutes that show what happens when you bring the right people together around the right problems. 
+                  No fluff, just infrastructure professionals getting stuff done.
                 </p>
               </CardHeader>
               <CardContent>
