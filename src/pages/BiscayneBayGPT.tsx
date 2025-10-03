@@ -144,7 +144,18 @@ const BiscayneBayGPT = () => {
   const isVisible = (index: number) => visibleItems.includes(index);
 
   return (
-    <div className="min-h-screen bg-background-deep">
+    <div className="min-h-screen bg-background-deep relative overflow-hidden">
+      {/* Subtle background gradient and glow effects */}
+      <div className="fixed inset-0 bg-gradient-hero pointer-events-none" />
+      <div className="fixed inset-0 bg-gradient-glow opacity-10 pointer-events-none" />
+      
+      {/* Animated subtle background elements */}
+      <div className="fixed inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '10s', animationDelay: '3s' }} />
+      </div>
+      
+      <div className="relative z-10">
       {/* 1. HERO SECTION */}
       <section className="relative py-16 sm:py-24 lg:py-32 px-4 overflow-hidden" data-index="0">
         <div className="absolute inset-0 bg-gradient-hero" />
@@ -633,6 +644,7 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
       
+      </div>
     </div>
   );
 };
