@@ -615,18 +615,18 @@ const BiscayneBayGPT = () => {
       </section>
 
       {/* 10. FINAL CALL TO ACTION */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-gradient-primary text-primary-foreground" data-index="9">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background-deep" data-index="9">
         <div className="container mx-auto max-w-4xl text-center">
           <div className={`transform transition-all duration-1000 ${
             isVisible(9) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-foreground">
               Join Us in Protecting Biscayne Bay
             </h2>
-            <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-12 leading-relaxed opacity-90">
+            <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-12 leading-relaxed text-muted-foreground">
               Every dollar, every decision, every data point matters. Together, we can ensure a healthier future for our bay and community.
             </p>
-            <Button size="lg" className="bg-white/90 text-primary hover:bg-white hover:text-primary shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
               Get Involved
             </Button>
           </div>
