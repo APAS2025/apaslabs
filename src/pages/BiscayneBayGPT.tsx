@@ -379,7 +379,7 @@ const BiscayneBayGPT = () => {
                 <h3 className="text-xl font-semibold mb-3 text-foreground">Property</h3>
                 <div className="text-2xl font-bold text-secondary mb-2">-15%</div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Average property value decline in waterfront neighborhoods with documented water quality issues—erasing billions in homeowner equity.
+                  Average property value decline in waterfront neighborhoods with documented water quality issues—erasing billions in homeowner equity. Coral Gables, Key Biscayne, and Miami Beach properties directly correlate to bay health.
                 </p>
               </div>
               <div className="glass-card p-8 flex flex-col items-center text-center hover:border-secondary/40 transition-all duration-300">
@@ -387,7 +387,7 @@ const BiscayneBayGPT = () => {
                 <h3 className="text-xl font-semibold mb-3 text-foreground">Tourism</h3>
                 <div className="text-2xl font-bold text-primary mb-2">$14B</div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Tourism economy at stake as visitors choose clearer waters elsewhere. One algal bloom closes beaches for weeks—costing millions daily.
+                  Tourism economy at stake as visitors choose clearer waters elsewhere. One algal bloom closes beaches for weeks—costing millions daily. Dead zones mean dead zones for business.
                 </p>
               </div>
               <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border flex flex-col items-center text-center">
@@ -408,14 +408,44 @@ const BiscayneBayGPT = () => {
           <div className={`transform transition-all duration-1000 ${
             isVisible(4) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
               How Droobi Helps
             </h2>
-            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border shadow-lg">
+            <p className="text-lg text-muted-foreground text-center max-w-4xl mx-auto mb-12 leading-relaxed">
+              Droobi is your AI-powered guide to understanding Biscayne Bay's complex health data in real-time. No more searching through scattered reports or waiting weeks for answers. Ask questions in plain English, get instant insights backed by live data, and discover exactly where your action creates the most impact.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <div className="glass-card p-6 hover:border-primary/40 transition-all duration-300">
+                <div className="text-3xl font-bold text-primary mb-2">Real-Time</div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">Live Bay Data</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Access current water quality metrics, pollution sources, and environmental trends as they happen—not weeks later in a dense government report.
+                </p>
+              </div>
+              
+              <div className="glass-card p-6 hover:border-secondary/40 transition-all duration-300">
+                <div className="text-3xl font-bold text-secondary mb-2">Instant</div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">Plain-English Answers</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  No PhD required. Ask complex questions about algal blooms, seagrass recovery, or pollution correlations and get clear, actionable answers in seconds.
+                </p>
+              </div>
+              
+              <div className="glass-card p-6 hover:border-primary/40 transition-all duration-300">
+                <div className="text-3xl font-bold text-primary mb-2">Trackable</div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">Impact Transparency</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  See exactly how your support translates to bay health improvements. Track restoration progress, correlate funding to outcomes, hold everyone accountable.
+                </p>
+              </div>
+            </div>
+
+            <div className="glass-card p-8 shadow-lg">
               <div className="mb-6 text-center">
-                <h3 className="text-xl font-semibold mb-2">Ask Droobi</h3>
-                <p className="text-muted-foreground text-sm max-w-xl mx-auto">
-                  Get real-time answers about Biscayne Bay’s health, impacts, and restoration efforts.
+                <h3 className="text-2xl font-bold mb-3 text-foreground">Try Droobi Now</h3>
+                <p className="text-muted-foreground text-base max-w-2xl mx-auto leading-relaxed">
+                  Ask anything about Biscayne Bay's health. Watch how Droobi transforms complex environmental data into insights you can act on—whether you're a concerned resident, policymaker, or investor.
                 </p>
               </div>
               <div className="bg-background rounded-lg p-6 min-h-[150px] text-foreground font-medium text-base leading-relaxed">
@@ -425,16 +455,16 @@ const BiscayneBayGPT = () => {
                   <p>{aiResponse}</p>
                 )}
               </div>
-              <div className="mt-6 flex justify-center space-x-4">
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
                 {aiQuestions.map((q, i) => (
                   <Button
                     key={i}
                     variant={currentQuestion === i ? "default" : "outline"}
                     size="sm"
                     onClick={() => setCurrentQuestion(i)}
-                    className="min-w-[100px]"
+                    className="min-w-[140px]"
                   >
-                    {q.length > 20 ? q.slice(0, 17) + "..." : q}
+                    {q.length > 25 ? q.slice(0, 22) + "..." : q}
                   </Button>
                 ))}
               </div>
