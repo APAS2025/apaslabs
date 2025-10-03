@@ -38,10 +38,10 @@ const BiscayneBayGPT = () => {
 
   // Fallback metrics if database is empty
   const defaultMetrics = [
-    { label: "Water Quality Score", value: "Fair-Poor", trend: "down", color: "text-orange-500" },
-    { label: "Seagrass Coverage", value: "Recovering", trend: "up", color: "text-green-500" },
-    { label: "Nutrient Loading", value: "High", trend: "down", color: "text-red-500" },
-    { label: "Species Count", value: "1,200+", trend: "stable", color: "text-blue-500" }
+    { label: "Water Quality Score", value: "Fair-Poor", trend: "down", color: "text-primary" },
+    { label: "Seagrass Coverage", value: "Recovering", trend: "up", color: "text-primary" },
+    { label: "Nutrient Loading", value: "High", trend: "down", color: "text-primary" },
+    { label: "Species Count", value: "1,200+", trend: "stable", color: "text-primary" }
   ];
 
   // Use database metrics if available, otherwise use defaults
@@ -67,21 +67,21 @@ const BiscayneBayGPT = () => {
       amount: "$5", 
       description: "Join Droobi in protecting our waters",
       icon: <Droplets className="h-6 w-6" />,
-      color: "bg-gradient-to-br from-primary to-primary-glow"
+      color: "bg-gradient-to-br from-primary/80 to-primary"
     },
     { 
       name: "Seagrass Guardian", 
       amount: "$25", 
       description: "Help restore vital underwater forests",
       icon: <Leaf className="h-6 w-6" />,
-      color: "bg-gradient-to-br from-primary to-secondary"
+      color: "bg-gradient-to-br from-primary to-primary-glow"
     },
     { 
       name: "Marine Champion", 
       amount: "$100", 
       description: "Support marine life conservation",
       icon: <Fish className="h-6 w-6" />,
-      color: "bg-gradient-to-br from-secondary to-secondary-glow"
+      color: "bg-gradient-to-br from-primary-glow to-primary"
     },
     { 
       name: "Ocean Ambassador", 
@@ -317,7 +317,7 @@ const BiscayneBayGPT = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex gap-4">
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Users className="h-7 w-7 text-cyan-400" />
+                    <Users className="h-7 w-7 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground mb-2">Parents & Families</h4>
@@ -325,8 +325,8 @@ const BiscayneBayGPT = () => {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0">
-                    <Building2 className="h-7 w-7 text-blue-400" />
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Building2 className="h-7 w-7 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground mb-2">Property Owners</h4>
@@ -334,8 +334,8 @@ const BiscayneBayGPT = () => {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0">
-                    <DollarSign className="h-7 w-7 text-green-400" />
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <DollarSign className="h-7 w-7 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground mb-2">Tourism Businesses</h4>
@@ -343,8 +343,8 @@ const BiscayneBayGPT = () => {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center flex-shrink-0">
-                    <BarChart3 className="h-7 w-7 text-purple-400" />
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <BarChart3 className="h-7 w-7 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground mb-2">Government Agencies</h4>
@@ -367,36 +367,43 @@ const BiscayneBayGPT = () => {
               What’s at Risk if We Don’t Act
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border flex flex-col items-center text-center">
-                <Users className="h-12 w-12 text-cyan-500 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Families</h3>
-                <p className="text-muted-foreground text-sm">
+              <div className="glass-card p-8 flex flex-col items-center text-center hover:border-primary/40 transition-all duration-300">
+                <Users className="h-12 w-12 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-3 text-foreground">Families</h3>
+                <div className="text-2xl font-bold text-primary mb-2">2.7M</div>
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   Unsafe waters threaten health and recreation for Miami’s communities.
                 </p>
               </div>
               <div className="glass-card p-8 flex flex-col items-center text-center hover:border-primary/40 transition-all duration-300">
                 <Building2 className="h-12 w-12 text-primary mb-4" />
                 <h3 className="text-xl font-semibold mb-3 text-foreground">Property</h3>
-                <div className="text-2xl font-bold text-secondary mb-2">-15%</div>
+                <div className="text-2xl font-bold text-primary mb-2">-15%</div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Average property value decline in waterfront neighborhoods with documented water quality issues—erasing billions in homeowner equity. Coral Gables, Key Biscayne, and Miami Beach properties directly correlate to bay health.
                 </p>
               </div>
-              <div className="glass-card p-8 flex flex-col items-center text-center hover:border-secondary/40 transition-all duration-300">
-                <DollarSign className="h-12 w-12 text-secondary mb-4" />
+              <div className="glass-card p-8 flex flex-col items-center text-center hover:border-primary/40 transition-all duration-300">
+                <DollarSign className="h-12 w-12 text-primary mb-4" />
                 <h3 className="text-xl font-semibold mb-3 text-foreground">Tourism</h3>
                 <div className="text-2xl font-bold text-primary mb-2">$14B</div>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Tourism economy at stake as visitors choose clearer waters elsewhere. One algal bloom closes beaches for weeks—costing millions daily. Dead zones mean dead zones for business.
                 </p>
               </div>
-              <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border flex flex-col items-center text-center">
-                <TreePine className="h-12 w-12 text-emerald-500 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Environment</h3>
-                <p className="text-muted-foreground text-sm">
+              <div className="glass-card p-8 flex flex-col items-center text-center hover:border-primary/40 transition-all duration-300">
+                <TreePine className="h-12 w-12 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-3 text-foreground">Environment</h3>
+                <div className="text-2xl font-bold text-primary mb-2">1,200+</div>
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   Biodiversity loss threatens the bay’s delicate ecosystem balance.
                 </p>
               </div>
+            </div>
+            <div className="mt-12 text-center">
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                <span className="text-foreground font-semibold">The correlation is clear:</span> Bay health directly impacts property values, tourism revenue, public health, and marine biodiversity. When one suffers, they all suffer. The question isn't if we can afford to act—it's whether we can afford not to.
+              </p>
             </div>
           </div>
         </div>
@@ -514,7 +521,7 @@ const BiscayneBayGPT = () => {
               Economic Impact
             </h2>
             <div className="glass-card p-12 text-center">
-              <DollarSign className="mx-auto mb-6 h-12 w-12 text-secondary" />
+              <DollarSign className="mx-auto mb-6 h-12 w-12 text-primary" />
               <p className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground max-w-3xl mx-auto leading-relaxed">
                 Biscayne Bay supports a $14 billion tourism economy and hundreds of billions in waterfront property value. Protecting water quality safeguards these vital economic assets.
               </p>
@@ -541,7 +548,7 @@ const BiscayneBayGPT = () => {
                 </CardDescription>
               </Card>
               <Card className="glass-card p-6 flex flex-col items-center text-center">
-                <Users className="h-10 w-10 text-secondary mb-4" />
+                <Users className="h-10 w-10 text-primary mb-4" />
                 <CardTitle className="text-lg font-semibold mb-2">Stakeholder Workshops</CardTitle>
                 <CardDescription className="text-muted-foreground text-sm">
                   Collaborating with agencies, businesses, and residents for solutions.
