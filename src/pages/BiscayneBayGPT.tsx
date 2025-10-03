@@ -164,145 +164,136 @@ const BiscayneBayGPT = () => {
           </div>
         </div>
         
-        <div className="container mx-auto relative z-10 max-w-6xl">
-          <div className={`text-center transform transition-all duration-1000 ${
+        <div className="container mx-auto relative z-10 max-w-7xl">
+          <div className={`transform transition-all duration-1000 ${
             isVisible(0) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
-            <div className="flex justify-center mb-8 sm:mb-12">
-              <div className="relative w-32 h-32 sm:w-40 sm:h-40">
-                <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl" />
-                <div className="relative w-full h-full rounded-full bg-gradient-to-br from-primary/30 to-primary shadow-xl overflow-hidden border-2 border-primary/20">
-                  <img 
-                    src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
-                    alt="Droobi - AI guardian of Biscayne Bay" 
-                    className="w-full h-full object-cover rounded-full hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 tracking-tight">
-              Meet <span className="text-primary">Droobi</span>
-            </h1>
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-3xl mx-auto leading-relaxed mb-4">
-              The world's first AI-powered voice for a vital water body
-            </p>
-            <p className="text-xs sm:text-base md:text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-8 sm:mb-12">
-              428 square miles of Miami's lifeblood • $14B tourism economy • 1,200+ marine species • Where innovation meets accountability
-            </p>
-            
-            <div className="max-w-4xl mx-auto mb-12 bg-card/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border">
-              <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed">
-                Droobi is an AI-powered platform that makes complex environmental data accessible to everyone. 
-                From real-time water quality metrics to restoration impact tracking, Droobi connects communities 
-                with the data they need to protect Biscayne Bay.
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-                <div className="bg-background/50 rounded-xl p-4 sm:p-6 border border-border">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                    <Fish className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Left side - Text content */}
+              <div className="text-center lg:text-left">
+                <div className="flex justify-center lg:justify-start mb-6">
+                  <div className="relative w-24 h-24 sm:w-32 sm:h-32">
+                    <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl" />
+                    <div className="relative w-full h-full rounded-full bg-gradient-to-br from-primary/30 to-primary shadow-xl overflow-hidden border-2 border-primary/20">
+                      <img 
+                        src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
+                        alt="Droobi - AI guardian of Biscayne Bay" 
+                        className="w-full h-full object-cover rounded-full hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
                   </div>
-                  <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Ecosystem Monitor</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Real-time tracking of 1,200+ marine species</p>
                 </div>
+
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-4 tracking-tight">
+                  Meet <span className="text-primary">Droobi</span>
+                </h1>
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light mb-3 leading-relaxed">
+                  The world's first AI-powered voice for a vital water body
+                </p>
+                <p className="text-sm sm:text-base text-muted-foreground/80 mb-8 leading-relaxed">
+                  428 square miles of Miami's lifeblood • $14B tourism economy • 1,200+ marine species
+                </p>
                 
-                <div className="bg-background/50 rounded-xl p-4 sm:p-6 border border-border">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                    <BarChart3 className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Data Intelligence</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Transforming complex data into insights</p>
-                </div>
-                
-                <div className="bg-background/50 rounded-xl p-4 sm:p-6 border border-border">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                    <Users className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Community Voice</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Connecting citizens with decision-makers</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6">
-              <Button size="lg" className="bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
-                <MessageCircle className="mr-2 h-4 sm:h-5 w-4 sm:w-5" />
-                Talk to Droobi
-              </Button>
-              <Button variant="outline" size="lg" className="border-2 border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[3rem]">
-                <Play className="mr-2 h-4 sm:h-5 w-4 sm:w-5" />
-                Bay Voices Podcast
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AI Chat Simulation - Phone Animation */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background relative overflow-hidden" data-index="1">
-        <div className="absolute inset-0 bg-gradient-to-b from-background-deep/50 via-background to-background-deep" />
-        
-        <div className="container mx-auto max-w-5xl relative z-10">
-          <div className={`transform transition-all duration-1000 ${
-            isVisible(1) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-          }`}>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center text-foreground mb-8 sm:mb-12">
-              AI-Powered Bay Intelligence
-            </h2>
-            <div className="flex justify-center">
-              <div className="relative w-full max-w-sm">
-                <div className="w-full bg-background-deep rounded-[2rem] sm:rounded-[3rem] p-4 sm:p-6 shadow-2xl border border-border">
-                  <div className="w-full bg-background rounded-[1.5rem] sm:rounded-[2rem] p-4 sm:p-6 flex flex-col min-h-[500px] sm:min-h-[600px]">
-                    <div className="flex items-center justify-between mb-4 sm:mb-6">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border border-primary/30">
-                          <img 
-                            src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
-                            alt="Droobi" 
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <span className="text-foreground font-medium text-sm sm:text-base">Droobi</span>
+                <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border border-border mb-8">
+                  <p className="text-sm sm:text-base text-muted-foreground mb-5 leading-relaxed">
+                    AI-powered platform making complex environmental data accessible to everyone. Track real-time water quality, 
+                    restoration impact, and connect communities with the data they need.
+                  </p>
+                  
+                  <div className="grid grid-cols-3 gap-3 sm:gap-4">
+                    <div className="text-center">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                        <Fish className="h-5 w-5 text-primary" />
                       </div>
-                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                      <h4 className="font-semibold text-foreground mb-1 text-xs sm:text-sm">Monitor</h4>
+                      <p className="text-xs text-muted-foreground">1,200+ species</p>
                     </div>
                     
-                    <div className="flex-1 overflow-hidden space-y-4">
-                      <div className="bg-primary/10 rounded-2xl p-3 sm:p-4">
-                        <p className="text-foreground text-xs sm:text-sm">
-                          {aiQuestions[currentQuestion]}
-                        </p>
+                    <div className="text-center">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                        <BarChart3 className="h-5 w-5 text-primary" />
                       </div>
-                      
-                      <div className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-3 sm:p-4">
-                        <div className="flex items-start space-x-2">
-                          <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 overflow-hidden border border-primary/30">
+                      <h4 className="font-semibold text-foreground mb-1 text-xs sm:text-sm">Intelligence</h4>
+                      <p className="text-xs text-muted-foreground">Data insights</p>
+                    </div>
+                    
+                    <div className="text-center">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                        <Users className="h-5 w-5 text-primary" />
+                      </div>
+                      <h4 className="font-semibold text-foreground mb-1 text-xs sm:text-sm">Voice</h4>
+                      <p className="text-xs text-muted-foreground">Community</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <Button size="lg" className="bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Talk to Droobi
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-2 border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[3rem]">
+                    <Play className="mr-2 h-5 w-5" />
+                    Bay Voices
+                  </Button>
+                </div>
+              </div>
+
+              {/* Right side - Phone animation */}
+              <div className="flex justify-center lg:justify-end">
+                <div className="relative w-full max-w-sm">
+                  <div className="w-full bg-background-deep rounded-[2.5rem] p-4 sm:p-5 shadow-2xl border border-border">
+                    <div className="w-full bg-background rounded-[2rem] p-4 sm:p-5 flex flex-col min-h-[550px] sm:min-h-[600px]">
+                      <div className="flex items-center justify-between mb-5">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border border-primary/30">
                             <img 
                               src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
                               alt="Droobi" 
                               className="w-full h-full object-cover"
                             />
                           </div>
-                          <div className="flex-1">
-                            <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
-                              {aiResponse}
-                              {isTyping && <span className="animate-pulse text-primary">|</span>}
-                            </p>
+                          <span className="text-foreground font-medium text-sm sm:text-base">Droobi</span>
+                        </div>
+                        <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                      </div>
+                      
+                      <div className="flex-1 overflow-hidden space-y-4">
+                        <div className="bg-primary/10 rounded-2xl p-3 sm:p-4">
+                          <p className="text-foreground text-xs sm:text-sm">
+                            {aiQuestions[currentQuestion]}
+                          </p>
+                        </div>
+                        
+                        <div className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-3 sm:p-4">
+                          <div className="flex items-start space-x-2">
+                            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 overflow-hidden border border-primary/30">
+                              <img 
+                                src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
+                                alt="Droobi" 
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <div className="flex-1">
+                              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
+                                {aiResponse}
+                                {isTyping && <span className="animate-pulse text-primary">|</span>}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    
-                    <div className="mt-4 sm:mt-6 flex items-center space-x-2">
-                      <input 
-                        type="text" 
-                        placeholder="Ask Droobi about the bay..."
-                        className="flex-1 bg-card border border-border text-foreground rounded-full px-3 sm:px-4 py-2 text-xs sm:text-sm focus:outline-none focus:border-primary transition-colors"
-                      />
-                      <button className="bg-primary hover:bg-primary-glow rounded-full p-2 transition-colors">
-                        <Send className="h-4 w-4 text-white" />
-                      </button>
+                      
+                      <div className="mt-5 flex items-center space-x-2">
+                        <input 
+                          type="text" 
+                          placeholder="Ask Droobi about the bay..."
+                          className="flex-1 bg-card border border-border text-foreground rounded-full px-3 sm:px-4 py-2 text-xs sm:text-sm focus:outline-none focus:border-primary transition-colors"
+                        />
+                        <button className="bg-primary hover:bg-primary-glow rounded-full p-2 transition-colors">
+                          <Send className="h-4 w-4 text-white" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
