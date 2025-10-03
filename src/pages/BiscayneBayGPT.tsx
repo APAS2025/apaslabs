@@ -239,13 +239,86 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
-      {/* 2. THE PROBLEM - Transparency Gap */}
+      {/* AI Chat Simulation - Phone Animation */}
       <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background relative overflow-hidden" data-index="1">
+        <div className="absolute inset-0 bg-gradient-to-b from-background-deep/50 via-background to-background-deep" />
+        
+        <div className="container mx-auto max-w-5xl relative z-10">
+          <div className={`transform transition-all duration-1000 ${
+            isVisible(1) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`}>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center text-foreground mb-8 sm:mb-12">
+              AI-Powered Bay Intelligence
+            </h2>
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-sm">
+                <div className="w-full bg-background-deep rounded-[2rem] sm:rounded-[3rem] p-4 sm:p-6 shadow-2xl border border-border">
+                  <div className="w-full bg-background rounded-[1.5rem] sm:rounded-[2rem] p-4 sm:p-6 flex flex-col min-h-[500px] sm:min-h-[600px]">
+                    <div className="flex items-center justify-between mb-4 sm:mb-6">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border border-primary/30">
+                          <img 
+                            src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
+                            alt="Droobi" 
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <span className="text-foreground font-medium text-sm sm:text-base">Droobi</span>
+                      </div>
+                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                    </div>
+                    
+                    <div className="flex-1 overflow-hidden space-y-4">
+                      <div className="bg-primary/10 rounded-2xl p-3 sm:p-4">
+                        <p className="text-foreground text-xs sm:text-sm">
+                          {aiQuestions[currentQuestion]}
+                        </p>
+                      </div>
+                      
+                      <div className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-3 sm:p-4">
+                        <div className="flex items-start space-x-2">
+                          <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 overflow-hidden border border-primary/30">
+                            <img 
+                              src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
+                              alt="Droobi" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
+                              {aiResponse}
+                              {isTyping && <span className="animate-pulse text-primary">|</span>}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-4 sm:mt-6 flex items-center space-x-2">
+                      <input 
+                        type="text" 
+                        placeholder="Ask Droobi about the bay..."
+                        className="flex-1 bg-card border border-border text-foreground rounded-full px-3 sm:px-4 py-2 text-xs sm:text-sm focus:outline-none focus:border-primary transition-colors"
+                      />
+                      <button className="bg-primary hover:bg-primary-glow rounded-full p-2 transition-colors">
+                        <Send className="h-4 w-4 text-white" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. THE PROBLEM - Transparency Gap */}
+      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background-deep relative overflow-hidden" data-index="2">
         <div className="absolute inset-0 bg-gradient-to-b from-background-deep/50 via-background to-background-deep" />
         
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className={`transform transition-all duration-1000 ${
-            isVisible(1) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            isVisible(2) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
             <div className="text-center mb-12 sm:mb-16">
               <Badge variant="outline" className="mb-4 border-red-500/30 text-red-500 text-xs sm:text-sm">
@@ -324,10 +397,10 @@ const BiscayneBayGPT = () => {
       </section>
 
       {/* 3. THE STAKES - What's at Risk */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background-deep" data-index="2">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background-deep" data-index="3">
         <div className="container mx-auto max-w-6xl">
           <div className={`transform transition-all duration-1000 ${
-            isVisible(2) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            isVisible(3) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
               What’s at Risk if We Don’t Act
@@ -367,10 +440,10 @@ const BiscayneBayGPT = () => {
       </section>
 
       {/* 4. THE SOLUTION - AI Chat Simulation */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background" data-index="3">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background" data-index="4">
         <div className="container mx-auto max-w-4xl">
           <div className={`transform transition-all duration-1000 ${
-            isVisible(3) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+            isVisible(4) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
               How Droobi Helps
