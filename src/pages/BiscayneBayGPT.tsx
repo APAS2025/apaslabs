@@ -168,10 +168,10 @@ const BiscayneBayGPT = () => {
         </div>
         
         {/* Miami location badge */}
-        <div className="absolute top-8 right-8 z-20">
-          <div className="bg-card/80 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium text-foreground">Miami, Florida</span>
+        <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-20">
+          <div className="bg-card/80 backdrop-blur-sm border border-primary/30 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 flex items-center gap-2">
+            <MapPin className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
+            <span className="text-xs sm:text-sm font-medium text-foreground">Miami, Florida</span>
           </div>
         </div>
         
@@ -181,9 +181,9 @@ const BiscayneBayGPT = () => {
           }`}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left side - Text content */}
-              <div className="text-center lg:text-left">
-                <div className="flex justify-center lg:justify-start mb-6">
-                  <div className="relative w-24 h-24 sm:w-32 sm:h-32">
+              <div className="text-center lg:text-left px-2 sm:px-0">
+                <div className="flex justify-center lg:justify-start mb-4 sm:mb-6">
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32">
                     <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl" />
                     <div className="relative w-full h-full rounded-full bg-gradient-to-br from-primary/30 to-primary shadow-xl overflow-hidden border-2 border-primary/20">
                       <img 
@@ -195,36 +195,36 @@ const BiscayneBayGPT = () => {
                   </div>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-4 tracking-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-3 sm:mb-4 tracking-tight px-2">
                   Meet{" "}
                   <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                     Droobi
                   </span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light mb-6 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light mb-4 sm:mb-6 leading-relaxed px-2">
                   AI assistant for Biscayne Bay data
                 </p>
-                <p className="text-sm sm:text-base text-muted-foreground max-w-xl mb-8 leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-8 leading-relaxed px-2">
                   Get instant answers about water quality, marine life, and environmental trends with real-time AI analysis.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
-                    <MessageCircle className="mr-2 h-5 w-5" />
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start px-2">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg active:scale-95 transition-all duration-300 min-h-[44px] sm:min-h-[3rem] text-sm sm:text-base">
+                    <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                     Talk to Droobi
                   </Button>
-                  <Button variant="outline" size="lg" className="border-border hover:bg-card active:scale-95 transition-all duration-300 min-h-[3rem]">
-                    <Play className="mr-2 h-5 w-5" />
+                  <Button variant="outline" size="lg" className="border-border hover:bg-card active:scale-95 transition-all duration-300 min-h-[44px] sm:min-h-[3rem] text-sm sm:text-base">
+                    <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                     Watch Demo
                   </Button>
                 </div>
               </div>
 
               {/* Right side - Phone animation */}
-              <div className="flex justify-center lg:justify-end">
-                <div className="relative w-full max-w-sm">
-                  <div className="w-full bg-background-deep rounded-[2.5rem] p-4 sm:p-5 shadow-2xl border border-border">
-                    <div className="w-full bg-background rounded-[2rem] p-4 sm:p-5 flex flex-col min-h-[550px] sm:min-h-[600px]">
+              <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
+                <div className="relative w-full max-w-[280px] sm:max-w-sm">
+                  <div className="w-full bg-background-deep rounded-[2rem] sm:rounded-[2.5rem] p-3 sm:p-4 md:p-5 shadow-2xl border border-border">
+                    <div className="w-full bg-background rounded-[1.5rem] sm:rounded-[2rem] p-3 sm:p-4 md:p-5 flex flex-col min-h-[450px] sm:min-h-[550px] md:min-h-[600px]">
                       <div className="flex items-center justify-between mb-5">
                         <div className="flex items-center space-x-2">
                           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border border-primary/30">
@@ -292,74 +292,74 @@ const BiscayneBayGPT = () => {
           <div className={`transform transition-all duration-1000 ${
             isVisible(2) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
-            <div className="text-center mb-12 sm:mb-16">
-              <Badge variant="outline" className="mb-4 border-secondary/30 text-secondary text-xs sm:text-sm">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16 px-2">
+              <Badge variant="outline" className="mb-3 sm:mb-4 border-secondary/30 text-secondary text-xs sm:text-sm">
                 The Problem
               </Badge>
-              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 sm:mb-6 px-2">
                 Billions Invested. <span className="text-primary">Zero Visibility.</span>
               </h2>
-              <p className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
                 Biscayne Bay receives massive restoration funding, but nobody can track where the money goes or if it's working.
               </p>
             </div>
 
             {/* The Numbers */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12">
-              <div className="glass-card p-6 sm:p-8 text-center">
-                <div className="text-4xl sm:text-6xl font-bold text-secondary mb-3">15+</div>
-                <div className="text-sm sm:text-base text-muted-foreground">Government agencies managing scattered bay data</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
+              <div className="glass-card p-5 sm:p-6 md:p-8 text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-2 sm:mb-3">15+</div>
+                <div className="text-xs sm:text-sm md:text-base text-muted-foreground">Government agencies managing scattered bay data</div>
               </div>
-              <div className="glass-card p-6 sm:p-8 text-center">
-                <div className="text-4xl sm:text-6xl font-bold text-secondary mb-3">$500M+</div>
-                <div className="text-sm sm:text-base text-muted-foreground">Invested in restoration over 5 years</div>
+              <div className="glass-card p-5 sm:p-6 md:p-8 text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-2 sm:mb-3">$500M+</div>
+                <div className="text-xs sm:text-sm md:text-base text-muted-foreground">Invested in restoration over 5 years</div>
               </div>
-              <div className="glass-card p-6 sm:p-8 text-center">
-                <div className="text-4xl sm:text-6xl font-bold text-primary mb-3">0</div>
-                <div className="text-sm sm:text-base text-muted-foreground">Unified platforms tracking ROI... until now</div>
+              <div className="glass-card p-5 sm:p-6 md:p-8 text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-2 sm:mb-3">0</div>
+                <div className="text-xs sm:text-sm md:text-base text-muted-foreground">Unified platforms tracking ROI... until now</div>
               </div>
             </div>
 
             {/* The Impact on People */}
-            <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20 rounded-2xl p-8 sm:p-12">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
+            <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20 rounded-xl sm:rounded-2xl p-5 sm:p-8 md:p-12">
+              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-6 sm:mb-8 text-center px-2">
                 Who This Affects
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Users className="h-7 w-7 text-primary" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-8">
+                <div className="flex gap-3 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Users className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-foreground mb-2">Parents & Families</h4>
-                    <p className="text-sm text-muted-foreground">"Is it safe for my kids to swim today?" No way to know in real-time.</p>
+                    <h4 className="font-bold text-foreground mb-1.5 sm:mb-2 text-sm sm:text-base">Parents & Families</h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground">"Is it safe for my kids to swim today?" No way to know in real-time.</p>
                   </div>
                 </div>
-                <div className="flex gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Building2 className="h-7 w-7 text-primary" />
+                <div className="flex gap-3 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Building2 className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-foreground mb-2">Property Owners</h4>
-                    <p className="text-sm text-muted-foreground">$200B+ in waterfront property with no transparency on environmental data.</p>
+                    <h4 className="font-bold text-foreground mb-1.5 sm:mb-2 text-sm sm:text-base">Property Owners</h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground">$200B+ in waterfront property with no transparency on environmental data.</p>
                   </div>
                 </div>
-                <div className="flex gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <DollarSign className="h-7 w-7 text-primary" />
+                <div className="flex gap-3 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <DollarSign className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-foreground mb-2">Tourism Businesses</h4>
-                    <p className="text-sm text-muted-foreground">$14B industry depends on clean water, but can't access verified metrics.</p>
+                    <h4 className="font-bold text-foreground mb-1.5 sm:mb-2 text-sm sm:text-base">Tourism Businesses</h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground">$14B industry depends on clean water, but can't access verified metrics.</p>
                   </div>
                 </div>
-                <div className="flex gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <BarChart3 className="h-7 w-7 text-primary" />
+                <div className="flex gap-3 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <BarChart3 className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-foreground mb-2">Government Agencies</h4>
-                    <p className="text-sm text-muted-foreground">Struggle to prove ROI to taxpayers and secure future funding.</p>
+                    <h4 className="font-bold text-foreground mb-1.5 sm:mb-2 text-sm sm:text-base">Government Agencies</h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Struggle to prove ROI to taxpayers and secure future funding.</p>
                   </div>
                 </div>
               </div>
@@ -426,47 +426,47 @@ const BiscayneBayGPT = () => {
           <div className={`transform transition-all duration-1000 ${
             isVisible(4) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6 text-center px-2">
               How Droobi Helps
             </h2>
-            <p className="text-lg text-muted-foreground text-center max-w-4xl mx-auto mb-12 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-center max-w-4xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4">
               Droobi is your AI-powered guide to understanding Biscayne Bay's complex health data in real-time. No more searching through scattered reports or waiting weeks for answers. Ask questions in plain English, get instant insights backed by live data, and discover exactly where your action creates the most impact.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <div className="glass-card p-6 hover:border-primary/40 transition-all duration-300">
-                <div className="text-3xl font-bold text-primary mb-2">Real-Time</div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">Live Bay Data</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+              <div className="glass-card p-5 sm:p-6 hover:border-primary/40 transition-all duration-300">
+                <div className="text-2xl sm:text-3xl font-bold text-primary mb-1.5 sm:mb-2">Real-Time</div>
+                <h3 className="text-base sm:text-lg font-semibold mb-1.5 sm:mb-2 text-foreground">Live Bay Data</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   Access current water quality metrics, pollution sources, and environmental trends as they happen—not weeks later in a dense government report.
                 </p>
               </div>
               
-              <div className="glass-card p-6 hover:border-secondary/40 transition-all duration-300">
-                <div className="text-3xl font-bold text-secondary mb-2">Instant</div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">Plain-English Answers</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+              <div className="glass-card p-5 sm:p-6 hover:border-secondary/40 transition-all duration-300">
+                <div className="text-2xl sm:text-3xl font-bold text-secondary mb-1.5 sm:mb-2">Instant</div>
+                <h3 className="text-base sm:text-lg font-semibold mb-1.5 sm:mb-2 text-foreground">Plain-English Answers</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   No PhD required. Ask complex questions about algal blooms, seagrass recovery, or pollution correlations and get clear, actionable answers in seconds.
                 </p>
               </div>
               
-              <div className="glass-card p-6 hover:border-primary/40 transition-all duration-300">
-                <div className="text-3xl font-bold text-primary mb-2">Trackable</div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">Impact Transparency</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+              <div className="glass-card p-5 sm:p-6 hover:border-primary/40 transition-all duration-300">
+                <div className="text-2xl sm:text-3xl font-bold text-primary mb-1.5 sm:mb-2">Trackable</div>
+                <h3 className="text-base sm:text-lg font-semibold mb-1.5 sm:mb-2 text-foreground">Impact Transparency</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   See exactly how your support translates to bay health improvements. Track restoration progress, correlate funding to outcomes, hold everyone accountable.
                 </p>
               </div>
             </div>
 
-            <div className="glass-card p-8 shadow-lg">
-              <div className="mb-6 text-center">
-                <h3 className="text-2xl font-bold mb-3 text-foreground">Try Droobi Now</h3>
-                <p className="text-muted-foreground text-base max-w-2xl mx-auto leading-relaxed">
+            <div className="glass-card p-5 sm:p-6 md:p-8 shadow-lg">
+              <div className="mb-4 sm:mb-6 text-center">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-foreground">Try Droobi Now</h3>
+                <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
                   Ask anything about Biscayne Bay's health. Watch how Droobi transforms complex environmental data into insights you can act on—whether you're a concerned resident, policymaker, or investor.
                 </p>
               </div>
-              <div className="bg-background rounded-lg p-6 min-h-[150px] text-foreground font-medium text-base leading-relaxed">
+              <div className="bg-background rounded-lg p-4 sm:p-6 min-h-[150px] text-foreground font-medium text-sm sm:text-base leading-relaxed">
                 {isTyping ? (
                   <span className="animate-pulse">Droobi is typing...</span>
                 ) : (
@@ -608,14 +608,14 @@ const BiscayneBayGPT = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
               Support the Bay
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
               {supportTiers.map(({ name, amount, description, icon, color }, idx) => (
-                <Card key={idx} className={`rounded-2xl p-6 flex flex-col items-center text-center border-2 border-primary/20 glass-card ${color}`}>
-                  <div className="mb-4 text-white">{icon}</div>
-                  <CardTitle className="text-lg font-semibold mb-2 text-white">{name}</CardTitle>
-                  <CardDescription className="text-white/80 mb-4">{description}</CardDescription>
-                  <div className="text-2xl font-bold text-white">{amount}</div>
-                  <Button size="sm" className="mt-6 w-full bg-white/90 text-primary hover:bg-white hover:text-primary transition-colors">
+                <Card key={idx} className={`rounded-xl sm:rounded-2xl p-5 sm:p-6 flex flex-col items-center text-center border-2 border-primary/20 glass-card ${color}`}>
+                  <div className="mb-3 sm:mb-4 text-white">{icon}</div>
+                  <CardTitle className="text-base sm:text-lg font-semibold mb-1.5 sm:mb-2 text-white">{name}</CardTitle>
+                  <CardDescription className="text-white/80 mb-3 sm:mb-4 text-xs sm:text-sm">{description}</CardDescription>
+                  <div className="text-xl sm:text-2xl font-bold text-white">{amount}</div>
+                  <Button size="sm" className="mt-4 sm:mt-6 w-full bg-white/90 text-primary hover:bg-white hover:text-primary transition-colors min-h-[44px]">
                     Donate
                   </Button>
                 </Card>
@@ -631,13 +631,13 @@ const BiscayneBayGPT = () => {
           <div className={`transform transition-all duration-1000 ${
             isVisible(9) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-foreground">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-foreground px-2">
               Join Us in Protecting Biscayne Bay
             </h2>
-            <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-12 leading-relaxed text-muted-foreground">
+            <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed text-muted-foreground px-4">
               Every dollar, every decision, every data point matters. Together, we can ensure a healthier future for our bay and community.
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg active:scale-95 transition-all duration-300 min-h-[44px] sm:min-h-[3rem] text-sm sm:text-base">
               Get Involved
             </Button>
           </div>
