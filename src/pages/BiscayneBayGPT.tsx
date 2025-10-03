@@ -366,7 +366,7 @@ const BiscayneBayGPT = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
               What’s at Risk if We Don’t Act
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border flex flex-col items-center text-center">
                 <Users className="h-12 w-12 text-cyan-500 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Families</h3>
@@ -374,18 +374,20 @@ const BiscayneBayGPT = () => {
                   Unsafe waters threaten health and recreation for Miami’s communities.
                 </p>
               </div>
-              <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border flex flex-col items-center text-center">
-                <Building2 className="h-12 w-12 text-blue-500 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Property</h3>
-                <p className="text-muted-foreground text-sm">
-                  Declining water quality reduces waterfront property values and investment.
+              <div className="glass-card p-8 flex flex-col items-center text-center hover:border-primary/40 transition-all duration-300">
+                <Building2 className="h-12 w-12 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-3 text-foreground">Property</h3>
+                <div className="text-2xl font-bold text-secondary mb-2">-15%</div>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Average property value decline in waterfront neighborhoods with documented water quality issues—erasing billions in homeowner equity.
                 </p>
               </div>
-              <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border flex flex-col items-center text-center">
-                <DollarSign className="h-12 w-12 text-green-500 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Tourism</h3>
-                <p className="text-muted-foreground text-sm">
-                  The $14B tourism economy depends on clean, vibrant bay waters.
+              <div className="glass-card p-8 flex flex-col items-center text-center hover:border-secondary/40 transition-all duration-300">
+                <DollarSign className="h-12 w-12 text-secondary mb-4" />
+                <h3 className="text-xl font-semibold mb-3 text-foreground">Tourism</h3>
+                <div className="text-2xl font-bold text-primary mb-2">$14B</div>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Tourism economy at stake as visitors choose clearer waters elsewhere. One algal bloom closes beaches for weeks—costing millions daily.
                 </p>
               </div>
               <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border flex flex-col items-center text-center">
