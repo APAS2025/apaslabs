@@ -67,28 +67,28 @@ const BiscayneBayGPT = () => {
       amount: "$5", 
       description: "Join Droobi in protecting our waters",
       icon: <Droplets className="h-6 w-6" />,
-      color: "bg-gradient-to-br from-blue-400 to-cyan-500"
+      color: "bg-gradient-to-br from-primary to-primary-glow"
     },
     { 
       name: "Seagrass Guardian", 
       amount: "$25", 
       description: "Help restore vital underwater forests",
       icon: <Leaf className="h-6 w-6" />,
-      color: "bg-gradient-to-br from-green-400 to-emerald-500"
+      color: "bg-gradient-to-br from-primary to-secondary"
     },
     { 
       name: "Marine Champion", 
       amount: "$100", 
       description: "Support marine life conservation",
       icon: <Fish className="h-6 w-6" />,
-      color: "bg-gradient-to-br from-cyan-400 to-blue-500"
+      color: "bg-gradient-to-br from-secondary to-secondary-glow"
     },
     { 
       name: "Ocean Ambassador", 
       amount: "$500", 
       description: "Lead the charge for ocean advocacy",
       icon: <Waves className="h-6 w-6" />,
-      color: "bg-gradient-to-br from-blue-500 to-purple-600"
+      color: "bg-gradient-primary"
     }
   ];
 
@@ -147,13 +147,13 @@ const BiscayneBayGPT = () => {
     <div className="min-h-screen bg-background-deep">
       {/* 1. HERO SECTION */}
       <section className="relative py-16 sm:py-24 lg:py-32 px-4 overflow-hidden" data-index="0">
-        <div className="absolute inset-0 bg-gradient-to-b from-background-deep via-background to-background-deep" />
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-primary/10" />
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-gradient-glow opacity-20" />
         
         {/* Animated water ripples */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
-          <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-blue-400/15 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+          <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-secondary/15 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
         </div>
         
         {/* Miami location badge */}
@@ -185,56 +185,26 @@ const BiscayneBayGPT = () => {
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-4 tracking-tight">
-                  Meet <span className="text-primary">Droobi</span>
+                  Meet{" "}
+                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Droobi
+                  </span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light mb-3 leading-relaxed">
-                  The world's first AI-powered voice for a vital water body
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light mb-6 leading-relaxed">
+                  AI assistant for Biscayne Bay data
                 </p>
-                <p className="text-sm sm:text-base text-muted-foreground/80 mb-8 leading-relaxed">
-                  428 square miles of Miami's lifeblood • $14B tourism economy • 1,200+ marine species
+                <p className="text-sm sm:text-base text-muted-foreground max-w-xl mb-8 leading-relaxed">
+                  Get instant answers about water quality, marine life, and environmental trends with real-time AI analysis.
                 </p>
-                
-                <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border border-border mb-8">
-                  <p className="text-sm sm:text-base text-muted-foreground mb-5 leading-relaxed">
-                    AI-powered platform making complex environmental data accessible to everyone. Track real-time water quality, 
-                    restoration impact, and connect communities with the data they need.
-                  </p>
-                  
-                  <div className="grid grid-cols-3 gap-3 sm:gap-4">
-                    <div className="text-center">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                        <Fish className="h-5 w-5 text-primary" />
-                      </div>
-                      <h4 className="font-semibold text-foreground mb-1 text-xs sm:text-sm">Monitor</h4>
-                      <p className="text-xs text-muted-foreground">1,200+ species</p>
-                    </div>
-                    
-                    <div className="text-center">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                        <BarChart3 className="h-5 w-5 text-primary" />
-                      </div>
-                      <h4 className="font-semibold text-foreground mb-1 text-xs sm:text-sm">Intelligence</h4>
-                      <p className="text-xs text-muted-foreground">Data insights</p>
-                    </div>
-                    
-                    <div className="text-center">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                        <Users className="h-5 w-5 text-primary" />
-                      </div>
-                      <h4 className="font-semibold text-foreground mb-1 text-xs sm:text-sm">Voice</h4>
-                      <p className="text-xs text-muted-foreground">Community</p>
-                    </div>
-                  </div>
-                </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button size="lg" className="bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
                     <MessageCircle className="mr-2 h-5 w-5" />
                     Talk to Droobi
                   </Button>
-                  <Button variant="outline" size="lg" className="border-2 border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[3rem]">
+                  <Button variant="outline" size="lg" className="border-border hover:bg-card active:scale-95 transition-all duration-300 min-h-[3rem]">
                     <Play className="mr-2 h-5 w-5" />
-                    Bay Voices
+                    Watch Demo
                   </Button>
                 </div>
               </div>
@@ -312,7 +282,7 @@ const BiscayneBayGPT = () => {
             isVisible(2) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
             <div className="text-center mb-12 sm:mb-16">
-              <Badge variant="outline" className="mb-4 border-red-500/30 text-red-500 text-xs sm:text-sm">
+              <Badge variant="outline" className="mb-4 border-secondary/30 text-secondary text-xs sm:text-sm">
                 The Problem
               </Badge>
               <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -325,15 +295,15 @@ const BiscayneBayGPT = () => {
 
             {/* The Numbers */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12">
-              <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border text-center">
-                <div className="text-4xl sm:text-6xl font-bold text-red-500 mb-3">15+</div>
+              <div className="glass-card p-6 sm:p-8 text-center">
+                <div className="text-4xl sm:text-6xl font-bold text-secondary mb-3">15+</div>
                 <div className="text-sm sm:text-base text-muted-foreground">Government agencies managing scattered bay data</div>
               </div>
-              <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border text-center">
-                <div className="text-4xl sm:text-6xl font-bold text-red-500 mb-3">$500M+</div>
+              <div className="glass-card p-6 sm:p-8 text-center">
+                <div className="text-4xl sm:text-6xl font-bold text-secondary mb-3">$500M+</div>
                 <div className="text-sm sm:text-base text-muted-foreground">Invested in restoration over 5 years</div>
               </div>
-              <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border text-center">
+              <div className="glass-card p-6 sm:p-8 text-center">
                 <div className="text-4xl sm:text-6xl font-bold text-primary mb-3">0</div>
                 <div className="text-sm sm:text-base text-muted-foreground">Unified platforms tracking ROI... until now</div>
               </div>
@@ -346,7 +316,7 @@ const BiscayneBayGPT = () => {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Users className="h-7 w-7 text-cyan-400" />
                   </div>
                   <div>
@@ -489,9 +459,9 @@ const BiscayneBayGPT = () => {
                   <CardContent>
                     <div className={`text-3xl font-bold mb-2 ${color}`}>{value}</div>
                     <div className="flex justify-center items-center space-x-2 text-muted-foreground">
-                      {trend === "up" && <TrendingUp className="h-5 w-5 text-green-500" />}
-                      {trend === "down" && <TrendingDown className="h-5 w-5 text-red-500" />}
-                      {trend === "stable" && <AlertTriangle className="h-5 w-5 text-yellow-500" />}
+                      {trend === "up" && <TrendingUp className="h-5 w-5 text-primary" />}
+                      {trend === "down" && <TrendingDown className="h-5 w-5 text-secondary" />}
+                      {trend === "stable" && <AlertTriangle className="h-5 w-5 text-secondary" />}
                       <span className="text-sm capitalize">{trend}</span>
                     </div>
                   </CardContent>
@@ -511,8 +481,8 @@ const BiscayneBayGPT = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
               Economic Impact
             </h2>
-            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-12 border border-border text-center">
-              <DollarSign className="mx-auto mb-6 h-12 w-12 text-green-500" />
+            <div className="glass-card p-12 text-center">
+              <DollarSign className="mx-auto mb-6 h-12 w-12 text-secondary" />
               <p className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground max-w-3xl mx-auto leading-relaxed">
                 Biscayne Bay supports a $14 billion tourism economy and hundreds of billions in waterfront property value. Protecting water quality safeguards these vital economic assets.
               </p>
@@ -531,21 +501,21 @@ const BiscayneBayGPT = () => {
               Community Conversations
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              <Card className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 flex flex-col items-center text-center">
+              <Card className="glass-card p-6 flex flex-col items-center text-center">
                 <Mic className="h-10 w-10 text-primary mb-4" />
                 <CardTitle className="text-lg font-semibold mb-2">Listening Sessions</CardTitle>
                 <CardDescription className="text-muted-foreground text-sm">
                   Engaging local voices to understand concerns and priorities.
                 </CardDescription>
               </Card>
-              <Card className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 flex flex-col items-center text-center">
-                <Users className="h-10 w-10 text-primary mb-4" />
+              <Card className="glass-card p-6 flex flex-col items-center text-center">
+                <Users className="h-10 w-10 text-secondary mb-4" />
                 <CardTitle className="text-lg font-semibold mb-2">Stakeholder Workshops</CardTitle>
                 <CardDescription className="text-muted-foreground text-sm">
                   Collaborating with agencies, businesses, and residents for solutions.
                 </CardDescription>
               </Card>
-              <Card className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 flex flex-col items-center text-center">
+              <Card className="glass-card p-6 flex flex-col items-center text-center">
                 <Send className="h-10 w-10 text-primary mb-4" />
                 <CardTitle className="text-lg font-semibold mb-2">Transparent Reporting</CardTitle>
                 <CardDescription className="text-muted-foreground text-sm">
@@ -566,12 +536,12 @@ const BiscayneBayGPT = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
               Government Collaboration
             </h2>
-            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-12 border border-border flex flex-col items-center text-center max-w-4xl mx-auto">
+            <div className="glass-card p-12 flex flex-col items-center text-center max-w-4xl mx-auto">
               <Briefcase className="h-12 w-12 text-primary mb-6" />
               <p className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground leading-relaxed">
                 Partnering with 15+ government agencies to unify data, improve restoration efforts, and demonstrate clear ROI to taxpayers.
               </p>
-              <Button size="lg" className="mt-8 bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
+              <Button size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
                 Learn More
               </Button>
             </div>
@@ -590,12 +560,12 @@ const BiscayneBayGPT = () => {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
               {supportTiers.map(({ name, amount, description, icon, color }, idx) => (
-                <Card key={idx} className={`rounded-2xl p-6 flex flex-col items-center text-center border border-border ${color}`}>
-                  <div className="mb-4">{icon}</div>
-                  <CardTitle className="text-lg font-semibold mb-2 text-foreground">{name}</CardTitle>
-                  <CardDescription className="text-muted-foreground mb-4">{description}</CardDescription>
-                  <div className="text-2xl font-bold text-foreground">{amount}</div>
-                  <Button size="sm" className="mt-6 w-full bg-white text-primary hover:bg-primary/90 hover:text-white transition-colors">
+                <Card key={idx} className={`rounded-2xl p-6 flex flex-col items-center text-center border-2 border-primary/20 glass-card ${color}`}>
+                  <div className="mb-4 text-white">{icon}</div>
+                  <CardTitle className="text-lg font-semibold mb-2 text-white">{name}</CardTitle>
+                  <CardDescription className="text-white/80 mb-4">{description}</CardDescription>
+                  <div className="text-2xl font-bold text-white">{amount}</div>
+                  <Button size="sm" className="mt-6 w-full bg-white/90 text-primary hover:bg-white hover:text-primary transition-colors">
                     Donate
                   </Button>
                 </Card>
@@ -606,7 +576,7 @@ const BiscayneBayGPT = () => {
       </section>
 
       {/* 10. FINAL CALL TO ACTION */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-primary text-white" data-index="9">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-gradient-primary text-primary-foreground" data-index="9">
         <div className="container mx-auto max-w-4xl text-center">
           <div className={`transform transition-all duration-1000 ${
             isVisible(9) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
@@ -614,10 +584,10 @@ const BiscayneBayGPT = () => {
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Join Us in Protecting Biscayne Bay
             </h2>
-            <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-12 leading-relaxed opacity-90">
               Every dollar, every decision, every data point matters. Together, we can ensure a healthier future for our bay and community.
             </p>
-            <Button size="lg" className="bg-white text-primary hover:bg-primary/90 hover:text-white shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
+            <Button size="lg" className="bg-white/90 text-primary hover:bg-white hover:text-primary shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
               Get Involved
             </Button>
           </div>
