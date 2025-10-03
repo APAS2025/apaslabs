@@ -67,28 +67,28 @@ const BiscayneBayGPT = () => {
       amount: "$5", 
       description: "Join Droobi in protecting our waters",
       icon: <Droplets className="h-6 w-6" />,
-      color: "bg-gradient-to-br from-primary/80 to-primary"
+      color: "bg-gradient-to-br from-primary/90 to-primary"
     },
     { 
       name: "Seagrass Guardian", 
       amount: "$25", 
       description: "Help restore vital underwater forests",
       icon: <Leaf className="h-6 w-6" />,
-      color: "bg-gradient-to-br from-primary to-primary-glow"
+      color: "bg-gradient-to-br from-primary/90 to-primary"
     },
     { 
       name: "Marine Champion", 
       amount: "$100", 
       description: "Support marine life conservation",
       icon: <Fish className="h-6 w-6" />,
-      color: "bg-gradient-to-br from-primary-glow to-primary"
+      color: "bg-gradient-to-br from-primary/90 to-primary"
     },
     { 
       name: "Ocean Ambassador", 
       amount: "$500", 
       description: "Lead the charge for ocean advocacy",
       icon: <Waves className="h-6 w-6" />,
-      color: "bg-gradient-primary"
+      color: "bg-gradient-to-br from-primary/90 to-primary"
     }
   ];
 
