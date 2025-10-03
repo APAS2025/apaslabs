@@ -569,26 +569,178 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
-      {/* Key Facts */}
+      {/* Why Biscayne Bay Matters - Reimagined */}
       <section className="py-16 sm:py-24 lg:py-32 px-4" data-index="3">
         <div className="container mx-auto max-w-6xl">
           <div className={`transform transition-all duration-1000 ${
             isVisible(3) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center text-foreground mb-8 sm:mb-12">
-              Why Biscayne Bay Matters
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {keyFacts.map((fact, index) => (
-                <Card key={index} className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300">
-                  <CardContent className="p-4 sm:p-6">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <p className="text-sm sm:text-base text-muted-foreground">{fact}</p>
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
+                Why Every Dollar, Every Decision, <span className="text-primary">Every Data Point Matters</span>
+              </h2>
+              <p className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-4">
+                Billions invested. Zero visibility. Until now.
+              </p>
+              <p className="text-xs sm:text-base text-muted-foreground/80 max-w-3xl mx-auto">
+                Biscayne Bay receives massive restoration funding, but families can't see if it's safe for their kids to swim. 
+                Businesses can't track ROI. Government agencies can't prove impact. We're changing that.
+              </p>
+            </div>
+
+            {/* Stakeholder Connection Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {/* For Parents & Families */}
+              <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-4">
+                    <Users className="h-6 w-6 sm:h-7 sm:w-7 text-cyan-400" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3">For Your Family</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4">
+                    <strong className="text-foreground">Is it safe for my kids to swim today?</strong> Real-time water quality data 
+                    means you don't have to guess. Know which beaches are safe, track pollution sources near your neighborhood, 
+                    and see exactly where restoration dollars are improving the waters your children play in.
+                  </p>
+                  <div className="pt-4 border-t border-border">
+                    <div className="text-xs sm:text-sm text-primary font-medium">
+                      Impact: 2.7M residents deserve to know
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* For Real Estate & Property Values */}
+              <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
+                    <Building2 className="h-6 w-6 sm:h-7 sm:w-7 text-blue-400" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3">For Property Owners</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4">
+                    <strong className="text-foreground">$200B+ in waterfront property at stake.</strong> Bay health directly impacts 
+                    your property value. Get transparent environmental data for due diligence, track improvement projects in your area, 
+                    and access verified restoration ROI that protects your investment.
+                  </p>
+                  <div className="pt-4 border-t border-border">
+                    <div className="text-xs sm:text-sm text-primary font-medium">
+                      Impact: Transparent data protects investments
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* For Tourism & Hospitality */}
+              <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-4">
+                    <DollarSign className="h-6 w-6 sm:h-7 sm:w-7 text-green-400" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3">For Tourism Businesses</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4">
+                    <strong className="text-foreground">$14B tourism economy depends on bay health.</strong> When tourists ask 
+                    "Is the water clean?", you'll have real answers. Track environmental metrics that affect bookings, prove your 
+                    sustainability commitments, and access data that helps you market Miami's restored waters.
+                  </p>
+                  <div className="pt-4 border-t border-border">
+                    <div className="text-xs sm:text-sm text-primary font-medium">
+                      Impact: Sustainable tourism needs verified data
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* For Environmental Advocates */}
+              <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
+                    <TreePine className="h-6 w-6 sm:h-7 sm:w-7 text-emerald-400" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3">For Environmentalists</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4">
+                    <strong className="text-foreground">1,200+ species need advocates with data.</strong> No more guessing if 
+                    restoration is working. Track seagrass recovery, monitor species populations, access historical trends, and 
+                    prove impact with AI-analyzed data that governments can't ignore.
+                  </p>
+                  <div className="pt-4 border-t border-border">
+                    <div className="text-xs sm:text-sm text-primary font-medium">
+                      Impact: Data-driven advocacy wins funding
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* For Government & Policy */}
+              <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4">
+                    <BarChart3 className="h-6 w-6 sm:h-7 sm:w-7 text-purple-400" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3">For Agencies & Policymakers</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4">
+                    <strong className="text-foreground">Prove ROI to taxpayers and secure future funding.</strong> Consolidate 
+                    scattered data sources into one platform. Auto-generate impact reports. Show constituents exactly how their 
+                    tax dollars improve water quality, with AI-powered transparency that builds public trust.
+                  </p>
+                  <div className="pt-4 border-t border-border">
+                    <div className="text-xs sm:text-sm text-primary font-medium">
+                      Impact: Accountability unlocks more funding
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* For Developers & Tech Community */}
+              <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3">For Tech Innovators</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4">
+                    <strong className="text-foreground">The future of civic infrastructure is here.</strong> See how AI consolidates 
+                    fragmented environmental data into accessible insights. This is the model for every watershed, every city, 
+                    every public system that needs transparency. Miami leads, tech follows.
+                  </p>
+                  <div className="pt-4 border-t border-border">
+                    <div className="text-xs sm:text-sm text-primary font-medium">
+                      Impact: Blueprint for global infrastructure
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* The Transparency Gap */}
+            <div className="mt-12 sm:mt-16 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20 rounded-2xl p-6 sm:p-10">
+              <div className="max-w-4xl mx-auto text-center">
+                <h3 className="text-xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">
+                  The Problem We're Solving: <span className="text-primary">The Transparency Gap</span>
+                </h3>
+                <p className="text-sm sm:text-lg text-muted-foreground mb-6 sm:mb-8">
+                  Biscayne Bay receives hundreds of millions in restoration funding from federal, state, and local sources. 
+                  But data is scattered across agencies, reports sit in filing cabinets, and citizens have no way to track 
+                  if their tax dollars are working.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                  <div className="bg-background/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-border">
+                    <div className="text-3xl sm:text-5xl font-bold text-primary mb-2">15+</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">Government agencies managing bay data</div>
+                  </div>
+                  <div className="bg-background/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-border">
+                    <div className="text-3xl sm:text-5xl font-bold text-primary mb-2">$500M+</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">Invested in restoration over 5 years</div>
+                  </div>
+                  <div className="bg-background/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-border">
+                    <div className="text-3xl sm:text-5xl font-bold text-primary mb-2">0</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">Unified platforms tracking impact... until now</div>
+                  </div>
+                </div>
+                <p className="text-sm sm:text-base text-foreground font-medium">
+                  Droobi aggregates scattered data, tracks every restoration dollar, and makes ROI visible to everyone. 
+                  This is infrastructure transparency powered by AI.
+                </p>
+              </div>
             </div>
           </div>
         </div>
