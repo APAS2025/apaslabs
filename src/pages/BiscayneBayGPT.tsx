@@ -24,7 +24,9 @@ import {
   Navigation,
   MapPin,
   Phone,
-  Send
+  Send,
+  Briefcase,
+  CheckCircle
 } from "lucide-react";
 
 const BiscayneBayGPT = () => {
@@ -152,10 +154,25 @@ const BiscayneBayGPT = () => {
 
   return (
     <div className="min-h-screen bg-background-deep">
-      {/* Hero Section */}
+      {/* Hero Section with Miami Vibes */}
       <section className="relative py-16 sm:py-24 lg:py-32 px-4 overflow-hidden" data-index="0">
+        {/* Miami-inspired gradient background */}
         <div className="absolute inset-0 bg-gradient-to-b from-background-deep via-background to-background-deep" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/8" />
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-primary/10" />
+        
+        {/* Animated water ripples */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+          <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-blue-400/15 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
+        </div>
+        
+        {/* Miami location badge */}
+        <div className="absolute top-8 right-8 z-20">
+          <div className="bg-card/80 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 flex items-center gap-2">
+            <MapPin className="h-4 w-4 text-primary" />
+            <span className="text-sm font-medium text-foreground">Miami, Florida</span>
+          </div>
+        </div>
         
         <div className="container mx-auto relative z-10 max-w-6xl">
           <div className={`text-center transform transition-all duration-1000 ${
@@ -178,8 +195,11 @@ const BiscayneBayGPT = () => {
             <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 tracking-tight">
               Meet <span className="text-primary">Droobi</span>
             </h1>
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-12">
-              Your AI guide to understanding and protecting Biscayne Bay
+            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-3xl mx-auto leading-relaxed mb-4">
+              The world's first AI-powered voice for a vital water body
+            </p>
+            <p className="text-xs sm:text-base md:text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-8 sm:mb-12">
+              428 square miles of Miami's lifeblood • $14B tourism economy • 1,200+ marine species • Where innovation meets accountability
             </p>
             
             {/* Droobi's Story - Simplified */}
@@ -226,6 +246,145 @@ const BiscayneBayGPT = () => {
                 <Play className="mr-2 h-4 sm:h-5 w-4 sm:w-5" />
                 Bay Voices Podcast
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Stakes - Why This Matters */}
+      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background relative overflow-hidden" data-index="9">
+        <div className="absolute inset-0 bg-gradient-to-b from-background-deep/50 via-background to-background-deep" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className={`transform transition-all duration-1000 ${
+            isVisible(1) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`}>
+            <div className="text-center mb-12 sm:mb-16">
+              <Badge variant="outline" className="mb-4 border-primary/30 text-xs sm:text-sm">
+                The First of Its Kind
+              </Badge>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
+                This Isn't Just Another <span className="text-primary">Environmental Platform</span>
+              </h2>
+              <p className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
+                Biscayne Bay powers Miami's economy, sustains marine ecosystems, and provides recreation for millions. 
+                For the first time, we're making every decision, dollar, and data point visible to everyone.
+              </p>
+            </div>
+
+            {/* Real Stakes - Visual Impact */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+              <Card className="bg-card/50 backdrop-blur-sm border-border overflow-hidden group hover:border-primary/50 transition-all duration-300">
+                <div className="h-2 bg-gradient-to-r from-cyan-400 to-blue-500" />
+                <CardHeader className="p-4 sm:p-6">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-4">
+                    <Users className="h-6 w-6 sm:h-7 sm:w-7 text-cyan-400" />
+                  </div>
+                  <CardTitle className="text-base sm:text-lg text-foreground">For Families & Communities</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4">
+                    Know if it's safe for your kids to swim. Track water quality in real-time. See exactly where restoration dollars go.
+                  </p>
+                  <div className="space-y-2 text-xs sm:text-sm">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-cyan-400" />
+                      <span className="text-muted-foreground">Real-time safety alerts</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-cyan-400" />
+                      <span className="text-muted-foreground">Community voice platform</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-cyan-400" />
+                      <span className="text-muted-foreground">Progress tracking dashboard</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card/50 backdrop-blur-sm border-border overflow-hidden group hover:border-primary/50 transition-all duration-300">
+                <div className="h-2 bg-gradient-to-r from-blue-500 to-primary" />
+                <CardHeader className="p-4 sm:p-6">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <Building2 className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
+                  </div>
+                  <CardTitle className="text-base sm:text-lg text-foreground">For Government Agencies</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4">
+                    Transparent data sharing. Automated community sentiment analysis. ROI tracking for every restoration project.
+                  </p>
+                  <div className="space-y-2 text-xs sm:text-sm">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-primary" />
+                      <span className="text-muted-foreground">Automated reporting to DERM</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-primary" />
+                      <span className="text-muted-foreground">Evidence-based policy recommendations</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-primary" />
+                      <span className="text-muted-foreground">Public accountability dashboard</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card/50 backdrop-blur-sm border-border overflow-hidden group hover:border-primary/50 transition-all duration-300">
+                <div className="h-2 bg-gradient-to-r from-primary to-blue-600" />
+                <CardHeader className="p-4 sm:p-6">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
+                    <Briefcase className="h-6 w-6 sm:h-7 sm:w-7 text-blue-400" />
+                  </div>
+                  <CardTitle className="text-base sm:text-lg text-foreground">For Tourism & Business</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4">
+                    Protect property values. Ensure sustainable tourism. Access verified environmental data for investors.
+                  </p>
+                  <div className="space-y-2 text-xs sm:text-sm">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-blue-400" />
+                      <span className="text-muted-foreground">Environmental impact reports</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-blue-400" />
+                      <span className="text-muted-foreground">Tourism sustainability metrics</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-blue-400" />
+                      <span className="text-muted-foreground">Property value tracking</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* The Numbers That Matter */}
+            <div className="bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 text-center">
+                The Stakes Are Real
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+                <div className="text-center">
+                  <div className="text-2xl sm:text-4xl font-bold text-primary mb-2">2.7M</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Miami residents affected</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-4xl font-bold text-primary mb-2">$14B+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Tourism revenue at risk</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-4xl font-bold text-primary mb-2">428</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Square miles to protect</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-4xl font-bold text-primary mb-2">1,200+</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Marine species dependent</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -628,7 +787,7 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
-      {/* Voices of the Bay Podcast */}
+      {/* Community Conversations & Progress Tracking */}
       <section className="py-16 sm:py-24 lg:py-32 px-4" data-index="7">
         <div className="container mx-auto max-w-6xl">
           <div className={`transform transition-all duration-1000 ${
@@ -636,140 +795,174 @@ const BiscayneBayGPT = () => {
           }`}>
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">
-                Voices of the Bay Podcast
+                Community Conversations
               </h2>
               <p className="text-sm sm:text-lg md:text-xl text-muted-foreground mb-4 sm:mb-6">
-                Bi-weekly episodes generated from community conversations with Droobi
+                Track real-time progress on community concerns and government responses
               </p>
               <Badge variant="outline" className="border-primary/30 text-xs sm:text-sm">
-                New Episode Every Two Weeks
+                Updated Every Two Weeks
               </Badge>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {/* Episode 1 */}
-              <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300">
+            {/* Active Community Issues */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
+              <Card className="bg-card/50 backdrop-blur-sm border-border">
                 <CardHeader className="p-4 sm:p-6">
-                  <div className="relative mb-4">
-                    <div className="w-full aspect-video bg-primary/10 rounded-lg flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-2 sm:mb-4">
-                          <img 
-                            src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
-                            alt="Droobi" 
-                            className="w-8 h-8 sm:w-12 sm:h-12 object-cover rounded-full"
-                          />
-                        </div>
-                        <Play className="w-8 h-8 sm:w-12 sm:h-12 mx-auto text-primary" />
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <CardTitle className="text-base sm:text-lg text-foreground mb-2">
+                        North Bay Seagrass Die-Off
+                      </CardTitle>
+                      <div className="flex items-center gap-2">
+                        <Badge variant="outline" className="border-orange-500/30 text-orange-500 text-xs">In Progress</Badge>
+                        <span className="text-xs text-muted-foreground">324 community voices</span>
                       </div>
                     </div>
-                    <Badge className="absolute top-2 right-2 bg-primary text-xs">LIVE</Badge>
+                    <AlertTriangle className="h-5 w-5 text-orange-500" />
                   </div>
-                  <CardTitle className="text-sm sm:text-base text-foreground">
-                    Episode 12: "The North Bay Crisis"
-                  </CardTitle>
-                  <CardDescription className="text-xs sm:text-sm text-muted-foreground">
-                    Community voices share concerns about water quality degradation
-                  </CardDescription>
                 </CardHeader>
                 <CardContent className="p-4 sm:p-6 pt-0">
-                  <div className="flex items-center justify-between text-xs sm:text-sm text-muted-foreground mb-4">
-                    <span>Feb 15, 2025</span>
-                    <span>23 min</span>
+                  <div className="space-y-4">
+                    <div>
+                      <div className="flex justify-between text-xs text-muted-foreground mb-2">
+                        <span>Community Concern Raised</span>
+                        <span>Jan 15, 2025</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-primary" />
+                        <span className="text-xs sm:text-sm text-foreground">Residents report widespread seagrass mortality</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between text-xs text-muted-foreground mb-2">
+                        <span>DERM Investigation Started</span>
+                        <span>Jan 22, 2025</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-primary" />
+                        <span className="text-xs sm:text-sm text-foreground">Water quality testing initiated across affected zones</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between text-xs text-muted-foreground mb-2">
+                        <span>Next Update Expected</span>
+                        <span>Feb 12, 2025</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+                        <span className="text-xs sm:text-sm text-foreground">Preliminary findings and action plan</span>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground mb-4">
-                    "Through Droobi's voice, residents share firsthand experiences of the recent seagrass die-off..."
-                  </p>
-                  <Button variant="outline" size="sm" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 text-xs sm:text-sm min-h-[2.5rem]">
-                    <Play className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                    Listen Now
-                  </Button>
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <Button variant="outline" size="sm" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10">
+                      <MessageCircle className="mr-2 h-4 w-4" />
+                      Join Conversation
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
-              {/* Episode 2 */}
-              <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300">
+              <Card className="bg-card/50 backdrop-blur-sm border-border border-green-500/20">
                 <CardHeader className="p-4 sm:p-6">
-                  <div className="relative mb-4">
-                    <div className="w-full aspect-video bg-primary/10 rounded-lg flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-2 sm:mb-4">
-                          <img 
-                            src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
-                            alt="Droobi" 
-                            className="w-8 h-8 sm:w-12 sm:h-12 object-cover rounded-full"
-                          />
-                        </div>
-                        <Play className="w-8 h-8 sm:w-12 sm:h-12 mx-auto text-primary" />
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <CardTitle className="text-base sm:text-lg text-foreground mb-2">
+                        Canal Cleanup Initiative
+                      </CardTitle>
+                      <div className="flex items-center gap-2">
+                        <Badge variant="outline" className="border-green-500/30 text-green-500 text-xs">Approved</Badge>
+                        <span className="text-xs text-muted-foreground">$2.3M secured</span>
+                      </div>
+                    </div>
+                    <CheckCircle className="h-5 w-5 text-green-500" />
+                  </div>
+                </CardHeader>
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <div className="space-y-4">
+                    <div>
+                      <div className="flex justify-between text-xs text-muted-foreground mb-2">
+                        <span>Community Proposal</span>
+                        <span>Nov 10, 2024</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-green-500" />
+                        <span className="text-xs sm:text-sm text-foreground">187 residents sign petition for canal maintenance</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between text-xs text-muted-foreground mb-2">
+                        <span>County Board Approval</span>
+                        <span>Dec 15, 2024</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-green-500" />
+                        <span className="text-xs sm:text-sm text-foreground">$2.3M funding approved for implementation</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between text-xs text-muted-foreground mb-2">
+                        <span>Implementation Begins</span>
+                        <span>Q2 2025</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-green-500" />
+                        <span className="text-xs sm:text-sm text-foreground">Contractor selection and planning phase</span>
                       </div>
                     </div>
                   </div>
-                  <CardTitle className="text-sm sm:text-base text-foreground">
-                    Episode 11: "Success Stories"
-                  </CardTitle>
-                  <CardDescription className="text-xs sm:text-sm text-muted-foreground">
-                    Celebrating wins in bay restoration and community action
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="p-4 sm:p-6 pt-0">
-                  <div className="flex items-center justify-between text-xs sm:text-sm text-muted-foreground mb-4">
-                    <span>Feb 1, 2025</span>
-                    <span>18 min</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground mb-4">
-                    "Droobi highlights community victories - from successful coral restoration to new cleanup programs..."
-                  </p>
-                  <Button variant="outline" size="sm" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 text-xs sm:text-sm min-h-[2.5rem]">
-                    <Play className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                    Listen Now
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* Episode 3 */}
-              <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300">
-                <CardHeader className="p-4 sm:p-6">
-                  <div className="relative mb-4">
-                    <div className="w-full aspect-video bg-primary/10 rounded-lg flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-2 sm:mb-4">
-                          <img 
-                            src="/lovable-uploads/e1a87cc1-b7f5-4782-b7e7-0321dadee653.png" 
-                            alt="Droobi" 
-                            className="w-8 h-8 sm:w-12 sm:h-12 object-cover rounded-full"
-                          />
-                        </div>
-                        <Play className="w-8 h-8 sm:w-12 sm:h-12 mx-auto text-primary" />
-                      </div>
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <div className="flex items-center justify-between text-xs sm:text-sm">
+                      <span className="text-muted-foreground">Community Impact:</span>
+                      <span className="text-foreground font-medium">Improved water flow to 12 neighborhoods</span>
                     </div>
                   </div>
-                  <CardTitle className="text-sm sm:text-base text-foreground">
-                    Episode 10: "Youth Voices"
-                  </CardTitle>
-                  <CardDescription className="text-xs sm:text-sm text-muted-foreground">
-                    Young environmentalists share their vision for the bay
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="p-4 sm:p-6 pt-0">
-                  <div className="flex items-center justify-between text-xs sm:text-sm text-muted-foreground mb-4">
-                    <span>Jan 15, 2025</span>
-                    <span>25 min</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground mb-4">
-                    "Students from local schools tell Droobi about their innovative ideas for protecting marine life..."
-                  </p>
-                  <Button variant="outline" size="sm" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 text-xs sm:text-sm min-h-[2.5rem]">
-                    <Play className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                    Listen Now
-                  </Button>
                 </CardContent>
               </Card>
             </div>
 
+            {/* How It Works */}
+            <div className="bg-primary/5 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 text-center">
+                How Community Conversations Work
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <MessageCircle className="h-6 w-6 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">1. Share Concerns</h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Citizens voice issues through Droobi conversations</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <BarChart3 className="h-6 w-6 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">2. AI Analysis</h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Patterns identified and synthesized into reports</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Building2 className="h-6 w-6 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">3. Government Action</h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Agencies respond with plans and timelines</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Users className="h-6 w-6 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">4. Track Progress</h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Community sees real-time updates on outcomes</p>
+                </div>
+              </div>
+            </div>
+
             <div className="text-center mt-8 sm:mt-12">
-              <Button size="lg" variant="outline" className="border-2 border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[3rem]">
+              <Button size="lg" className="bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]">
                 <MessageCircle className="mr-2 h-4 sm:h-5 w-4 sm:w-5" />
-                View All Episodes
+                Share Your Concern with Droobi
               </Button>
             </div>
           </div>
