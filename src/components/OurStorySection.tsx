@@ -64,13 +64,13 @@ const OurStorySection = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/20 mb-4">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-primary">Proven Track Record</span>
+            <span className="text-sm font-semibold text-primary">Our Story</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
-            Not a Startup. A Track Record.
+            Decades of Experience, Forward-Thinking Vision
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Built by infrastructure veterans who've managed <span className="text-foreground font-semibold">$9B+ in public works programs</span> across <span className="text-foreground font-semibold">35+ cities</span>—we've delivered at scale before bringing it to AI.
+            Founded by infrastructure leaders with <span className="text-foreground font-semibold">$9B+ in program oversight</span> across <span className="text-foreground font-semibold">35+ cities</span>—bringing proven expertise to the next generation of public systems.
           </p>
         </div>
 
@@ -163,9 +163,9 @@ const OurStorySection = () => {
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
-                Who We Are
+                Leadership
               </h3>
-              <p className="text-sm text-muted-foreground">Infrastructure veterans, not consultants with slide decks</p>
+              <p className="text-sm text-muted-foreground">Practitioners who've built and managed at scale</p>
             </div>
             
             <div className="space-y-5">
@@ -233,7 +233,7 @@ const OurStorySection = () => {
             border border-primary/20 rounded-full px-6 py-3 hover:scale-105 transition-all duration-300 cursor-default">
             <Zap className="w-5 h-5 text-primary animate-pulse" />
             <p className="text-base md:text-lg font-semibold text-white">
-              We've delivered before. Now we're doing it with AI.
+              Transforming decades of infrastructure expertise into intelligent systems
             </p>
           </div>
         </div>
