@@ -168,84 +168,51 @@ const OurStorySection = () => {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-background-deep rounded-b-3xl z-10" />
                 
                 {/* Screen Content */}
-                <div className="absolute inset-4 bg-background-deep rounded-[2.2rem] overflow-hidden">
-                  {/* Header - Shows Current Year */}
-                  <div className="bg-gradient-to-r from-primary/20 to-secondary/20 p-4 border-b border-primary/30">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-primary mb-1">{timeline[activeYear].year}</div>
-                      <div className="text-sm font-semibold text-foreground">{timeline[activeYear].title}</div>
-                    </div>
-                  </div>
+                <div className="absolute inset-4 bg-gradient-to-b from-background-deep to-background rounded-[2.2rem] overflow-hidden">
                   
-                  {/* Timeline Content - Changes with active year */}
-                  <div className="p-4 space-y-4 overflow-y-auto h-[calc(100%-6rem)]">
-                    {/* Active Milestone Card */}
-                    <div className="bg-gradient-to-br from-primary/20 to-secondary/20 border-2 border-primary/40 rounded-2xl p-4 transition-all duration-500">
-                      {(() => {
-                        const ActiveIcon = timeline[activeYear].icon;
-                        return (
-                          <div className="flex flex-col items-center text-center gap-3">
-                            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-blue-500 flex items-center justify-center shadow-lg shadow-primary/50">
-                              <ActiveIcon className="w-8 h-8 text-white" />
-                            </div>
-                            <div>
-                              <div className="text-sm font-bold text-foreground mb-2">{timeline[activeYear].title}</div>
-                              <p className="text-xs text-muted-foreground leading-relaxed">
-                                {timeline[activeYear].desc}
-                              </p>
-                            </div>
-                            <div className="mt-2 px-3 py-1 bg-primary/20 rounded-full">
-                              <div className="text-lg font-bold text-primary">{timeline[activeYear].impact}</div>
-                            </div>
-                          </div>
-                        );
-                      })()}
+                  {/* Main Content - Centered */}
+                  <div className="flex flex-col items-center justify-center h-full p-6 text-center">
+                    
+                    {/* Year Badge */}
+                    <div className="mb-6 px-6 py-2 bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30 rounded-full">
+                      <div className="text-4xl font-bold text-primary">{timeline[activeYear].year}</div>
                     </div>
 
-                    {/* Mini Timeline Progress */}
-                    <div className="bg-card/50 border border-border rounded-xl p-3">
-                      <div className="text-xs text-muted-foreground mb-3 text-center">Journey Progress</div>
-                      <div className="flex items-center justify-between gap-2">
-                        {timeline.map((item, idx) => {
-                          const isPast = idx <= activeYear;
-                          const isCurrent = idx === activeYear;
-                          return (
-                            <div key={idx} className="flex-1 flex flex-col items-center gap-1">
-                              <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300
-                                ${isCurrent 
-                                  ? 'bg-gradient-to-br from-primary to-blue-500 scale-110 shadow-lg shadow-primary/50' 
-                                  : isPast 
-                                  ? 'bg-primary/30' 
-                                  : 'bg-muted'
-                                }`}
-                              >
-                                <span className="text-xs font-bold text-white">{item.year === "Today" ? "Now" : item.year.slice(-2)}</span>
-                              </div>
-                              {idx < timeline.length - 1 && (
-                                <div className={`absolute h-0.5 w-8 transition-colors duration-300 ${isPast ? 'bg-primary' : 'bg-border'}`} 
-                                  style={{ 
-                                    left: `${(idx + 1) * 25}%`,
-                                    top: '50%',
-                                    transform: 'translateY(-50%)'
-                                  }} 
-                                />
-                              )}
-                            </div>
-                          );
-                        })}
-                      </div>
+                    {/* Icon */}
+                    {(() => {
+                      const ActiveIcon = timeline[activeYear].icon;
+                      return (
+                        <div className="mb-6 w-20 h-20 rounded-full bg-gradient-to-br from-primary to-blue-500 flex items-center justify-center shadow-lg shadow-primary/50 transition-all duration-500">
+                          <ActiveIcon className="w-10 h-10 text-white" />
+                        </div>
+                      );
+                    })()}
+
+                    {/* Title */}
+                    <div className="mb-4">
+                      <div className="text-2xl font-bold text-foreground mb-2">{timeline[activeYear].title}</div>
+                      <div className="text-lg font-semibold text-primary">{timeline[activeYear].impact}</div>
                     </div>
 
-                    {/* Key Stats */}
-                    <div className="grid grid-cols-2 gap-2">
-                      <div className="bg-gradient-to-br from-primary/10 to-transparent border border-primary/30 rounded-lg p-2 text-center">
-                        <div className="text-lg font-bold text-primary">$9B+</div>
-                        <div className="text-xs text-muted-foreground">Programs</div>
-                      </div>
-                      <div className="bg-gradient-to-br from-secondary/10 to-transparent border border-secondary/30 rounded-lg p-2 text-center">
-                        <div className="text-lg font-bold text-secondary">35+</div>
-                        <div className="text-xs text-muted-foreground">Cities</div>
-                      </div>
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground leading-relaxed max-w-[220px]">
+                      {timeline[activeYear].desc}
+                    </p>
+
+                    {/* Progress Dots */}
+                    <div className="mt-8 flex items-center justify-center gap-2">
+                      {timeline.map((_, idx) => (
+                        <div
+                          key={idx}
+                          className={`h-2 rounded-full transition-all duration-300 ${
+                            idx === activeYear
+                              ? 'w-8 bg-primary'
+                              : idx < activeYear
+                              ? 'w-2 bg-primary/50'
+                              : 'w-2 bg-muted'
+                          }`}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -253,7 +220,6 @@ const OurStorySection = () => {
                 {/* Side Buttons */}
                 <div className="absolute right-0 top-24 w-1 h-12 bg-muted rounded-l" />
                 <div className="absolute right-0 top-40 w-1 h-16 bg-muted rounded-l" />
-                <div className="absolute right-0 top-60 w-1 h-16 bg-muted rounded-l" />
               </div>
 
               {/* Floating Glow */}
