@@ -1,276 +1,182 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link } from "react-router-dom";
-import { Users, GraduationCap, Globe, Zap, ArrowRight } from "lucide-react";
+import { Users, GraduationCap, Globe, Zap, ArrowRight, Sparkles } from "lucide-react";
 
 const OurStorySection = () => {
-  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
-  const [activeItem, setActiveItem] = useState<number | null>(null);
-  const sectionRef = useRef<HTMLElement>(null);
+  const [activeYear, setActiveYear] = useState<number>(3);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(entry.target.getAttribute('data-index') || '0');
-            setVisibleItems(prev => new Set([...prev, index]));
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+  const timeline = [
+    { year: "2016", title: "Coalition", icon: Users, desc: "Resilient Utilities Coalition" },
+    { year: "2018", title: "Academy", icon: GraduationCap, desc: "One Water Academy" },
+    { year: "2019", title: "Summit", icon: Globe, desc: "Future of Water Summit" },
+    { year: "Today", title: "APAS Labs", icon: Zap, desc: "AI-Powered Infrastructure" },
+  ];
 
-    const elements = sectionRef.current?.querySelectorAll('[data-index]');
-    elements?.forEach(el => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
-  const storyItems = [
+  const founders = [
     {
-      type: "milestone",
-      year: "2016",
-      title: "Resilient Utilities Coalition",
-      description: "Brought together practitioners and experts, hosting our first global Resiliency Summit.",
-      icon: Users,
-      color: "from-blue-500 to-purple-600",
+      name: "Simi Anand",
+      initials: "SA",
+      role: "Systems strategist bridging knowledge, technology, and community.",
     },
     {
-      type: "milestone",
-      year: "2018",
-      title: "One Water Academy",
-      description: "Created webinars and training sessions, capturing lessons and building momentum.",
-      icon: GraduationCap,
-      color: "from-purple-500 to-pink-600",
-    },
-    {
-      type: "milestone",
-      year: "2019",
-      title: "Future of Water Summit",
-      description: "Launched our national Miami conference, putting resilience at the center of conversation.",
-      icon: Globe,
-      color: "from-pink-500 to-blue-600",
-    },
-    {
-      type: "team",
-      title: "The Builders",
-      description: "Led by infrastructure veterans with decades managing $9B+ in public works programs across 35+ cities.",
-      founders: [
-        {
-          name: "Simi Anand",
-          initials: "SA",
-          role: "Systems strategist and builder, focused on bridging knowledge, technology, and community.",
-        },
-        {
-          name: "Hardeep Anand",
-          initials: "HA",
-          role: "Infrastructure leader and systems synthesist, with decades of experience overseeing complex public works.",
-        },
-      ],
-    },
-    {
-      type: "milestone",
-      year: "Today",
-      title: "APAS Labs",
-      description: "Evolved to meet the AI challenge with accountable, data-powered platforms transforming infrastructure decisions.",
-      icon: Zap,
-      color: "from-blue-400 to-purple-500",
-      highlight: true,
+      name: "Hardeep Anand",
+      initials: "HA",
+      role: "Infrastructure leader with decades managing complex public works.",
     },
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-32 bg-gradient-to-b from-background-deep via-background to-background-deep overflow-hidden">
+    <section className="relative py-20 bg-gradient-to-b from-background-deep via-background to-background-deep overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
-        {/* Header */}
-        <div
-          data-index="0"
-          className={`text-center mb-16 md:mb-24 transition-all duration-1000 ${
-            visibleItems.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
-              Our Story
-            </span>
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-7xl">
+        {/* Compact Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/20 mb-4">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-sm font-semibold text-primary">Our Journey</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 leading-tight bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
+            Built by Practitioners, Powered by AI
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From resilience pioneers to infrastructure innovators—building systems society can trust.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            $9B+ programs managed • 35+ cities served • Decades of infrastructure leadership
           </p>
         </div>
 
-        {/* Vertical Timeline */}
-        <div className="relative">
-          {/* Central Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 md:-translate-x-1/2" />
-
-          {/* Timeline Items */}
-          <div className="space-y-12 md:space-y-20">
-            {storyItems.map((item, index) => {
-              const isVisible = visibleItems.has(index + 1);
-              const isActive = activeItem === index;
-              const isLeft = index % 2 === 0;
-
-              if (item.type === "milestone") {
-                const Icon = item.icon!;
-                return (
-                  <div
-                    key={index}
-                    data-index={index + 1}
-                    onMouseEnter={() => setActiveItem(index)}
-                    onMouseLeave={() => setActiveItem(null)}
-                    className={`relative transition-all duration-700 ${
-                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    }`}
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    {/* Timeline Dot */}
-                    <div className={`absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-gradient-to-r ${item.color} 
-                      md:-translate-x-1/2 shadow-lg ring-4 ring-background transition-transform duration-300
-                      ${isActive || item.highlight ? 'scale-150' : 'scale-100'}
-                      ${item.highlight ? 'animate-pulse' : ''}`}
-                    />
-
-                    {/* Content Card */}
-                    <div className={`ml-12 md:ml-0 md:w-[calc(50%-3rem)] ${isLeft ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'}`}>
-                      <div className={`group backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8
-                        transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20
-                        ${isActive ? 'bg-white/10 scale-105 shadow-2xl shadow-primary/20' : ''}
-                        ${item.highlight ? 'border-primary/40 bg-primary/5' : ''}`}
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          {/* Left: Interactive Timeline */}
+          <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/8 transition-all duration-500">
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              Evolution Timeline
+            </h3>
+            
+            {/* Horizontal Timeline */}
+            <div className="relative mb-8">
+              <div className="flex items-center justify-between mb-6">
+                {timeline.map((item, idx) => {
+                  const Icon = item.icon;
+                  const isActive = activeYear === idx;
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveYear(idx)}
+                      className={`relative group transition-all duration-300 ${
+                        isActive ? 'scale-110' : 'scale-100 hover:scale-105'
+                      }`}
+                    >
+                      {/* Dot */}
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300
+                        ${isActive 
+                          ? 'bg-gradient-to-r from-primary to-blue-500 shadow-lg shadow-primary/50' 
+                          : 'bg-white/10 hover:bg-white/20'
+                        }`}
                       >
-                        {/* Year Badge */}
-                        <div className={`inline-flex items-center justify-center px-4 py-2 mb-4 rounded-full 
-                          bg-gradient-to-r ${item.color} text-white font-bold text-sm shadow-lg`}>
-                          {item.year}
-                        </div>
-
-                        {/* Icon */}
-                        <div className="bg-primary/10 border border-primary/20 rounded-xl p-3 w-fit mb-4
-                          group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                          <Icon className="w-6 h-6 text-primary" />
-                        </div>
-
-                        {/* Text Content */}
-                        <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
-                          {item.title}
-                        </h3>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                          {item.description}
-                        </p>
+                        <Icon className={`w-5 h-5 transition-colors ${isActive ? 'text-white' : 'text-muted-foreground'}`} />
                       </div>
+                      
+                      {/* Year Label */}
+                      <div className={`absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-semibold whitespace-nowrap
+                        ${isActive ? 'text-primary' : 'text-muted-foreground'}`}
+                      >
+                        {item.year}
+                      </div>
+                      
+                      {/* Connector Line */}
+                      {idx < timeline.length - 1 && (
+                        <div className={`absolute top-1/2 left-full w-8 sm:w-12 md:w-16 h-0.5 -translate-y-1/2 transition-colors
+                          ${idx < activeYear ? 'bg-primary' : 'bg-white/20'}`}
+                        />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Active Content */}
+            <div className="bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-6 min-h-[140px]">
+              <div className="flex items-start gap-4">
+                {(() => {
+                  const ActiveIcon = timeline[activeYear].icon;
+                  return <ActiveIcon className="w-8 h-8 text-primary flex-shrink-0 mt-1" />;
+                })()}
+                <div>
+                  <h4 className="text-xl font-bold text-white mb-2">{timeline[activeYear].title}</h4>
+                  <p className="text-base text-muted-foreground leading-relaxed">{timeline[activeYear].desc}</p>
+                  {activeYear === timeline.length - 1 && (
+                    <div className="mt-3 inline-flex items-center gap-2 text-sm text-primary font-semibold">
+                      <Zap className="w-4 h-4 animate-pulse" />
+                      <span>Current Focus</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Team */}
+          <div className="backdrop-blur-xl bg-gradient-to-br from-primary/10 via-white/5 to-accent/10 border-2 border-primary/30 rounded-3xl p-8 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+              The Builders
+            </h3>
+            
+            <div className="space-y-6">
+              {founders.map((founder, idx) => (
+                <div
+                  key={idx}
+                  className="group bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:scale-105 transition-all duration-300"
+                >
+                  <div className="flex items-start gap-4">
+                    <Avatar className="w-16 h-16 ring-4 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300 flex-shrink-0">
+                      <AvatarImage src="/placeholder.svg" alt={founder.name} />
+                      <AvatarFallback className="text-lg font-bold bg-gradient-to-br from-primary/20 to-accent/20 text-white">
+                        {founder.initials}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-lg font-bold text-white mb-1 group-hover:text-primary transition-colors">
+                        {founder.name}
+                      </h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {founder.role}
+                      </p>
                     </div>
                   </div>
-                );
-              } else {
-                // Team Section
-                return (
-                  <div
-                    key={index}
-                    data-index={index + 1}
-                    className={`relative transition-all duration-700 ${
-                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    }`}
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    {/* Timeline Dot - Special */}
-                    <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500
-                      md:-translate-x-1/2 shadow-lg ring-4 ring-background scale-150 animate-pulse" />
+                </div>
+              ))}
+            </div>
 
-                    {/* Full Width Team Card */}
-                    <div className="ml-12 md:ml-0 md:px-12">
-                      <div className="backdrop-blur-xl bg-gradient-to-br from-primary/10 via-white/5 to-accent/10 
-                        border-2 border-primary/30 rounded-3xl p-6 md:p-10 shadow-2xl">
-                        
-                        {/* Header */}
-                        <div className="text-center mb-8 md:mb-10">
-                          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-500 
-                            px-4 py-2 rounded-full text-white font-bold text-sm mb-4 shadow-lg">
-                            <Users className="w-4 h-4" />
-                            <span>The Team</span>
-                          </div>
-                          <h3 className="text-2xl md:text-4xl font-bold text-white mb-3">{item.title}</h3>
-                          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                            {item.description}
-                          </p>
-                        </div>
-
-                        {/* Founders Grid */}
-                        <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-6">
-                          {item.founders?.map((founder, fIndex) => (
-                            <div
-                              key={fIndex}
-                              className="group bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8
-                                hover:bg-white/10 hover:scale-105 transition-all duration-300
-                                hover:shadow-xl hover:shadow-primary/20"
-                            >
-                              <div className="flex flex-col items-center text-center space-y-4">
-                                <Avatar className="w-20 h-20 md:w-24 md:h-24 ring-4 ring-primary/20 
-                                  group-hover:ring-primary/40 transition-all duration-300">
-                                  <AvatarImage src="/placeholder.svg" alt={founder.name} />
-                                  <AvatarFallback className="text-xl md:text-2xl font-bold 
-                                    bg-gradient-to-br from-primary/20 to-accent/20 text-white">
-                                    {founder.initials}
-                                  </AvatarFallback>
-                                </Avatar>
-                                <div>
-                                  <h4 className="text-xl md:text-2xl font-bold text-white mb-2">{founder.name}</h4>
-                                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                                    {founder.role}
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* CTA */}
-                        <div className="text-center">
-                          <Button
-                            asChild
-                            variant="hero"
-                            size="lg"
-                            className="group relative overflow-hidden"
-                          >
-                            <Link to="/about">
-                              <span className="relative z-10">Learn More About the Team</span>
-                              <ArrowRight className="ml-2 w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-                              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 
-                                group-hover:opacity-100 transition-opacity duration-300" />
-                            </Link>
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              }
-            })}
+            {/* CTA */}
+            <div className="mt-6 pt-6 border-t border-white/10">
+              <Button
+                asChild
+                variant="outline"
+                className="w-full group border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300"
+              >
+                <Link to="/about">
+                  <span>Meet the Full Team</span>
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Message */}
-        <div
-          data-index={storyItems.length + 1}
-          className={`text-center mt-16 md:mt-24 transition-all duration-1000 ${
-            visibleItems.has(storyItems.length + 1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="backdrop-blur-xl bg-gradient-to-r from-primary/10 via-secondary/5 to-accent/10
-            border-2 border-primary/20 rounded-2xl p-6 md:p-10 max-w-2xl mx-auto hover:bg-primary/15 transition-all duration-500">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <Zap className="w-6 h-6 md:w-8 md:h-8 text-primary animate-pulse" />
-              <p className="text-xl md:text-3xl font-bold text-white">
-                And it's only the beginning.
-              </p>
-            </div>
-            <p className="text-base md:text-xl text-muted-foreground">
-              Join us as we transform infrastructure decisions in the age of AI.
+        {/* Bottom Tagline */}
+        <div className="text-center mt-12">
+          <div className="inline-flex items-center gap-3 backdrop-blur-xl bg-gradient-to-r from-primary/10 to-accent/10 
+            border border-primary/20 rounded-full px-6 py-3 hover:scale-105 transition-all duration-300">
+            <Zap className="w-5 h-5 text-primary animate-pulse" />
+            <p className="text-lg font-semibold text-white">
+              Transforming infrastructure decisions in the age of AI
             </p>
           </div>
         </div>
