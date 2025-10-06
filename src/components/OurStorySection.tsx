@@ -159,7 +159,7 @@ const OurStorySection = () => {
             </div>
           </div>
 
-          {/* Center: iPhone Mockup Animation */}
+          {/* Center: iPhone Mockup Animation - Journey Timeline */}
           <div className="lg:col-span-1 flex items-center justify-center py-8 lg:py-0">
             <div className="relative float">
               {/* iPhone Frame */}
@@ -169,52 +169,83 @@ const OurStorySection = () => {
                 
                 {/* Screen Content */}
                 <div className="absolute inset-4 bg-background-deep rounded-[2.2rem] overflow-hidden">
-                  {/* Header */}
+                  {/* Header - Shows Current Year */}
                   <div className="bg-gradient-to-r from-primary/20 to-secondary/20 p-4 border-b border-primary/30">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-blue-500 flex items-center justify-center">
-                        <Zap className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-bold text-foreground">APAS Labs</div>
-                        <div className="text-xs text-muted-foreground">Infrastructure Platform</div>
-                      </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-primary mb-1">{timeline[activeYear].year}</div>
+                      <div className="text-sm font-semibold text-foreground">{timeline[activeYear].title}</div>
                     </div>
                   </div>
                   
-                  {/* Content Cards */}
-                  <div className="p-4 space-y-3 overflow-y-auto h-[calc(100%-5rem)]">
-                    <div className="bg-gradient-to-br from-primary/10 to-transparent border border-primary/30 rounded-xl p-3 animate-pulse">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
-                          <Users className="w-4 h-4 text-primary" />
-                        </div>
-                        <div className="text-xs font-semibold text-foreground">Live Projects</div>
-                      </div>
-                      <div className="text-xl font-bold text-primary">127</div>
-                      <div className="text-xs text-muted-foreground">Active Infrastructure Programs</div>
+                  {/* Timeline Content - Changes with active year */}
+                  <div className="p-4 space-y-4 overflow-y-auto h-[calc(100%-6rem)]">
+                    {/* Active Milestone Card */}
+                    <div className="bg-gradient-to-br from-primary/20 to-secondary/20 border-2 border-primary/40 rounded-2xl p-4 transition-all duration-500">
+                      {(() => {
+                        const ActiveIcon = timeline[activeYear].icon;
+                        return (
+                          <div className="flex flex-col items-center text-center gap-3">
+                            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-blue-500 flex items-center justify-center shadow-lg shadow-primary/50">
+                              <ActiveIcon className="w-8 h-8 text-white" />
+                            </div>
+                            <div>
+                              <div className="text-sm font-bold text-foreground mb-2">{timeline[activeYear].title}</div>
+                              <p className="text-xs text-muted-foreground leading-relaxed">
+                                {timeline[activeYear].desc}
+                              </p>
+                            </div>
+                            <div className="mt-2 px-3 py-1 bg-primary/20 rounded-full">
+                              <div className="text-lg font-bold text-primary">{timeline[activeYear].impact}</div>
+                            </div>
+                          </div>
+                        );
+                      })()}
                     </div>
-                    
-                    <div className="bg-gradient-to-br from-secondary/10 to-transparent border border-secondary/30 rounded-xl p-3">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-8 h-8 rounded-lg bg-secondary/20 flex items-center justify-center">
-                          <GraduationCap className="w-4 h-4 text-secondary" />
-                        </div>
-                        <div className="text-xs font-semibold text-foreground">Knowledge Base</div>
+
+                    {/* Mini Timeline Progress */}
+                    <div className="bg-card/50 border border-border rounded-xl p-3">
+                      <div className="text-xs text-muted-foreground mb-3 text-center">Journey Progress</div>
+                      <div className="flex items-center justify-between gap-2">
+                        {timeline.map((item, idx) => {
+                          const isPast = idx <= activeYear;
+                          const isCurrent = idx === activeYear;
+                          return (
+                            <div key={idx} className="flex-1 flex flex-col items-center gap-1">
+                              <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300
+                                ${isCurrent 
+                                  ? 'bg-gradient-to-br from-primary to-blue-500 scale-110 shadow-lg shadow-primary/50' 
+                                  : isPast 
+                                  ? 'bg-primary/30' 
+                                  : 'bg-muted'
+                                }`}
+                              >
+                                <span className="text-xs font-bold text-white">{item.year === "Today" ? "Now" : item.year.slice(-2)}</span>
+                              </div>
+                              {idx < timeline.length - 1 && (
+                                <div className={`absolute h-0.5 w-8 transition-colors duration-300 ${isPast ? 'bg-primary' : 'bg-border'}`} 
+                                  style={{ 
+                                    left: `${(idx + 1) * 25}%`,
+                                    top: '50%',
+                                    transform: 'translateY(-50%)'
+                                  }} 
+                                />
+                              )}
+                            </div>
+                          );
+                        })}
                       </div>
-                      <div className="text-xl font-bold text-secondary">2,500+</div>
-                      <div className="text-xs text-muted-foreground">Expert Resources</div>
                     </div>
-                    
-                    <div className="bg-gradient-to-br from-accent/10 to-transparent border border-accent/30 rounded-xl p-3 animate-pulse delay-1000">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
-                          <Globe className="w-4 h-4 text-accent" />
-                        </div>
-                        <div className="text-xs font-semibold text-foreground">Global Reach</div>
+
+                    {/* Key Stats */}
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="bg-gradient-to-br from-primary/10 to-transparent border border-primary/30 rounded-lg p-2 text-center">
+                        <div className="text-lg font-bold text-primary">$9B+</div>
+                        <div className="text-xs text-muted-foreground">Programs</div>
                       </div>
-                      <div className="text-xl font-bold text-accent">35+</div>
-                      <div className="text-xs text-muted-foreground">Cities Served</div>
+                      <div className="bg-gradient-to-br from-secondary/10 to-transparent border border-secondary/30 rounded-lg p-2 text-center">
+                        <div className="text-lg font-bold text-secondary">35+</div>
+                        <div className="text-xs text-muted-foreground">Cities</div>
+                      </div>
                     </div>
                   </div>
                 </div>
