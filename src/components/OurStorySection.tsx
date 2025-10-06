@@ -12,28 +12,28 @@ const OurStorySection = () => {
       year: "2016", 
       title: "Built Coalition", 
       icon: Users, 
-      desc: "Brought together 200+ infrastructure practitioners across 15 countries at our inaugural Resiliency Summit—proving we could unite fragmented expertise.",
+      desc: "Brought together infrastructure practitioners from 15 countries at our first Resiliency Summit.",
       impact: "15 Countries"
     },
     { 
       year: "2018", 
       title: "Captured Knowledge", 
       icon: GraduationCap, 
-      desc: "Launched One Water Academy—preserving decades of institutional knowledge through structured training before it retired out the door.",
+      desc: "Launched One Water Academy to preserve institutional knowledge through structured training.",
       impact: "1000+ Trained"
     },
     { 
       year: "2019", 
       title: "Scaled Nationally", 
       icon: Globe, 
-      desc: "Future of Water Summit in Miami became the national conference for resilience—attended by C-suite executives from utilities managing $50B+ in assets.",
+      desc: "Future of Water Summit became the go-to conference for utility executives across the country.",
       impact: "$50B+ Assets"
     },
     { 
       year: "Today", 
-      title: "AI-Powered Labs", 
+      title: "APAS Labs", 
       icon: Zap, 
-      desc: "Evolved proven frameworks into intelligent platforms—combining 30+ years of infrastructure leadership with AI to solve what manual systems cannot.",
+      desc: "Building AI platforms that connect the people, systems, and decisions that shape infrastructure.",
       impact: "Active Now"
     },
   ];
@@ -42,14 +42,14 @@ const OurStorySection = () => {
     {
       name: "Simi Anand",
       initials: "SA",
-      role: "Led multi-billion dollar infrastructure programs",
-      credentials: "Managed $9B+ wastewater & stormwater programs • Integrated SCADA, finance, and operations at municipal scale • Featured at Singapore Water Week",
+      role: "Led billion-dollar infrastructure programs",
+      credentials: "$9B+ wastewater & stormwater programs • SCADA, finance, operations integration • Singapore Water Week speaker",
     },
     {
       name: "Hardeep Anand",
       initials: "HA",
-      role: "Infrastructure strategy for 35+ cities & regions",
-      credentials: "Decades overseeing complex public works • Built systems from scratch for South Florida's largest programs • Rockefeller Foundation 100 Resilient Cities",
+      role: "Infrastructure strategy across 35+ cities",
+      credentials: "Complex public works oversight • South Florida regional programs • Rockefeller 100 Resilient Cities",
     },
   ];
 
@@ -67,10 +67,10 @@ const OurStorySection = () => {
             <span className="text-sm font-semibold text-primary">Our Story</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent">
-            Decades of Experience, Forward-Thinking Vision
+            Built by People Who've Done This Before
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Founded by infrastructure leaders with <span className="text-foreground font-semibold">$9B+ in program oversight</span> across <span className="text-foreground font-semibold">35+ cities</span>—bringing proven expertise to the next generation of public systems.
+            $9B+ in programs managed. 35+ cities served. 30+ years in infrastructure.
           </p>
         </div>
 
@@ -82,9 +82,9 @@ const OurStorySection = () => {
               <div>
                 <h3 className="text-2xl font-bold text-white mb-1 flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  From Execution to Innovation
+                  How We Got Here
                 </h3>
-                <p className="text-sm text-muted-foreground">A decade of proven delivery</p>
+                <p className="text-sm text-muted-foreground">A decade of building connections</p>
               </div>
               <div className="text-right">
                 <div className="text-2xl font-bold text-primary">{timeline[activeYear].impact}</div>
@@ -165,7 +165,7 @@ const OurStorySection = () => {
                 <div className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
                 Leadership
               </h3>
-              <p className="text-sm text-muted-foreground">Practitioners who've built and managed at scale</p>
+              <p className="text-sm text-muted-foreground">The team behind the platforms</p>
             </div>
             
             <div className="space-y-5">
@@ -233,7 +233,7 @@ const OurStorySection = () => {
             border border-primary/20 rounded-full px-6 py-3 hover:scale-105 transition-all duration-300 cursor-default">
             <Zap className="w-5 h-5 text-primary animate-pulse" />
             <p className="text-base md:text-lg font-semibold text-white">
-              Transforming decades of infrastructure expertise into intelligent systems
+              Infrastructure experience meets AI capability
             </p>
           </div>
         </div>
