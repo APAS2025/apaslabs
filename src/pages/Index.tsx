@@ -7,8 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import OraklesDemo from "@/components/OraklesDemo";
 import WhyWeExistSection from "@/components/WhyWeExistSection";
-import FoundersSection from "@/components/FoundersSection";
-import JourneySection from "@/components/JourneySection";
+import OurStorySection from "@/components/OurStorySection";
 import { 
   Mail, 
   Phone, 
@@ -454,14 +453,8 @@ const Index = () => {
       {/* Gradient Divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
-      {/* Our Journey */}
-      <JourneySection />
-
-      {/* Gradient Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-
-      {/* Leadership Team */}
-      <FoundersSection />
+      {/* Our Story - Journey & Team */}
+      <OurStorySection />
 
       {/* Gradient Divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
