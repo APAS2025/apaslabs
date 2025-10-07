@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 import OraklesDemo from "@/components/OraklesDemo";
 import WhyWeExistSection from "@/components/WhyWeExistSection";
 import OurStorySection from "@/components/OurStorySection";
-import { 
+import { RotatingText } from "@/components/RotatingText";
+import {
   Mail, 
   Phone, 
   MapPin,
@@ -57,7 +58,20 @@ const Index = () => {
             {/* Main headline */}
             <div className="space-y-10 sm:space-y-16">
               <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.2] tracking-tight px-2 animate-fade-in">
-                AI-powered systems that make public infrastructure <span className="text-primary">intelligent</span> and people <span className="text-primary">connected</span>.
+                AI-powered systems that make public infrastructure{' '}
+                <span className="text-primary">
+                  <RotatingText 
+                    words={['intelligent', 'smarter', 'faster', 'adaptive', 'efficient']} 
+                    interval={2500}
+                  />
+                </span>{' '}
+                and people{' '}
+                <span className="text-primary">
+                  <RotatingText 
+                    words={['connected', 'unified', 'accessible', 'empowered', 'engaged']} 
+                    interval={2500}
+                  />
+                </span>.
               </h1>
               
               <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in [animation-delay:0.3s]">
