@@ -56,9 +56,13 @@ const Index = () => {
           <div className="space-y-8 sm:space-y-12">
             {/* Main headline */}
             <div className="space-y-10 sm:space-y-16">
-              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.2] tracking-tight px-4 max-w-5xl mx-auto animate-fade-in [animation-delay:0.2s]">
-                APAS Labs unites engineering, governance, and AI to transform how cities, utilities, and institutions plan, operate, and deliver—creating <span className="text-primary">smarter systems</span> and <span className="text-primary">stronger communities</span> everywhere.
+              <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.2] tracking-tight px-2 animate-fade-in">
+                AI-powered systems that make public infrastructure <span className="text-primary">intelligent</span> and people <span className="text-primary">connected</span>.
               </h1>
+              
+              <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in [animation-delay:0.3s]">
+                APAS Labs unites engineering, governance, and AI to transform how cities, utilities, and institutions plan, operate, and deliver—creating smarter systems and stronger communities everywhere.
+              </p>
             </div>
 
             {/* CTA buttons */}
