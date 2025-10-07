@@ -56,7 +56,7 @@ const Index = () => {
           <div className="space-y-8 sm:space-y-12">
             {/* Main headline */}
             <div className="space-y-10 sm:space-y-16">
-              <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-foreground leading-[1.2] tracking-tight px-2 animate-fade-in">
+              <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.2] tracking-tight px-2 animate-fade-in">
                 We build AI systems that make<br />
                 infrastructure <span className="text-primary animate-pulse inline-block">smarter</span> and<br />
                 operations more <span className="text-primary animate-pulse inline-block [animation-delay:0.5s]">reliable</span>.
@@ -86,7 +86,7 @@ const Index = () => {
                 <span className="text-primary">in $9B+ Public Infrastructure</span>
               </h1> */}
 
-              <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in [animation-delay:0.3s]">
+              <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in [animation-delay:0.3s]">
                 Building <span className="text-foreground font-medium">reliable, compliant</span> AI systems<br className="hidden sm:block" />
                 for public agencies, utilities, and consultants.<br />
                 <br className="hidden sm:block" />
