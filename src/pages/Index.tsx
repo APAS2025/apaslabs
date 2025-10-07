@@ -9,7 +9,6 @@ import OraklesDemo from "@/components/OraklesDemo";
 import WhyWeExistSection from "@/components/WhyWeExistSection";
 import OurStorySection from "@/components/OurStorySection";
 import { RotatingText } from "@/components/RotatingText";
-import { HeroPhoneMockup } from "@/components/HeroPhoneMockup";
 import {
   Mail, 
   Phone, 
@@ -54,64 +53,56 @@ const Index = () => {
           <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[300px] bg-primary/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left side - Text content */}
-            <div className="space-y-8 sm:space-y-12 text-center lg:text-left">
-              {/* Main headline */}
-              <div className="space-y-10 sm:space-y-16">
-                <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.2] tracking-tight px-2 animate-fade-in">
-                  AI-powered systems that make public infrastructure{' '}
-                  <span className="text-primary">
-                    <RotatingText 
-                      words={['intelligent', 'resilient', 'predictive', 'proactive', 'data-driven', 'responsive']} 
-                      interval={2500}
-                    />
-                  </span>{' '}
-                  and people{' '}
-                  <span className="text-primary">
-                    <RotatingText 
-                      words={['connected', 'transparent', 'accountable', 'collaborative', 'unified', 'empowered']} 
-                      interval={2500}
-                    />
-                  </span>.
-                </h1>
-                
-                <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto lg:mx-0 leading-relaxed px-4 lg:px-0 animate-fade-in [animation-delay:0.3s]">
-                  APAS Labs is building the next generation of intelligent infrastructure—empowering cities, governments, and institutions to move faster, work smarter, and deliver lasting impact that people can see and trust.
-                </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-24">
+          <div className="space-y-8 sm:space-y-12">
+            {/* Main headline */}
+            <div className="space-y-10 sm:space-y-16">
+              <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.2] tracking-tight px-2 animate-fade-in">
+                AI-powered systems that make public infrastructure{' '}
+                <span className="text-primary">
+                  <RotatingText 
+                    words={['intelligent', 'resilient', 'predictive', 'proactive', 'data-driven', 'responsive']} 
+                    interval={2500}
+                  />
+                </span>{' '}
+                and people{' '}
+                <span className="text-primary">
+                  <RotatingText 
+                    words={['connected', 'transparent', 'accountable', 'collaborative', 'unified', 'empowered']} 
+                    interval={2500}
+                  />
+                </span>.
+              </h1>
+              
+              <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in [animation-delay:0.3s]">
+                APAS Labs is building the next generation of intelligent infrastructure—empowering cities, governments, and institutions to move faster, work smarter, and deliver lasting impact that people can see and trust.
+              </p>
+            </div>
+
+            {/* CTA buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center pt-4 sm:pt-8 px-4">
+              <Button size="lg" className="text-sm sm:text-lg px-6 sm:px-10 py-4 sm:py-6 h-auto font-semibold bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]" asChild>
+                <Link to="/partnerships">Partner With Us <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" /></Link>
+              </Button>
+              <Button variant="outline" size="lg" className="text-sm sm:text-lg px-6 sm:px-10 py-4 sm:py-6 h-auto font-semibold border-2 border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[3rem]" asChild>
+                <Link to="/labs">Explore Our Labs</Link>
+              </Button>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="pt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="h-5 w-5 text-primary" />
+                <span>$9B+ Programs Managed</span>
               </div>
-
-              {/* CTA buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start pt-4 sm:pt-8 px-4 lg:px-0">
-                <Button size="lg" className="text-sm sm:text-lg px-6 sm:px-10 py-4 sm:py-6 h-auto font-semibold bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]" asChild>
-                  <Link to="/partnerships">Partner With Us <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" /></Link>
-                </Button>
-                <Button variant="outline" size="lg" className="text-sm sm:text-lg px-6 sm:px-10 py-4 sm:py-6 h-auto font-semibold border-2 border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[3rem]" asChild>
-                  <Link to="/labs">Explore Our Labs</Link>
-                </Button>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="h-5 w-5 text-primary" />
+                <span>35+ Cities Served</span>
               </div>
-            </div>
-
-            {/* Right side - iPhone mockup */}
-            <div className="flex justify-center lg:justify-end animate-fade-in [animation-delay:0.5s]">
-              <HeroPhoneMockup />
-            </div>
-          </div>
-
-          {/* Trust indicators */}
-          <div className="pt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-primary" />
-              <span>$9B+ Programs Managed</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-primary" />
-              <span>35+ Cities Served</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-primary" />
-              <span>Global Infrastructure Leadership</span>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="h-5 w-5 text-primary" />
+                <span>Global Infrastructure Leadership</span>
+              </div>
             </div>
           </div>
         </div>
