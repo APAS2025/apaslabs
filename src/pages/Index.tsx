@@ -56,10 +56,36 @@ const Index = () => {
           <div className="space-y-8 sm:space-y-12">
             {/* Main headline */}
             <div className="space-y-4 sm:space-y-8">
+              {/* OPTION 1: Direct Problem → Solution */}
               <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
                 Making Infrastructure<br />
                 <span className="text-primary">Transparent. Accountable. Trusted.</span>
               </h1>
+
+              {/* OPTION 2: Scale + Sector Focus */}
+              {/* <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
+                The AI Platform<br />
+                <span className="text-primary">Managing Billions in Public Infrastructure</span>
+              </h1> */}
+
+              {/* OPTION 3: Transformation Statement */}
+              {/* <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
+                Ending the Black Box<br />
+                <span className="text-primary">of Infrastructure Spending</span>
+              </h1> */}
+
+              {/* OPTION 4: Bold Tech Company Style */}
+              {/* <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
+                Infrastructure That<br />
+                <span className="text-primary">Actually Works</span>
+              </h1> */}
+
+              {/* OPTION 5: Value + Outcome */}
+              {/* <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
+                Connecting the Dots<br />
+                <span className="text-primary">in $9B+ Public Infrastructure</span>
+              </h1> */}
+
               <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4">
                 AI-powered platforms that connect communities, regulators, and innovators—creating transparent, 
                 accountable systems society can trust.
