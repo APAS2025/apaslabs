@@ -57,9 +57,9 @@ const Index = () => {
             {/* Main headline */}
             <div className="space-y-10 sm:space-y-16">
               <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.2] tracking-tight px-2 animate-fade-in">
-                <span className="text-primary font-extrabold">AI-Powered</span> Infrastructure:<br />
-                Make your systems <span className="text-primary animate-pulse inline-block">smarter</span><br />
-                and operations more <span className="text-primary animate-pulse inline-block [animation-delay:0.5s]">reliable</span>.
+                <span className="text-primary">AI-Powered</span> Infrastructure<br />
+                for <span className="text-primary animate-pulse inline-block">Smarter</span> Operations<br />
+                and <span className="text-primary animate-pulse inline-block [animation-delay:0.5s]">Reliable</span> Results
               </h1>
 
               {/* OPTION 2: Scale + Sector Focus */}
