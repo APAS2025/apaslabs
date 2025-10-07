@@ -87,7 +87,11 @@ const Index = () => {
               </h1> */}
 
               <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4">
-                Building reliable, compliant AI systems for public agencies, utilities, and consultants. Technology that makes it easier to plan, fund, and operate complex infrastructure with confidence and transparency.
+                Building reliable, compliant AI systems<br className="hidden sm:block" />
+                for public agencies, utilities, and consultants.<br />
+                <br className="hidden sm:block" />
+                Technology that makes it easier to plan, fund, and operate<br className="hidden sm:block" />
+                complex infrastructure with confidence and transparency.
               </p>
             </div>
 
