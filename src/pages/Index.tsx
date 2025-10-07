@@ -61,7 +61,7 @@ const Index = () => {
               </h1>
               
               <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in [animation-delay:0.3s]">
-                APAS Labs unites engineering, governance, and AI to transform how cities, utilities, and institutions plan, operate, and deliver—creating smarter systems and stronger communities everywhere.
+                APAS Labs is building the next generation of intelligent infrastructure—empowering cities, governments, and institutions to move faster, work smarter, and deliver lasting impact that people can see and trust.
               </p>
             </div>
 
