@@ -87,10 +87,7 @@ const Index = () => {
               </h1> */}
 
               <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in [animation-delay:0.3s]">
-                AI systems, training, and community for public agencies, utilities,<br className="hidden sm:block" />
-                consultants, and vendors. <span className="text-foreground font-medium">Technology and education</span> that make it easier<br className="hidden sm:block" />
-                to plan, fund, and operate complex infrastructure<br className="hidden sm:block" />
-                with <span className="text-foreground font-medium">confidence</span> and <span className="text-foreground font-medium">transparency</span>.
+                AI-powered systems that make public infrastructure <span className="text-primary font-semibold">intelligent</span> and people <span className="text-primary font-semibold">connected</span>.
               </p>
             </div>
 
