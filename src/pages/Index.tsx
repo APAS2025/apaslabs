@@ -87,7 +87,7 @@ const Index = () => {
               </h1> */}
 
               <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4">
-                APAS Labs builds reliable, compliant AI systems. We connect communities, regulators, and innovators—making it easier for public agencies, utilities, and consultants to plan, fund, and operate complex infrastructure. With confidence. With transparency.
+                Building reliable, compliant AI systems for public agencies, utilities, and consultants. Technology that makes it easier to plan, fund, and operate complex infrastructure with confidence and transparency.
               </p>
             </div>
 
