@@ -56,10 +56,9 @@ const Index = () => {
           <div className="space-y-8 sm:space-y-12">
             {/* Main headline */}
             <div className="space-y-4 sm:space-y-8">
-              {/* OPTION 1: Direct Problem → Solution */}
               <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
-                Making Infrastructure<br />
-                <span className="text-primary">Transparent. Accountable. Trusted.</span>
+                We build AI systems that make<br />
+                <span className="text-primary">infrastructure smarter and operations more reliable.</span>
               </h1>
 
               {/* OPTION 2: Scale + Sector Focus */}
