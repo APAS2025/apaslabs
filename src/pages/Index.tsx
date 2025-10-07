@@ -56,36 +56,6 @@ const Index = () => {
           <div className="space-y-8 sm:space-y-12">
             {/* Main headline */}
             <div className="space-y-10 sm:space-y-16">
-              <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.2] tracking-tight px-2 animate-fade-in">
-                The First <span className="text-primary animate-pulse inline-block">AI-Powered</span><br />
-                Operating System<br />
-                for <span className="text-primary">Public Infrastructure</span>
-              </h1>
-
-              {/* OPTION 2: Scale + Sector Focus */}
-              {/* <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
-                The AI Platform<br />
-                <span className="text-primary">Managing Billions in Public Infrastructure</span>
-              </h1> */}
-
-              {/* OPTION 3: Transformation Statement */}
-              {/* <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
-                Ending the Black Box<br />
-                <span className="text-primary">of Infrastructure Spending</span>
-              </h1> */}
-
-              {/* OPTION 4: Bold Tech Company Style */}
-              {/* <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
-                Infrastructure That<br />
-                <span className="text-primary">Actually Works</span>
-              </h1> */}
-
-              {/* OPTION 5: Value + Outcome */}
-              {/* <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
-                Connecting the Dots<br />
-                <span className="text-primary">in $9B+ Public Infrastructure</span>
-              </h1> */}
-
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.2] tracking-tight px-4 max-w-5xl mx-auto animate-fade-in [animation-delay:0.2s]">
                 AI-powered systems that make public infrastructure <span className="text-primary">intelligent</span> and people <span className="text-primary">connected</span>.
               </h1>
