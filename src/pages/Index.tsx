@@ -57,8 +57,8 @@ const Index = () => {
             {/* Main headline */}
             <div className="space-y-4 sm:space-y-8">
               <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
-                Building the Operating System<br />
-                <span className="text-primary">for Public Infrastructure</span>
+                Intelligence for<br />
+                <span className="text-primary">Every City. Every Citizen.</span>
               </h1>
               <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4">
                 AI-powered platforms that connect communities, regulators, and innovators—creating transparent, 
