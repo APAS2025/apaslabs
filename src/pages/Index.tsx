@@ -57,8 +57,8 @@ const Index = () => {
             {/* Main headline */}
             <div className="space-y-4 sm:space-y-8">
               <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
-                We build AI systems that make<br />
-                <span className="text-primary">infrastructure smarter and operations more reliable.</span>
+                We build AI systems<br />
+                <span className="text-primary">that make infrastructure smarter<br />and operations more reliable.</span>
               </h1>
 
               {/* OPTION 2: Scale + Sector Focus */}
