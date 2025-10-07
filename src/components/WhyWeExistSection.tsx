@@ -30,25 +30,25 @@ const WhyWeExistSection = () => {
       stat: "$2.4B",
       label: "Lost annually",
       problem: "Disconnected Systems",
-      detail: "Cities spend billions on infrastructure upgrades. No one can tell you what actually got fixed or if it made any difference."
+      detail: "A water main breaks. Emergency crews dig it up. Public works logs the repair. Finance processes the invoice. But the GIS map still shows the old pipe. The maintenance database was never updated. Six months later, they dig up the same street again because nobody knew it was already fixed."
     },
     {
       stat: "92%",
       label: "Over budget",
       problem: "Zero Accountability",
-      detail: "Projects routinely exceed budgets by double or triple. No tracking, no consequences, no answers."
+      detail: "A stormwater project quoted at $8M ends up costing $18M. The contractor says soil conditions changed. Engineering blames outdated surveys. Finance can't trace which change orders were approved or why. Council asks for answers at the hearing. Staff brings binders nobody reads."
     },
     {
       stat: "68%",
       label: "Trust decline",
       problem: "Broken Transparency",
-      detail: "Citizens ask basic questions about their water, their roads, their safety. They get silence or conflicting answers."
+      detail: "A resident reports cloudy tap water. Calls three departments. Gets transferred five times. One says it's safe, another says they're investigating, a third says there's no record of any issue. Two weeks later, the same resident sees a social media post about a water quality advisory from three days ago."
     },
     {
       stat: "40%",
       label: "Overspending",
       problem: "Legacy Processes",
-      detail: "Decisions made with outdated tools, paper reports, and institutional knowledge walking out the door."
+      detail: "The city engineer retires after 30 years. She kept critical pump station details in a spiral notebook. Her replacement finds folders of maintenance logs that were never digitized. A contractor bids on a repair without knowing the equipment was already upgraded last year—because that data lived in someone's email."
     }
   ];
 
