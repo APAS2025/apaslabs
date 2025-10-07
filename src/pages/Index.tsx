@@ -57,9 +57,10 @@ const Index = () => {
             {/* Main headline */}
             <div className="space-y-10 sm:space-y-16">
               <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.2] tracking-tight px-2 animate-fade-in">
-                <span className="text-primary">AI-Powered</span> Infrastructure<br />
-                for <span className="text-primary animate-pulse inline-block">Smarter</span> Operations<br />
-                and <span className="text-primary animate-pulse inline-block [animation-delay:0.5s]">Reliable</span> Results
+                Giving <span className="text-primary">Dying Ecosystems</span><br />
+                a Voice Through <span className="text-primary animate-pulse inline-block">AI</span><br />
+                and Making Infrastructure<br />
+                <span className="text-primary animate-pulse inline-block [animation-delay:0.5s]">Work for Everyone</span>
               </h1>
 
               {/* OPTION 2: Scale + Sector Focus */}
