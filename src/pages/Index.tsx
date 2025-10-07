@@ -130,8 +130,8 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Three Core Platforms */}
-          <div className="grid lg:grid-cols-3 gap-10 mb-20">
+          {/* Core Platforms */}
+          <div className="grid lg:grid-cols-2 gap-10 mb-20">
             {/* Orakles */}
             <Card className="group bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2">
               <CardHeader className="space-y-6 p-8">
@@ -204,41 +204,6 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            {/* Practitioner GPTs */}
-            <Card className="group bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2">
-              <CardHeader className="space-y-6 p-8">
-                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Users className="h-10 w-10 text-primary" />
-                </div>
-                <CardTitle className="text-3xl">Practitioner GPTs</CardTitle>
-                <CardDescription className="text-lg">
-                  Capturing Expert Knowledge at Scale
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6 p-8 pt-0">
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Specialized AI agents trained on decades of infrastructure expertise, 
-                  preserving institutional knowledge before it walks out the door.
-                </p>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-base">Guild-specific knowledge bases</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-base">Expert-verified AI responses</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-base">24/7 access to critical expertise</span>
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full mt-4 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300" asChild>
-                  <Link to="/community">Explore Guilds</Link>
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
