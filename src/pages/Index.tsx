@@ -86,9 +86,9 @@ const Index = () => {
                 <span className="text-primary">in $9B+ Public Infrastructure</span>
               </h1> */}
 
-              <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in [animation-delay:0.3s]">
-                AI-powered systems that make public infrastructure <span className="text-primary font-semibold">intelligent</span> and people <span className="text-primary font-semibold">connected</span>.
-              </p>
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.2] tracking-tight px-4 max-w-5xl mx-auto animate-fade-in [animation-delay:0.2s]">
+                AI-powered systems that make public infrastructure <span className="text-primary">intelligent</span> and people <span className="text-primary">connected</span>.
+              </h1>
             </div>
 
             {/* CTA buttons */}
