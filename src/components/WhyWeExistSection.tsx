@@ -30,25 +30,25 @@ const WhyWeExistSection = () => {
       stat: "$2.4B",
       label: "Lost annually",
       problem: "Disconnected Systems",
-      detail: "Emergency crews fix a water main. Six months later, they dig up the same street because the repair was never logged in the system."
+      detail: "Cities spend billions on infrastructure upgrades. No one can tell you what actually got fixed or if it made any difference."
     },
     {
       stat: "92%",
       label: "Over budget",
       problem: "Zero Accountability",
-      detail: "Projects quoted at $8M end up costing $18M. Nobody can explain which change orders were approved or why."
+      detail: "Projects routinely exceed budgets by double or triple. No tracking, no consequences, no answers."
     },
     {
       stat: "68%",
       label: "Trust decline",
       problem: "Broken Transparency",
-      detail: "Residents call about water quality, get transferred five times, and receive three different answers from three departments."
+      detail: "Citizens ask basic questions about their water, their roads, their safety. They get silence or conflicting answers."
     },
     {
       stat: "40%",
       label: "Overspending",
       problem: "Legacy Processes",
-      detail: "The city engineer retires. Critical infrastructure details lived in her notebook and emails, never digitized."
+      detail: "Decisions made with outdated tools, paper reports, and institutional knowledge walking out the door."
     }
   ];
 
