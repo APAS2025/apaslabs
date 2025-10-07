@@ -30,25 +30,25 @@ const WhyWeExistSection = () => {
       stat: "$2.4B",
       label: "Lost annually",
       problem: "Disconnected Systems",
-      detail: "A water main breaks. Emergency crews dig it up. Public works logs the repair. Finance processes the invoice. But the GIS map still shows the old pipe. The maintenance database was never updated. Six months later, they dig up the same street again because nobody knew it was already fixed."
+      detail: "Emergency crews fix a water main. Six months later, they dig up the same street because the repair was never logged in the system."
     },
     {
       stat: "92%",
       label: "Over budget",
       problem: "Zero Accountability",
-      detail: "A stormwater project quoted at $8M ends up costing $18M. The contractor says soil conditions changed. Engineering blames outdated surveys. Finance can't trace which change orders were approved or why. Council asks for answers at the hearing. Staff brings binders nobody reads."
+      detail: "Projects quoted at $8M end up costing $18M. Nobody can explain which change orders were approved or why."
     },
     {
       stat: "68%",
       label: "Trust decline",
       problem: "Broken Transparency",
-      detail: "A resident reports cloudy tap water. Calls three departments. Gets transferred five times. One says it's safe, another says they're investigating, a third says there's no record of any issue. Two weeks later, the same resident sees a social media post about a water quality advisory from three days ago."
+      detail: "Residents call about water quality, get transferred five times, and receive three different answers from three departments."
     },
     {
       stat: "40%",
       label: "Overspending",
       problem: "Legacy Processes",
-      detail: "The city engineer retires after 30 years. She kept critical pump station details in a spiral notebook. Her replacement finds folders of maintenance logs that were never digitized. A contractor bids on a repair without knowing the equipment was already upgraded last year—because that data lived in someone's email."
+      detail: "The city engineer retires. Critical infrastructure details lived in her notebook and emails, never digitized."
     }
   ];
 
