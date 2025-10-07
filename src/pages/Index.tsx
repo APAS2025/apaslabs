@@ -57,9 +57,9 @@ const Index = () => {
             {/* Main headline */}
             <div className="space-y-10 sm:space-y-16">
               <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.2] tracking-tight px-2 animate-fade-in">
-                We build AI systems that make<br />
-                infrastructure <span className="text-primary animate-pulse inline-block">smarter</span> and<br />
-                operations more <span className="text-primary animate-pulse inline-block [animation-delay:0.5s]">reliable</span>.
+                Make your infrastructure <span className="text-primary animate-pulse inline-block">smarter</span><br />
+                and your operations<br />
+                more <span className="text-primary animate-pulse inline-block [animation-delay:0.5s]">reliable</span>.
               </h1>
 
               {/* OPTION 2: Scale + Sector Focus */}
@@ -87,11 +87,10 @@ const Index = () => {
               </h1> */}
 
               <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in [animation-delay:0.3s]">
-                Building <span className="text-foreground font-medium">reliable, compliant</span> AI systems<br className="hidden sm:block" />
-                for public agencies, utilities, and consultants.<br />
-                <br className="hidden sm:block" />
-                Technology that makes it easier to plan, fund, and operate<br className="hidden sm:block" />
-                complex infrastructure with <span className="text-foreground font-medium">confidence</span> and <span className="text-foreground font-medium">transparency</span>.
+                AI systems, training, and community for public agencies, utilities,<br className="hidden sm:block" />
+                consultants, and vendors. <span className="text-foreground font-medium">Technology and education</span> that make it easier<br className="hidden sm:block" />
+                to plan, fund, and operate complex infrastructure<br className="hidden sm:block" />
+                with <span className="text-foreground font-medium">confidence</span> and <span className="text-foreground font-medium">transparency</span>.
               </p>
             </div>
 
