@@ -56,9 +56,10 @@ const Index = () => {
           <div className="space-y-8 sm:space-y-12">
             {/* Main headline */}
             <div className="space-y-4 sm:space-y-8">
-              <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2">
-                We build AI systems<br />
-                <span className="text-primary">that make infrastructure smarter<br />and operations more reliable.</span>
+              <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.2] tracking-tight px-2">
+                We build AI systems that make<br />
+                infrastructure <span className="text-primary">smarter</span> and<br />
+                operations more <span className="text-primary">reliable</span>.
               </h1>
 
               {/* OPTION 2: Scale + Sector Focus */}
