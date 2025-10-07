@@ -61,14 +61,14 @@ const Index = () => {
                 AI-powered systems that make public infrastructure{' '}
                 <span className="text-primary">
                   <RotatingText 
-                    words={['resilient', 'predictive', 'proactive', 'data-driven', 'responsive']} 
+                    words={['intelligent', 'resilient', 'predictive', 'proactive', 'data-driven', 'responsive']} 
                     interval={2500}
                   />
                 </span>{' '}
                 and people{' '}
                 <span className="text-primary">
                   <RotatingText 
-                    words={['transparent', 'accountable', 'collaborative', 'unified', 'empowered']} 
+                    words={['connected', 'transparent', 'accountable', 'collaborative', 'unified', 'empowered']} 
                     interval={2500}
                   />
                 </span>.
