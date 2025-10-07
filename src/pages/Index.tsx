@@ -57,7 +57,7 @@ const Index = () => {
             {/* Main headline */}
             <div className="space-y-10 sm:space-y-16">
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.2] tracking-tight px-4 max-w-5xl mx-auto animate-fade-in [animation-delay:0.2s]">
-                AI-powered systems that make public infrastructure <span className="text-primary">intelligent</span> and people <span className="text-primary">connected</span>.
+                APAS Labs unites engineering, governance, and AI to transform how cities, utilities, and institutions plan, operate, and deliver—creating <span className="text-primary">smarter systems</span> and <span className="text-primary">stronger communities</span> everywhere.
               </h1>
             </div>
 
