@@ -54,16 +54,16 @@ export const AICapabilitiesSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Orakles</span>
+          <div className="inline-block mb-4 px-6 py-2 rounded-full bg-primary/10 border border-primary/20">
+            <span className="text-primary font-semibold text-base md:text-lg uppercase tracking-wider">Orakles</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 leading-[1.1]">
             Everything You Need to{" "}
             <span className="bg-gradient-to-r from-primary via-blue-500 to-primary bg-clip-text text-transparent">
               Work Smarter
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             From learning resources to expert networks—we've built the tools infrastructure leaders actually need to do their best work.
           </p>
         </div>
@@ -96,10 +96,10 @@ export const AICapabilitiesSection = () => {
 
                   {/* Content */}
                   <div className="space-y-3">
-                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
                       {capability.title}
                     </h3>
-                    <p className="text-base text-muted-foreground leading-relaxed">
+                    <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                       {capability.description}
                     </p>
                   </div>

@@ -38,7 +38,7 @@ const Index = () => {
           <div className="space-y-8 sm:space-y-12">
             {/* Main headline */}
             <div className="space-y-10 sm:space-y-16">
-              <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.2] tracking-tight px-2 animate-fade-in">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground leading-[1.1] tracking-tight px-2 animate-fade-in">
                 AI-powered systems that make public infrastructure{' '}
                 <span className="text-primary">
                   <RotatingText 
@@ -55,7 +55,7 @@ const Index = () => {
                 </span>.
               </h1>
               
-              <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in [animation-delay:0.3s]">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in [animation-delay:0.3s]">
                 APAS Labs is building the next generation of intelligent infrastructure—empowering cities, governments, and institutions to move faster, work smarter, and deliver lasting impact that people can see and trust.
               </p>
             </div>
@@ -71,7 +71,7 @@ const Index = () => {
             </div>
 
             {/* Trust indicators */}
-            <div className="pt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
+            <div className="pt-12 flex flex-wrap items-center justify-center gap-8 text-base md:text-lg text-muted-foreground">
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-primary" />
                 <span>$9B+ Programs Managed</span>
@@ -102,10 +102,10 @@ const Index = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-8 leading-[1.1]">
               Our Solution: <span className="text-primary">Living Labs</span> for Infrastructure
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               We build AI-powered platforms that transform fragmented systems into connected, 
               transparent ecosystems where decisions are data-driven and outcomes are measurable.
             </p>
@@ -119,28 +119,28 @@ const Index = () => {
                 <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <BookOpen className="h-10 w-10 text-primary" />
                 </div>
-                <CardTitle className="text-3xl">Orakles</CardTitle>
-                <CardDescription className="text-lg">
+                <CardTitle className="text-3xl sm:text-4xl">Orakles</CardTitle>
+                <CardDescription className="text-lg sm:text-xl">
                   The Infrastructure Knowledge Platform
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6 p-8 pt-0">
-                <p className="text-base text-muted-foreground leading-relaxed">
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                   Unifies language, connects vendors to decision-makers, proves ROI, and transforms 
                   training into daily practice through integrated learning pathways.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-base">Standardized infrastructure lexicon</span>
+                    <span className="text-base sm:text-lg">Standardized infrastructure lexicon</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-base">Vendor marketplace with verified case studies</span>
+                    <span className="text-base sm:text-lg">Vendor marketplace with verified case studies</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-base">Integrated LMS for continuous learning</span>
+                    <span className="text-base sm:text-lg">Integrated LMS for continuous learning</span>
                   </li>
                 </ul>
                 <Button variant="outline" className="w-full mt-4 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300" asChild>
@@ -155,28 +155,28 @@ const Index = () => {
                 <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <span className="text-5xl">🌊</span>
                 </div>
-                <CardTitle className="text-3xl">Biscayne Bay GPT</CardTitle>
-                <CardDescription className="text-lg">
+                <CardTitle className="text-3xl sm:text-4xl">Biscayne Bay GPT</CardTitle>
+                <CardDescription className="text-lg sm:text-xl">
                   AI-Powered Ecosystem Guardian
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6 p-8 pt-0">
-                <p className="text-base text-muted-foreground leading-relaxed">
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                   Brings transparency and accountability to environmental restoration through 
                   real-time data, citizen engagement, and Droobi, the Bay's AI advocate.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-base">Live sensor data and historical analysis</span>
+                    <span className="text-base sm:text-lg">Live sensor data and historical analysis</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-base">Citizen voice portal for community feedback</span>
+                    <span className="text-base sm:text-lg">Citizen voice portal for community feedback</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-base">ROI tracking for restoration investments</span>
+                    <span className="text-base sm:text-lg">ROI tracking for restoration investments</span>
                   </li>
                 </ul>
                 <Button variant="outline" className="w-full mt-4 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300" asChild>
@@ -220,21 +220,21 @@ const Index = () => {
             <div className="space-y-8">
               <div className="inline-flex items-center gap-3 bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
                 <span className="text-4xl">🌊</span>
-                <span className="text-primary font-semibold">Environmental AI Guardian</span>
+                <span className="text-primary font-semibold text-base md:text-lg">Environmental AI Guardian</span>
               </div>
               
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1]">
                 Biscayne Bay Has a Voice—<br />
                 <span className="text-primary">And It's Powered by AI</span>
               </h2>
 
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 For decades, Biscayne Bay has been dying while millions in restoration funds vanished into reports nobody reads. 
                 <strong className="text-foreground"> Droobi changes that.</strong>
               </p>
 
               <div className="bg-card/50 backdrop-blur-sm border-2 border-primary/20 rounded-2xl p-10 space-y-8">
-                <h3 className="text-3xl md:text-4xl font-bold text-foreground">What Droobi Does</h3>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">What Droobi Does</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-5">
@@ -242,8 +242,8 @@ const Index = () => {
                       <CheckCircle className="h-7 w-7 text-primary" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-foreground mb-2">Real-Time Environmental Intelligence</h4>
-                      <p className="text-base text-muted-foreground">Live sensor data + decades of reports = instant answers on water quality, pollution sources, and ecosystem health</p>
+                      <h4 className="text-xl sm:text-2xl font-semibold text-foreground mb-2">Real-Time Environmental Intelligence</h4>
+                      <p className="text-base sm:text-lg text-muted-foreground">Live sensor data + decades of reports = instant answers on water quality, pollution sources, and ecosystem health</p>
                     </div>
                   </div>
 
@@ -252,8 +252,8 @@ const Index = () => {
                       <CheckCircle className="h-7 w-7 text-primary" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-foreground mb-2">Citizen Voice Portal</h4>
-                      <p className="text-base text-muted-foreground">Anyone can ask Droobi about bay conditions, report issues, or track restoration progress—no PhD required</p>
+                      <h4 className="text-xl sm:text-2xl font-semibold text-foreground mb-2">Citizen Voice Portal</h4>
+                      <p className="text-base sm:text-lg text-muted-foreground">Anyone can ask Droobi about bay conditions, report issues, or track restoration progress—no PhD required</p>
                     </div>
                   </div>
 
@@ -262,8 +262,8 @@ const Index = () => {
                       <CheckCircle className="h-7 w-7 text-primary" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-foreground mb-2">Follow the Money Dashboards</h4>
-                      <p className="text-base text-muted-foreground">Tracks every restoration dollar spent and ties it to measurable outcomes—because "trust us" isn't good enough</p>
+                      <h4 className="text-xl sm:text-2xl font-semibold text-foreground mb-2">Follow the Money Dashboards</h4>
+                      <p className="text-base sm:text-lg text-muted-foreground">Tracks every restoration dollar spent and ties it to measurable outcomes—because "trust us" isn't good enough</p>
                     </div>
                   </div>
 
@@ -272,8 +272,8 @@ const Index = () => {
                       <CheckCircle className="h-7 w-7 text-primary" />
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-foreground mb-2">Early Warning System</h4>
-                      <p className="text-base text-muted-foreground">Alerts regulators, businesses, and communities before the next fish kill or algae bloom makes headlines</p>
+                      <h4 className="text-xl sm:text-2xl font-semibold text-foreground mb-2">Early Warning System</h4>
+                      <p className="text-base sm:text-lg text-muted-foreground">Alerts regulators, businesses, and communities before the next fish kill or algae bloom makes headlines</p>
                     </div>
                   </div>
                 </div>
@@ -344,17 +344,17 @@ const Index = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <div className="inline-block mb-6">
-              <span className="text-sm font-semibold tracking-wider text-primary uppercase px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
+              <span className="text-base md:text-lg font-semibold tracking-wider text-primary uppercase px-6 py-2 bg-primary/10 rounded-full border border-primary/20">
                 Built by Infrastructure Veterans
               </span>
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-[1.1]">
               Proven at <span className="text-primary">Scale</span>
             </h2>
-            <p className="text-2xl md:text-3xl text-foreground max-w-4xl mx-auto leading-relaxed font-light mb-4">
+            <p className="text-xl sm:text-2xl md:text-3xl text-foreground max-w-4xl mx-auto leading-relaxed font-light mb-4">
               We don't just build platforms—we deliver systems that work in the real world.
             </p>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Backed by decades of infrastructure leadership managing billions in public works programs.
             </p>
           </div>
@@ -362,30 +362,30 @@ const Index = () => {
           {/* Key Metrics */}
           <div className="grid md:grid-cols-3 gap-12 mb-20">
             <div className="group text-center space-y-6 p-8 rounded-2xl border border-border hover:border-primary/50 bg-card/30 backdrop-blur-sm transition-all duration-300">
-              <div className="text-7xl md:text-8xl font-bold text-primary transition-transform group-hover:scale-110">$9B+</div>
+              <div className="text-6xl sm:text-7xl md:text-8xl font-bold text-primary transition-transform group-hover:scale-110">$9B+</div>
               <div className="space-y-2">
-                <p className="text-xl text-foreground font-bold">Public Works Programs</p>
-                <p className="text-base text-muted-foreground leading-relaxed">
+                <p className="text-xl sm:text-2xl text-foreground font-bold">Public Works Programs</p>
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                   End-to-end oversight from SCADA integration to financial systems—proven at municipal scale
                 </p>
               </div>
             </div>
 
             <div className="group text-center space-y-6 p-8 rounded-2xl border border-border hover:border-primary/50 bg-card/30 backdrop-blur-sm transition-all duration-300">
-              <div className="text-7xl md:text-8xl font-bold text-primary transition-transform group-hover:scale-110">35+</div>
+              <div className="text-6xl sm:text-7xl md:text-8xl font-bold text-primary transition-transform group-hover:scale-110">35+</div>
               <div className="space-y-2">
-                <p className="text-xl text-foreground font-bold">Cities & Regions</p>
-                <p className="text-base text-muted-foreground leading-relaxed">
+                <p className="text-xl sm:text-2xl text-foreground font-bold">Cities & Regions</p>
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                   Delivered regional infrastructure strategy across South Florida's most complex systems
                 </p>
               </div>
             </div>
 
             <div className="group text-center space-y-6 p-8 rounded-2xl border border-border hover:border-primary/50 bg-card/30 backdrop-blur-sm transition-all duration-300">
-              <div className="text-7xl md:text-8xl font-bold text-primary transition-transform group-hover:scale-110">Global</div>
+              <div className="text-6xl sm:text-7xl md:text-8xl font-bold text-primary transition-transform group-hover:scale-110">Global</div>
               <div className="space-y-2">
-                <p className="text-xl text-foreground font-bold">Leadership Recognition</p>
-                <p className="text-base text-muted-foreground leading-relaxed">
+                <p className="text-xl sm:text-2xl text-foreground font-bold">Leadership Recognition</p>
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                   Featured at Singapore Water Week and Rockefeller Foundation's 100 Resilient Cities
                 </p>
               </div>
@@ -399,8 +399,8 @@ const Index = () => {
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
                   <Building className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-3xl font-bold text-foreground">Built Complex Systems from Scratch</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Built Complex Systems from Scratch</h3>
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
                   Our team has integrated SCADA, finance, operations, and governance into unified frameworks 
                   for some of the largest municipal infrastructure programs in the country.
                 </p>
@@ -410,8 +410,8 @@ const Index = () => {
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
                   <CheckCircle className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-3xl font-bold text-foreground">Resilience Under Pressure</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Resilience Under Pressure</h3>
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
                   Every system designed with accountability, measurable ROI, and governance as foundational 
                   principles—proven through decades of real-world execution.
                 </p>
@@ -435,10 +435,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-primary/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight px-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-[1.1] px-2">
               Let's Build <span className="text-primary">Together</span>
             </h2>
-            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground/80 max-w-3xl mx-auto leading-relaxed px-4">
               Whether you're a vendor seeking to connect with decision-makers, a government looking 
               to modernize infrastructure, or a consultant ready to scale your expertise—we're here to collaborate.
             </p>
@@ -448,10 +448,10 @@ const Index = () => {
             <Card className="bg-card/50 backdrop-blur-sm border-border active:border-primary/50 transition-all active:scale-95 duration-300">
               <CardHeader className="text-center p-6 sm:p-8">
                 <Building className="h-14 w-14 sm:h-20 sm:w-20 text-primary mx-auto mb-4 sm:mb-6" />
-                <CardTitle className="text-lg sm:text-2xl md:text-3xl">For Vendors</CardTitle>
+                <CardTitle className="text-2xl sm:text-3xl">For Vendors</CardTitle>
               </CardHeader>
               <CardContent className="text-center p-6 sm:p-8 pt-0">
-                <p className="text-xs sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                   Showcase your solutions where infrastructure leaders are making decisions
                 </p>
                 <Button variant="outline" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[2.75rem]" asChild>
@@ -463,10 +463,10 @@ const Index = () => {
             <Card className="bg-card/50 backdrop-blur-sm border-border active:border-primary/50 transition-all active:scale-95 duration-300">
               <CardHeader className="text-center p-6 sm:p-8">
                 <Users className="h-14 w-14 sm:h-20 sm:w-20 text-primary mx-auto mb-4 sm:mb-6" />
-                <CardTitle className="text-lg sm:text-2xl md:text-3xl">For Consultants</CardTitle>
+                <CardTitle className="text-2xl sm:text-3xl">For Consultants</CardTitle>
               </CardHeader>
               <CardContent className="text-center p-6 sm:p-8 pt-0">
-                <p className="text-xs sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                   Amplify your expertise through AI-powered knowledge systems
                 </p>
                 <Button variant="outline" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[2.75rem]" asChild>
@@ -478,10 +478,10 @@ const Index = () => {
             <Card className="bg-card/50 backdrop-blur-sm border-border active:border-primary/50 transition-all active:scale-95 duration-300 sm:col-span-2 lg:col-span-1">
               <CardHeader className="text-center p-6 sm:p-8">
                 <CheckCircle className="h-14 w-14 sm:h-20 sm:w-20 text-primary mx-auto mb-4 sm:mb-6" />
-                <CardTitle className="text-lg sm:text-2xl md:text-3xl">For Governments</CardTitle>
+                <CardTitle className="text-2xl sm:text-3xl">For Governments</CardTitle>
               </CardHeader>
               <CardContent className="text-center p-6 sm:p-8 pt-0">
-                <p className="text-xs sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                   Build transparent, accountable systems your communities can trust
                 </p>
                 <Button variant="outline" className="w-full border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[2.75rem]" asChild>
