@@ -8,37 +8,37 @@ export const AICapabilitiesSection = () => {
     {
       icon: BookOpen,
       title: "Water Lexicon",
-      description: "Stop searching through endless documents. Our AI-powered lexicon instantly translates technical jargon into plain language, with direct links to the regulations and standards that matter.",
+      description: "The language of infrastructure, made simple. 500+ curated definitions with AI-enhanced semantic search, connected to standards, SOPs, and permitting workflows—so you spend less time translating jargon.",
       link: null
     },
     {
       icon: Users,
-      title: "Trusted Partner Network",
-      description: "No more vetting headaches. Connect with pre-verified vendors, consultants, and experts who actually understand your challenges—complete with portfolios and proven ROI.",
+      title: "Partner Ecosystem",
+      description: "The LinkedIn of Infrastructure. Discover verified vendors, consultants, and academic collaborators with one-click profiles showing specializations, regions, and proven ROI through real case studies.",
       link: "/partnerships"
     },
     {
       icon: Video,
       title: "Droobi TV",
-      description: "Learn from systems that actually work. Watch real case studies, technical walkthroughs, and earn certifications—all on your schedule, filtered by what matters to you.",
+      description: "Learn from real systems. On-demand technical learning, case studies, and webinars filtered by category—earn certifications and shareable learning badges on your schedule.",
       link: null
     },
     {
       icon: Calendar,
       title: "Community Events",
-      description: "You're not alone in this. Join live sessions with peers facing the same issues, share war stories, and build relationships that last beyond the conference room.",
+      description: "Stay connected. Live and virtual events from across the world. RSVP, add to calendar, or rewatch on-demand recordings—build relationships with peers facing the same challenges.",
       link: "/community"
     },
     {
       icon: FileText,
       title: "Apps News",
-      description: "Skip the fluff. Get practical frameworks, cutting-edge research, and real-world strategies from engineers and operators—not marketing departments.",
+      description: "Systems thinking meets infrastructure. Deep-dive insights on AI, blockchain, governance, and digital transformation—authored by engineers and operators, not marketers.",
       link: null
     },
     {
       icon: GraduationCap,
       title: "Orakles Academy",
-      description: "Build skills that matter. Professional training on AI, data governance, and modern infrastructure systems—with certifications your organization will recognize.",
+      description: "Certified training & upskilling. Professional development programs on AI, data governance, and One Water systems—earn recognized certifications that advance your career.",
       link: null
     }
   ];
