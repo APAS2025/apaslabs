@@ -27,7 +27,7 @@ const Navigation = () => {
               Biscayne Bay GPT
             </Link>
             <a href="https://orakles.lovable.app/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
-              Lexicon
+              Orakles
             </a>
             <Link to="/community" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Community
@@ -86,7 +86,7 @@ const Navigation = () => {
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Lexicon
+                Orakles
               </a>
               <Link 
                 to="/community"

@@ -72,38 +72,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/droobi" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Droobi Language Lab
-                </Link>
-              </li>
-            </ul>
-            
-            <h3 className="text-white font-semibold mb-4 mt-6 font-satoshi">Guild Communities</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/guild/pfas" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  PFAS & Emerging Contaminants
-                </Link>
-              </li>
-              <li>
-                <Link to="/guild/climate-resilience" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Climate & Resilience
-                </Link>
-              </li>
-              <li>
-                <Link to="/guild/finance-roi" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Finance, Ratings & ROI
-                </Link>
-              </li>
-              <li>
-                <Link to="/guild/ai-data-governance" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  AI & Data Governance
-                </Link>
-              </li>
-              <li>
-                <Link to="/guild/stormwater-watershed" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  Stormwater & Watershed
-                </Link>
+                <a href="https://orakles.lovable.app/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Orakles
+                </a>
               </li>
             </ul>
           </div>
