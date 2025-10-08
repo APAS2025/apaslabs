@@ -23,70 +23,105 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background-deep">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Gradient background - minimalistic single color */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background-deep via-background to-background-deep" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/8" />
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#1a2332] via-[#0f1825] to-[#0a0f1a]">
+        {/* Animated Blue Glow Effects */}
+        <div className="absolute top-20 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-40 left-1/3 w-[500px] h-[500px] bg-primary/30 rounded-full blur-[150px] animate-float" />
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary-glow/20 rounded-full blur-[100px] animate-float-delayed" />
         
-        {/* Strategic accent glows - single color blue */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[300px] bg-primary/10 rounded-full blur-3xl" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-24">
-          <div className="space-y-8 sm:space-y-12">
-            {/* Main headline */}
-            <div className="space-y-10 sm:space-y-16">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-tight px-2 animate-fade-in">
-                AI-powered systems that make public infrastructure{' '}
-                <span className="text-primary">
-                  <RotatingText 
-                    words={['intelligent', 'resilient', 'predictive', 'proactive', 'data-driven', 'responsive']} 
-                    interval={2500}
-                  />
-                </span>{' '}
-                and people{' '}
-                <span className="text-primary">
-                  <RotatingText 
-                    words={['connected', 'transparent', 'accountable', 'collaborative', 'unified', 'empowered']} 
-                    interval={2500}
-                  />
-                </span>.
-              </h1>
-              
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto leading-relaxed px-4 animate-fade-in [animation-delay:0.3s]">
-                APAS Labs is building the next generation of intelligent infrastructure—empowering cities, governments, and institutions to move faster, work smarter, and deliver lasting impact that people can see and trust.
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
+        
+        {/* Content Container */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 flex items-center min-h-screen">
+          <div className="w-full lg:w-2/3 space-y-8">
+            {/* Eyebrow Text */}
+            <div className="inline-block">
+              <p className="text-primary text-sm sm:text-base font-space tracking-wider uppercase mb-2 animate-fade-in">
+                Trusted Infrastructure Partner
               </p>
             </div>
 
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center pt-4 sm:pt-8 px-4">
-              <Button size="lg" className="text-sm sm:text-lg px-6 sm:px-10 py-4 sm:py-6 h-auto font-semibold bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]" asChild>
-                <Link to="/partnerships">Partner With Us <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" /></Link>
+            {/* Main Headline */}
+            <div className="space-y-4">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-satoshi leading-[0.95] tracking-tight animate-fade-in-scale" style={{ animationDelay: '0.1s' }}>
+                <span className="block text-foreground/90">
+                  Building the
+                </span>
+                <span className="block text-primary text-glow mt-2">
+                  Operating System
+                </span>
+                <span className="block text-foreground/90 mt-2">
+                  for Public Infrastructure
+                </span>
+              </h1>
+            </div>
+
+            {/* Subheading */}
+            <div className="max-w-2xl animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="h-[2px] w-16 bg-gradient-to-r from-primary to-primary-glow mb-6" />
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground/90 font-space font-light leading-relaxed">
+                Building AI powered solutions that governments, practitioners, citizens, and funders can trust.
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <Button 
+                size="lg" 
+                className="group text-sm sm:text-lg px-6 sm:px-10 py-4 sm:py-6 h-auto font-semibold bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg hover:shadow-glow active:scale-95 transition-all duration-300 min-h-[3rem]" 
+                asChild
+              >
+                <Link to="/partnerships">
+                  Partner With Us
+                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
-              <Button variant="outline" size="lg" className="text-sm sm:text-lg px-6 sm:px-10 py-4 sm:py-6 h-auto font-semibold border-2 border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[3rem]" asChild>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-sm sm:text-lg px-6 sm:px-10 py-4 sm:py-6 h-auto font-semibold border-2 border-primary/30 hover:border-primary hover:bg-primary/10 active:scale-95 transition-all duration-300 min-h-[3rem]" 
+                asChild
+              >
                 <Link to="/labs">Explore Our Labs</Link>
               </Button>
             </div>
 
-            {/* Trust indicators */}
-            <div className="pt-12 flex flex-wrap items-center justify-center gap-8 text-base md:text-lg text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-primary" />
-                <span>$9B+ Programs Managed</span>
+            {/* Services List - Mobile */}
+            <div className="lg:hidden pt-8 space-y-3 text-left animate-fade-in" style={{ animationDelay: '0.7s' }}>
+              <div className="text-foreground/80 text-base sm:text-lg font-space tracking-wide hover:text-primary transition-colors cursor-pointer">
+                AI Governance
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-primary" />
-                <span>35+ Cities Served</span>
+              <div className="text-foreground/80 text-base sm:text-lg font-space tracking-wide hover:text-primary transition-colors cursor-pointer">
+                Climate Resilience
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-primary" />
-                <span>Global Infrastructure Leadership</span>
+              <div className="text-foreground/80 text-base sm:text-lg font-space tracking-wide hover:text-primary transition-colors cursor-pointer">
+                Infrastructure Intelligence
               </div>
             </div>
           </div>
+
+          {/* Right Side Services - Desktop Only */}
+          <div className="hidden lg:flex lg:w-1/3 flex-col items-end justify-center space-y-6 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+            <div className="text-foreground/80 text-xl font-space tracking-wide hover:text-primary transition-colors cursor-pointer hover:translate-x-[-4px] duration-300">
+              AI Governance
+            </div>
+            <div className="text-foreground/80 text-xl font-space tracking-wide hover:text-primary transition-colors cursor-pointer hover:translate-x-[-4px] duration-300">
+              Climate Resilience
+            </div>
+            <div className="text-foreground/80 text-xl font-space tracking-wide hover:text-primary transition-colors cursor-pointer hover:translate-x-[-4px] duration-300">
+              Infrastructure Intelligence
+            </div>
+          </div>
         </div>
+
+        {/* Bottom Gradient Fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent z-20" />
+        
+        {/* Subtle Particles */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-ping" style={{ animationDelay: '0s' }} />
+        <div className="absolute top-2/3 left-1/2 w-1.5 h-1.5 bg-primary/30 rounded-full animate-ping" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-primary-glow/40 rounded-full animate-ping" style={{ animationDelay: '2s' }} />
       </section>
 
       {/* Why We Exist - The Challenge */}
