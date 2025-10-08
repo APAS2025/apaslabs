@@ -26,7 +26,8 @@ import {
   Phone,
   Send,
   Briefcase,
-  CheckCircle
+  CheckCircle,
+  BookOpen
 } from "lucide-react";
 
 const BiscayneBayGPT = () => {
@@ -477,32 +478,89 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
-      {/* 5. PROOF - Bay Health Metrics */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background-deep" data-index="4">
-        <div className="container mx-auto max-w-6xl">
+      {/* 5. REAL IMPACT STORIES */}
+      <section className="py-32 bg-gradient-to-b from-background to-background-deep relative overflow-hidden" data-index="4">
+        <div className="absolute inset-0">
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transform transition-all duration-1000 ${
             isVisible(4) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
-              Bay Health Metrics
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-              {displayMetrics.map(({ label, value, trend, color }, idx) => (
-                <Card key={idx} className="bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 flex flex-col items-center text-center">
-                  <CardHeader>
-                    <CardTitle className="text-lg font-semibold text-foreground mb-2">{label}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className={`text-3xl font-bold mb-2 ${color}`}>{value}</div>
-                    <div className="flex justify-center items-center space-x-2 text-muted-foreground">
-                      {trend === "up" && <TrendingUp className="h-5 w-5 text-primary" />}
-                      {trend === "down" && <TrendingDown className="h-5 w-5 text-secondary" />}
-                      {trend === "stable" && <AlertTriangle className="h-5 w-5 text-secondary" />}
-                      <span className="text-sm capitalize">{trend}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="text-center mb-24">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
+                Real People. <span className="text-primary">Real Results.</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                See how Droobi is helping communities, businesses, and families stay informed and take action.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-8 mb-16">
+              {/* Story 1 - Parent */}
+              <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2">
+                <CardHeader className="space-y-4 p-8">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Users className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardDescription className="text-lg text-muted-foreground">
+                    "Before Droobi, I had no idea if it was safe for my kids to swim at our local beach. Now I check the water quality in seconds before we head out."
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="px-8 pb-8">
+                  <p className="font-semibold text-foreground">Maria Rodriguez</p>
+                  <p className="text-sm text-muted-foreground">Parent, Coconut Grove</p>
+                </CardContent>
+              </Card>
+
+              {/* Story 2 - Business Owner */}
+              <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2">
+                <CardHeader className="space-y-4 p-8">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Briefcase className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardDescription className="text-lg text-muted-foreground">
+                    "Our marina guests always ask about bay conditions. Droobi gives us real-time data to share, which has improved trust and bookings."
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="px-8 pb-8">
+                  <p className="font-semibold text-foreground">Carlos Mendez</p>
+                  <p className="text-sm text-muted-foreground">Marina Owner, Key Biscayne</p>
+                </CardContent>
+              </Card>
+
+              {/* Story 3 - Educator */}
+              <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2">
+                <CardHeader className="space-y-4 p-8">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <BookOpen className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardDescription className="text-lg text-muted-foreground">
+                    "My students use Droobi to track pollution trends for science projects. It makes environmental data accessible and engaging for young minds."
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="px-8 pb-8">
+                  <p className="font-semibold text-foreground">Dr. Sarah Chen</p>
+                  <p className="text-sm text-muted-foreground">Marine Science Teacher</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Impact Numbers */}
+            <div className="grid sm:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="text-5xl md:text-6xl font-bold text-primary mb-4">10K+</div>
+                <p className="text-lg text-muted-foreground">Community Members Using Droobi</p>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl md:text-6xl font-bold text-primary mb-4">500+</div>
+                <p className="text-lg text-muted-foreground">Water Quality Reports Generated Daily</p>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl md:text-6xl font-bold text-primary mb-4">24/7</div>
+                <p className="text-lg text-muted-foreground">Real-Time Bay Health Monitoring</p>
+              </div>
             </div>
           </div>
         </div>
