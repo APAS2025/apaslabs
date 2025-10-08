@@ -34,8 +34,9 @@ export const DifferentiatorSection = () => {
   return (
     <section className="py-32 bg-gradient-to-b from-background to-background-deep relative overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary/5 via-blue-500/5 to-primary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,13 +104,19 @@ export const DifferentiatorSection = () => {
                 }`}>
                   {/* Icon Container */}
                   <div className="flex justify-center">
-                    <div className={`w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-3xl border-2 bg-card/50 backdrop-blur-sm flex items-center justify-center transition-all duration-500 ${
+                    <div className={`relative w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-3xl border-2 backdrop-blur-sm flex items-center justify-center transition-all duration-500 ${
                       isActive 
-                        ? 'border-primary shadow-2xl shadow-primary/30 scale-110' 
-                        : 'border-primary/30 hover:border-primary/50'
+                        ? 'border-primary shadow-2xl shadow-primary/30 scale-110 animate-float bg-gradient-to-br from-primary/20 via-card/50 to-blue-500/20' 
+                        : 'border-primary/30 hover:border-primary/50 bg-card/50'
                     }`}>
-                      <Icon className={`h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 transition-all duration-500 ${
-                        isActive ? 'text-primary scale-110' : 'text-primary/70'
+                      {/* Pulsing glow ring when active */}
+                      {isActive && (
+                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/40 to-blue-500/40 blur-xl animate-pulse" />
+                      )}
+                      
+                      {/* Icon with rotation animation when active */}
+                      <Icon className={`relative z-10 h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 transition-all duration-500 ${
+                        isActive ? 'text-primary scale-110 drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]' : 'text-primary/70'
                       }`} />
                     </div>
                   </div>
