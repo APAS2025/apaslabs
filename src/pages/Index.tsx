@@ -1,7 +1,4 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
@@ -10,36 +7,17 @@ import WhyWeExistSection from "@/components/WhyWeExistSection";
 import OurStorySection from "@/components/OurStorySection";
 import { RotatingText } from "@/components/RotatingText";
 import { FinalCTA } from "@/components/FinalCTA";
+import { GetInTouchSection } from "@/components/GetInTouchSection";
 import {
-  Mail, 
-  Phone, 
-  MapPin,
-  Users,
-  FileText,
-  Handshake,
-  MessageCircle,
-  Newspaper,
-  Briefcase,
   ArrowRight,
   DollarSign,
   Building,
   BookOpen,
-  CheckCircle
+  CheckCircle,
+  Users
 } from "lucide-react";
 
 const Index = () => {
-  const [selectedInquiry, setSelectedInquiry] = useState("General Inquiry");
-  const [email, setEmail] = useState("");
-
-  const inquiryTypes = [
-    { id: "General Inquiry", label: "General Inquiry", icon: MessageCircle },
-    { id: "Research Collaboration", label: "Research Collaboration", icon: FileText },
-    { id: "Partnership", label: "Partnership", icon: Handshake },
-    { id: "Join Community", label: "Join Community", icon: Users },
-    { id: "Media & Press", label: "Media & Press", icon: Newspaper },
-    { id: "Careers", label: "Careers", icon: Briefcase }
-  ];
-
   return (
     <main className="min-h-screen bg-background-deep">
       {/* Hero Section */}
@@ -504,160 +482,8 @@ const Index = () => {
       {/* Gradient Divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
-      {/* Contact Section */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-background-deep relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background to-background-deep" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/8 via-transparent to-primary/5" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-start">
-            {/* Left: Contact Info & Quick Actions */}
-            <div className="space-y-8 sm:space-y-12">
-              <div>
-                <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight">
-                  Get in <span className="text-primary">Touch</span>
-                </h2>
-                <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
-                  Ready to transform infrastructure decision-making? Let's start the conversation.
-                </p>
-              </div>
-
-              {/* Contact Methods */}
-              <div className="space-y-6 sm:space-y-8">
-                <a href="mailto:contact@apaslabs.org" className="flex items-start gap-4 sm:gap-5 active:opacity-70 transition-opacity">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-base sm:text-lg font-semibold text-foreground mb-1 sm:mb-2">Email Us</p>
-                    <p className="text-sm sm:text-base text-primary">contact@apaslabs.org</p>
-                  </div>
-                </a>
-
-                <div className="flex items-start gap-4 sm:gap-5">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-base sm:text-lg font-semibold text-foreground mb-1 sm:mb-2">Headquarters</p>
-                    <p className="text-sm sm:text-base text-muted-foreground">Miami, FL • Serving Infrastructure Leaders Globally</p>
-                  </div>
-                </div>
-
-                <a href="tel:+15551234567" className="flex items-start gap-4 sm:gap-5 active:opacity-70 transition-opacity">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-base sm:text-lg font-semibold text-foreground mb-1 sm:mb-2">Phone</p>
-                    <p className="text-sm sm:text-base text-primary">+1 (555) 123-4567</p>
-                    <p className="text-xs sm:text-sm text-muted-foreground">Mon–Fri, 9am–6pm ET</p>
-                  </div>
-                </a>
-              </div>
-
-              {/* Quick Links */}
-              <div className="space-y-3 sm:space-y-4 pt-6 sm:pt-8 border-t border-border">
-                <p className="font-semibold text-foreground text-sm sm:text-base mb-3 sm:mb-4">Quick Access</p>
-                <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                  <Button variant="outline" className="justify-start min-h-[2.75rem] active:scale-95 transition-transform" asChild>
-                    <Link to="/community">
-                      <Users className="h-4 w-4 mr-2 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm">Join Community</span>
-                    </Link>
-                  </Button>
-                  <Button variant="outline" className="justify-start min-h-[2.75rem] active:scale-95 transition-transform" asChild>
-                    <Link to="/partnerships">
-                      <Handshake className="h-4 w-4 mr-2 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm">Partnerships</span>
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-
-              {/* Newsletter */}
-              <Card className="bg-primary/5 border-primary/20">
-                <CardHeader className="p-4 sm:p-6">
-                  <CardTitle className="text-lg sm:text-xl">Stay Informed</CardTitle>
-                  <CardDescription className="text-sm sm:text-base">
-                    Get updates on infrastructure innovation and new platform releases
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="p-4 sm:p-6 pt-0">
-                  <div className="flex flex-col sm:flex-row gap-2">
-                    <Input
-                      type="email"
-                      placeholder="your.email@example.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="bg-background/50 min-h-[2.75rem]"
-                    />
-                    <Button className="flex-shrink-0 bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[2.75rem] whitespace-nowrap">Subscribe</Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-            </div>
-
-            {/* Right: Contact Form */}
-            <Card className="bg-card/50 backdrop-blur-sm border-border">
-              <CardHeader className="p-4 sm:p-6">
-                <CardTitle className="text-xl sm:text-2xl">Send a Message</CardTitle>
-                <CardDescription className="text-sm sm:text-base text-foreground/80">
-                  Tell us about your infrastructure challenges and goals
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-5 sm:space-y-6 p-4 sm:p-6 pt-0">
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-3 block">I'm interested in:</label>
-                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                    {inquiryTypes.map((type) => {
-                      const Icon = type.icon;
-                      return (
-                        <button
-                          key={type.id}
-                          onClick={() => setSelectedInquiry(type.id)}
-                          className={`p-3 sm:p-3.5 rounded-lg border text-sm font-medium transition-all active:scale-95 flex flex-col items-center gap-2 min-h-[4.5rem] ${
-                            selectedInquiry === type.id
-                              ? 'bg-primary text-primary-foreground border-primary shadow-lg'
-                              : 'bg-background/50 text-muted-foreground border-border active:bg-background/80'
-                          }`}
-                        >
-                          <Icon className="h-5 w-5 flex-shrink-0" />
-                          <span className="text-xs text-center leading-tight">{type.label}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">Name</label>
-                    <Input placeholder="Your name" className="bg-background/50 min-h-[2.75rem]" />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">Email</label>
-                    <Input placeholder="your@email.com" className="bg-background/50 min-h-[2.75rem]" />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Message</label>
-                  <Textarea 
-                    placeholder="Tell us about your infrastructure challenges or partnership interests..." 
-                    className="bg-background/50 min-h-32 resize-none"
-                  />
-                </div>
-
-                <Button className="w-full bg-gradient-to-br from-primary to-blue-500 hover:from-primary-glow hover:to-blue-400 shadow-lg active:scale-95 transition-all duration-300 min-h-[3rem]" size="lg">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Send Message
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      {/* Get in Touch Section */}
+      <GetInTouchSection />
 
       {/* Final CTA */}
       <FinalCTA />
