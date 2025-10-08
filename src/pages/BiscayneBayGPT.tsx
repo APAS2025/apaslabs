@@ -478,7 +478,7 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
-      {/* 5. REAL IMPACT STORIES */}
+      {/* 5. WHAT YOU'LL BE ABLE TO DO */}
       <section className="py-32 bg-gradient-to-b from-background to-background-deep relative overflow-hidden" data-index="4">
         <div className="absolute inset-0">
           <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl" />
@@ -489,97 +489,92 @@ const BiscayneBayGPT = () => {
             isVisible(4) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
             <div className="text-center mb-24">
+              <Badge variant="outline" className="mb-6 border-primary/30 text-primary text-sm px-4 py-2">
+                Coming Soon
+              </Badge>
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
-                Real People. <span className="text-primary">Real Results.</span>
+                What You'll Be Able To Do
               </h2>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                See how Droobi is helping communities, businesses, and families stay informed and take action.
+                When Droobi launches, here's how it will serve our community.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-8 mb-16">
-              {/* Story 1 - Parent */}
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Use Case 1 - Parents */}
               <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2">
-                <CardHeader className="space-y-4 p-8">
+                <CardHeader className="space-y-6 p-8">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
                     <Users className="h-8 w-8 text-primary" />
                   </div>
-                  <CardDescription className="text-lg text-muted-foreground">
-                    "Before Droobi, I had no idea if it was safe for my kids to swim at our local beach. Now I check the water quality in seconds before we head out."
-                  </CardDescription>
+                  <CardTitle className="text-2xl">For Families</CardTitle>
                 </CardHeader>
-                <CardContent className="px-8 pb-8">
-                  <p className="font-semibold text-foreground">Maria Rodriguez</p>
-                  <p className="text-sm text-muted-foreground">Parent, Coconut Grove</p>
+                <CardContent className="px-8 pb-8 space-y-4">
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    Check water quality before taking kids to the beach. Get instant alerts about unsafe conditions.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">Real-time safety alerts</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">Beach condition reports</span>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
 
-              {/* Story 2 - Business Owner */}
+              {/* Use Case 2 - Businesses */}
               <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2">
-                <CardHeader className="space-y-4 p-8">
+                <CardHeader className="space-y-6 p-8">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
                     <Briefcase className="h-8 w-8 text-primary" />
                   </div>
-                  <CardDescription className="text-lg text-muted-foreground">
-                    "Our marina guests always ask about bay conditions. Droobi gives us real-time data to share, which has improved trust and bookings."
-                  </CardDescription>
+                  <CardTitle className="text-2xl">For Businesses</CardTitle>
                 </CardHeader>
-                <CardContent className="px-8 pb-8">
-                  <p className="font-semibold text-foreground">Carlos Mendez</p>
-                  <p className="text-sm text-muted-foreground">Marina Owner, Key Biscayne</p>
+                <CardContent className="px-8 pb-8 space-y-4">
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    Share verified bay conditions with customers. Make data-driven decisions about operations.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">Customer confidence data</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">Operations planning tools</span>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
 
-              {/* Story 3 - Educator */}
+              {/* Use Case 3 - Educators */}
               <Card className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2">
-                <CardHeader className="space-y-4 p-8">
+                <CardHeader className="space-y-6 p-8">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
                     <BookOpen className="h-8 w-8 text-primary" />
                   </div>
-                  <CardDescription className="text-lg text-muted-foreground">
-                    "My students use Droobi to track pollution trends for science projects. It makes environmental data accessible and engaging for young minds."
-                  </CardDescription>
+                  <CardTitle className="text-2xl">For Educators</CardTitle>
                 </CardHeader>
-                <CardContent className="px-8 pb-8">
-                  <p className="font-semibold text-foreground">Dr. Sarah Chen</p>
-                  <p className="text-sm text-muted-foreground">Marine Science Teacher</p>
+                <CardContent className="px-8 pb-8 space-y-4">
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    Teach environmental science with real-world data. Track long-term ecosystem trends.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">Historical data access</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">Educational resources</span>
+                    </li>
+                  </ul>
                 </CardContent>
               </Card>
-            </div>
-
-            {/* Impact Numbers */}
-            <div className="grid sm:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-5xl md:text-6xl font-bold text-primary mb-4">10K+</div>
-                <p className="text-lg text-muted-foreground">Community Members Using Droobi</p>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl md:text-6xl font-bold text-primary mb-4">500+</div>
-                <p className="text-lg text-muted-foreground">Water Quality Reports Generated Daily</p>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl md:text-6xl font-bold text-primary mb-4">24/7</div>
-                <p className="text-lg text-muted-foreground">Real-Time Bay Health Monitoring</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. IMPACT - Economic Impact */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background" data-index="5">
-        <div className="container mx-auto max-w-6xl">
-          <div className={`transform transition-all duration-1000 ${
-            isVisible(5) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-          }`}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
-              Economic Impact
-            </h2>
-            <div className="glass-card p-12 text-center">
-              <DollarSign className="mx-auto mb-6 h-12 w-12 text-primary" />
-              <p className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground max-w-3xl mx-auto leading-relaxed">
-                Biscayne Bay supports a $14 billion tourism economy and hundreds of billions in waterfront property value. Protecting water quality safeguards these vital economic assets.
-              </p>
             </div>
           </div>
         </div>
