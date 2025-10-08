@@ -6,33 +6,33 @@ export const AICapabilitiesSection = () => {
   const capabilities = [
     {
       icon: Brain,
-      title: "Infrastructure Intelligence",
-      description: "Turn complex infrastructure data into actionable insights using machine learning and predictive analytics for smarter decision-making."
+      title: "See Problems Before They Happen",
+      description: "Stop reacting to emergencies. Our AI spots patterns in your infrastructure data so you can fix small issues before they become expensive disasters."
     },
     {
       icon: Activity,
-      title: "Predictive Maintenance",
-      description: "Forecast infrastructure needs before failures occur, reducing costs and preventing disruptions through AI-powered monitoring."
+      title: "Never Miss a Critical Deadline",
+      description: "Tired of scrambling to meet compliance deadlines? Get early warnings when your systems need attention, so you can plan maintenance on your terms."
     },
     {
       icon: Droplets,
-      title: "Environmental Monitoring",
-      description: "Real-time tracking of water quality, stormwater systems, and environmental data with AI-driven anomaly detection."
+      title: "Protect What Matters Most",
+      description: "Your community depends on clean water and safe infrastructure. Get instant alerts when something's wrong, so you can respond before anyone is affected."
     },
     {
       icon: Users,
-      title: "Community Engagement",
-      description: "Enable public participation with conversational AI that understands local context and connects communities to infrastructure decisions."
+      title: "Answer Questions in Seconds, Not Days",
+      description: "Residents have questions. Your team is overwhelmed. Let AI instantly surface the information you need from years of reports and data."
     },
     {
       icon: Database,
-      title: "Data Integration Hub",
-      description: "Seamlessly connect multiple data sources—GIS, sensors, historical records—into a unified AI-powered knowledge base."
+      title: "Make Sense of Your Data",
+      description: "You have the data, but it's everywhere—spreadsheets, reports, sensors. We bring it all together so you can actually use it to make decisions."
     },
     {
       icon: Shield,
-      title: "Regulatory Compliance",
-      description: "Automated compliance tracking and reporting for EPA standards, ensuring your infrastructure meets all regulatory requirements."
+      title: "Stay Compliant Without the Stress",
+      description: "Regulations keep changing. Reporting takes forever. Let AI track requirements and prepare documentation so your team can focus on the real work."
     }
   ];
 
@@ -54,7 +54,7 @@ export const AICapabilitiesSection = () => {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From automation to innovation, our cutting-edge AI solutions help infrastructure leaders work smarter, move faster, and build with confidence.
+            We help infrastructure leaders spend less time fighting fires and more time building resilient communities that thrive.
           </p>
         </div>
 
