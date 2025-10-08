@@ -42,10 +42,10 @@ export const DifferentiatorSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-[1.1]">
             What Makes Our <span className="text-primary">AI Different</span>
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             From automation to innovation, our cutting-edge AI solutions help infrastructure leaders work smarter, move faster, and build with confidence.
           </p>
         </div>
@@ -123,12 +123,12 @@ export const DifferentiatorSection = () => {
 
                   {/* Content */}
                   <div className="space-y-3 px-2">
-                    <h3 className={`text-2xl sm:text-3xl lg:text-4xl font-bold transition-all duration-500 leading-tight ${
+                    <h3 className={`text-xl sm:text-2xl lg:text-3xl font-bold transition-all duration-500 leading-tight ${
                       isActive ? 'text-primary' : 'text-foreground'
                     }`}>
                       {item.title}
                     </h3>
-                    <p className={`text-base sm:text-lg lg:text-xl leading-relaxed max-w-sm mx-auto transition-all duration-500 ${
+                    <p className={`text-base sm:text-lg leading-relaxed max-w-sm mx-auto transition-all duration-500 ${
                       isActive ? 'text-foreground' : 'text-muted-foreground'
                     }`}>
                       {item.description}
