@@ -105,7 +105,7 @@ const OraklesPage = () => {
       stat: "50,000+",
       label: "U.S. Utilities",
       description: "Each utility has its own playbook, leaving engineers, regulators, and contractors translating rather than solving.",
-      color: "from-red-500/20 to-orange-500/20"
+      color: "from-primary/20 to-primary/10"
     },
     {
       icon: <Database className="h-8 w-8" />,
@@ -113,7 +113,7 @@ const OraklesPage = () => {
       stat: "<10%",
       label: "Have Structured Data",
       description: "70% of water utilities still rely on PDF reports and unlinked spreadsheets.",
-      color: "from-orange-500/20 to-yellow-500/20"
+      color: "from-secondary/20 to-secondary/10"
     },
     {
       icon: <Shield className="h-8 w-8" />,
@@ -121,7 +121,7 @@ const OraklesPage = () => {
       stat: "0%",
       label: "Verified Performance",
       description: "Vendors can't prove what their 'smart' solutions actually do, and governments can't verify claims.",
-      color: "from-yellow-500/20 to-red-500/20"
+      color: "from-accent/20 to-accent/10"
     },
     {
       icon: <Building2 className="h-8 w-8" />,
@@ -129,7 +129,7 @@ const OraklesPage = () => {
       stat: "Lost",
       label: "When People Retire",
       description: "Institutional knowledge retires with people instead of staying within systems.",
-      color: "from-purple-500/20 to-pink-500/20"
+      color: "from-primary/20 to-secondary/10"
     }
   ];
 
@@ -145,7 +145,7 @@ const OraklesPage = () => {
         "AI-curated and continuously updated",
         "Powers permitting agents to training platforms"
       ],
-      color: "from-primary/20 to-blue-500/20"
+      color: "from-primary/20 to-primary/10"
     },
     {
       icon: <FileCheck className="h-12 w-12" />,
@@ -158,7 +158,7 @@ const OraklesPage = () => {
         "Tracks 'Made in America' credentials",
         "AI model transparency"
       ],
-      color: "from-green-500/20 to-emerald-500/20"
+      color: "from-secondary/20 to-secondary/10"
     },
     {
       icon: <Search className="h-12 w-12" />,
@@ -171,7 +171,7 @@ const OraklesPage = () => {
         "Get connected codes and vendors",
         "Practical examples included"
       ],
-      color: "from-cyan-500/20 to-blue-500/20"
+      color: "from-accent/20 to-accent/10"
     },
     {
       icon: <GraduationCap className="h-12 w-12" />,
@@ -184,7 +184,7 @@ const OraklesPage = () => {
         "Continual learning pathways",
         "Learn the why behind every standard"
       ],
-      color: "from-purple-500/20 to-pink-500/20"
+      color: "from-primary/20 to-secondary/10"
     }
   ];
 
@@ -288,7 +288,7 @@ const OraklesPage = () => {
                   <div className="absolute inset-2 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
                     <Brain className="h-12 w-12 text-white animate-pulse" />
                   </div>
-                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full p-3 animate-bounce shadow-lg">
+                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-primary to-secondary rounded-full p-3 animate-bounce shadow-lg">
                     <Sparkles className="h-5 w-5 text-white" />
                   </div>
                 </div>
@@ -339,7 +339,7 @@ const OraklesPage = () => {
             <div className="max-w-5xl mx-auto text-center mb-16">
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-satoshi mb-8">
                 <span className="text-foreground">The </span>
-                <span className="bg-gradient-to-r from-red-400 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Problem
                 </span>
               </h2>
@@ -479,7 +479,7 @@ const OraklesPage = () => {
             <div className="max-w-5xl mx-auto text-center mb-16">
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-satoshi mb-8">
                 <span className="text-foreground">The </span>
-                <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   Solution
                 </span>
               </h2>
@@ -628,7 +628,7 @@ const OraklesPage = () => {
             <div className="max-w-5xl mx-auto text-center mb-16">
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-satoshi mb-8">
                 <span className="text-foreground">Proof of </span>
-                <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Concept
                 </span>
               </h2>
