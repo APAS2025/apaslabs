@@ -144,38 +144,20 @@ const BiscayneBayGPT = () => {
   const isVisible = (index: number) => visibleItems.includes(index);
 
   return (
-    <div className="min-h-screen bg-background-deep relative overflow-hidden">
-      {/* Subtle background gradient and glow effects */}
-      <div className="fixed inset-0 bg-gradient-hero pointer-events-none" />
-      <div className="fixed inset-0 bg-gradient-glow opacity-20 pointer-events-none" />
-      
-      {/* Animated subtle background elements */}
-      <div className="fixed inset-0 opacity-20 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }} />
-        <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '10s', animationDelay: '3s' }} />
-      </div>
-      
-      <div className="relative z-10">
+    <main className="min-h-screen bg-background-deep">
       {/* 1. HERO SECTION */}
-      <section className="relative py-16 sm:py-24 lg:py-32 px-4 overflow-hidden" data-index="0">
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="absolute inset-0 bg-gradient-glow opacity-20" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" data-index="0">
+        {/* Gradient background - minimalistic single color */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background-deep via-background to-background-deep" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/8" />
         
-        {/* Animated water ripples */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
-          <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-secondary/15 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
+        {/* Strategic accent glows - single color blue */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[300px] bg-primary/10 rounded-full blur-3xl" />
         </div>
         
-        {/* Miami location badge */}
-        <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-20">
-          <div className="bg-card/80 backdrop-blur-sm border border-primary/30 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 flex items-center gap-2">
-            <MapPin className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
-            <span className="text-xs sm:text-sm font-medium text-foreground">Miami, Florida</span>
-          </div>
-        </div>
-        
-        <div className="container mx-auto relative z-10 max-w-7xl">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
           <div className={`transform transition-all duration-1000 ${
             isVisible(0) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
@@ -284,11 +266,15 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
+      {/* Gradient Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
       {/* 2. THE PROBLEM - Transparency Gap */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background-deep relative overflow-hidden" data-index="2">
+      <section className="py-32 bg-background relative overflow-hidden" data-index="2">
         <div className="absolute inset-0 bg-gradient-to-b from-background-deep/50 via-background to-background-deep" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/8 via-transparent to-primary/5" />
         
-        <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transform transition-all duration-1000 ${
             isVisible(2) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
@@ -306,18 +292,18 @@ const BiscayneBayGPT = () => {
 
             {/* The Numbers */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
-              <div className="glass-card p-5 sm:p-6 md:p-8 text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-2 sm:mb-3">15+</div>
+              <Card className="bg-card/50 backdrop-blur-sm border-border p-5 sm:p-6 md:p-8 text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-2 sm:mb-3">15+</div>
                 <div className="text-xs sm:text-sm md:text-base text-muted-foreground">Government agencies managing scattered bay data</div>
-              </div>
-              <div className="glass-card p-5 sm:p-6 md:p-8 text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-2 sm:mb-3">$500M+</div>
+              </Card>
+              <Card className="bg-card/50 backdrop-blur-sm border-border p-5 sm:p-6 md:p-8 text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-2 sm:mb-3">$500M+</div>
                 <div className="text-xs sm:text-sm md:text-base text-muted-foreground">Invested in restoration over 5 years</div>
-              </div>
-              <div className="glass-card p-5 sm:p-6 md:p-8 text-center">
+              </Card>
+              <Card className="bg-card/50 backdrop-blur-sm border-border p-5 sm:p-6 md:p-8 text-center">
                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-2 sm:mb-3">0</div>
                 <div className="text-xs sm:text-sm md:text-base text-muted-foreground">Unified platforms tracking ROI... until now</div>
-              </div>
+              </Card>
             </div>
 
             {/* The Impact on People */}
@@ -643,9 +629,7 @@ const BiscayneBayGPT = () => {
           </div>
         </div>
       </section>
-      
-      </div>
-    </div>
+    </main>
   );
 };
 
