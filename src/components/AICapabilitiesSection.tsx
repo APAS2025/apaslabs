@@ -31,7 +31,7 @@ export const AICapabilitiesSection = () => {
     },
     {
       icon: FileText,
-      title: "Frameworks & Insights",
+      title: "Apps News",
       description: "Skip the fluff. Get practical frameworks, cutting-edge research, and real-world strategies from engineers and operators—not marketing departments.",
       link: null
     },
