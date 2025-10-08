@@ -355,9 +355,16 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
-      {/* 3. THE STAKES - What's at Risk */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background-deep" data-index="3">
-        <div className="container mx-auto max-w-6xl">
+      {/* Gradient Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
+      {/* 3. THE STAKES */}
+      <section className="py-32 bg-gradient-to-b from-background to-background-deep relative overflow-hidden" data-index="3">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transform transition-all duration-1000 ${
             isVisible(3) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
@@ -407,9 +414,15 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
+      {/* Gradient Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
       {/* 4. THE SOLUTION - AI Chat Simulation */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background" data-index="4">
-        <div className="container mx-auto max-w-4xl">
+      <section className="py-32 bg-background relative overflow-hidden" data-index="4">
+        <div className="absolute inset-0 bg-gradient-to-b from-background-deep/50 via-background to-background-deep" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/8 via-transparent to-primary/5" />
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transform transition-all duration-1000 ${
             isVisible(4) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
@@ -580,9 +593,16 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
-      {/* 7. HOW IT WORKS - Community Conversations */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background-deep" data-index="6">
-        <div className="container mx-auto max-w-6xl">
+      {/* Gradient Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
+      {/* 7. COMMUNITY CONVERSATIONS */}
+      <section className="py-32 bg-gradient-to-b from-background to-background-deep relative overflow-hidden" data-index="6">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transform transition-all duration-1000 ${
             isVisible(6) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
@@ -616,9 +636,15 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
+      {/* Gradient Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
       {/* 8. TRUST - Government Collaboration */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background" data-index="7">
-        <div className="container mx-auto max-w-6xl">
+      <section className="py-32 bg-background relative overflow-hidden" data-index="7">
+        <div className="absolute inset-0 bg-gradient-to-b from-background-deep/50 via-background to-background-deep" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/8 via-transparent to-primary/5" />
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transform transition-all duration-1000 ${
             isVisible(7) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
@@ -638,9 +664,16 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
+      {/* Gradient Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
       {/* 9. CALL TO ACTION - Support the Bay */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background-deep" data-index="8">
-        <div className="container mx-auto max-w-6xl">
+      <section className="py-32 bg-gradient-to-b from-background to-background-deep relative overflow-hidden" data-index="8">
+        <div className="absolute inset-0">
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transform transition-all duration-1000 ${
             isVisible(8) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
@@ -664,9 +697,12 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
+      {/* Gradient Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
       {/* 10. FINAL CALL TO ACTION */}
-      <section className="py-16 sm:py-24 lg:py-32 px-4 bg-background-deep" data-index="9">
-        <div className="container mx-auto max-w-4xl text-center">
+      <section className="py-32 bg-background-deep" data-index="9">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className={`transform transition-all duration-1000 ${
             isVisible(9) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
