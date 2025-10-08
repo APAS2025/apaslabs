@@ -56,7 +56,7 @@ const HeroSection = () => {
       >
         {/* Hero Headline */}
         <div className="mb-6 sm:mb-8">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-satoshi leading-tight mb-4 sm:mb-6 max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-satoshi leading-tight mb-4 sm:mb-6 max-w-2xl mx-auto">
             <span className="block text-foreground drop-shadow-lg">
               Building the
             </span>
