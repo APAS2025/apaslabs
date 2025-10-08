@@ -64,29 +64,34 @@ export const DifferentiatorSection = () => {
               >
                 {/* Connecting Arrow (hidden on mobile, shown between items on desktop) */}
                 {index < differentiators.length - 1 && (
-                  <div className="hidden md:block absolute top-20 left-full w-full h-0.5 overflow-hidden">
+                  <div className="hidden md:block absolute top-20 left-full w-full h-1">
                     <div className="relative w-full h-full">
                       {/* Base dotted line */}
                       <div className="absolute inset-0 flex items-center">
                         <div className="w-full border-t-2 border-dotted border-primary/30"></div>
                       </div>
                       
-                      {/* Animated glowing line that lights up */}
+                      {/* Animated glowing line that lights up - ENHANCED */}
                       <div 
                         className={`absolute inset-0 flex items-center transition-opacity duration-700 ${
                           isPrevActive ? 'opacity-100' : 'opacity-0'
                         }`}
                       >
-                        <div className="w-full h-0.5 bg-gradient-to-r from-primary via-primary to-transparent animate-pulse">
-                          <div className="w-full h-full bg-primary shadow-lg shadow-primary/50"></div>
+                        <div className="w-full h-1 bg-gradient-to-r from-primary via-primary to-transparent">
+                          {/* Main solid line */}
+                          <div className="w-full h-full bg-primary"></div>
+                          {/* Outer glow */}
+                          <div className="absolute inset-0 w-full h-2 -translate-y-1/4 bg-primary/50 blur-md"></div>
+                          {/* Inner bright glow */}
+                          <div className="absolute inset-0 w-full h-1 bg-primary shadow-[0_0_20px_rgba(59,130,246,0.8)]"></div>
                         </div>
                       </div>
                       
-                      {/* Arrow */}
+                      {/* Arrow - ENHANCED */}
                       <div className={`absolute right-0 top-1/2 -translate-y-1/2 transition-all duration-500 ${
-                        isPrevActive ? 'text-primary scale-125' : 'text-primary/50 scale-100'
+                        isPrevActive ? 'text-primary scale-150 drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]' : 'text-primary/50 scale-100'
                       }`}>
-                        <ArrowRight className="h-4 w-4" />
+                        <ArrowRight className="h-5 w-5" />
                       </div>
                     </div>
                   </div>
