@@ -163,7 +163,7 @@ const Index = () => {
                   </li>
                 </ul>
                 <Button variant="outline" className="w-full mt-4 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300" asChild>
-                  <Link to="/lexicon">Explore Orakles</Link>
+                  <a href="https://orakles.lovable.app/" target="_blank" rel="noopener noreferrer">Explore Orakles</a>
                 </Button>
               </CardContent>
             </Card>
