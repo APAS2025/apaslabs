@@ -113,7 +113,7 @@ const OraklesPage = () => {
       stat: "<10%",
       label: "Have Structured Data",
       description: "70% of water utilities still rely on PDF reports and unlinked spreadsheets.",
-      color: "from-secondary/20 to-secondary/10"
+      color: "from-primary/20 to-primary/10"
     },
     {
       icon: <Shield className="h-8 w-8" />,
@@ -121,7 +121,7 @@ const OraklesPage = () => {
       stat: "0%",
       label: "Verified Performance",
       description: "Vendors can't prove what their 'smart' solutions actually do, and governments can't verify claims.",
-      color: "from-accent/20 to-accent/10"
+      color: "from-primary/20 to-primary/10"
     },
     {
       icon: <Building2 className="h-8 w-8" />,
@@ -129,7 +129,7 @@ const OraklesPage = () => {
       stat: "Lost",
       label: "When People Retire",
       description: "Institutional knowledge retires with people instead of staying within systems.",
-      color: "from-primary/20 to-secondary/10"
+      color: "from-primary/20 to-primary/10"
     }
   ];
 
@@ -158,7 +158,7 @@ const OraklesPage = () => {
         "Tracks 'Made in America' credentials",
         "AI model transparency"
       ],
-      color: "from-secondary/20 to-secondary/10"
+      color: "from-primary/20 to-primary/10"
     },
     {
       icon: <Search className="h-12 w-12" />,
@@ -171,7 +171,7 @@ const OraklesPage = () => {
         "Get connected codes and vendors",
         "Practical examples included"
       ],
-      color: "from-accent/20 to-accent/10"
+      color: "from-primary/20 to-primary/10"
     },
     {
       icon: <GraduationCap className="h-12 w-12" />,
@@ -184,7 +184,7 @@ const OraklesPage = () => {
         "Continual learning pathways",
         "Learn the why behind every standard"
       ],
-      color: "from-primary/20 to-secondary/10"
+      color: "from-primary/20 to-primary/10"
     }
   ];
 
@@ -244,12 +244,12 @@ const OraklesPage = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden" data-index="0">
         {/* Gradient backgrounds */}
         <div className="absolute inset-0 bg-gradient-to-b from-background-deep via-background to-background-deep" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/8" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/8" />
         
         {/* Animated glows */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-[800px] h-[400px] bg-secondary/15 rounded-full blur-3xl float" />
+          <div className="absolute bottom-1/4 right-1/4 w-[800px] h-[400px] bg-primary/10 rounded-full blur-3xl float" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
@@ -264,7 +264,7 @@ const OraklesPage = () => {
                 <span className="block text-foreground mb-4">
                   Orakles
                 </span>
-                <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent text-glow">
+                <span className="block bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent text-glow">
                   The Language of Infrastructure
                 </span>
               </h1>
@@ -283,12 +283,12 @@ const OraklesPage = () => {
                 <div className="absolute -inset-4 flex items-center justify-center">
                   <div className="w-32 h-32 rounded-full border border-secondary/20 animate-ping animation-delay-500"></div>
                 </div>
-                <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-primary via-secondary to-accent shadow-2xl glow-primary">
+                <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-primary to-blue-400 shadow-2xl glow-primary">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 via-transparent to-transparent"></div>
                   <div className="absolute inset-2 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
                     <Brain className="h-12 w-12 text-white animate-pulse" />
                   </div>
-                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-primary to-secondary rounded-full p-3 animate-bounce shadow-lg">
+                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-primary to-blue-400 rounded-full p-3 animate-bounce shadow-lg">
                     <Sparkles className="h-5 w-5 text-white" />
                   </div>
                 </div>
@@ -339,7 +339,7 @@ const OraklesPage = () => {
             <div className="max-w-5xl mx-auto text-center mb-16">
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-satoshi mb-8">
                 <span className="text-foreground">The </span>
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <span className="text-primary">
                   Problem
                 </span>
               </h2>
@@ -403,18 +403,18 @@ const OraklesPage = () => {
 
       {/* The Origin Section */}
       <section className="py-32 bg-gradient-to-b from-background to-background-deep relative overflow-hidden" data-index="2">
-        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-3xl float-delayed" />
+        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary/8 rounded-full blur-3xl float-delayed" />
         
         <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
           <div className={`max-w-5xl mx-auto transform transition-all duration-1000 ${
             isVisible(2) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-satoshi mb-12 text-center">
-              <span className="text-foreground">The </span>
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Origin
-              </span>
-            </h2>
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-satoshi mb-12 text-center">
+                <span className="text-foreground">The </span>
+                <span className="text-primary">
+                  Origin
+                </span>
+              </h2>
             
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div className="glass-card p-8 space-y-6 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500">
@@ -438,7 +438,7 @@ const OraklesPage = () => {
                     <FileCheck className="h-8 w-8 text-secondary" />
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-secondary">40,000+</div>
+                    <div className="text-3xl font-bold text-primary">40,000+</div>
                     <div className="text-sm text-muted-foreground">Permits Managed</div>
                   </div>
                 </div>
@@ -450,8 +450,8 @@ const OraklesPage = () => {
 
             <Card className="glass-card p-10 mt-8 border-2 border-primary/20">
               <div className="text-center space-y-6">
-                <p className="text-2xl text-foreground font-semibold leading-relaxed">
-                  You can't build AI for infrastructure until you build the <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">ontology of infrastructure</span>.
+                  <p className="text-2xl text-foreground font-semibold leading-relaxed">
+                    You can't build AI for infrastructure until you build the <span className="text-primary">ontology of infrastructure</span>.
                 </p>
                 <div className="pt-4">
                   <p className="text-3xl text-primary font-bold">
@@ -470,7 +470,7 @@ const OraklesPage = () => {
       {/* The Solution Section */}
       <section className="py-32 bg-background relative overflow-hidden" data-index="3">
         <div className="absolute inset-0 bg-gradient-to-b from-background-deep/30 via-background to-background-deep/30" />
-        <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-primary/5 rounded-full blur-3xl" />
         
         <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
           <div className={`transform transition-all duration-1000 ${
@@ -479,7 +479,7 @@ const OraklesPage = () => {
             <div className="max-w-5xl mx-auto text-center mb-16">
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-satoshi mb-8">
                 <span className="text-foreground">The </span>
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <span className="text-primary">
                   Solution
                 </span>
               </h2>
@@ -497,7 +497,7 @@ const OraklesPage = () => {
                 </div>
                 <div className="flex-1 text-center lg:text-left">
                   <p className="text-2xl text-foreground font-semibold leading-relaxed">
-                    Transforms the world's <span className="text-muted-foreground">unstructured regulatory documents</span>, <span className="text-muted-foreground">technical specifications</span>, and <span className="text-muted-foreground">vendor catalogs</span> into <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">living, intelligent definitions</span>.
+                    Transforms the world's <span className="text-muted-foreground">unstructured regulatory documents</span>, <span className="text-muted-foreground">technical specifications</span>, and <span className="text-muted-foreground">vendor catalogs</span> into <span className="text-primary">living, intelligent definitions</span>.
                   </p>
                 </div>
               </div>
@@ -516,7 +516,7 @@ const OraklesPage = () => {
           }`}>
             <h2 className="text-5xl sm:text-6xl font-bold font-satoshi mb-20 text-center">
               <span className="text-foreground">Key Features & </span>
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="text-primary">
                 Modules
               </span>
             </h2>
@@ -565,7 +565,7 @@ const OraklesPage = () => {
       {/* Our Moat Section - Competitive Advantage */}
       <section className="py-32 bg-background relative overflow-hidden" data-index="5">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-background-deep" />
-        <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-3xl float" />
+        <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl float" />
         
         <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
           <div className={`transform transition-all duration-1000 ${
@@ -574,7 +574,7 @@ const OraklesPage = () => {
             <div className="max-w-5xl mx-auto text-center mb-16">
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-satoshi mb-8">
                 <span className="text-foreground">Our </span>
-                <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                <span className="text-primary">
                   Moat
                 </span>
               </h2>
@@ -619,7 +619,7 @@ const OraklesPage = () => {
 
       {/* Proof of Concept Section */}
       <section className="py-32 bg-gradient-to-b from-background-deep to-background relative overflow-hidden" data-index="6">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
         
         <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
           <div className={`transform transition-all duration-1000 ${
@@ -628,7 +628,7 @@ const OraklesPage = () => {
             <div className="max-w-5xl mx-auto text-center mb-16">
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-satoshi mb-8">
                 <span className="text-foreground">Proof of </span>
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <span className="text-primary">
                   Concept
                 </span>
               </h2>
@@ -675,7 +675,7 @@ const OraklesPage = () => {
       {/* The Future Section - Grand Finale */}
       <section className="py-40 bg-background relative overflow-hidden" data-index="7">
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-gradient-to-r from-primary/20 via-secondary/15 to-accent/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-gradient-to-r from-primary/20 via-primary/15 to-primary/10 rounded-full blur-3xl animate-pulse" />
         </div>
         
         <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
@@ -684,14 +684,14 @@ const OraklesPage = () => {
           }`}>
             <h2 className="text-6xl sm:text-7xl lg:text-8xl font-bold font-satoshi mb-12">
               <span className="text-foreground">The </span>
-              <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              <span className="text-primary">
                 Future
               </span>
             </h2>
             
             <div className="glass-card p-12 sm:p-16 space-y-10 mb-16 border-2 border-primary/20">
               <p className="text-3xl sm:text-4xl text-foreground font-bold leading-relaxed">
-                Creating a new category: <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Knowledge Infrastructure</span>
+                Creating a new category: <span className="text-primary">Knowledge Infrastructure</span>
               </p>
               
               <div className="grid sm:grid-cols-2 gap-8 text-left">
@@ -703,7 +703,7 @@ const OraklesPage = () => {
                     </p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <ArrowRight className="h-6 w-6 text-secondary flex-shrink-0 mt-1" />
+                    <ArrowRight className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <p className="text-xl text-muted-foreground leading-relaxed">
                       Not just organizing data—<span className="text-foreground font-semibold">organizing how cities learn</span>
                     </p>
@@ -711,7 +711,7 @@ const OraklesPage = () => {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <ArrowRight className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                    <ArrowRight className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <p className="text-xl text-muted-foreground leading-relaxed">
                       Not just bridging systems—<span className="text-foreground font-semibold">bridging how people decide</span>
                     </p>
@@ -751,9 +751,9 @@ const OraklesPage = () => {
             </div>
 
             {/* Final CTA */}
-            <div className="space-y-8">
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button size="lg" className="text-xl px-12 py-8 h-auto font-bold bg-gradient-to-br from-primary via-secondary to-accent hover:shadow-2xl hover:shadow-primary/30 active:scale-95 transition-all duration-300">
+              <div className="space-y-8">
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <Button size="lg" className="text-xl px-12 py-8 h-auto font-bold bg-gradient-to-br from-primary to-blue-500 hover:shadow-2xl hover:shadow-primary/30 active:scale-95 transition-all duration-300">
                   <TrendingUp className="mr-3 h-6 w-6" />
                   Join the Revolution
                 </Button>
