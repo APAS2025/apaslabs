@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { FinalCTA } from "@/components/FinalCTA";
 
 const Solutions = () => {
   return (
@@ -48,6 +49,9 @@ const Solutions = () => {
           </Card>
         </div>
       </section>
+
+      {/* Final CTA */}
+      <FinalCTA />
     </div>
   );
 };

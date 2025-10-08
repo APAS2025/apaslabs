@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Beaker, Database, Shield, Droplets, TrendingUp, Brain } from "lucide-react";
+import { FinalCTA } from "@/components/FinalCTA";
 
 const Labs = () => {
   const labs = [
@@ -115,6 +116,9 @@ const Labs = () => {
           </div>
         </div>
       </section>
+
+      {/* Final CTA */}
+      <FinalCTA />
     </div>
   );
 };

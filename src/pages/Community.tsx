@@ -9,6 +9,7 @@ import { Users, MessageCircle, Calendar, Award, Send, Mail, Phone, MapPin } from
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { FinalCTA } from "@/components/FinalCTA";
 
 const Community = () => {
   const { toast } = useToast();
@@ -264,6 +265,9 @@ const Community = () => {
           </Card>
         </div>
       </section>
+
+      {/* Final CTA */}
+      <FinalCTA />
     </div>
   );
 };

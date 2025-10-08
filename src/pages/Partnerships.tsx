@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Building2, Users, Target, TrendingUp, Database, Shield, Network } from "lucide-react";
+import { FinalCTA } from "@/components/FinalCTA";
 
 const Partnerships = () => {
   const { toast } = useToast();
@@ -379,6 +380,9 @@ const Partnerships = () => {
           </div>
         </div>
       </section>
+
+      {/* Final CTA */}
+      <FinalCTA />
     </div>
   );
 };

@@ -16,6 +16,7 @@ import {
   Crown,
   Sparkles
 } from "lucide-react";
+import { FinalCTA } from "@/components/FinalCTA";
 
 const Support = () => {
   const supportTiers = [
@@ -241,6 +242,9 @@ const Support = () => {
           </div>
         </div>
       </section>
+
+      {/* Final CTA */}
+      <FinalCTA />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { FinalCTA } from "@/components/FinalCTA";
 import {
   Waves,
   Fish,
@@ -697,27 +698,8 @@ const BiscayneBayGPT = () => {
         </div>
       </section>
 
-      {/* Gradient Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-
-      {/* 10. FINAL CALL TO ACTION */}
-      <section className="py-32 bg-background-deep" data-index="9">
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className={`transform transition-all duration-1000 ${
-            isVisible(9) ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-          }`}>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-foreground px-2">
-              Join Us in Protecting Biscayne Bay
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed text-muted-foreground px-4">
-              Every dollar, every decision, every data point matters. Together, we can ensure a healthier future for our bay and community.
-            </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg active:scale-95 transition-all duration-300 min-h-[44px] sm:min-h-[3rem] text-sm sm:text-base">
-              Get Involved
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Final CTA */}
+      <FinalCTA />
     </main>
   );
 };

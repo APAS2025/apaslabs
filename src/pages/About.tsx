@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Quote, Heart, Target, Users, Lightbulb, Award } from "lucide-react";
+import { FinalCTA } from "@/components/FinalCTA";
 
 const About = () => {
   return (
@@ -526,6 +527,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Final CTA */}
+      <FinalCTA />
     </div>
   );
 };

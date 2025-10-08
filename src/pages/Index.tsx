@@ -9,6 +9,7 @@ import OraklesDemo from "@/components/OraklesDemo";
 import WhyWeExistSection from "@/components/WhyWeExistSection";
 import OurStorySection from "@/components/OurStorySection";
 import { RotatingText } from "@/components/RotatingText";
+import { FinalCTA } from "@/components/FinalCTA";
 import {
   Mail, 
   Phone, 
@@ -657,6 +658,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Final CTA */}
+      <FinalCTA />
     </main>
   );
 };
