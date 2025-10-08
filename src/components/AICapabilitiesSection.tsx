@@ -1,38 +1,45 @@
-import { Brain, Activity, Droplets, Users, Database, Shield } from "lucide-react";
+import { BookOpen, Users, Video, Calendar, FileText, GraduationCap } from "lucide-react";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const AICapabilitiesSection = () => {
   const capabilities = [
     {
-      icon: Brain,
-      title: "See Problems Before They Happen",
-      description: "Stop reacting to emergencies. Our AI spots patterns in your infrastructure data so you can fix small issues before they become expensive disasters."
-    },
-    {
-      icon: Activity,
-      title: "Never Miss a Critical Deadline",
-      description: "Tired of scrambling to meet compliance deadlines? Get early warnings when your systems need attention, so you can plan maintenance on your terms."
-    },
-    {
-      icon: Droplets,
-      title: "Protect What Matters Most",
-      description: "Your community depends on clean water and safe infrastructure. Get instant alerts when something's wrong, so you can respond before anyone is affected."
+      icon: BookOpen,
+      title: "Water Lexicon",
+      description: "Stop searching through endless documents. Our AI-powered lexicon instantly translates technical jargon into plain language, with direct links to the regulations and standards that matter.",
+      link: null
     },
     {
       icon: Users,
-      title: "Answer Questions in Seconds, Not Days",
-      description: "Residents have questions. Your team is overwhelmed. Let AI instantly surface the information you need from years of reports and data."
+      title: "Partner Ecosystem",
+      description: "No more vetting headaches. Connect with pre-verified vendors, consultants, and experts who actually understand your challenges—complete with portfolios and testimonials.",
+      link: "/partnerships"
     },
     {
-      icon: Database,
-      title: "Make Sense of Your Data",
-      description: "You have the data, but it's everywhere—spreadsheets, reports, sensors. We bring it all together so you can actually use it to make decisions."
+      icon: Video,
+      title: "Droobi TV",
+      description: "Learn from systems that actually work. Watch real case studies, technical walkthroughs, and earn certifications—all on your schedule, filtered by what matters to you.",
+      link: null
     },
     {
-      icon: Shield,
-      title: "Stay Compliant Without the Stress",
-      description: "Regulations keep changing. Reporting takes forever. Let AI track requirements and prepare documentation so your team can focus on the real work."
+      icon: Calendar,
+      title: "Community Events",
+      description: "You're not alone in this. Join live sessions with peers facing the same issues, share war stories, and build relationships that last beyond the conference room.",
+      link: "/community"
+    },
+    {
+      icon: FileText,
+      title: "Blog & Insights",
+      description: "Cut through the hype. Get practical insights on AI, digital transformation, and infrastructure innovation—written by engineers and operators, not marketers.",
+      link: null
+    },
+    {
+      icon: GraduationCap,
+      title: "Academy",
+      description: "Build skills that matter. Professional training on AI, data governance, and modern infrastructure systems—with certifications your organization will recognize.",
+      link: null
     }
   ];
 
@@ -48,13 +55,13 @@ export const AICapabilitiesSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Transforming Infrastructure{" "}
+            Everything You Need to{" "}
             <span className="bg-gradient-to-r from-primary via-blue-500 to-primary bg-clip-text text-transparent">
-              with Intelligence
+              Work Smarter
             </span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We help infrastructure leaders spend less time fighting fires and more time building resilient communities that thrive.
+            From learning resources to expert networks—we've built the tools infrastructure leaders actually need to do their best work.
           </p>
         </div>
 
@@ -62,11 +69,9 @@ export const AICapabilitiesSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {capabilities.map((capability, index) => {
             const Icon = capability.icon;
-            return (
-              <div
-                key={index}
-                className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1"
-              >
+            
+            const cardContent = (
+              <>
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
                 
@@ -86,6 +91,23 @@ export const AICapabilitiesSection = () => {
                     </p>
                   </div>
                 </div>
+              </>
+            );
+            
+            return capability.link ? (
+              <Link
+                key={index}
+                to={capability.link}
+                className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 block"
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <div
+                key={index}
+                className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1"
+              >
+                {cardContent}
               </div>
             );
           })}
