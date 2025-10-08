@@ -1,6 +1,9 @@
+import { useState, useEffect } from "react";
 import { Database, Users, Shield, ArrowRight } from "lucide-react";
 
 export const DifferentiatorSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const differentiators = [
     {
       icon: Database,
@@ -18,6 +21,15 @@ export const DifferentiatorSection = () => {
       description: "Every AI recommendation is traceable to its source. Track funding, verify outcomes, and hold systems accountable—because infrastructure decisions affect real communities."
     }
   ];
+
+  // Auto-rotate through items every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % differentiators.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [differentiators.length]);
 
   return (
     <section className="py-32 bg-gradient-to-b from-background to-background-deep relative overflow-hidden">
@@ -41,39 +53,72 @@ export const DifferentiatorSection = () => {
         <div className="grid md:grid-cols-3 gap-8 md:gap-6 lg:gap-12 items-start">
           {differentiators.map((item, index) => {
             const Icon = item.icon;
+            const isActive = activeIndex === index;
+            const isPrevActive = activeIndex === index - 1;
+            
             return (
-              <div key={index} className="relative">
+              <div 
+                key={index} 
+                className="relative"
+                onClick={() => setActiveIndex(index)}
+              >
                 {/* Connecting Arrow (hidden on mobile, shown between items on desktop) */}
                 {index < differentiators.length - 1 && (
-                  <div className="hidden md:block absolute top-20 left-full w-full h-0.5">
+                  <div className="hidden md:block absolute top-20 left-full w-full h-0.5 overflow-hidden">
                     <div className="relative w-full h-full">
-                      {/* Dotted line */}
+                      {/* Base dotted line */}
                       <div className="absolute inset-0 flex items-center">
                         <div className="w-full border-t-2 border-dotted border-primary/30"></div>
                       </div>
+                      
+                      {/* Animated glowing line that lights up */}
+                      <div 
+                        className={`absolute inset-0 flex items-center transition-opacity duration-700 ${
+                          isPrevActive ? 'opacity-100' : 'opacity-0'
+                        }`}
+                      >
+                        <div className="w-full h-0.5 bg-gradient-to-r from-primary via-primary to-transparent animate-pulse">
+                          <div className="w-full h-full bg-primary shadow-lg shadow-primary/50"></div>
+                        </div>
+                      </div>
+                      
                       {/* Arrow */}
-                      <div className="absolute right-0 top-1/2 -translate-y-1/2">
-                        <ArrowRight className="h-4 w-4 text-primary/50" />
+                      <div className={`absolute right-0 top-1/2 -translate-y-1/2 transition-all duration-500 ${
+                        isPrevActive ? 'text-primary scale-125' : 'text-primary/50 scale-100'
+                      }`}>
+                        <ArrowRight className="h-4 w-4" />
                       </div>
                     </div>
                   </div>
                 )}
 
                 {/* Card */}
-                <div className="text-center space-y-6">
+                <div className={`text-center space-y-6 transition-all duration-500 cursor-pointer ${
+                  isActive ? 'scale-105' : 'scale-100'
+                }`}>
                   {/* Icon Container */}
                   <div className="flex justify-center">
-                    <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-3xl border-2 border-primary/30 bg-card/50 backdrop-blur-sm flex items-center justify-center hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 hover:scale-105">
-                      <Icon className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 text-primary" />
+                    <div className={`w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-3xl border-2 bg-card/50 backdrop-blur-sm flex items-center justify-center transition-all duration-500 ${
+                      isActive 
+                        ? 'border-primary shadow-2xl shadow-primary/30 scale-110' 
+                        : 'border-primary/30 hover:border-primary/50'
+                    }`}>
+                      <Icon className={`h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 transition-all duration-500 ${
+                        isActive ? 'text-primary scale-110' : 'text-primary/70'
+                      }`} />
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="space-y-3 px-2">
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground">
+                    <h3 className={`text-xl sm:text-2xl lg:text-3xl font-bold transition-all duration-500 ${
+                      isActive ? 'text-primary' : 'text-foreground'
+                    }`}>
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-sm mx-auto">
+                    <p className={`text-sm sm:text-base lg:text-lg leading-relaxed max-w-sm mx-auto transition-all duration-500 ${
+                      isActive ? 'text-foreground' : 'text-muted-foreground'
+                    }`}>
                       {item.description}
                     </p>
                   </div>
@@ -81,6 +126,22 @@ export const DifferentiatorSection = () => {
               </div>
             );
           })}
+        </div>
+        
+        {/* Progress Indicators */}
+        <div className="flex justify-center gap-3 mt-12">
+          {differentiators.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveIndex(index)}
+              className={`h-2 rounded-full transition-all duration-500 ${
+                activeIndex === index 
+                  ? 'w-12 bg-primary' 
+                  : 'w-2 bg-primary/30 hover:bg-primary/50'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
