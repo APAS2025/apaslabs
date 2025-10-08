@@ -26,9 +26,9 @@ const Navigation = () => {
             <Link to="/biscayne-bay-gpt" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Biscayne Bay GPT
             </Link>
-            <Link to="/droobi" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
+            <a href="https://orakles.lovable.app/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Lexicon
-            </Link>
+            </a>
             <Link to="/community" className="text-muted-foreground hover:text-foreground transition-smooth text-sm lg:text-base">
               Community
             </Link>
@@ -79,13 +79,15 @@ const Navigation = () => {
               >
                 Biscayne Bay GPT
               </Link>
-              <Link 
-                to="/droobi" 
+              <a 
+                href="https://orakles.lovable.app/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Lexicon
-              </Link>
+              </a>
               <Link 
                 to="/community"
                 className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-smooth"
