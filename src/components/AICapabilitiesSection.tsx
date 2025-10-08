@@ -13,8 +13,8 @@ export const AICapabilitiesSection = () => {
     },
     {
       icon: Users,
-      title: "Partner Ecosystem",
-      description: "No more vetting headaches. Connect with pre-verified vendors, consultants, and experts who actually understand your challenges—complete with portfolios and testimonials.",
+      title: "Trusted Partner Network",
+      description: "No more vetting headaches. Connect with pre-verified vendors, consultants, and experts who actually understand your challenges—complete with portfolios and proven ROI.",
       link: "/partnerships"
     },
     {
@@ -31,13 +31,13 @@ export const AICapabilitiesSection = () => {
     },
     {
       icon: FileText,
-      title: "Blog & Insights",
-      description: "Cut through the hype. Get practical insights on AI, digital transformation, and infrastructure innovation—written by engineers and operators, not marketers.",
+      title: "Frameworks & Insights",
+      description: "Skip the fluff. Get practical frameworks, cutting-edge research, and real-world strategies from engineers and operators—not marketing departments.",
       link: null
     },
     {
       icon: GraduationCap,
-      title: "Academy",
+      title: "Orakles Academy",
       description: "Build skills that matter. Professional training on AI, data governance, and modern infrastructure systems—with certifications your organization will recognize.",
       link: null
     }
