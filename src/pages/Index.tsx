@@ -9,6 +9,7 @@ import { RotatingText } from "@/components/RotatingText";
 import { FinalCTA } from "@/components/FinalCTA";
 import { GetInTouchSection } from "@/components/GetInTouchSection";
 import { DifferentiatorSection } from "@/components/DifferentiatorSection";
+import { AICapabilitiesSection } from "@/components/AICapabilitiesSection";
 import {
   ArrowRight,
   DollarSign,
@@ -193,6 +194,12 @@ const Index = () => {
 
       {/* What Makes Us Different */}
       <DifferentiatorSection />
+
+      {/* Gradient Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
+      {/* AI Capabilities */}
+      <AICapabilitiesSection />
 
       {/* Gradient Divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
