@@ -54,6 +54,9 @@ export const AICapabilitiesSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
+          <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">Orakles</span>
+          </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
             Everything You Need to{" "}
             <span className="bg-gradient-to-r from-primary via-blue-500 to-primary bg-clip-text text-transparent">
