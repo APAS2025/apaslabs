@@ -56,7 +56,7 @@ const HeroSection = () => {
       >
         {/* Hero Headline */}
         <div className="mb-6 sm:mb-8">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-satoshi leading-tight mb-4 sm:mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-satoshi leading-tight mb-4 sm:mb-6 max-w-4xl mx-auto">
             <span className="block text-foreground drop-shadow-lg">
               Building the Operating System
             </span>
@@ -70,7 +70,7 @@ const HeroSection = () => {
         </div>
 
         {/* Subheading */}
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-space font-light max-w-4xl mx-auto mb-8 sm:mb-10 lg:mb-12 leading-relaxed px-4">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-space font-light max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12 leading-relaxed px-4">
           Building AI powered solutions that governments, practitioners, citizens, and funders can trust.
         </p>
 
