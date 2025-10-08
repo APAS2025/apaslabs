@@ -58,7 +58,10 @@ const HeroSection = () => {
         <div className="mb-6 sm:mb-8">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-satoshi leading-tight mb-4 sm:mb-6 max-w-4xl mx-auto">
             <span className="block text-foreground drop-shadow-lg">
-              Building the Operating System
+              Building the
+            </span>
+            <span className="block text-foreground drop-shadow-lg">
+              Operating System
             </span>
             <span className="block bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent drop-shadow-lg">
               for Public Infrastructure
