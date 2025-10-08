@@ -31,7 +31,7 @@ export const AICapabilitiesSection = () => {
     },
     {
       icon: FileText,
-      title: "Apps News",
+      title: "APAS News",
       description: "Systems thinking meets infrastructure. Deep-dive insights on AI, blockchain, governance, and digital transformation—authored by engineers and operators, not marketers.",
       link: null
     },
@@ -69,7 +69,7 @@ export const AICapabilitiesSection = () => {
         </div>
 
         {/* Capabilities Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {capabilities.map((capability, index) => {
             const Icon = capability.icon;
             
@@ -78,18 +78,28 @@ export const AICapabilitiesSection = () => {
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
                 
-                <div className="relative z-10 space-y-4">
+                {/* Connecting line visualization */}
+                <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
+                  <div className="absolute -inset-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+                       style={{ 
+                         animation: 'shimmer 2s infinite',
+                         animationDelay: `${index * 0.2}s`
+                       }} 
+                  />
+                </div>
+                
+                <div className="relative z-10 space-y-5">
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="h-7 w-7 text-primary" />
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/20">
+                    <Icon className="h-8 w-8 text-primary" />
                   </div>
 
                   {/* Content */}
                   <div className="space-y-3">
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                       {capability.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-base text-muted-foreground leading-relaxed">
                       {capability.description}
                     </p>
                   </div>
@@ -101,14 +111,16 @@ export const AICapabilitiesSection = () => {
               <Link
                 key={index}
                 to={capability.link}
-                className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 block"
+                className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 block animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {cardContent}
               </Link>
             ) : (
               <div
                 key={index}
-                className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1"
+                className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {cardContent}
               </div>
