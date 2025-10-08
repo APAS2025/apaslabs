@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import heroBackground from "@/assets/hero-background-blue-pink.jpg";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -13,119 +12,114 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#1a2332] via-[#0f1825] to-[#0a0f1a]">
+      {/* Animated Blue Glow Effects */}
+      <div className="absolute top-20 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse" />
+      <div className="absolute bottom-40 left-1/3 w-[500px] h-[500px] bg-primary/30 rounded-full blur-[150px] animate-float" />
+      <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary-glow/20 rounded-full blur-[100px] animate-float-delayed" />
       
-      {/* Overlay Gradients */}
-      <div className="absolute inset-0 bg-background-deep/60 z-10" />
-      <div className="absolute inset-0 bg-gradient-hero z-20" />
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-96 bg-gradient-glow z-30" />
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
       
-      {/* Flowing Ribbon */}
-      <div className="absolute top-1/3 left-0 w-full h-0.5 z-30 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/80 to-transparent h-full w-full animate-[ribbon-flow_8s_ease-in-out_infinite] shadow-glow" />
-      </div>
-      
-      {/* Decorative Elements - Responsive with Parallax */}
-      <div 
-        className="absolute top-20 left-4 sm:left-10 w-48 sm:w-72 lg:w-96 h-48 sm:h-72 lg:h-96 bg-primary/10 rounded-full blur-3xl animate-pulse transform-gpu" 
-        style={{ transform: `translateY(${scrollY * 0.3}px)` }}
-      />
-      <div 
-        className="absolute bottom-20 right-4 sm:right-10 w-40 sm:w-60 lg:w-80 h-40 sm:h-60 lg:h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000 transform-gpu" 
-        style={{ transform: `translateY(${scrollY * -0.2}px)` }}
-      />
-      <div 
-        className="absolute top-1/2 left-0 w-36 sm:w-54 lg:w-72 h-36 sm:h-54 lg:h-72 bg-accent/10 rounded-full blur-3xl animate-pulse delay-500 transform-gpu" 
-        style={{ transform: `translateY(${scrollY * 0.1}px)` }}
-      />
+      {/* Content Container */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 flex items-center min-h-screen">
+        <div className="w-full lg:w-2/3 space-y-8">
+          {/* Eyebrow Text */}
+          <div className="inline-block">
+            <p className="text-primary text-sm sm:text-base font-space tracking-wider uppercase mb-2 animate-fade-in">
+              Trusted Infrastructure Partner
+            </p>
+          </div>
 
-      {/* Content */}
-      <div 
-        className="relative z-40 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center transform-gpu"
-        style={{ transform: `translateY(${scrollY * 0.1}px)` }}
-      >
-        {/* Hero Headline */}
-        <div className="mb-6 sm:mb-8">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-satoshi leading-tight mb-4 sm:mb-6 max-w-2xl mx-auto">
-            <span className="block text-foreground drop-shadow-lg">
-              Building the
-            </span>
-            <span className="block text-foreground drop-shadow-lg">
-              Operating System
-            </span>
-            <span className="block bg-gradient-to-r from-primary via-blue-400 to-blue-600 bg-clip-text text-transparent drop-shadow-lg">
-              for Public Infrastructure
-            </span>
-          </h1>
-          
-          {/* Accent line under headline */}
-          <div className="mx-auto w-24 sm:w-32 h-1 bg-gradient-to-r from-primary to-blue-600 rounded-full shadow-glow mb-6 sm:mb-8" />
+          {/* Main Headline */}
+          <div className="space-y-4">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-satoshi leading-[0.95] tracking-tight animate-fade-in-scale" style={{ animationDelay: '0.1s' }}>
+              <span className="block text-foreground/90">
+                Building the
+              </span>
+              <span className="block text-primary text-glow mt-2">
+                Operating System
+              </span>
+              <span className="block text-foreground/90 mt-2">
+                for Public Infrastructure
+              </span>
+            </h1>
+          </div>
+
+          {/* Subheading */}
+          <div className="max-w-2xl animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="h-[2px] w-16 bg-gradient-to-r from-primary to-primary-glow mb-6" />
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground/90 font-space font-light leading-relaxed">
+              Building AI powered solutions that governments, practitioners, citizens, and funders can trust.
+            </p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="group transition-all hover:scale-105 hover:shadow-glow" 
+              asChild
+            >
+              <Link to="/guild">
+                <span>Explore the Labs</span>
+                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </Button>
+            
+            <Button 
+              variant="glass" 
+              size="lg" 
+              className="group transition-all hover:scale-105" 
+              asChild
+            >
+              <Link to="/community">
+                <span>Join the Community</span>
+                <svg className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                </svg>
+              </Link>
+            </Button>
+          </div>
+
+          {/* Services List - Mobile */}
+          <div className="lg:hidden pt-8 space-y-3 text-left animate-fade-in" style={{ animationDelay: '0.7s' }}>
+            <div className="text-foreground/80 text-base sm:text-lg font-space tracking-wide hover:text-primary transition-colors cursor-pointer">
+              AI Governance
+            </div>
+            <div className="text-foreground/80 text-base sm:text-lg font-space tracking-wide hover:text-primary transition-colors cursor-pointer">
+              Climate Resilience
+            </div>
+            <div className="text-foreground/80 text-base sm:text-lg font-space tracking-wide hover:text-primary transition-colors cursor-pointer">
+              Infrastructure Intelligence
+            </div>
+          </div>
         </div>
 
-        {/* Subheading */}
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-space font-light max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12 leading-relaxed px-4">
-          Building AI powered solutions that governments, practitioners, citizens, and funders can trust.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
-          <Button variant="hero" size="lg" className="group w-full sm:w-auto transition-transform hover:scale-105" asChild>
-            <Link to="/guild">
-              <span>Explore the Labs</span>
-              <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </Button>
-          
-          <Button variant="glass" size="lg" className="group w-full sm:w-auto transition-transform hover:scale-105" asChild>
-            <Link to="/community">
-              <span>Join the Community</span>
-              <svg className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-              </svg>
-            </Link>
-          </Button>
-          
-          <Button variant="glow" size="lg" className="group w-full sm:w-auto transition-transform hover:scale-105" asChild>
-            <Link to="/support">
-              <span>Support Biscayne Bay</span>
-              <svg className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </Link>
-          </Button>
-        </div>
-
-        {/* Floating Elements with Parallax */}
-        <div className="mt-12 sm:mt-16 lg:mt-20 relative">
-          <div 
-            className="absolute left-1/4 top-0 w-2 h-2 bg-primary rounded-full animate-ping transform-gpu" 
-            style={{ transform: `translateY(${scrollY * -0.3}px)` }}
-          />
-          <div 
-            className="absolute right-1/3 top-4 w-1 h-1 bg-secondary rounded-full animate-ping delay-700 transform-gpu" 
-            style={{ transform: `translateY(${scrollY * 0.2}px)` }}
-          />
-          <div 
-            className="absolute left-1/3 top-8 w-1.5 h-1.5 bg-accent rounded-full animate-ping delay-1000 transform-gpu" 
-            style={{ transform: `translateY(${scrollY * -0.1}px)` }}
-          />
+        {/* Right Side Services - Desktop Only */}
+        <div className="hidden lg:flex lg:w-1/3 flex-col items-end justify-center space-y-6 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+          <div className="text-foreground/80 text-xl font-space tracking-wide hover:text-primary transition-colors cursor-pointer hover:translate-x-[-4px] duration-300">
+            AI Governance
+          </div>
+          <div className="text-foreground/80 text-xl font-space tracking-wide hover:text-primary transition-colors cursor-pointer hover:translate-x-[-4px] duration-300">
+            Climate Resilience
+          </div>
+          <div className="text-foreground/80 text-xl font-space tracking-wide hover:text-primary transition-colors cursor-pointer hover:translate-x-[-4px] duration-300">
+            Infrastructure Intelligence
+          </div>
         </div>
       </div>
 
-      {/* Bottom gradient fade - smoother transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background via-background/80 to-transparent z-30" />
+      {/* Bottom Gradient Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent z-20" />
+      
+      {/* Subtle Particles */}
+      <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-ping" style={{ animationDelay: '0s' }} />
+      <div className="absolute top-2/3 left-1/2 w-1.5 h-1.5 bg-primary/30 rounded-full animate-ping" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-primary-glow/40 rounded-full animate-ping" style={{ animationDelay: '2s' }} />
     </section>
   );
 };
